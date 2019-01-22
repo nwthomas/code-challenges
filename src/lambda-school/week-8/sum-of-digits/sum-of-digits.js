@@ -11,9 +11,12 @@ sumOfDigits(496) returns 19 because 4 + 9 + 6 = 19
 
 */
 
-
 function sumOfDigits(num) {
-  return num.toString().split("").reduce((t, a) => { return Number(t) + Number(a); }, 0);
+  return num
+    .toString()
+    .split("")
+    .map(Number)
+    .reduce((t, a) => t + a, 0);
 }
 
 module.exports = sumOfDigits;

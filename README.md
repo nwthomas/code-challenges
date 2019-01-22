@@ -4,7 +4,7 @@
 
 ## Purpose
 
-This repository is a collection of completed code challenges, katas, whiteboarding question practice, and other assorted problems from my journey.
+This repository is a collection of completed code challenges, katas, whiteboarding question practice, and other assorted problems from my journey. This repo, more than any other, is a macro lense of my entire journey; you can see a visible increase in ability throughout the months
 
 ## Table of Contents
 
@@ -41,6 +41,8 @@ This repository is a collection of completed code challenges, katas, whiteboardi
   - [Week 5](src/lambda-school/week-5)
   - [Week 6](src/lambda-school/week-6)
   - [Week 7](src/lambda-school/week-7)
+    - [Breadth First Search](src/lambda-school/week-7/breadth-first-search)
+    - [Common Elements](src/lambda-school/week-7/common-elements)
   - [Week 8](src/lambda-school/week-8)
     - [Sum of Digits](src/lambda-school/week-8/sum-of-digits)
 
