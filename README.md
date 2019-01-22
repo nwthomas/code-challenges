@@ -7,7 +7,10 @@
 - [Codewars](src/codewars/)
 
   - [7 kyu](src/codewars/7-kyu)
+    - [Descending Order](src/codewars/7-kyu/descending-order)
+    - [Exes and Ohs](src/codewars/7-kyu/exes-and-ohs)
     - [Sum of Numbers](src/codewars/7-kyu/sum-of-numbers)
+    - [Vowel Count](src/codewars/7-kyu/vowel-count)
     - [You're a Square!](src/codewars/7-kyu/you're-a-square)
   - [6 kyu](src/codewars/6-kyu)
     - [Find the Parity Outlier](src/codewars/6-kyu/find-the-parity-outlier)
