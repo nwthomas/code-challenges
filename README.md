@@ -14,8 +14,10 @@
     - [You're a Square!](src/codewars/7-kyu/you're-a-square)
   - [6 kyu](src/codewars/6-kyu)
     - [Find the Parity Outlier](src/codewars/6-kyu/find-the-parity-outlier)
+    - [Format a String of Names](src/codewars/6-kyu/format-a-string-of-names)
     - [IQ Test](src/codewars/6-kyu/iq-test)
     - [Persistence](src/codewars/6-kyu/persistence-bugger)
+    - [Simple Encryption #1: Alternating Split](src/codewars/6-kyu/simple-encryption-1)
 
 - [Lambda School](src/lambda-school/)
 
