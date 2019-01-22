@@ -15,9 +15,12 @@
   - [6 kyu](src/codewars/6-kyu)
     - [Find the Parity Outlier](src/codewars/6-kyu/find-the-parity-outlier)
     - [Format a String of Names](src/codewars/6-kyu/format-a-string-of-names)
+    - [Good vs. Evil](src/codewars/6-kyu/good-vs-evil)
     - [IQ Test](src/codewars/6-kyu/iq-test)
+    - [Is a Number Prime?](src/codewars/6-kyu/is-a-number-prime)
     - [Persistence](src/codewars/6-kyu/persistence-bugger)
     - [Simple Encryption #1: Alternating Split](src/codewars/6-kyu/simple-encryption-1)
+    - [Write Number in Expanded Form](src/codewars/6-kyu/write-number-in-expanded-form)
 
 - [Lambda School](src/lambda-school/)
 
