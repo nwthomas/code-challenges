@@ -2,6 +2,10 @@
 <h4 align="center">A collection of completed code challenges for Nathan Thomas</h4>
 <br>
 
+## Purpose
+
+This repository is a collection of completed code challenges, katas, whiteboarding question practice, and other assorted problems from my journey.
+
 ## Table of Contents
 
 - [Codewars](src/codewars/)
@@ -37,10 +41,12 @@
   - [Week 5](src/lambda-school/week-5)
   - [Week 6](src/lambda-school/week-6)
   - [Week 7](src/lambda-school/week-7)
+  - [Week 8](src/lambda-school/week-8)
+    - [Sum of Digits](src/lambda-school/week-8/sum-of-digits)
 
 ## Built With
 
-- My solutions use [JavaScript](https://www.ecma-international.org/ecma-262/6.0/) for the code and [Jest](https://jestjs.io/en/) for unit testing
+- My solutions use [JavaScript](https://www.ecma-international.org/ecma-262/6.0/) for the code and Facebook's [Jest](https://jestjs.io/en/) for unit testing
 
 ## Authors
 
