@@ -14,6 +14,8 @@
     - [You're a Square!](src/codewars/7-kyu/you're-a-square)
   - [6 kyu](src/codewars/6-kyu)
     - [Find the Parity Outlier](src/codewars/6-kyu/find-the-parity-outlier)
+    - [IQ Test](src/codewars/6-kyu/iq-test)
+    - [Persistence](src/codewars/6-kyu/persistence-bugger)
 
 - [Lambda School](src/lambda-school/)
 
@@ -33,7 +35,7 @@
 
 ## Built With
 
-- My solutions use [Javascript](https://www.ecma-international.org/ecma-262/6.0/) for the code and [Jest](https://jestjs.io/en/) for unit testing
+- My solutions use [JavaScript](https://www.ecma-international.org/ecma-262/6.0/) for the code and [Jest](https://jestjs.io/en/) for unit testing
 
 ## Authors
 
