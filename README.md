@@ -8,6 +8,7 @@
 
   - [7 kyu](src/codewars/7-kyu)
     - [Sum of Numbers](src/codewars/7-kyu/sum-of-numbers)
+    - [You're a Square!](src/codewars/7-kyu/you're-a-square)
   - [6 kyu](src/codewars/6-kyu)
     - [Find the Parity Outlier](src/codewars/6-kyu/find-the-parity-outlier)
 
