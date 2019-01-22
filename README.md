@@ -14,9 +14,6 @@
   - [Week 5](src/lambda-school/week-5)
   - [Week 6](src/lambda-school/week-6)
   - [Week 7](src/lambda-school/week-7)
-  - [Week 8](src/lambda-school/week-8)
-  - [Week 9](src/lambda-school/week-9)
-  - [Week 10](src/lambda-school/week-10)
 
 ## Built With
 

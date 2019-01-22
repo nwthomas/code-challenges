@@ -1,4 +1,4 @@
-const longestString = require("./longestString");
+const longestString = require("./longest-string");
 
 test("Finds the longest string", () => {
   expect(
@@ -7,8 +7,8 @@ test("Finds the longest string", () => {
       "Whatever, I do what I want!",
       "Blarghy",
       "Blargh Blargh"
-    ]).toBe("Whatever, I do what I want!")
-  );
+    ])
+  ).toBe("Whatever, I do what I want!");
   expect(
     longestString(["This is a string", "String", "Spam spam spam spam spam"])
   ).toBe("Spam spam spam spam spam");

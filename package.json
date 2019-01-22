@@ -1,0 +1,15 @@
+{
+  "name": "code-challenges",
+  "version": "1.0.0",
+  "description": "A repository of code challenges",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": "git@github.com:nwthomas/code-challenges.git",
+  "author": "Nathan Thomas <nwthomas@me.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jest": "^23.6.0"
+  }
+}
