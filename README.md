@@ -4,7 +4,7 @@
 
 ## Purpose
 
-This repository is a collection of completed code challenges, katas, whiteboarding question practice, and other assorted problems from my journey. This repo, more than any other, is a macro lense of my entire journey; you can see a visible increase in ability throughout the months
+This repository is a collection of completed code challenges, katas, whiteboarding question practice, and other assorted problems from my journey.
 
 ## Table of Contents
 
@@ -37,6 +37,10 @@ This repository is a collection of completed code challenges, katas, whiteboardi
     - [Sort String](src/lambda-school/week-2/sort-string)
     - [String to Camel Case](src/lambda-school/week-2/string-to-camel-case)
   - [Week 3](src/lambda-school/week-3)
+    - [JS-I](src/lambda-school/week-3/js-I)
+    - [JS-II](src/lambda-school/week-3/js-II)
+    - [JS-III](src/lambda-school/week-3/js-III)
+    - [JS-IV](src/lambda-school/week-3/js-IV)
   - [Week 4](src/lambda-school/week-4)
   - [Week 5](src/lambda-school/week-5)
   - [Week 6](src/lambda-school/week-6)
