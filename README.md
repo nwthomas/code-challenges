@@ -4,7 +4,7 @@
 
 ## Purpose
 
-This repository is a collection of completed code challenges, katas, whiteboarding question practice, and other assorted problems from my journey.
+This repository is a collection of completed code challenges, katas, whiteboarding question practice, and other assorted problems from a variety of places.
 
 ## Table of Contents
 
@@ -48,11 +48,12 @@ This repository is a collection of completed code challenges, katas, whiteboardi
     - [Breadth First Search](src/lambda-school/week-7/breadth-first-search)
     - [Common Elements](src/lambda-school/week-7/common-elements)
   - [Week 8](src/lambda-school/week-8)
+    - [Markdown Tables](src/lambda-school/week-8/markdown-tables)
     - [Sum of Digits](src/lambda-school/week-8/sum-of-digits)
 
 ## Built With
 
-- My solutions use [JavaScript](https://www.ecma-international.org/ecma-262/6.0/) for the code and Facebook's [Jest](https://jestjs.io/en/) for unit testing
+- The solutions use [JavaScript](https://www.ecma-international.org/ecma-262/6.0/) for the code and Facebook's [Jest](https://jestjs.io/en/) for unit testing
 
 ## Authors
 
