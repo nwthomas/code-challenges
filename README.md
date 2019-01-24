@@ -48,6 +48,7 @@ This repository is a collection of completed code challenges, katas, whiteboardi
     - [Breadth First Search](src/lambda-school/week-7/breadth-first-search)
     - [Common Elements](src/lambda-school/week-7/common-elements)
   - [Week 8](src/lambda-school/week-8)
+    - [Even Occurrences](src/lambda-school/week-8/even-occurrences)
     - [Markdown Tables](src/lambda-school/week-8/markdown-tables)
     - [Sum of Digits](src/lambda-school/week-8/sum-of-digits)
 
