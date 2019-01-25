@@ -56,6 +56,16 @@ This repository is a collection of completed code challenges, katas, whiteboardi
 
 - The solutions use [JavaScript](https://www.ecma-international.org/ecma-262/6.0/) for the code and Facebook's [Jest](https://jestjs.io/en/) for unit testing
 
+## Getting Started
+
+1. Fork or clone this repository to your local machine
+
+2. Open your terminal and install Jest using `yarn global add jest`
+
+3. Navigate to the parent directory and run Jest by entering the command `jest --watch`
+
+4. Modify some of the code or the test cases to watch the magic happen
+
 ## Authors
 
 - [**Nathan Thomas**](https://github.com/nwthomas)
