@@ -25,6 +25,8 @@ This repository is a collection of completed code challenges, katas, whiteboardi
     - [Persistence](src/codewars/6-kyu/persistence-bugger)
     - [Simple Encryption #1: Alternating Split](src/codewars/6-kyu/simple-encryption-1)
     - [Write Number in Expanded Form](src/codewars/6-kyu/write-number-in-expanded-form)
+  - [5 kyu](src/codewars/5-kyu)
+    - [First Non-Repeating Character](src/codewars/5-kyu/first-non-repeating-character)
 
 - [Lambda School](src/lambda-school/)
 
