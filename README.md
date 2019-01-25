@@ -8,7 +8,7 @@ This repository is a collection of completed code challenges, katas, whiteboardi
 
 ## Table of Contents
 
-- [Codewars](src/codewars/)
+- [Codewars](src/codewars/) <img src="https://www.codewars.com/users/nwthomas/badges/micro" alt="Codewars profile tag" />
 
   - [7 kyu](src/codewars/7-kyu)
     - [Descending Order](src/codewars/7-kyu/descending-order)
