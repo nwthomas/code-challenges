@@ -1,4 +1,4 @@
-<h1 align="center"><img src="src/assets/readme-header.png" /></h1>
+<h1 align="center"><img src="src/assets/readme-header.png" alt="Code challenges repo banner" /></h1>
 <h4 align="center">A collection of completed code challenges for Nathan Thomas</h4>
 <br>
 
@@ -54,6 +54,12 @@ This repository is a collection of completed code challenges, katas, whiteboardi
     - [Markdown Tables](src/lambda-school/week-8/markdown-tables)
     - [Sum of Digits](src/lambda-school/week-8/sum-of-digits)
 
+- [Miscellaneous Code Challenges](src/miscellaneous-code-challenges/)
+
+  - [Flatten Arrays](src/miscellaneous-code-challenges/flatten-arrays)
+  - [Get Prime Numbers](src/miscellaneous-code-challenges/get-prime-numbers)
+  - [Score Palindromes](src/miscellaneous-code-challenges/score-palindromes)
+
 ## Built With
 
 - The solutions use [JavaScript](https://www.ecma-international.org/ecma-262/6.0/) for the code and Facebook's [Jest](https://jestjs.io/en/) for unit testing
@@ -66,7 +72,9 @@ This repository is a collection of completed code challenges, katas, whiteboardi
 
 3. Navigate to the parent directory and run Jest by entering the command `jest --watch`
 
-4. Modify some of the code or the test cases to watch the magic happen
+4. Select which method of testing in `Jest` you want to use via the command line prompts
+
+5. Modify some of the code or the test cases to watch the magic happen
 
 ## Authors
 
