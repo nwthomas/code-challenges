@@ -57,6 +57,8 @@ This repository is a collection of completed code challenges, katas, whiteboardi
     - [Even Occurrences](src/lambda-school/week-8/even-occurrences)
     - [Markdown Tables](src/lambda-school/week-8/markdown-tables)
     - [Sum of Digits](src/lambda-school/week-8/sum-of-digits)
+  - [Week 9](src/lambda-school/week-9)
+    - [Expanded Numbers](src/lambda-school/week-9/expanded-numbers)
 
 - [Miscellaneous Code Challenges](src/miscellaneous-code-challenges/)
 
