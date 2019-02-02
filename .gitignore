@@ -1,5 +1,4 @@
 node_modules/
 src/codewars/5-kyu/merged-string-checker/
-src/lambda-school/week-4/to-binary-string/
 src/miscellaneous-code-challenges/fibonacci-sequence-finder
 yarn.lock

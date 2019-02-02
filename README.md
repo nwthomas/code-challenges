@@ -47,6 +47,7 @@ This repository is a collection of completed code challenges, katas, whiteboardi
     - [JS-IV](src/lambda-school/week-3/js-IV)
   - [Week 4](src/lambda-school/week-4)
     - [Stack Class](src/lambda-school/week-4/stack-class)
+    - [To Binary String](src/lambda-school/week-4/to-binary-string)
     - [Vowel Count](src/lambda-school/week-4/vowel-count)
   - [Week 5](src/lambda-school/week-5)
   - [Week 6](src/lambda-school/week-6)
