@@ -2,4 +2,5 @@
 
 ## Table of Contents
 
+- [Bubble Sort](bubble-sort)
 - [Merged Objects](merged-objects)
