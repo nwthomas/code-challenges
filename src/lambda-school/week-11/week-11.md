@@ -2,5 +2,6 @@
 
 ## Table of Contents
 
+- [Armstrong Numbers](armstrong-numbers)
 - [Bubble Sort](bubble-sort)
 - [Merged Objects](merged-objects)
