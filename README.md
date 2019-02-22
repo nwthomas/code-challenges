@@ -27,6 +27,7 @@ This repository is a collection of completed code challenges, katas, whiteboardi
   - [Week 9](src/lambda-school/week-9/week-9.md)
   - Week 10 (Build Week - No Code Challenges)
   - [Week 11](src/lambda-school/week-11/week-11.md)
+  - [Week 12](src/lambda-school/week-12/week-12.md)
 
 - [Miscellaneous Code Challenges](src/miscellaneous-code-challenges/misc-code-challenges.md)
 
