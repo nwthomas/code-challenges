@@ -2,4 +2,5 @@
 
 ## Table of Contents
 
+- [String Compression](string-compression)
 - [Twin Primes](twin-primes)
