@@ -2,5 +2,6 @@
 
 ## Table of Contents
 
+- [Rotate Image](rotate-image)
 - [String Compression](string-compression)
 - [Twin Primes](twin-primes)
