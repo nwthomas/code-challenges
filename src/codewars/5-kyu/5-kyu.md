@@ -3,4 +3,5 @@
 ## Table of Contents
 
 - [First Non-Repeating Character](first-non-repeating-character)
+- [Not Very Secure](not-very-secure)
 - [Prime Numbers](prime-numbers)
