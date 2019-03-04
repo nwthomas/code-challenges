@@ -4,7 +4,7 @@
   "description": "A repository of code challenges",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --watch"
   },
   "repository": "git@github.com:nwthomas/code-challenges.git",
   "author": "Nathan Thomas <nwthomas@me.com>",

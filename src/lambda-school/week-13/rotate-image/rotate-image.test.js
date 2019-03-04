@@ -18,4 +18,5 @@ test("takes in an array of arrays of pixels and rotates it counterclockwise", ()
   ]);
   expect(rotateImage([[1, 2], [3, 4]])).toEqual([[2, 4], [1, 3]]);
   expect(rotateImage([[3, 4, 5], [2, 3, 4]])).toEqual([[5, 4], [4, 3], [3, 2]]);
+  expect(rotateImage([[1, 2], [2, 1]])).toEqual([[2, 1], [1, 2]]);
 });
