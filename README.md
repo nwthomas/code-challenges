@@ -10,6 +10,7 @@ This repository is a collection of completed code challenges, katas, whiteboardi
 
 - [Codewars](src/codewars/) <img src="https://www.codewars.com/users/nwthomas/badges/micro" alt="Codewars profile tag" />
 
+  - [8 kyu](src/codewars/8-kyu/8-kyu.md)
   - [7 kyu](src/codewars/7-kyu/7-kyu.md)
   - [6 kyu](src/codewars/6-kyu/6-kyu.md)
   - [5 kyu](src/codewars/5-kyu/5-kyu.md)
