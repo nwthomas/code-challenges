@@ -13,6 +13,7 @@ This repository is a collection of completed code challenges, katas, whiteboardi
   - [7 kyu](src/codewars/7-kyu/7-kyu.md)
   - [6 kyu](src/codewars/6-kyu/6-kyu.md)
   - [5 kyu](src/codewars/5-kyu/5-kyu.md)
+  - [4 kyu](src/codewars/4-kyu/4-kyu.md)
 
 - [Lambda School](src/lambda-school/)
 
