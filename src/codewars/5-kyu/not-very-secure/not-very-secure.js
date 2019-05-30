@@ -11,8 +11,8 @@ The string has the following conditions to be alphanumeric:
 */
 
 function alphanumeric(string) {
-  if (!string.length) return false;
-  return string.match("^[a-zA-Z0-9]*$") ? true : false;
+  if (!/^[a-zA-Z0-9]+$/.test(string)) return false;
+  return true;
 }
 
 module.exports = alphanumeric;
