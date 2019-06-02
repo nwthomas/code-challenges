@@ -4,6 +4,7 @@
 
 - Java
   - [Convert a Number to a String](convert-a-number-to-a-string)
-  - [COnvert a String to a Number](convert-a-string-to-a-number)
+  - [Convert a String to a Number](convert-a-string-to-a-number)
+  - [Square(n) Sum](square-sum)
 - JavaScript
   - ["This" is a Problem](this-is-a-problem)
