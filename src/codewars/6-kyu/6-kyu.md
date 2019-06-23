@@ -3,6 +3,7 @@
 ## Table of Contents
 
 - [Bouncing Ball](bouncing-ball)
+- [Counting Duplicates](counting-duplicates)
 - [Find the Parity Outlier](find-the-parity-outlier)
 - [Format a String of Names](format-a-string-of-names)
 - [Good vs. Evil](good-vs-evil)
