@@ -11,4 +11,5 @@
 - [Is a Number Prime?](is-a-number-prime)
 - [Persistence](persistence-bugger)
 - [Simple Encryption #1: Alternating Split](simple-encryption-1)
+- [Sort Odd and Even Numbers in Different Order](sort-odd-and-even-numbers-in-different-order)
 - [Write Number in Expanded Form](write-number-in-expanded-form)
