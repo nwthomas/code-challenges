@@ -38,8 +38,8 @@ This repository is a collection of completed code challenges, katas, whiteboardi
 
 ## Built With
 
-- The code challenge solutions use [JavaScript](https://www.ecma-international.org/ecma-262/6.0/) and [Java](https://www.java.com/en/)
-- The JavaScript tests are written with Facebook's [Jest](https://jestjs.io/en/) for unit testing. Java tests are coming soon.
+- The code challenge solutions use [JavaScript](https://www.ecma-international.org/ecma-262/6.0/), [Java](https://www.java.com/en/), and [Solidity](https://solidity.readthedocs.io/en/v0.4.24/index.html)
+- The JavaScript tests are written with Facebook's [Jest](https://jestjs.io/en/) for unit testing. Java and Solidity tests are coming soon.
 
 ## Getting Started
 

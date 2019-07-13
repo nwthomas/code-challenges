@@ -8,3 +8,5 @@
   - [Square(n) Sum](square-sum)
 - JavaScript
   - ["This" is a Problem](this-is-a-problem)
+- Solidity
+  - [Count by X](count-by-x)
