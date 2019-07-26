@@ -2,4 +2,5 @@
 
 ## Table of Contents
 
+- [Chained Functions](chained-functions)
 - [Expanded Numbers](expanded-numbers)
