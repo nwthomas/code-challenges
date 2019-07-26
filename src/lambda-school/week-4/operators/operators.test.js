@@ -7,7 +7,7 @@ describe("Operators Lambda School code challenge", () => {
     });
 
     it("should return a false value if both the numbers passed in as arguments are negative", () => {
-      expect(negCheck(-67458, -1)).toBeFalsy;
+      expect(negCheck(-67458, -1)).toBeFalsy();
     });
 
     it("should return a true value if either one of the arguments are negative", () => {
