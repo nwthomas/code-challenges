@@ -7,3 +7,4 @@
 - [Not Very Secure](not-very-secure)
 - [Prime Numbers](prime-numbers)
 - [Tic-Tac-Toe Checker](tic-tac-toe-checker)
+- [Valid Parentheses](valid-parentheses)
