@@ -10,6 +10,7 @@
 - [IQ Test](iq-test)
 - [Is a Number Prime?](is-a-number-prime)
 - [Persistence](persistence-bugger)
+- [Reverse Every Other Word in the String](reverse-every-other-word-in-the-string)
 - [Simple Encryption #1: Alternating Split](simple-encryption-1)
 - [Sort Odd and Even Numbers in Different Order](sort-odd-and-even-numbers-in-different-order)
 - [Stop gninnipS My sdroW!](stop-gninnips-my-sdrow!);
