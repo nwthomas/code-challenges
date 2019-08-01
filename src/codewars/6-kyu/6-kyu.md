@@ -14,4 +14,5 @@
 - [Simple Encryption #1: Alternating Split](simple-encryption-1)
 - [Sort Odd and Even Numbers in Different Order](sort-odd-and-even-numbers-in-different-order)
 - [Stop gninnipS My sdroW!](stop-gninnips-my-sdrow!);
+- [What's in a Name](whats-in-a-name)
 - [Write Number in Expanded Form](write-number-in-expanded-form)
