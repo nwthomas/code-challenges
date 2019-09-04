@@ -4,6 +4,7 @@
 
 - [Bouncing Ball](bouncing-ball)
 - [Counting Duplicates](counting-duplicates)
+- [Digital Root](digital-root)
 - [Equal Sides of an Array](equal-sides-of-an-array)
 - [Find the Parity Outlier](find-the-parity-outlier)
 - [Format a String of Names](format-a-string-of-names)
