@@ -6,6 +6,7 @@
 - [Counting Duplicates](counting-duplicates)
 - [Digital Root](digital-root)
 - [Equal Sides of an Array](equal-sides-of-an-array)
+- [Find the Missing Letter](find-the-missing-letter)
 - [Find the Parity Outlier](find-the-parity-outlier)
 - [Format a String of Names](format-a-string-of-names)
 - [Good vs. Evil](good-vs-evil)
