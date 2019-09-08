@@ -2,4 +2,5 @@
 
 ## Table of Contents
 
+- [Insertion Sort](insertion-sort)
 - [Sum and Product](sum-and-product)
