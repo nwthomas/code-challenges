@@ -1,4 +1,4 @@
-const copy = require("./deepCopy.js");
+const copy = require("./deepCopyObject.js");
 
 describe("copy()", () => {
   describe("should deep copy an object with simple key-value pairs", () => {
@@ -9,6 +9,11 @@ describe("copy()", () => {
 
     it("tests if a deep copy of a simple object of string values has occured", () => {
       const obj = { "1": "1", "2": "2", "3": "3" };
+      expect(copy(obj)).toEqual(obj);
+    });
+
+    it("it tests if a deep copy of an object filled with empty objects has occured", () => {
+      const obj = { 1: {}, 2: {}, 3: {} };
       expect(copy(obj)).toEqual(obj);
     });
   });
