@@ -4,18 +4,15 @@ Give an array with a variable amount of indexes and nested arrays inside it (of 
 
 */
 
-function copy(oldArr) {
+function copy(arr) {
   const final = [];
-  function helper(arr) {
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i].length && typeof arr[i] === "object") {
-        final[i] = copy(arr[i]);
-      } else {
-        final[i] = arr[i];
-      }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length && typeof arr[i] === "object") {
+      final[i] = copy(arr[i]);
+    } else {
+      final[i] = arr[i];
     }
   }
-  helper(oldArr);
   return final;
 }
 
