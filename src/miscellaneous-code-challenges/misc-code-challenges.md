@@ -3,6 +3,7 @@
 ## Table of Contents
 
 - JavaScript
+  - [Deep Copy](deep-copy)
   - [Flatten Arrays](flatten-arrays)
   - [Get Prime Numbers](get-prime-numbers)
   - [Largest Matrix](largest-matrix)
