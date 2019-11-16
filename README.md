@@ -16,6 +16,10 @@ This repository is a collection of completed code challenges, katas, whiteboardi
   - [5 kyu](src/codewars/5-kyu/5-kyu.md)
   - [4 kyu](src/codewars/4-kyu/4-kyu.md)
 
+- [Daily Coding Problem](src/daily-coding-problem)
+
+  - [Easy](src/daily-coding-problem/easy)
+
 - [HackerRank](src/hacker-rank)
 
 - [Lambda School](src/lambda-school/)
