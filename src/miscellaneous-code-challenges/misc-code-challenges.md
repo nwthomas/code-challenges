@@ -10,6 +10,7 @@
   - [Largest Matrix](largest-matrix)
   - [Meandering Array](meandering-array)
   - [Score Palindromes](score-palindromes)
+  - [Sum Fibonacci](sum-fibonacci)
 - Python
   - [Eating Cookies](eating-cookies)
   - [Making Change](making-change)

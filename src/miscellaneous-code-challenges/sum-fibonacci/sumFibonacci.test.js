@@ -1,4 +1,4 @@
-const sumFibonacci = require("./fibonacci-sequence-finder");
+const sumFibonacci = require("./sumFibonacci.js");
 
 describe("fibonacci()", () => {
   describe("should return the sum of all fibs", () => {
