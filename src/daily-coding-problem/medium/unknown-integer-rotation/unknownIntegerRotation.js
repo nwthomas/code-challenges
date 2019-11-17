@@ -1,0 +1,43 @@
+/*
+
+Good morning! Here's your coding interview problem for today.
+
+This problem was asked by Amazon.
+
+An sorted array of integers was rotated an unknown number of times.
+
+Given such an array, find the index of the element in the array in faster than linear time. If the element doesn't exist in the array, return null.
+
+For example, given the array [13, 18, 25, 2, 8, 10] and the element 8, return 4 (the index of 8 in the array).
+
+You can assume all the integers in the array are unique.
+
+*/
+
+function findRotatedNum(rotatedArr, num) {
+  if (
+    !rotatedArr.length ||
+    typeof rotatedArr !== "object" ||
+    typeof num !== "number"
+  ) {
+    return null;
+  }
+  let element = null;
+  let right = 0;
+  let left = rotatedArr.length - 1;
+  while (right <= left) {
+    if (rotatedArr[right] === num) {
+      element = right;
+      break;
+    }
+    if (rotatedArr[left] === num) {
+      element = left;
+      break;
+    }
+    right++;
+    left--;
+  }
+  return element;
+}
+
+module.exports = findRotatedNum;
