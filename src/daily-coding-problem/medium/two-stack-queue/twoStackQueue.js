@@ -22,6 +22,9 @@ class Stack {
     this.length -= 1;
     return temp;
   }
+  getStack() {
+    return this.stack;
+  }
   len() {
     return this.length;
   }
@@ -46,7 +49,7 @@ class Queue {
     return temp;
   }
   getQueue() {
-    return this.stack1.stack;
+    return this.stack1.getStack();
   }
   len() {
     return this.stack1.len();
