@@ -4,3 +4,4 @@
 
 - JavaScript
   - [URL Shortener](url-shortener)
+  - [Word Matrix](word-matrix)
