@@ -22,7 +22,7 @@ function findWordInMatrix(arrayOfLetters, searchWord) {
     word = "",
     x = 0,
     y = 0,
-    wordIndex = 0;
+    letterIndex = 0;
   if (
     arrayOfLetters.length >= searchWord.length ||
     arrayOfLetters[0].length >= searchWord.length
