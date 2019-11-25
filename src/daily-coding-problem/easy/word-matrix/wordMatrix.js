@@ -17,18 +17,35 @@ For example, given the following matrix:
 
 */
 
-function findWordInMatrix(arrayOfLetters, searchWord) {
-  let found = false,
-    word = "",
-    x = 0,
-    y = 0,
-    letterIndex = 0;
-  if (
-    arrayOfLetters.length >= searchWord.length ||
-    arrayOfLetters[0].length >= searchWord.length
-  ) {
-    return found;
+/**
+ * 1. Check first array item top-down and left-right
+ * 2. If the word is found, return true
+ * 3. If not, move to the right and check again
+ * 4. Should accomodate handling word length longer than array length
+ */
+
+function findWordInMatrix(arr, word) {
+  // Checks the x axis of the 2D array for the word
+  for (let i = 0; i < arr[0].length; i++) {
+    let arrString = "";
+    for (let j = 0; j < arr.length; j++) {
+      arrString += arr[j][i];
+    }
+    const isWordMatched = arrString.toLowerCase().match(word.toLowerCase());
+    if (isWordMatched) {
+      return true;
+    }
   }
+  // Checks the x axis of the 2D array for the word
+  for (let i = 0; i < arr.length; i++) {
+    const arrString = arr[i].join("");
+    const matched = arrString.toLowerCase().match(word.toLowerCase());
+    if (matched && matched[0]) {
+      return true;
+    }
+  }
+  // Defaults to returning false if the word is not found
+  return false;
 }
 
 module.exports = findWordInMatrix;
