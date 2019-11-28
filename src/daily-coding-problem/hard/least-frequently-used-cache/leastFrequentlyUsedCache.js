@@ -102,7 +102,6 @@ LeastFrequentlyUsedCache.prototype.set = function(key, value) {
     this._cache[key] = node;
     this._length++;
   }
-
   if (this._length > this._cacheSize) {
     const newTailNode = this._tail._previous;
     const oldNodeKey = this._tail._value[0];
