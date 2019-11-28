@@ -18,12 +18,12 @@ function testUtilsNamespace() {
       LFUCache.set(`thing${i}`, i);
     }
   }
-  return [returnCacheValues, setHundredValues];
+  return { returnCacheValues, setHundredValues };
 }
 
 describe("LeastFrequentlyUsedCache()", () => {
   let LFUCache;
-  const [returnCacheValues, setHundredValues] = testUtilsNamespace();
+  const utils = testUtilsNamespace();
 
   beforeEach(() => {
     LFUCache = new LeastFrequentlyUsedCache(20);
@@ -59,7 +59,7 @@ describe("LeastFrequentlyUsedCache()", () => {
       LFUCache.set("thing2", 2);
       LFUCache.set("thing3", 3);
       LFUCache.set("thing4", 4);
-      expect(returnCacheValues(LFUCache)).toEqual([4, 3, 2, 1]);
+      expect(utils.returnCacheValues(LFUCache)).toEqual([4, 3, 2, 1]);
     });
 
     it("handles trying to add a key value pair twice with n === 1", () => {
@@ -70,7 +70,7 @@ describe("LeastFrequentlyUsedCache()", () => {
     });
 
     it("deletes old nodes to not exceed max cache size", () => {
-      setHundredValues(LFUCache);
+      utils.setHundredValues(LFUCache);
       expect(Object.keys(LFUCache._cache).length).toBe(20);
       expect(LFUCache.length()).toBe(20);
     });
@@ -85,7 +85,7 @@ describe("LeastFrequentlyUsedCache()", () => {
     });
 
     it("gets the value when a lot of values have been added to the cache", () => {
-      setHundredValues(LFUCache);
+      utils.setHundredValues(LFUCache);
       expect(LFUCache.get("thing100")).toEqual(["thing100", 100]);
     });
 
@@ -100,7 +100,7 @@ describe("LeastFrequentlyUsedCache()", () => {
       expect(LFUCache.length()).toBeFalsy();
       LFUCache.set("test", "test");
       expect(LFUCache.length()).toBe(1);
-      setHundredValues(LFUCache);
+      utils.setHundredValues(LFUCache);
       expect(LFUCache.length()).toBe(20);
     });
   });
