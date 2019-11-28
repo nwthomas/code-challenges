@@ -20,6 +20,7 @@ This repository is a collection of completed code challenges, katas, whiteboardi
 
   - [Easy](src/daily-coding-problem/easy)
   - [Medium](src/daily-coding-problem/medium)
+  - [Hard](src/daily-coding-problem/hard)
 
 - [HackerRank](src/hacker-rank)
 
