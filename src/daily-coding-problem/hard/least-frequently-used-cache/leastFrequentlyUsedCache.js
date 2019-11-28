@@ -71,23 +71,24 @@ LeastFrequentlyUsedCache.prototype.set = function(key, value) {
    * LFU cache, and returns the index of the newly-set key-value
    * pair
    */
+  const stringKey = `${key}`;
   if (!this._head) {
-    const node = new Node([key, value]);
+    const node = new Node([stringKey, value]);
     this._head = node;
     this._tail = node;
-    this._cache[key] = node;
+    this._cache[stringKey] = node;
     this._length++;
-  } else if (this._cache[key]) {
+  } else if (this._cache[stringKey]) {
     if (this._length === 1) {
       return;
     }
     let newTail;
-    if (this._tail === this._cache[key]) {
+    if (this._tail === this._cache[stringKey]) {
       newTail = this._tail._previous;
     }
-    const oldNode = this._cache[key].delete();
-    const newNode = new Node([key, value]);
-    this._cache[key] = newNode;
+    const oldNode = this._cache[stringKey].delete();
+    const newNode = new Node([stringKey, value]);
+    this._cache[stringKey] = newNode;
     this._head._previous = newNode;
     newNode._next = this._head;
     this._head = newNode;
@@ -95,11 +96,11 @@ LeastFrequentlyUsedCache.prototype.set = function(key, value) {
       this._tail = newTail;
     }
   } else {
-    const node = new Node([key, value]);
+    const node = new Node([stringKey, value]);
     node._next = this._head;
     this._head._previous = node;
     this._head = node;
-    this._cache[key] = node;
+    this._cache[stringKey] = node;
     this._length++;
   }
   if (this._length > this._cacheSize) {
@@ -109,6 +110,7 @@ LeastFrequentlyUsedCache.prototype.set = function(key, value) {
     delete this._cache[oldNodeKey];
     this._tail = newTailNode;
     this._tail._next = null;
+    this._length--;
   }
 };
 
@@ -117,7 +119,12 @@ LeastFrequentlyUsedCache.prototype.get = function(key) {
    * This method runs in O(1) time and returns the value
    * associated with the key passed in as a parameter
    */
-  return this._cache[key]._value;
+  const stringKey = `${key}`;
+  const value = this._cache[stringKey] && this._cache[stringKey]._value;
+  if (value) {
+    return value;
+  }
+  return null;
 };
 
 LeastFrequentlyUsedCache.prototype.length = function() {

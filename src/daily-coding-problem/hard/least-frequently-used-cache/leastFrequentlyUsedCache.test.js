@@ -63,6 +63,14 @@ describe("LeastFrequentlyUsedCache()", () => {
       expect(LFUCache.length()).toBe(1);
       expect(LFUCache._head === LFUCache._tail).toBeTruthy();
     });
+
+    it("deletes old nodes to not exceed max cache size", () => {
+      for (let i = 0; i < 100; i++) {
+        LFUCache.set(`thing${i}`, i);
+      }
+      expect(Object.keys(LFUCache._cache).length).toBe(20);
+      expect(LFUCache.length()).toBe(20);
+    });
   });
 
   describe("get", () => {
@@ -71,6 +79,11 @@ describe("LeastFrequentlyUsedCache()", () => {
       LFUCache.set("thing2", 2);
       const value = LFUCache.get("thing1");
       expect(value).toEqual(["thing1", 1]);
+    });
+
+    it("returns null if the value is not present in the cache", () => {
+      LFUCache.set("thing1", 1);
+      expect(LFUCache.get("notAValidValue")).toBeFalsy();
     });
   });
 });
