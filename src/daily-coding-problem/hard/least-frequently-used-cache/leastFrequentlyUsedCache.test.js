@@ -13,12 +13,17 @@ function testUtilsNamespace() {
     }
     return final;
   }
-  return [returnCacheValues];
+  function setHundredValues(LFUCache) {
+    for (let i = 1; i <= 100; i++) {
+      LFUCache.set(`thing${i}`, i);
+    }
+  }
+  return [returnCacheValues, setHundredValues];
 }
 
 describe("LeastFrequentlyUsedCache()", () => {
   let LFUCache;
-  const [returnCacheValues] = testUtilsNamespace();
+  const [returnCacheValues, setHundredValues] = testUtilsNamespace();
 
   beforeEach(() => {
     LFUCache = new LeastFrequentlyUsedCache(20);
@@ -65,9 +70,7 @@ describe("LeastFrequentlyUsedCache()", () => {
     });
 
     it("deletes old nodes to not exceed max cache size", () => {
-      for (let i = 0; i < 100; i++) {
-        LFUCache.set(`thing${i}`, i);
-      }
+      setHundredValues(LFUCache);
       expect(Object.keys(LFUCache._cache).length).toBe(20);
       expect(LFUCache.length()).toBe(20);
     });
@@ -81,9 +84,24 @@ describe("LeastFrequentlyUsedCache()", () => {
       expect(value).toEqual(["thing1", 1]);
     });
 
+    it("gets the value when a lot of values have been added to the cache", () => {
+      setHundredValues(LFUCache);
+      expect(LFUCache.get("thing100")).toEqual(["thing100", 100]);
+    });
+
     it("returns null if the value is not present in the cache", () => {
       LFUCache.set("thing1", 1);
       expect(LFUCache.get("notAValidValue")).toBeFalsy();
+    });
+  });
+
+  describe("length", () => {
+    it("returns the length of the cache", () => {
+      expect(LFUCache.length()).toBeFalsy();
+      LFUCache.set("test", "test");
+      expect(LFUCache.length()).toBe(1);
+      setHundredValues(LFUCache);
+      expect(LFUCache.length()).toBe(20);
     });
   });
 });

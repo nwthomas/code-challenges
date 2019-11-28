@@ -107,9 +107,8 @@ LeastFrequentlyUsedCache.prototype.set = function(key, value) {
     const newTailNode = this._tail._previous;
     const oldNodeKey = this._tail._value[0];
     this._tail.delete();
-    delete this._cache[oldNodeKey];
     this._tail = newTailNode;
-    this._tail._next = null;
+    delete this._cache[oldNodeKey];
     this._length--;
   }
 };
