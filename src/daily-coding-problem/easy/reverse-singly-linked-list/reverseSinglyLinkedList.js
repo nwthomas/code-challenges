@@ -8,7 +8,7 @@ Given the head of a singly-linked list, reverse it in-place.
 
 */
 
-function Node(value) {
+function Node(value = null) {
   this.value = value;
   this.next = null;
 }
@@ -20,7 +20,7 @@ Node.prototype.add = function(value) {
   }
   current.next = new Node(value);
   return value;
-}
+};
 
 Node.prototype.get = function(value) {
   let current = this;
@@ -28,11 +28,11 @@ Node.prototype.get = function(value) {
     if (current.value === value) {
       return true;
     } else {
-      current = current.next
+      current = current.next;
     }
   }
   return false;
-}
+};
 
 Node.prototype.reverse = function() {
   if (!this.next) {
@@ -50,6 +50,6 @@ Node.prototype.reverse = function() {
     }
   }
   return previous;
-}
+};
 
 module.exports = Node;
