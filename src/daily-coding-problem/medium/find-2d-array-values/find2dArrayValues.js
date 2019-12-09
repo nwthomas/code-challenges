@@ -26,4 +26,61 @@ And there are 4 12's in the table.
 
 */
 
-module.exports = null;
+function createArray(x, y) {
+  if (typeof x !== "number" || typeof y !== "number") {
+    return null;
+  }
+  const array = Array(y).fill([]);
+  for (let xIndex = 0; xIndex < array.length; xIndex++) {
+    let tempArray = Array(x).fill(null);
+    tempArray = tempArray.map((_, yIndex) => {
+      return (xIndex + 1) * (yIndex + 1);
+    });
+    array[xIndex] = tempArray;
+  }
+  return array;
+}
+
+function flattenArray(array) {
+  if (!array.length || typeof array !== "object") {
+    return null;
+  }
+  if (array.length <= 0) {
+    return array;
+  }
+  let final = [];
+  for (let i = 0; i < array.length; i++) {
+    if (typeof array[i] === "object" && array[i].length) {
+      final = final.concat(flattenArray(array[i]));
+    } else {
+      final.push(array[i]);
+    }
+  }
+  return final;
+}
+
+function findValues(x, y, value) {
+  if (
+    typeof x !== "number" ||
+    typeof y !== "number" ||
+    typeof value !== "number"
+  ) {
+    return null;
+  }
+  const array = createArray(x, y);
+  const flattened = flattenArray(array);
+  const final = flattened.reduce((accum, current) => {
+    if (current === value) {
+      return (accum = accum + 1);
+    } else {
+      return accum;
+    }
+  }, 0);
+  return final;
+}
+
+module.exports = {
+  createArray,
+  findValues,
+  flattenArray
+};
