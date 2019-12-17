@@ -128,9 +128,6 @@ class ReverseBinaryTreeHelper {
     this._head = binaryTreeHead;
     this._reversed = null;
   }
-  getList() {
-    return JSON.stringify(this._head);
-  }
   reverse(current = this._head) {
     if (!this._reversed) {
       this._reversed = new Node(current.getValue());
@@ -145,7 +142,7 @@ class ReverseBinaryTreeHelper {
     }
   }
   getReversedHead() {
-    return this._reversed;
+    return JSON.stringify(this._reversed);
   }
 }
 

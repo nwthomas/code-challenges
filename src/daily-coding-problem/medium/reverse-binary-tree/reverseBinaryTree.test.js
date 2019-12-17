@@ -3,6 +3,7 @@ const {
   Node
 } = require("./reverseBinaryTree.js");
 const jsonTree = require("./data.json");
+const reversedJsonTree = require("./reversedData.json");
 
 const utils = {
   numArray: [4, 6, 2, 7, 8, 3, 1, 34, 12, 78, 69, 100],
@@ -18,9 +19,11 @@ const utils = {
 
 describe("reverseBinaryTree", () => {
   let head;
+  let rbt;
 
   beforeEach(() => {
     head = utils.createBST();
+    rbt = new RBT(head);
   });
 
   describe("Node", () => {
@@ -172,8 +175,8 @@ describe("reverseBinaryTree", () => {
   describe("ReverseBinaryTree", () => {
     describe("instantiates", () => {
       test("instantiates a new ReverseBinaryTree class", () => {
-        const node = new Node("test");
-        const reverse = new RBT(node);
+        const headNode = new Node("test");
+        const reverse = new RBT(headNode);
         expect(reverse instanceof RBT).toBeTruthy();
       });
 
@@ -184,7 +187,47 @@ describe("reverseBinaryTree", () => {
     });
 
     describe("reverse()", () => {
-      // finish
+      test("reverses a small Binary Search Tree", () => {
+        const headNode = new Node(5);
+        headNode.addValue(1);
+        headNode.addValue(7);
+        const normalResult = headNode.getTree();
+        expect(normalResult).toBe(
+          JSON.stringify({
+            _value: 5,
+            _left: { _value: 1, _left: null, _right: null },
+            _right: { _value: 7, _left: null, _right: null }
+          })
+        );
+        const rbt = new RBT(headNode);
+        rbt.reverse();
+        const reversedResult = rbt.getReversedHead();
+        expect(reversedResult).toBe(
+          JSON.stringify({
+            _value: 5,
+            _left: { _value: 7, _left: null, _right: null },
+            _right: { _value: 1, _left: null, _right: null }
+          })
+        );
+      });
+
+      test("reverses a large Binary Search Tree", () => {
+        rbt.reverse();
+        const result = rbt.getReversedHead();
+        expect(result).toBe(reversedJsonTree);
+      });
+    });
+
+    describe("getReverseHead()", () => {
+      test("should return the head of the reversed Binary Search Tree", () => {
+        const nodeHead = new Node(5);
+        rbt._head = nodeHead;
+        rbt.reverse();
+        const result = rbt.getReversedHead();
+        expect(result).toBe(
+          JSON.stringify({ _value: 5, _left: null, _right: null })
+        );
+      });
     });
   });
 });
