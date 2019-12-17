@@ -96,32 +96,56 @@ class Node {
       return false;
     }
   }
+  addValueReverse(newValue, node = this) {
+    if (newValue === undefined || node instanceof Node === false) {
+      return null;
+    }
+    const current = node;
+    const currentValue = current.getValue();
+    if (currentValue === newValue) {
+      return newValue;
+    } else if (currentValue < newValue) {
+      if (current._left) {
+        return current.addValue(newValue, current._left);
+      } else {
+        return (current._left = new Node(newValue));
+      }
+    } else if (currentValue > newValue) {
+      if (current._right) {
+        return current.addValue(newValue, current._right);
+      } else {
+        current._right = new Node(newValue);
+        return newValue;
+      }
+    } else {
+      return false;
+    }
+  }
 }
 
 class ReverseBinaryTreeHelper {
-  constructor(binaryTree = null) {
-    this._head = binaryTree;
-    this._values = [];
+  constructor(binaryTreeHead = null) {
+    this._head = binaryTreeHead;
+    this._reversed = null;
   }
   getList() {
-    return this._getNodes();
+    return JSON.stringify(this._head);
   }
-  reverse() {
-    this._values = this._getNodes(this._head);
-  }
-  _getNodes(node) {
-    const total = [];
-    function findAllNodes(currentNode) {
-      total.push(node._value);
-      if (!currentNode._left && !currentNode._right) {
-        return null;
-      } else {
-        currentNode._left && this._getNodes(currentNode._left);
-        currentNode._right && this._getNodes(currentNode._right);
-      }
+  reverse(current = this._head) {
+    if (!this._reversed) {
+      this._reversed = new Node(current.getValue());
+    } else {
+      this._reversed.addValueReverse(current.getValue());
     }
-    findAllNodes(node);
-    return total;
+    if (current._left) {
+      this.reverse(current._left);
+    }
+    if (current._right) {
+      this.reverse(current._right);
+    }
+  }
+  getReversedHead() {
+    return this._reversed;
   }
 }
 
