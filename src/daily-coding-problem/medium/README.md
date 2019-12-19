@@ -9,3 +9,4 @@
   - [Reverse Binary Tree](reverse-binary-tree)
   - [Two Stack Queue](two-stack-queue)
   - [Unknown Integer Rotation](unknown-integer-rotation)
+  - [Validate Binary Search Tree](validate-binary-search-tree)

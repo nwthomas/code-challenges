@@ -19,33 +19,48 @@ class Node {
   getValue() {
     return this._value && this._value;
   }
-  addValue(value, node = this) {
-    if (typeof value !== "number" || node instanceof Node === false) {
-      return false;
+  getAllTreeValues(node = this) {
+    const values = [node.getValue()];
+    if (node._left) {
+      values.unshift(...this.getAllTreeValues(node._left));
     }
-    if (!this._value) {
-      this._value = value;
+    if (node._right) {
+      values.push(...this.getAllTreeValues(node._right));
+    }
+    return values;
+  }
+  addValue(value, node = this) {
+    if (typeof value === "undefined" || node instanceof Node === false) {
+      return null;
+    }
+    if (!node._value) {
+      node._value = value;
       return true;
     }
-    if (this.getValue() > value) {
-      if (!this._left) {
-        this._left = new Node(value);
-        return true;
+    if (node.getValue() === value) {
+      return true;
+    } else if (node.getValue() > value) {
+      if (node._left) {
+        return node.addValue(value, node._left);
       } else {
-        return this.addValue(value, this._left);
+        node._left = new Node(value);
+        return true;
       }
-    } else if (this.getValue() < value) {
-      if (!this._right) {
-        this._right = new Node(value);
-        return true;
+    } else if (node.getValue() < value) {
+      if (node._right) {
+        return node.addValue(value, node._right);
       } else {
-        return this.addValue(value, this._right);
+        node._right = new Node(value);
+        return true;
       }
     } else {
       return false;
     }
   }
   validateTree(node = this) {
+    if (node instanceof Node === false) {
+      return null;
+    }
     if (node._right && node._right.getValue() < node.getValue()) {
       return false;
     }
@@ -56,10 +71,10 @@ class Node {
       return true;
     }
     if (node._right && node._right.getValue() > node.getValue()) {
-      return this.validateTree(this._right);
+      return this.validateTree(node._right);
     }
     if (node._left && node._left.getValue() < node.getValue()) {
-      return this.validateTree(this._left);
+      return this.validateTree(node._left);
     }
   }
 }
