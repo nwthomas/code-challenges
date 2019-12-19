@@ -45,10 +45,23 @@ class Node {
       return false;
     }
   }
+  validateTree(node = this) {
+    if (node._right && node._right.getValue() < node.getValue()) {
+      return false;
+    }
+    if (node._left && node._left.getValue() > node.getValue()) {
+      return false;
+    }
+    if (!node._left && !node._right) {
+      return true;
+    }
+    if (node._right && node._right.getValue() > node.getValue()) {
+      return this.validateTree(this._right);
+    }
+    if (node._left && node._left.getValue() < node.getValue()) {
+      return this.validateTree(this._left);
+    }
+  }
 }
 
-function validateTree(headNode) {
-  // finish
-}
-
-module.exports = { Node, validateTree };
+module.exports = Node;
