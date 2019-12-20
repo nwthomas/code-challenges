@@ -17,9 +17,35 @@ describe("randomNumberExceptList", () => {
       expect(result).toBeNull();
     });
 
-    test("returns a random number lesser than the number passed in and also not in the list", () => {
-      const result = getRandomNumber(3, [0, 3]);
-      expect(result).toBeOneOf([1, 2]);
+    test("returns a random number lesser than the small number passed in and also not in the short list", () => {
+      const list = [0, 3];
+      const result = getRandomNumber(3, list);
+      expect(result).not.toBeOneOf(list);
+    });
+
+    test("returns a random number lesser than the large number passed in and also not in the large list", () => {
+      const list = [
+        1,
+        56,
+        24,
+        32,
+        6,
+        19,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        34,
+        31,
+        20,
+        55
+      ];
+      const result = getRandomNumber(55, list);
+      expect(result).not.toBeOneOf(list);
     });
   });
 });
