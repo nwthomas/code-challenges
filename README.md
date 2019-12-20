@@ -1,4 +1,4 @@
-<h1 align="center"><img src="src/assets/readme-header.png" alt="Code challenges repo banner" /></h1>
+<h1 align="center"><img src="./assets/readme-header.png" alt="Code challenges repo banner" /></h1>
 <h4 align="center">A collection of completed code challenges for Nathan Thomas</h4>
 <br>
 
