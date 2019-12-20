@@ -6,6 +6,7 @@
   - [Find Non-Decreasing Integers](find-non-decreasing-integers)
   - [Find 2D Array Values](find-2d-array-values)
   - [Maximum Possible Words](maximum-possible-words)
+  - [Random Number Except List](random-number-except-list)
   - [Reverse Binary Tree](reverse-binary-tree)
   - [Two Stack Queue](two-stack-queue)
   - [Unknown Integer Rotation](unknown-integer-rotation)
