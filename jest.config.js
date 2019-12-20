@@ -12,5 +12,8 @@ module.exports = {
   testEnvironment: "node",
 
   // Indicates whether each individual test should be reported during the run
-  verbose: null
+  verbose: null,
+
+  // Allows for custom setup configurations
+  setupFilesAfterEnv: ["jest-extended"]
 };

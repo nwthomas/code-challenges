@@ -9,7 +9,9 @@
   "repository": "git@github.com:nwthomas/code-challenges.git",
   "author": "Nathan Thomas <nwthomas@me.com>",
   "license": "MIT",
-  "dependencies": {
-    "jest": "^23.6.0"
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "jest-extended": "^0.11.2"
   }
 }
