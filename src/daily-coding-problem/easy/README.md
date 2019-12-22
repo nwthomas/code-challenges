@@ -7,3 +7,5 @@
   - [Reverse Singly-Linked List](reverse-singly-linked-list)
   - [URL Shortener](url-shortener)
   - [Word Matrix](word-matrix)
+- Python
+  - [Fix the Lambda](fix-the-lambda)

@@ -4,5 +4,6 @@
     "titleBar.inactiveForeground": "#ffffff50",
     "titleBar.activeBackground": "#162524",
     "titleBar.inactiveBackground": "#162524"
-  }
+  },
+  "python.pythonPath": "/Users/nathanthomas/.local/share/virtualenvs/code-challenges-OAvYTN3Q/bin/python"
 }
