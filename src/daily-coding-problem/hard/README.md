@@ -4,3 +4,5 @@
 
 - JavaScript
   - [Least Frequently Used Cache](least-frequently-used-cache)
+- Python
+  - [Validate Courses](validate-courses)
