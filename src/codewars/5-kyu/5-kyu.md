@@ -11,4 +11,5 @@
   - [Tic-Tac-Toe Checker](tic-tac-toe-checker)
   - [Valid Parentheses](valid-parentheses)
 - Python
+  - [Moving Zeros to the End](moving-zeros-to-the-end)
   - [Sum of Pairs](sum-of-pairs)
