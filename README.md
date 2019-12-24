@@ -57,13 +57,19 @@ This repository is a collection of completed code challenges, katas, whiteboardi
 
 1. Fork or clone this repository to your local machine
 
-2. Open your terminal and install Jest using `yarn global add jest`
+2. For Python challenges:
 
-3. Navigate to the parent directory and run Jest by entering the command `jest --watch`
+   - Open your terminal and install dependencies via `pipenv install`
+   - Start a shell environment by running either `pip shell` (or, if you have it installed, preferably `pipenv shell`)
+   - Navigate into any directory and run files using the `python3 <file name here>` command
 
-4. Select which method of testing in `Jest` you want to use via the command line prompts
+3. For JavaScript challenges:
 
-5. Modify some of the code or the test cases to watch the magic happen
+   - Open your terminal and install Jest using `yarn global add jest`
+   - Navigate to the parent directory and run Jest by entering the command `jest --watch`
+   - Select which method of testing in `Jest` you want to use via the command line prompts
+
+4. Modify some of the code in a test file to watch the magic happen
 
 ## Authors
 
