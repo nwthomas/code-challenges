@@ -12,5 +12,5 @@
   - [Valid Parentheses](valid-parentheses)
 - Python
   - [Moving Zeros to the End](moving-zeros-to-the-end)
-  - [Direction Reduction](direction-reduction)
+  - [Directions Reduction](directions-reduction)
   - [Sum of Pairs](sum-of-pairs)
