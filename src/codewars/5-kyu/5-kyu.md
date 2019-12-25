@@ -8,6 +8,7 @@
   - [Merged String Checker](merged-string-checker)
   - [Not Very Secure](not-very-secure)
   - [Prime Numbers](prime-numbers)
+  - [Simple Pig Latin](simple-pig-latin)
   - [Tic-Tac-Toe Checker](tic-tac-toe-checker)
   - [Valid Parentheses](valid-parentheses)
 - Python
