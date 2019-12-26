@@ -2,4 +2,7 @@
 
 ## Table of Contents
 
-- [Range Extraction](range-extraction)
+- JavaScript
+  - [Range Extraction](range-extraction)
+- Python
+  - [Snail](snail)
