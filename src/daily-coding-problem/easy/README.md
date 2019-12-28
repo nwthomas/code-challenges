@@ -10,3 +10,4 @@
   - [Word Matrix](word-matrix)
 - Python
   - [Fix the Lambda](fix-the-lambda)
+  - [Word Board](word-board)
