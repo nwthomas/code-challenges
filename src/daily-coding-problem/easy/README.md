@@ -9,5 +9,6 @@
   - [URL Shortener](url-shortener)
   - [Word Matrix](word-matrix)
 - Python
+  - [Singly Linked Palindrome](singly-linked-palindrome)
   - [Fix the Lambda](fix-the-lambda)
   - [Word Board](word-board)
