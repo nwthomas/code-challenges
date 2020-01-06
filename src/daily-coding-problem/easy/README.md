@@ -5,6 +5,7 @@
 - JavaScript
   - [Read N Seven Times](read-n-seven-times)
   - [Reverse Singly-Linked List](reverse-singly-linked-list)
+  - [Shifted String](shifted-string)
   - [Sum Binary Tree](sum-binary-tree)
   - [URL Shortener](url-shortener)
   - [Word Matrix](word-matrix)
