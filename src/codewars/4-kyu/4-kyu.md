@@ -4,5 +4,6 @@
 
 - JavaScript
   - [Range Extraction](range-extraction)
+  - [Strip Comments](strip-comments)
 - Python
   - [Snail](snail)
