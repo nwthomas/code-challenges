@@ -12,4 +12,5 @@
 - Python
   - [Singly Linked Palindrome](singly-linked-palindrome)
   - [Fix the Lambda](fix-the-lambda)
+  - [Reverse Words](reverse-words)
   - [Word Board](word-board)
