@@ -12,6 +12,7 @@
   - [Score Palindromes](score-palindromes)
   - [Sum Fibonacci](sum-fibonacci)
 - Python
+  - [Count Islands](count-islands)
   - [Eating Cookies](eating-cookies)
   - [Making Change](making-change)
   - [Recipe Batches](recipe-batches)
