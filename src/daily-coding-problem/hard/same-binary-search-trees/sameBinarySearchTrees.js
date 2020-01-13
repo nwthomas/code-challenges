@@ -54,7 +54,8 @@ Node.prototype.addValue = function addValue(value = null, currentNode = this) {
 };
 
 Node.prototype.verifyTreesAreSame = function verifyTreesAreSame(
-  newTree = null
+  newTree = null,
+  currentTree = this
 ) {
   /**
    * Checks if this tree and another one are the same structure
@@ -62,8 +63,52 @@ Node.prototype.verifyTreesAreSame = function verifyTreesAreSame(
    * @param {Node} newTree Takes in a Binary Search Tree to be verified against the head node of
    * the Binary Search Tree the method is being called against
    *
+   * @param {Node} currentTree While this parameter exists, it's advisable that you do not pass
+   * in a Node as an argument. This is a parameter specifically included to call the method
+   * recursively on itself. It defaults to the current node as referenced by the this keyword.
+   *
    * @returns {boolean} Returns true if the trees are the same or false otherwise
    */
-
-  let currentOriginal = newTree;
+  if (
+    currentTree.value !== newTree.value ||
+    newTree instanceof Node === false
+  ) {
+    return false;
+  }
+  if (
+    !currentTree.left &&
+    !currentTree.right &&
+    !newTree.left &&
+    !newTree.right
+  ) {
+    if (newTree.value === currentTree.value) {
+      return true;
+    }
+  } else {
+    let left, right;
+    if (currentTree.left) {
+      if (newTree.left) {
+        left = currentTree.verifyTreesAreSame(newTree.left, currentTree.left);
+      } else {
+        left = false;
+      }
+    }
+    if (currentTree.right) {
+      if (newTree.right) {
+        right = currentTree.verifyTreesAreSame(
+          newTree.right,
+          currentTree.right
+        );
+      } else {
+        right = false;
+      }
+    }
+    if ((left !== false && right !== false && left) || right) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 };
+
+module.exports = Node;
