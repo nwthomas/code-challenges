@@ -7,6 +7,7 @@
   - [Reverse Singly-Linked List](reverse-singly-linked-list)
   - [Shifted String](shifted-string)
   - [Sum Binary Tree](sum-binary-tree)
+  - [Sum Minimum Level Binary Tree](sum-minimum-level-binary-tree)
   - [URL Shortener](url-shortener)
   - [Word Matrix](word-matrix)
 - Python
