@@ -17,10 +17,10 @@ function findIntervalSpread(intervalArray) {
   intervalArray.forEach(interval => {
     if (!final.length) {
       firstInterval = [interval[1], interval[0]];
-      final = firstInterval;
+      final = [...firstInterval];
     } else {
-      interval[0] > final[1] && (final[0] = interval[0]);
-      interval[1] < final[0] && (final[1] = interval[1]);
+      interval[0] > final[1] && (final[1] = interval[0]);
+      interval[1] < final[0] && (final[0] = interval[1]);
     }
   });
   if (final[0] === firstInterval) {
