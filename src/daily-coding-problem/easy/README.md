@@ -6,6 +6,7 @@
   - [Read N Seven Times](read-n-seven-times)
   - [Reverse Singly-Linked List](reverse-singly-linked-list)
   - [Shifted String](shifted-string)
+  - [Sort Squared Integers](sort-squared-integers)
   - [Sum Binary Tree](sum-binary-tree)
   - [Sum Minimum Level Binary Tree](sum-minimum-level-binary-tree)
   - [URL Shortener](url-shortener)
