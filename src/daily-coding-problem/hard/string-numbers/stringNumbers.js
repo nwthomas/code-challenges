@@ -20,6 +20,9 @@ And here are examples of non-numbers:
 */
 
 const isStringANumbers = numString => {
+    if (typeof numString === "undefined" || numString.length <= 0) {
+        return false;
+    }
     const stringArray = numString.split("e");
     if (stringArray.length > 1) {
         let isNumber = true;
