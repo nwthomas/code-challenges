@@ -75,17 +75,18 @@ function findSumInBinaryTree(rootNode, k) {
      *
      * @returns {array} Returns an array of two Nodes if they add up to k or otherwise an empty array.
      */
+    if (rootNode instanceof Node !== true || typeof k !== "number") {
+        return [];
+    }
     const tracker = {};
     const queue = [rootNode];
     while (queue.length) {
         const currentNode = queue.shift();
-        if (tracker[currentNode.value]) {
-            tracker[currentNode.value].add(currentNode);
-        } else {
-            tracker[currentNode.value] = new Set(currentNode.value);
+        if (!tracker[currentNode.value]) {
+            tracker[currentNode.value] = currentNode;
         }
         if (tracker[k - currentNode.value]) {
-            return [currentNode, tracker[k - currentNode.value][0]];
+            return [tracker[k - currentNode.value], currentNode];
         }
         if (currentNode.left) {
             queue.push(currentNode.left);
