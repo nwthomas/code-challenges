@@ -58,20 +58,33 @@ def sum_reversed_lists(root_node_1, root_node_2):
     current_2 = root_node_2
 
     while current_1 or current_2:
-        if current_1._value:
-            num_1 += str(current_1._value)
+        if current_1 != None and current_1._value:
+            num_1 += " " + str(current_1._value)
             current_1 = current_1._next
-        if current_2._value:
-            num_2 += str(current_1._value)
+        if current_2 != None and current_2._value:
+            num_2 += " " + str(current_2._value)
             current_2 = current_2._next
 
-    num_1_rev = num_1.split().reverse().join()
-    num_2_rev = num_2.split().reverse().join()
-    total = int(num_1_rev) + int(num_2_rev)
-    total_str = str(total)
-    new_root_node = Node(total_str[-1])
+    num_1 = num_1.split(" ")
+    num_2 = num_2.split(" ")
+    num_1.reverse()
+    num_2.reverse()
+    num_1 = "".join(num_1)
+    num_2 = "".join(num_2)
 
-    for i in range(len(total_str) - 1, -1):
-        new_root_node.add_value(total_str[i])
+    total = int(num_1) + int(num_2)
+    total_str = ""
+
+    for char in str(total):
+        total_str += " " + char
+
+    total_str = total_str.split()
+    total_str.reverse()
+    total_str = "".join(total_str)
+    new_root_node = Node()
+
+    for i in range(0, len(total_str)):
+        next_value = int(total_str[i])
+        new_root_node.add_value(next_value)
 
     return new_root_node
