@@ -13,7 +13,8 @@
     -   [URL Shortener](url-shortener)
     -   [Word Matrix](word-matrix)
 -   Python
-    -   [Singly Linked Palindrome](singly-linked-palindrome)
     -   [Fix the Lambda](fix-the-lambda)
+    -   [Math with Lists](math-with-lists)
     -   [Reverse Words](reverse-words)
+    -   [Singly Linked Palindrome](singly-linked-palindrome)
     -   [Word Board](word-board)
