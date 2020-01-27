@@ -10,17 +10,26 @@ In this algorithm, you should do the following:
 */
 
 const findMaxSumSubarray = numberArray => {
+    if (!Array.isArray(numberArray)) {
+        return null;
+    }
+    if (!numberArray.length) {
+        return 0;
+    }
     let maxTotal = null;
     let currentTotal = 0;
     numberArray.forEach(num => {
         currentTotal += num;
-        if (!maxTotal || currentTotal > maxTotal) {
+        if (currentTotal > -1 && (!maxTotal || currentTotal > maxTotal)) {
             maxTotal = currentTotal;
         }
         if (currentTotal < 0) {
             currentTotal = 0;
         }
     });
+    if (!maxTotal) {
+        return 0;
+    }
     return maxTotal;
 };
 
