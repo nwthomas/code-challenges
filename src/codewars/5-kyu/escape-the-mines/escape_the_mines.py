@@ -26,7 +26,18 @@ Should return ['right', 'down']
 """
 
 
-def solve(map, miner, exit):
+def find_mine_escape_path(map, miner, exit):
+    if type(map) != list:
+        return TypeError("The map must be a list.")
+    if type(miner) != object or not "x" in miner or not "y" in miner or type(miner.x) != int or type(miner.y) != int:
+        return TypeError("The initial miner placement must be an object with 'x' and 'y' integer coordinates.")
+    if type(exit) != object or not "x" in exit or not "y" in exit or type(exit.x) != int or type(exit.y) != int:
+        return TypeError("The final exit point must be an object with 'x' and 'y' integer coordinates.")
+    if len(map) <= 0:
+        return []
+    if miner.x >= len(map) or miner.y >= len(map[0]):
+        return ReferenceError("The initial miner 'x' and 'y' coordinates must exist on the map.")
+
     visited_set = set()
     visited_set.add((miner["x"], miner["y"]))
 
