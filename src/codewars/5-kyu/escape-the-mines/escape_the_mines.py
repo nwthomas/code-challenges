@@ -27,16 +27,8 @@ Should return ['right', 'down']
 
 
 def find_mine_escape_path(map, miner, exit):
-    if type(map) != list:
-        return TypeError("The map must be a list.")
-    if type(miner) != object or not "x" in miner or not "y" in miner or type(miner.x) != int or type(miner.y) != int:
-        return TypeError("The initial miner placement must be an object with 'x' and 'y' integer coordinates.")
-    if type(exit) != object or not "x" in exit or not "y" in exit or type(exit.x) != int or type(exit.y) != int:
-        return TypeError("The final exit point must be an object with 'x' and 'y' integer coordinates.")
     if len(map) <= 0:
         return []
-    if miner.x >= len(map) or miner.y >= len(map[0]):
-        return ReferenceError("The initial miner 'x' and 'y' coordinates must exist on the map.")
 
     visited_set = set()
     visited_set.add((miner["x"], miner["y"]))
@@ -45,19 +37,15 @@ def find_mine_escape_path(map, miner, exit):
         if x == exit["x"] and y == exit["y"]:
             return path
         if x + 1 < len(map) and map[x + 1][y] and (x + 1, y) not in visited:
-            print("right")
             visited.add((x + 1, y))
             return move(x + 1, y, visited, path + ["right"])
-        if y + 1 < len(map[0]) and map[x][y + 1] and (x, y + 1) not in visited:
-            print("down")
+        if y + 1 < len(map[x]) and map[x][y + 1] and (x, y + 1) not in visited:
             visited.add((x, y + 1))
             return move(x, y + 1, visited, path + ["down"])
         if x - 1 >= 0 and map[x - 1][y] and (x - 1, y) not in visited:
-            print("left")
             visited.add((x - 1, y))
             return move(x - 1, y, visited, path + ["left"])
         if y - 1 >= 0 and map[x][y - 1] and (x, y - 1) not in visited:
-            print("up")
             visited.add((x, y - 1))
             return move(x, y - 1, visited, path + ["up"])
 
