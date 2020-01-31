@@ -18,7 +18,7 @@ class HitCounter {
         this.totalHits = 0;
     }
 
-    record(timestamp) {
+    record(timestamp = null) {
         if (
             typeof timestamp !== "string" &&
             typeof parseInt(timestamp) !== "number"
@@ -33,11 +33,14 @@ class HitCounter {
         }
     }
 
-    range(lower, upper) {
+    range(lower = null, upper = null) {
+        if (!lower || !upper) {
+            return 0;
+        }
         let total = 0;
         const _lower = parseInt(lower);
         const _upper = parseInt(upper);
-        Object.entries(this.totalHits).forEach(entry => {
+        Object.entries(this.hitCounter).forEach(entry => {
             const key = parseInt(entry[0]);
             const value = entry[1];
             if (key >= _lower && key <= _upper) {
