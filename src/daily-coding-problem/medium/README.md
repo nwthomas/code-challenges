@@ -8,6 +8,7 @@
     -   [Find Tree Paths](find-tree-paths)
     -   [Interval Spread](interval-spread)
     -   [Maximum Possible Words](maximum-possible-words)
+    -   [Next Bigger Element Node](next-bigger-element-node)
     -   [Random Number Except List](random-number-except-list)
     -   [Reverse Binary Tree](reverse-binary-tree)
     -   [Two Stack Queue](two-stack-queue)
