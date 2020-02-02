@@ -14,30 +14,34 @@ Use a more space-efficient data structure, SparseArray, that implements the same
     get(i): gets the value at index i.
 */
 
-function SparseArray(arr, size) {
+function SparseArray(arr = null, size = null) {
     /**
      * Constructor function for SparseArray class. Instantiates a new SparseArray of a specific
-     * size and stores anh data accordingly
+     * size and stores the data accordingly
      *
      * @param {array} arr The original array to be stored in the SparseArray
      *
      * @param {number} size The size of the list
+     *
+     * @returns {(SparseArray|object)} Returns a new SparseArray or an empty object if given the
+     * wrong arguments
      */
 
-    if (!Array.isArray(arr) || typeof size !== "number") {
-        return null;
+    if (!Array.isArray(arr) || typeof size !== "number" || arr.length > size) {
+        return {};
     }
 
+    this.currentLength = 0;
     this.size = size;
     this.storage = {};
 
     arr.forEach((val, i) => {
+        this.currentLength++;
+
         if (val !== 0) {
             this.storage[i] = val;
         }
     });
-
-    return arr;
 }
 
 SparseArray.prototype.set = function set(index, val) {
@@ -45,13 +49,17 @@ SparseArray.prototype.set = function set(index, val) {
      * Stores a value with the associated index
      *
      * @param {number} index The index of of the value to be stored
+     *
+     * @returns {(any|null)} Returns the value if added successfully, or otherwise null
      */
+
+    if (index > this.size - 1) {
+        return null;
+    }
 
     this.storage[index] = val;
 
-    if (index >= this.size) {
-        this.size++;
-    }
+    return val;
 };
 
 SparseArray.prototype.get = function get(index) {
@@ -60,7 +68,14 @@ SparseArray.prototype.get = function get(index) {
      * number 0
      *
      * @param {number} i The index of the value to be retrieved
+     *
+     * @returns {(any|null)} Returns the value stored at the specified index, the number 0,
+     * or null
      */
+
+    if (index > this.size - 1) {
+        return null;
+    }
 
     return this.storage[index] ? this.storage[index] : 0;
 };
@@ -90,10 +105,18 @@ SparseArray.prototype.push = function push(val) {
      * Adds a new value to the end of the SparseArray
      *
      * @param {any} val The value to be added to the end of the SparseArray
+     *
+     * @returns {(any|null)} Returns the value that has been added to the SparseArray or else null
      */
+
+    if (this.currentLength + 1 >= this.size) {
+        return null;
+    }
 
     this.storage[this.size] = val;
     this.size++;
+
+    return val;
 };
 
 SparseArray.prototype.pop = function pop() {
@@ -103,7 +126,7 @@ SparseArray.prototype.pop = function pop() {
      * @returns {any} The value at the end of the SparseArray
      */
 
-    this.size--;
+    this.currentLength--;
 
     if (this.storage[this.size - 1]) {
         const val = this.storage[this.size - 1];
@@ -118,8 +141,12 @@ SparseArray.prototype.shift = function shift() {
     /**
      * Shifts the value from the front of the SparseArray
      *
-     * @returns {any} The value from the front of the SparseArray
+     * @returns {(any|null)} The value from the front of the SparseArray or else null
      */
+
+    if (this.currentLength === 0) {
+        return null;
+    }
 
     let val = null;
 
@@ -138,7 +165,7 @@ SparseArray.prototype.shift = function shift() {
         }
     }
 
-    this.size--;
+    this.currentLength--;
 
     return val;
 };
@@ -148,9 +175,16 @@ SparseArray.prototype.unshift = function unshift(val) {
      * Adds a new value to the front of the SparseArray
      *
      * @param {any} val The value to be added to the front of the SparseArray
+     *
+     * @returns {(any|null)} Returns the new value added to the front of the SparseArray or
+     * else null
      */
 
-    this.size++;
+    if (this.currentLength + 1 >= this.size) {
+        return null;
+    }
+
+    this.currentLength++;
 
     for (let i = this.size; i >= 1; i++) {
         if (this.storage[i - 1]) {
@@ -160,6 +194,8 @@ SparseArray.prototype.unshift = function unshift(val) {
     }
 
     this.storage[0] = val;
+
+    return val;
 };
 
 module.exports = SparseArray;
