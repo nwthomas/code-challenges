@@ -53,8 +53,12 @@ SparseArray.prototype.set = function set(index, val) {
      * @returns {(any|null)} Returns the value if added successfully, or otherwise null
      */
 
-    if (index > this.size - 1) {
+    if (index > this.size - 1 || index > this.currentLength + 1) {
         return null;
+    }
+
+    if (index > this.currentLength && index < this.size) {
+        this.currentLength++;
     }
 
     this.storage[index] = val;
@@ -196,6 +200,16 @@ SparseArray.prototype.unshift = function unshift(val) {
     this.storage[0] = val;
 
     return val;
+};
+
+SparseArray.prototype.length = function length() {
+    /**
+     * Returns the current length of the SparseArray
+     *
+     * @returns {number} Returns the length of the SparseArray
+     */
+
+    return this.currentLength;
 };
 
 module.exports = SparseArray;
