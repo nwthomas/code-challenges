@@ -36,6 +36,18 @@ describe("SparseArray", () => {
     });
 
     describe("set()", () => {
+        test("returns null if the index argument is greater than the size of the array", () => {
+            const s = new SparseArray(utils.largeNumberArray, 20);
+            const result = s.set(21, 100);
+            expect(result).toBeNull();
+        });
+
+        test("returns null if the index argument is greater than + 1 the currentLength of the SparseArray", () => {
+            const s = new SparseArray(utils.smallNumberArray, 1000);
+            const result = s.set(100, 100);
+            expect(result).toBeNull();
+        });
+
         test("sets a single value at a given index", () => {
             const s = new SparseArray(utils.smallNumberArray, 10);
             const initialResult = s.storage[0];
@@ -45,17 +57,23 @@ describe("SparseArray", () => {
             expect(afterResult).toBe(8);
         });
 
-        test("returns an empty object if the index argument is greater than the size of the array", () => {
-            const s = new SparseArray(utils.largeNumberArray, 20);
-            const result = s.set(21, 100);
-            expect(result).toBeNull();
-        });
-
         test("increases the size of the SparseArray if the index argument is greater than current length but shorter than max length", () => {
             const s = new SparseArray(utils.smallNumberArray, 20);
             s.set(8, 12);
             const result = s.currentLength;
             expect(result).toBe(8);
+        });
+
+        test("increases the currentLength of the SparseArray when new items are added", () => {
+            const s = new SparseArray(utils.smallNumberArray, 1000);
+            const result = s.currentLength;
+            expect(result).toBe(7);
+        });
+
+        test("returns the value set at the specified index if the value is added successfully", () => {
+            const s = new SparseArray([], 1000);
+            const result = s.set(0, 100);
+            expect(result).toBe(100);
         });
     });
 });
