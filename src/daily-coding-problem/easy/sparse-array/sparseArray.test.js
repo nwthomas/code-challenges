@@ -76,4 +76,64 @@ describe("SparseArray", () => {
             expect(result).toBe(100);
         });
     });
+
+    describe("get()", () => {
+        test("returns null if the index is greater than currentLength", () => {
+            const s = new SparseArray(utils.largeNumberArray, 1000);
+            const result = s.get(100);
+            expect(result).toBeNull();
+        });
+
+        test("returns null if the index is greater than the size of the SparseArray", () => {
+            const s = new SparseArray([], 100);
+            const result = s.get(101);
+            expect(result).toBeNull();
+        });
+
+        test("returns 0 if there is not value contained in SparseArray.storage", () => {
+            const s = new SparseArray(utils.smallNumberArray, 100);
+            const storageResult = s.storage[2];
+            const zeroResult = s.get(2);
+            expect(storageResult).toBeUndefined();
+            expect(zeroResult).toBe(0);
+        });
+
+        test("returns the non-zero value if it's stored in SparseArray.storage", () => {
+            const s = new SparseArray(utils.smallNumberArray, 100);
+            const result = s.get(1);
+            expect(result).toBe(5);
+        });
+    });
+
+    describe("retrieveArray()", () => {
+        test("returns the entire array passed into the SparseArray constructor", () => {
+            const s = new SparseArray(utils.smallNumberArray, 100);
+            const result = s.retrieveArray();
+            expect(result).toEqual(utils.smallNumberArray);
+        });
+
+        test("returns an empty array if the SparseArray is empty", () => {
+            const s = new SparseArray([], 1);
+            const result = s.retrieveArray();
+            expect(result).toEqual([]);
+        });
+    });
+
+    describe("pushValue()", () => {
+        test("returns null if the currentLength is greater than the size of the SparseArray", () => {
+            const s = new SparseArray(utils.smallNumberArray, 8);
+            s.pushValue(100);
+            const result = s.pushValue(101);
+            expect(result).toBeNull();
+        });
+
+        test("adds a value to the end of the SparseArray", () => {
+            const s = new SparseArray(utils.smallNumberArray, 100);
+            s.pushValue(6);
+            const arr = s.retrieveArray();
+            console.log(arr);
+            const result = arr[arr.length - 1];
+            expect(result).toBe(6);
+        });
+    });
 });

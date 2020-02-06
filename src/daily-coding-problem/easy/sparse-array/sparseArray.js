@@ -77,7 +77,7 @@ SparseArray.prototype.get = function get(index) {
      * or null
      */
 
-    if (index > this.size - 1) {
+    if (index > this.size - 1 || index > this.currentLength) {
         return null;
     }
 
@@ -88,12 +88,16 @@ SparseArray.prototype.retrieveArray = function retrieveArray() {
     /**
      * Returns the full array stored inside SparseArray
      *
-     * @returns {array} The array stored inside SparseArray
+     * @returns {array} The array of values stored inside SparseArray
      */
+
+    if (!this.currentLength) {
+        return [];
+    }
 
     const arr = [];
 
-    for (let i = 0; i < this.size; i++) {
+    for (let i = 0; i < this.currentLength; i++) {
         if (this.storage[i]) {
             arr.push(this.storage[i]);
         } else {
@@ -104,7 +108,7 @@ SparseArray.prototype.retrieveArray = function retrieveArray() {
     return arr;
 };
 
-SparseArray.prototype.push = function push(val) {
+SparseArray.prototype.pushValue = function pushValue(val) {
     /**
      * Adds a new value to the end of the SparseArray
      *
@@ -113,17 +117,17 @@ SparseArray.prototype.push = function push(val) {
      * @returns {(any|null)} Returns the value that has been added to the SparseArray or else null
      */
 
-    if (this.currentLength + 1 >= this.size) {
+    if (this.currentLength - 1 <= this.size) {
         return null;
     }
 
-    this.storage[this.size] = val;
-    this.size++;
+    this.storage[this.currentLength - 1] = val;
+    this.currentLength++;
 
     return val;
 };
 
-SparseArray.prototype.pop = function pop() {
+SparseArray.prototype.popValue = function popValue() {
     /**
      * Pops the value off the end of the SparseArray
      *
