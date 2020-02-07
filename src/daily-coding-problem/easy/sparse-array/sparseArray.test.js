@@ -131,7 +131,7 @@ describe("SparseArray", () => {
             const s = new SparseArray(utils.smallNumberArray, 100);
             s.pushValue(6);
             const arr = s.retrieveArray();
-            console.log(arr);
+            console.log(s.currentLength);
             const result = arr[arr.length - 1];
             expect(result).toBe(6);
         });

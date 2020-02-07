@@ -117,12 +117,12 @@ SparseArray.prototype.pushValue = function pushValue(val) {
      * @returns {(any|null)} Returns the value that has been added to the SparseArray or else null
      */
 
-    if (this.currentLength - 1 <= this.size) {
+    if (this.currentLength >= this.size) {
         return null;
     }
 
-    this.storage[this.currentLength - 1] = val;
     this.currentLength++;
+    this.storage[this.currentLength - 1] = val;
 
     return val;
 };
