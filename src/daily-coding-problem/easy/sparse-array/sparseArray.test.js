@@ -131,9 +131,90 @@ describe("SparseArray", () => {
             const s = new SparseArray(utils.smallNumberArray, 100);
             s.pushValue(6);
             const arr = s.retrieveArray();
-            console.log(s.currentLength);
             const result = arr[arr.length - 1];
             expect(result).toBe(6);
+        });
+    });
+
+    describe("popValue()", () => {
+        test("returns the value stored at the last index of the SparseArray", () => {
+            const s = new SparseArray(utils.smallNumberArray, 100);
+            const result = s.popValue();
+            expect(result).toBe(7);
+        });
+
+        test("decreases the currentLength by 1", () => {
+            const s = new SparseArray(utils.smallNumberArray, 100);
+            const prevLength = s.currentLength;
+            s.popValue();
+            const resultLength = s.currentLength;
+            expect(prevLength).toBe(7);
+            expect(resultLength).toBe(6);
+        });
+
+        test("returns 0 if that value is the SparseArray value", () => {
+            const s = new SparseArray([0, 3, 4, 0], 10);
+            const result = s.popValue();
+            expect(result).toBe(0);
+        });
+    });
+
+    describe("shiftValue()", () => {
+        test("returns null if the currentLength of the SparseArray is 0", () => {
+            const s = new SparseArray([], 1);
+            const result = s.shiftValue();
+            expect(result).toBeNull();
+        });
+
+        test("returns the value from the front of the SparseArray", () => {
+            const s = new SparseArray([1, 0, 0, 7], 10);
+            const result = s.shiftValue();
+            expect(result).toBe(1);
+        });
+
+        test("shifts the index of all other values in the SparseArray down by 1", () => {
+            const s = new SparseArray([1, 8, 0, 0], 10);
+            s.shiftValue();
+            const result = s.storage[0]; //
+            expect(result).toBe(8);
+        });
+    });
+
+    describe("unshiftValue()", () => {
+        test("returns null if the currentLength of the SparseArray will be greater than the determined size", () => {
+            const s = new SparseArray([0, 1, 8, 9, 1], 5);
+            const result = s.unshiftValue(8);
+            expect(result).toBeNull();
+        });
+
+        test("returns the value stored at the front of the SparseArray", () => {
+            const s = new SparseArray([0, 4, 5, 0, 0], 10);
+            const result = s.unshiftValue(7);
+            expect(result).toBe(7);
+        });
+
+        test("moves all values up by one index in the SparseArray", () => {
+            const oldArr = [0, 4, 6, 8, 0, 0, 0, 2, 3];
+            const s = new SparseArray(oldArr, 100);
+            s.unshiftValue(10);
+            const newArr = [10, ...oldArr];
+            for (let i = 0; i < newArr.length; i++) {
+                expect(s.get(i)).toBe(newArr[i]);
+            }
+        });
+    });
+
+    describe("length()", () => {
+        test("returns 0 if no values have been added to the SparseArray", () => {
+            const s = new SparseArray([], 10);
+            const result = s.length();
+            expect(result).toBe(0);
+        });
+
+        test("returns the current length of the SparseArray", () => {
+            const s = new SparseArray(utils.largeNumberArray, 100);
+            const result = s.length();
+            expect(result).toBe(16);
         });
     });
 });

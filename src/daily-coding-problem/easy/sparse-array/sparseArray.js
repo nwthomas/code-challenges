@@ -136,27 +136,27 @@ SparseArray.prototype.popValue = function popValue() {
 
     this.currentLength--;
 
-    if (this.storage[this.size - 1]) {
-        const val = this.storage[this.size - 1];
-        delete this.storage[this.size - 1];
+    if (this.storage[this.currentLength]) {
+        const val = this.storage[this.currentLength];
+        delete this.storage[this.currentLength];
         return val;
     } else {
         return 0;
     }
 };
 
-SparseArray.prototype.shift = function shift() {
+SparseArray.prototype.shiftValue = function shiftValue() {
     /**
      * Shifts the value from the front of the SparseArray
      *
      * @returns {(any|null)} The value from the front of the SparseArray or else null
      */
 
-    if (this.currentLength === 0) {
-        return null;
-    }
-
     let val = null;
+
+    if (this.currentLength === 0) {
+        return val;
+    }
 
     if (this.storage[0]) {
         val = this.storage[0];
@@ -178,7 +178,7 @@ SparseArray.prototype.shift = function shift() {
     return val;
 };
 
-SparseArray.prototype.unshift = function unshift(val) {
+SparseArray.prototype.unshiftValue = function unshiftValue(val) {
     /**
      * Adds a new value to the front of the SparseArray
      *
@@ -188,13 +188,13 @@ SparseArray.prototype.unshift = function unshift(val) {
      * else null
      */
 
-    if (this.currentLength + 1 >= this.size) {
+    if (this.currentLength + 1 > this.size) {
         return null;
     }
 
     this.currentLength++;
 
-    for (let i = this.size; i >= 1; i++) {
+    for (let i = this.size - 1; i > 0; i--) {
         if (this.storage[i - 1]) {
             this.storage[i] = this.storage[i - 1];
             delete this.storage[i - 1];
