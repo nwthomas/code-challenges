@@ -46,11 +46,11 @@ class Iterator:
         if self.peeked_value:
             return True
         else:
-            temp_val = next(self.iter)
-            if temp_val != None:
+            try:
+                temp_val = next(self.iter)
                 self.peeked_value = temp_val
                 return True
-            else:
+            except StopIteration:
                 return False
 
 
