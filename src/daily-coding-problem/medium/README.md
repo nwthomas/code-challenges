@@ -18,4 +18,5 @@
 -   Python
     -   [Coin Collector](coin-collector)
     -   [Odd/Even Singleton](odd-even-singleton)
+    -   [Peekable Iterator](peekable-iterator)
     -   [Time Map](time-map)
