@@ -37,7 +37,11 @@ class Iterator:
             self.peeked_value = None
             return temp_val
         else:
-            return False
+            try:
+                temp_val = next(self.iter)
+                return temp_val
+            except StopIteration:
+                return False
 
     def has_next(self):
         """
