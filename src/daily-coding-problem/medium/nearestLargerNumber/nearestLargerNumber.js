@@ -38,6 +38,10 @@ function findNearestLargerNumber(numberArray = [], index = null) {
         );
     }
 
+    if (!numberArray.length || index < 0 || index >= numberArray.length) {
+        return null;
+    }
+
     let rightIndex = index > 0 ? index - 1 : index;
     let leftIndex = index < numberArray.length - 1 ? index + 1 : index;
     let isRightFound = false;
