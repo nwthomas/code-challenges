@@ -20,7 +20,8 @@ function findNearestLargerNumber(numberArray = [], index = null) {
      * @param {array} numberArray The number array used to find the next largest integer. It
      * defaults to an empty array.
      *
-     * @param {number} index The index of the number to be compared when searching for the next largest integer.
+     * @param {number} index The index of the number to be compared when searching for the next
+     * largest integer. It defaults to null.
      *
      * @returns {number} The integer of the next larger integer in the numberArray.
      */
