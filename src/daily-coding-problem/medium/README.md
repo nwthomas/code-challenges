@@ -18,6 +18,7 @@
     -   [Validate Binary Search Tree](validate-binary-search-tree)
 -   Python
     -   [Coin Collector](coin-collector)
+    -   [Generate Grey Code](generate-grey-code)
     -   [Odd/Even Singleton](odd-even-singleton)
     -   [Peekable Iterator](peekable-iterator)
     -   [Time Map](time-map)
