@@ -15,32 +15,38 @@ def find_grey_code_bits(num_bits):
     """
     Takes in the number of bits and returns a list of unique grey code combinations
     """
-    final_bits = []
-    initial_bits = [num_bits * 0] * (num_bits * num_bits)
+    if type(num_bits) is not int:
+        return None
+    if num_bits <= 0:
+        return []
 
-    def make_new_bit(prev_bit):
-        bit_str = str(prev_bit)
-        new_bit = None
+    final_bits = []
+    initial_bit = "0" * num_bits
+    length = 2 if num_bits is 1 else num_bits * num_bits
+
+    def make_new_bit(bit_str):
+        new_bit = bit_str
         initial_one = True if bit_str[0] == "1" else False
 
-        for i in range(len(bit_str) - 1, -1):
+        for i in range(len(bit_str) - 1, -1, -1):
             if initial_one and bit_str[i] == "1":
                 new_bit = bit_str[:i] + "0"
-                if i + 1 < len(bit_str) - 1:
+                if i + 1 < len(bit_str):
                     new_bit += bit_str[i+1:]
                 break
             if not initial_one and bit_str[i] == "0":
                 new_bit = bit_str[:i] + "1"
-                if i + 1 < len(bit_str) - 1:
+                if i + 1 < len(bit_str):
                     new_bit += bit_str[i+1:]
                 break
+        return new_bit
 
-        return int(new_bit)
-
-    for i in range(0, len(initial_bits)):
-        temp_bit = None
+    for i in range(0, length):
+        temp_bit = initial_bit if i == 0 else final_bits[i - 1]
         if i > 0:
-            temp_bit = make_new_bit(initial_bits[i - 1])
+            temp_bit = make_new_bit(temp_bit)
+        if i > 0 and temp_bit == initial_bit:
+            break
         final_bits.append(temp_bit)
 
     return final_bits
