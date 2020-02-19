@@ -28,7 +28,7 @@ function replacePixels(arr, point, newColor) {
     ) {
         throw new TypeError("The point must be an array of two numbers");
     }
-    if (point.length < 2 || point.length > 2) {
+    if (point.length > 2) {
         throw new TypeError("The point must exactly contain an X and Y axis");
     }
     if (
@@ -40,35 +40,43 @@ function replacePixels(arr, point, newColor) {
             "The new color must be a string with one character"
         );
     }
-    if (!arr.length) {
-        return arr;
-    }
     const replacedColor = arr[point[0]][point[1]];
     const tracker = new Set();
-    let newArr = [...arr];
-    function replace(_point = point) {
-        if (tracker.has(_point)) {
-            return;
-        } else {
+    let newArr = deepCopy(arr);
+
+    function replace(_point) {
+        if (!tracker.has(JSON.stringify(_point))) {
             if (newArr[_point[0]][_point[1]] === replacedColor) {
                 newArr[_point[0]][_point[1]] = newColor;
             }
-            tracker.add(_point);
-            if (_point[0] - 1 > 0) {
+            tracker.add(JSON.stringify(_point));
+            if (
+                _point[0] - 1 >= 0 &&
+                newArr[_point[0] - 1][_point[1]] === replacedColor
+            ) {
                 replace([_point[0] - 1, _point[1]]);
             }
-            if (_point[1] - 1 > 0) {
+            if (
+                _point[1] - 1 >= 0 &&
+                newArr[_point[0]][_point[1] - 1] === replacedColor
+            ) {
                 replace([_point[0], _point[1] - 1]);
             }
-            if (_point[0] + 1 < arr.length) {
+            if (
+                _point[0] + 1 < newArr.length &&
+                newArr[_point[0] + 1][_point[1]] === replacedColor
+            ) {
                 replace([_point[0] + 1, _point[1]]);
             }
-            if (_point[1] + 1 < arr[_point[0]].length) {
+            if (
+                _point[1] + 1 < arr[_point[0]].length &&
+                newArr[_point[0]][_point[1] + 1] === replacedColor
+            ) {
                 replace([_point[0], _point[1] + 1]);
             }
         }
     }
-    replace();
+    replace(point);
     return newArr;
 }
 
