@@ -12,6 +12,7 @@
     -   [Nearest Larger Integer](nearest-larger-integer)
     -   [Next Bigger Element Node](next-bigger-element-node)
     -   [Random Number Except List](random-number-except-list)
+    -   [Replace Pixels](replace-pixels)
     -   [Reverse Binary Tree](reverse-binary-tree)
     -   [Two Stack Queue](two-stack-queue)
     -   [Unknown Integer Rotation](unknown-integer-rotation)
