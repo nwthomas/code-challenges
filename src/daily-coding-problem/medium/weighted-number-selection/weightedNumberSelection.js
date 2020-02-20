@@ -10,18 +10,6 @@ For example, given the numbers [1, 2, 3, 4] and probabilities [0.1, 0.5, 0.2, 0.
 You can generate random numbers between 0 and 1 uniformly.
 */
 
-const addZeros = (num, length) => {
-    let newNum = `${num}`.split(".")[1];
-    if (newNum.length === length) {
-        return Number(newNum);
-    } else {
-        while (newNum.length < length) {
-            newNum += "0";
-        }
-        return Number(newNum);
-    }
-};
-
 const findRandomArrayLength = probabilities => {
     const randomArrayLength = probabilities.reduce(
         (accumulator, probability) => {
@@ -35,6 +23,18 @@ const findRandomArrayLength = probabilities => {
         0
     );
     return randomArrayLength;
+};
+
+const addZeros = (num, length) => {
+    let newNum = `${num}`.split(".")[1];
+    if (newNum.length === length) {
+        return Number(newNum);
+    } else {
+        while (newNum.length < length) {
+            newNum += "0";
+        }
+        return Number(newNum);
+    }
 };
 
 const generateWeightedNumberArray = (numberArray, probabilities) => {
