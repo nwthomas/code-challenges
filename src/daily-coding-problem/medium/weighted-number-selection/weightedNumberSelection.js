@@ -47,7 +47,7 @@ const generateWeightedNumberArray = (numberArray, probabilities) => {
     return newNumberArray;
 };
 
-const generateRandomNumber = (numberArray, probabilities) => {
+const generateWeightedRandomNumber = (numberArray, probabilities) => {
     if (!Array.isArray(numberArray)) {
         throw new TypeError("The first argument must be an array of numbers");
     }
@@ -68,4 +68,9 @@ const generateRandomNumber = (numberArray, probabilities) => {
     return randomNumberArray[randomIndexPick];
 };
 
-module.exports = generateRandomNumber;
+module.exports = {
+    addZeros,
+    findRandomArrayLength,
+    generateWeightedNumberArray,
+    generateWeightedRandomNumber
+};
