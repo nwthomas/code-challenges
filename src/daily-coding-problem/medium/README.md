@@ -17,6 +17,7 @@
     -   [Two Stack Queue](two-stack-queue)
     -   [Unknown Integer Rotation](unknown-integer-rotation)
     -   [Validate Binary Search Tree](validate-binary-search-tree)
+    -   [Weighted Number Selection](weighted-number-selection)
 -   Python
     -   [Coin Collector](coin-collector)
     -   [Generate Grey Code](generate-grey-code)
