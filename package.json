@@ -1,17 +1,17 @@
 {
-  "name": "code-challenges",
-  "version": "1.0.0",
-  "description": "A repository of code challenges",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest --watch --verbose"
-  },
-  "repository": "git@github.com:nwthomas/code-challenges.git",
-  "author": "Nathan Thomas <nwthomas@me.com>",
-  "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {
-    "jest": "^24.9.0",
-    "jest-extended": "^0.11.2"
-  }
+    "name": "code-challenges",
+    "version": "1.0.0",
+    "description": "A repository of code challenges",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest --watch --verbose"
+    },
+    "repository": "git@github.com:nwthomas/code-challenges.git",
+    "author": "Nathan Thomas <nwthomas@me.com>",
+    "license": "MIT",
+    "dependencies": {},
+    "devDependencies": {
+        "jest": "^24.9.0",
+        "jest-extended": "^0.11.2"
+    }
 }

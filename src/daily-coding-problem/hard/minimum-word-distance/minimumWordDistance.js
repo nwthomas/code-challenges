@@ -19,24 +19,26 @@ const findMinimumWordDistance = (wordOne, wordTwo, wordString) => {
         throw new TypeError("The third argument must be a string");
     }
     if (wordString.length < wordOne.length + wordTwo.length + 1) {
-        throw new TypeError(
+        throw new Error(
             "The length of the third argument must be greater than the length of the first two arguments"
         );
     }
     const wordStringArray = wordString.split(" ");
     let isTracking = false;
-    let foundDistance = 0;
+    let foundDistance = null;
     let tracker = 0;
     wordStringArray.forEach(word => {
         if (word === wordOne && isTracking) {
             tracker = 0;
         } else if (word === wordTwo && isTracking) {
-            if (foundDistance === 0 || foundDistance > tracker) {
+            if (foundDistance === null) {
+                foundDistance = tracker;
+            } else if (foundDistance > tracker) {
                 foundDistance = tracker;
             }
         } else if (word === wordOne && !isTracking) {
             isTracking = true;
-        } else {
+        } else if (isTracking) {
             tracker++;
         }
     });
