@@ -31,6 +31,11 @@ const checkForHalfNumber = (num, tracker, halfLength) => {
 };
 
 const findMoreThanHalfNumber = arr => {
+    if (!Array.isArray(arr)) {
+        throw new TypeError(
+            "You must pass an array of numbers into findMoreThanHalfNumber"
+        );
+    }
     let tracker = [];
     let foundNumber = null;
     const halfArrayLength = getArrayLength(arr);
