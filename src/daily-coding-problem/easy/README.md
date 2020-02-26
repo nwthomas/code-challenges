@@ -5,6 +5,7 @@
 -   JavaScript
     -   [Binary Tree Addition](binary-tree-addition)
     -   [Hit Counter](hit-counter)
+    -   [Permutation Palindrome](permutation-palindrome)
     -   [Read N Seven Times](read-n-seven-times)
     -   [Reverse Singly-Linked List](reverse-singly-linked-list)
     -   [Shifted String](shifted-string)
