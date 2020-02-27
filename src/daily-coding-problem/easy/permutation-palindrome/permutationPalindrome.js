@@ -14,33 +14,32 @@ function isPermutationPalindromePossible(wordString) {
             "The argument for isPermutationPalindromePossible must be a string"
         );
     }
+
     const tracker = wordString.split("").reduce((accum, char) => {
         const newAccum = accum;
         newAccum[char] ? newAccum[char]++ : (newAccum[char] = 1);
         return newAccum;
     }, {});
 
-    let leftString = "";
-    let rightString = "";
     let oddLetter = null;
     const keys = Object.keys(tracker);
 
     for (let i = 0; i < keys.length; i++) {
         if (tracker[keys[i]] >= 2) {
             tracker[keys[i]] -= 2;
-            leftString += keys[i];
-            rightString = keys[i] + rightString;
             tracker[keys[i]] >= 1 && i--;
         } else if (!oddLetter) {
-            oddLetter = keys[i];
+            tracker[keys[i]] -= 1;
+            oddLetter = true;
         } else if (oddLetter && tracker[keys[i]] === 1) {
             return false;
         } else {
-            return leftString + oddLetter + rightString;
+            return true;
         }
+        tracker[keys[i]] === 0 && delete tracker[keys[i]];
     }
 
-    return false;
+    return Object.keys(tracker).length ? false : true;
 }
 
 module.exports = isPermutationPalindromePossible;

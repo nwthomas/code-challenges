@@ -14,4 +14,9 @@ describe("isPermutationPalindrome", () => {
         const result = isPermutationPalindromePossible("test");
         expect(result).toBeFalsy();
     });
+
+    test("returns true if a permutation palindrome is possible", () => {
+        const result = isPermutationPalindromePossible("carrace");
+        expect(result).toBeTruthy();
+    });
 });
