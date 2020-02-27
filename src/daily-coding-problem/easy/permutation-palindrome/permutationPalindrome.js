@@ -28,11 +28,11 @@ function isPermutationPalindromePossible(wordString) {
     for (let i = 0; i < keys.length; i++) {
         if (tracker[keys[i]] >= 2) {
             tracker[keys[i]] -= 2;
-            leftString += key;
-            rightString = key + rightString;
+            leftString += keys[i];
+            rightString = keys[i] + rightString;
             tracker[keys[i]] >= 1 && i--;
         } else if (!oddLetter) {
-            oddLetter = key;
+            oddLetter = keys[i];
         } else if (oddLetter && tracker[keys[i]] === 1) {
             return false;
         } else {
