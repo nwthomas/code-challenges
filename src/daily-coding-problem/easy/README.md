@@ -16,6 +16,7 @@
     -   [URL Shortener](url-shortener)
     -   [Word Matrix](word-matrix)
 -   Python
+    -   [First Recurring Character](first-recurring-character)
     -   [Fix the Lambda](fix-the-lambda)
     -   [Math with Lists](math-with-lists)
     -   [Reverse Words](reverse-words)
