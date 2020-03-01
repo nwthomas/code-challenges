@@ -21,6 +21,7 @@
     -   [Weighted Number Selection](weighted-number-selection)
 -   Python
     -   [Coin Collector](coin-collector)
+    -   [Find Shortest Prefix](find-shortest-prefix)
     -   [Generate Grey Code](generate-grey-code)
     -   [Odd/Even Singleton](odd-even-singleton)
     -   [Peekable Iterator](peekable-iterator)
