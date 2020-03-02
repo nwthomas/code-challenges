@@ -15,6 +15,7 @@
     -   [Random Number Except List](random-number-except-list)
     -   [Replace Pixels](replace-pixels)
     -   [Reverse Binary Tree](reverse-binary-tree)
+    -   [Smaller to Right](smaller-to-right)
     -   [Two Stack Queue](two-stack-queue)
     -   [Unknown Integer Rotation](unknown-integer-rotation)
     -   [Validate Binary Search Tree](validate-binary-search-tree)
