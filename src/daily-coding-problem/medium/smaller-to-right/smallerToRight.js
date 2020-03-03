@@ -23,16 +23,23 @@ function findSmallerToTheRightInArray(arrayOfNumbers) {
      *
      * @returns {array} The returned array of numbers
      */
+    if (!Array.isArray(arrayOfNumbers)) {
+        throw new TypeError("The argument must be an array");
+    }
+    if (!arrayOfNumbers.length) {
+        return [];
+    }
     const tracker = {};
     const final = [];
-    arrayOfNumbers.forEach(num => {
+    arrayOfNumbers.reverse().forEach(num => {
+        if (typeof num !== "number") {
+            throw new TypeError("The array must only contain numbers");
+        }
         let numberSmaller = 0;
         for (let trackedNum in tracker) {
-            trackedNum < num && numberSmaller++;
+            trackedNum < num && (numberSmaller += tracker[trackedNum]);
         }
-        tracker[num]
-            ? (tracker[num] += numberSmaller)
-            : (tracker[num] = numberSmaller);
+        tracker[num] ? (tracker[num] += 1) : (tracker[num] = 1);
         final.push(numberSmaller);
     });
     return final.reverse();
