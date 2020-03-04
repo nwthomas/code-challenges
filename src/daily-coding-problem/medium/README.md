@@ -10,6 +10,7 @@
     -   [Find Tree Paths](find-tree-paths)
     -   [Interval Spread](interval-spread)
     -   [Maximum Possible Words](maximum-possible-words)
+    -   [Next Item in 2D Array](next-item-in-2d-array)
     -   [Nearest Larger Integer](nearest-larger-integer)
     -   [Next Bigger Element Node](next-bigger-element-node)
     -   [Random Number Except List](random-number-except-list)
