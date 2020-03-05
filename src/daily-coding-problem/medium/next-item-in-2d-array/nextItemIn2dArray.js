@@ -17,7 +17,7 @@ class Implement2DIterator {
         this._array = _2DArray;
         this._x = 0;
         this._y = 0;
-        this._checked = false;
+        this._nextValue = null;
     }
 
     next() {
@@ -26,6 +26,25 @@ class Implement2DIterator {
          *
          * @returns {(any|ReferenceError)} Returns the value if it exists or else a ReferenceError
          */
+        let temp = this._nextValue;
+        if (this._nextValue) {
+            this._nextValue = null;
+            return temp;
+        } else if (this.hasNext()) {
+            this._nextValue = null;
+            return temp;
+        } else {
+            if (this._x >= this._array.length) {
+                throw new ReferenceError(
+                    `The x-axis index of ${this._x} is not valid`
+                );
+            }
+            if (this._y >= this._array[this._x].length) {
+                throw new ReferenceError(
+                    `The y-axis of ${this._y} is not valid`
+                );
+            }
+        }
     }
 
     hasNext() {
@@ -34,10 +53,24 @@ class Implement2DIterator {
          *
          * @returns {boolean} Returns true if there is a next value or else false
          */
-        if (this._array[this._x] && this._array[this._x][this._y]) {
+        if (this._nextValue) {
             return true;
         } else {
-            return false;
+            this._y++;
+            while (true) {
+                if (
+                    this._x < this._array.length &&
+                    this._y < this._array[this._x].length
+                ) {
+                    this._nextValue = this._array[this._x][this._y];
+                    return true;
+                } else if (this._x < this._array.length - 1) {
+                    this._x++;
+                    this._y = 0;
+                } else {
+                    return false;
+                }
+            }
         }
     }
 }
