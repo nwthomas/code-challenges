@@ -9,6 +9,37 @@ For example, the linked list 4 -> 1 -> -3 -> 99 should become -3 -> 1 -> 4 -> 99
 """
 
 
+class DoublyLinkedList:
+    def __init__(self, value=None):
+        """
+        Constructor for instantiating a new Doubly Linked List
+        """
+        self.dll_list = Node(value) if value else None
+        self.length = 1 if value else 0
+
+    def add_value(self, value=None):
+        """
+        Adds a new value to the Doubly Linked List
+        """
+        if value:
+            if self.dll_list:
+                current = self.dll_list
+                while current.nextNode:
+                    current = current.nextNode
+                current.nextNode = Node(value)
+                current.nextNode.prevNode = current
+                self.length += 1
+                return True
+            elif self.dll_list is None:
+                self.dll_list = Node(value)
+                self.length += 1
+                return True
+            else:
+                return False
+        else:
+            return False
+
+
 class Node:
     def __init__(self, value=None, prevNode=None, nextNode=None):
         """
@@ -18,7 +49,7 @@ class Node:
         self.prevNode = prevNode
         self.nextNode = nextNode
 
-    def addValue(self, value=None):
+    def add_value(self, value=None):
         """
         Adds a new value to the linked list
         """
@@ -37,13 +68,15 @@ class Node:
         garbage collected
         """
         value = self.value
-        self.prevNode.nextNode = self.nextNode
-        self.nextNode.prevNode = self.prevNode
+        if self.prevNode:
+            self.prevNode.nextNode = self.nextNode
+        if self.nextNode:
+            self.nextNode.prevNode = self.prevNode
         self.prevNode = None
         self.nextNode = None
         return value
 
-    def insertInFront(self, value):
+    def insert_in_front(self, value=None):
         """
         Inserts a given value in front of the current Node
         """
@@ -52,7 +85,7 @@ class Node:
         if nextNode is not None:
             nextNode.prevNode = self.nextNode
 
-    def insertBehind(self, value):
+    def insert_behind(self, value):
         """
         Inserts a given value bheind the current Node
         """
@@ -65,5 +98,12 @@ class Node:
 def sort_doubly_linked_list(dll_list):
     """
     Takes in a doubly-linked list and sorts it in O(n log n) time
+    """
+    pass
+
+
+def merge_in_place(listOne, listTwo):
+    """
+    Takes in two lists and merges them together in 
     """
     pass
