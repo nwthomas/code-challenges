@@ -13,11 +13,19 @@ Do not use flatten or otherwise clone the arrays. Some of the arrays can be empt
 */
 
 class Implement2DIterator {
-    constructor(_2DArray) {
+    constructor(_2DArray = []) {
         this._array = _2DArray;
         this._x = 0;
         this._y = 0;
         this._nextValue = null;
+
+        if (
+            Array.isArray(this._array) &&
+            this._array.length &&
+            this._y < this._array[this._x].length
+        ) {
+            this._nextValue = this._array[this._x][this._y];
+        }
     }
 
     next() {
@@ -31,17 +39,16 @@ class Implement2DIterator {
             this._nextValue = null;
             return temp;
         } else if (this.hasNext()) {
+            temp = this._nextValue;
             this._nextValue = null;
             return temp;
         } else {
-            if (this._x >= this._array.length) {
+            if (
+                this._x >= this._array.length ||
+                this._y >= this._array[this._x].length
+            ) {
                 throw new ReferenceError(
-                    `The x-axis index of ${this._x} is not valid`
-                );
-            }
-            if (this._y >= this._array[this._x].length) {
-                throw new ReferenceError(
-                    `The y-axis of ${this._y} is not valid`
+                    `The (x, y) indices of (${this._x}, ${this._y}) are not valid`
                 );
             }
         }
