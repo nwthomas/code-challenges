@@ -25,20 +25,7 @@ class DoublyLinkedList:
         Adds a new value to the Doubly-Linked List
         """
         if new_value:
-            if self.head:
-                current = self.head
-                while current.next_node:
-                    current = current.next_node
-                current.next_node = Node(new_value)
-                current.next_node.prev_node = current
-                self.length += 1
-                return True
-            elif not self.head:
-                self.head = Node(new_value)
-                self.length += 1
-                return True
-            else:
-                return False
+            return self.head.add_value(new_value)
         else:
             return False
 
