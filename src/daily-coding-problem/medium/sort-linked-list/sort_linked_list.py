@@ -1,5 +1,3 @@
-from copy import deepcopy
-
 """
 Good morning! Here's your coding interview problem for today.
 
@@ -24,10 +22,15 @@ class DoublyLinkedList:
         """
         Adds a new value to the Doubly-Linked List
         """
-        if new_value:
-            return self.head.add_value(new_value)
-        else:
+        if not new_value:
             return False
+        elif self.tail:
+            isAdded = self.tail.add_value(new_value)
+            self.tail = self.tail.next_node
+            return isAdded
+        else:
+            self.head = Node(new_value)
+            self.tail = self.head
 
     def sort_list(self):
         """
@@ -40,32 +43,40 @@ class DoublyLinkedList:
             start = start.next_node
             end = end.prev_node
 
-    def _sort_range_of_list(self, head, tail):
+    def _sort_range_of_list(self, head=None, tail=None):
         """
         Private method for finding the biggest and smallest values between head and tail and
         swapping those values with the input head and tail arguments
         """
-        start = head
-        end = tail
-        replacement_start = None
-        replacement_end = None
+        replacement_head = head
+        replacement_tail = tail
         current_left = head
         current_right = tail
-        while current_left.prev_node != current_right or current_left != current_right:
-            if current_left.value < start.value:
-                if not replacement_start or current_left.value < replacement_start.value:
-                    replacement_start = current_left
-            if current_right.value > end.value:
-                if not replacement_end or current_right.value > replacement_end.value:
-                    replacement_end = current_right
-        if replacement_start:
-            temp = start.value
-            start.value = replacement_start.value
-            replacement_start.value = temp
-        if replacement_end:
-            temp = end.value
-            end.value = replacement_end.value
-            replacement_end.value = temp
+        while current_left != current_right and current_left and current_right and (current_left.prev_node != current_right):
+            if current_left.value < head.value or current_right.value < head.value or current_right.value > tail.value or current_left.value > head.value:
+                if current_left.value < replacement_head.value:
+                    replacement_head = current_left
+                if current_right.value < replacement_head.value:
+                    replacement_head = current_right
+                if current_left.value > replacement_tail.value:
+                    replacement_tail = current_left
+                if current_right.value > replacement_tail.value:
+                    replacement_tail = current_right
+            current_left = current_left.next_node
+            current_right = current_right.prev_node
+        if replacement_tail == replacement_head and replacement_head and replacement_tail:
+            temp = replacement_head.value
+            replacement_head.value = replacement_tail.value
+            replacement_tail.value = temp
+        else:
+            if replacement_head:
+                temp = head.value
+                head.value = replacement_head.value
+                replacement_head.value = temp
+            if replacement_tail:
+                temp = tail.value
+                tail.value = replacement_tail.value
+                replacement_tail.value = temp
 
 
 class Node:
@@ -90,7 +101,7 @@ class Node:
                 current = self
                 while current.next_node:
                     current = current.next_node
-                current.next_node = Node(new_value, self)
+                current.next_node = Node(new_value, current)
             return True
 
     def delete(self):

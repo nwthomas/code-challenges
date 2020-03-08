@@ -33,6 +33,41 @@ class TestNode(unittest.TestCase):
         result = node.next_node.value
         self.assertEqual(result, 5)
 
+    def test_adds_next_node_reference(self):
+        """
+        Adds a new Node to the list and adds the correct next_node reference for each one
+        """
+        node = Node(3)
+        node.add_value(4)
+        node.add_value(8)
+        node.add_value(10)
+        first_node = node.value
+        second_node = node.next_node.value
+        third_node = node.next_node.next_node.value
+        fourth_node = node.next_node.next_node.next_node.value
+        self.assertEqual(first_node, 3)
+        self.assertEqual(second_node, 4)
+        self.assertEqual(third_node, 8)
+        self.assertEqual(fourth_node, 10)
+
+    def test_adds_prev_node_reference(self):
+        """
+        Adds a new Node to the list and adds the correct prev_node reference for each one
+        """
+        node = Node(3)
+        node.add_value(4)
+        node.add_value(8)
+        node.add_value(10)
+        tail = node.next_node.next_node.next_node
+        first_node = tail.value
+        second_node = tail.prev_node.value
+        third_node = tail.prev_node.prev_node.value
+        fourth_node = tail.prev_node.prev_node.prev_node.value
+        self.assertEqual(first_node, 10)
+        self.assertEqual(second_node, 8)
+        self.assertEqual(third_node, 4)
+        self.assertEqual(fourth_node, 3)
+
     def test_returns_true_when_value_is_added(self):
         """
         Returns a True boolean if a new value is added to the list
@@ -121,6 +156,35 @@ class TestDoublyLinkedList(unittest.TestCase):
         """
         Adds a value correctly to the list
         """
+        dll = DoublyLinkedList(100)
+        initial_head_value = dll.head.value
+        initial_tail_value = dll.tail.value
+        dll.add_value(1)
+        final_head_value = dll.head.value
+        final_tail_value = dll.tail.value
+        self.assertEqual(initial_head_value, 100)
+        self.assertEqual(initial_tail_value, 100)
+        self.assertEqual(final_head_value, 100)
+        self.assertEqual(final_tail_value, 1)
+
+    def test_sort_range_of_dll(self):
+        """
+        Runs one time between two nodes and swaps the lowest value with the start and the highest
+        value with the end
+        """
+        dll = DoublyLinkedList(10)
+        dll.add_value(50)
+        dll.add_value(3)
+        dll.add_value(6)
+        initial_head_value = dll.head.value
+        initial_tail_value = dll.tail.value
+        dll._sort_range_of_list(dll.head, dll.tail)
+        final_head_value = dll.head.value
+        final_tail_value = dll.tail.value
+        self.assertEqual(initial_head_value, 10)
+        self.assertEqual(initial_tail_value, 6)
+        self.assertEqual(final_head_value, 3)
+        self.assertEqual(final_tail_value, 50)
 
 
 if __name__ == "__main__":
