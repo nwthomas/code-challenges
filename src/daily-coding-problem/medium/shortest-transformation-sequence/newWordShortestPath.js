@@ -34,10 +34,13 @@ const findShortestTransformationSequence = (
             "The second argument of findShortestTransformationSequence must be a string"
         );
     }
-    if (typeof wordArray !== "object") {
+    if (!Array.isArray(wordArray)) {
         throw new TypeError(
             "The third argument of findShortestTransformationSequence must be an object"
         );
+    }
+    if (!wordArray.length) {
+        return null;
     }
     const matchRecord = [startString];
     let currentWord = startString;
