@@ -27,10 +27,13 @@ class DoublyLinkedList:
         elif self.tail:
             isAdded = self.tail.add_value(new_value)
             self.tail = self.tail.next_node
+            self.length += 1
             return isAdded
         else:
             self.head = Node(new_value)
             self.tail = self.head
+            self.length += 1
+            return True
 
     def sort_list(self):
         """
@@ -48,35 +51,40 @@ class DoublyLinkedList:
         Private method for finding the biggest and smallest values between head and tail and
         swapping those values with the input head and tail arguments
         """
-        replacement_head = head
-        replacement_tail = tail
         current_left = head
         current_right = tail
         while current_left != current_right and current_left and current_right and (current_left.prev_node != current_right):
-            if current_left.value < head.value or current_right.value < head.value or current_right.value > tail.value or current_left.value > head.value:
-                if current_left.value < replacement_head.value:
-                    replacement_head = current_left
-                if current_right.value < replacement_head.value:
-                    replacement_head = current_right
-                if current_left.value > replacement_tail.value:
-                    replacement_tail = current_left
-                if current_right.value > replacement_tail.value:
-                    replacement_tail = current_right
+            if current_left.value < head.value or current_right.value < head.value:
+                if current_left.value < head.value:
+                    [head.value, current_left.value] = [
+                        current_left.value, head.value]
+                if current_right.value < head.value:
+                    [head.value, current_right.value] = [
+                        current_right.value, head.value]
+            if current_right.value > tail.value or current_left.value > head.value:
+                if current_left.value > tail.value:
+                    [tail.value, current_left.value] = [
+                        current_left.value, tail.value]
+                if current_right.value > tail.value:
+                    [tail.value, current_right.value] = [
+                        current_right.value, tail.value]
             current_left = current_left.next_node
             current_right = current_right.prev_node
-        if replacement_tail == replacement_head and replacement_head and replacement_tail:
-            temp = replacement_head.value
-            replacement_head.value = replacement_tail.value
-            replacement_tail.value = temp
+
+    def get_all_values(self):
+        """
+        Returns all values, in order, contained in the Doubly-Linked List
+        """
+        current = self.head
+        final_values = []
+        if not current.value:
+            return final_values
         else:
-            if replacement_head:
-                temp = head.value
-                head.value = replacement_head.value
-                replacement_head.value = temp
-            if replacement_tail:
-                temp = tail.value
-                tail.value = replacement_tail.value
-                replacement_tail.value = temp
+            final_values.append(current.value)
+            while current.next_node:
+                current = current.next_node
+                final_values.append(current.value)
+            return final_values
 
 
 class Node:

@@ -186,6 +186,22 @@ class TestDoublyLinkedList(unittest.TestCase):
         self.assertEqual(final_head_value, 3)
         self.assertEqual(final_tail_value, 50)
 
+    def test_sorts_entire_list(self):
+        """
+        Sorts an entire Doubly-Linked List
+        """
+        dll = DoublyLinkedList(10)
+        dll.add_value(100)
+        dll.add_value(7)
+        dll.add_value(3)
+        dll.add_value(1)
+        dll.add_value(-9)
+        initial_list_order = dll.get_all_values()
+        dll.sort_list()
+        final_list_order = dll.get_all_values()
+        self.assertEqual(initial_list_order, [10, 100, 7, 3, 1, -9])
+        self.assertEqual(final_list_order, [-9, 1, 3, 7, 10, 100])
+
 
 if __name__ == "__main__":
     unittest.main()
