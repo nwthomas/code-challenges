@@ -13,10 +13,11 @@ This means 3 people entered the building. An exit looks like this:
 
 This means that 2 people exited the building. timestamp is in Unix time.
 
-Find the busiest period in the building, that is, the time with the most people in the building. Return it as a pair of (start, end) timestamps. You can assume the building always starts off and ends up empty, i.e. with 0 people inside.
+Find the busiest period in the building, that is, the time with the most people in the building. Return it as a pair of (start, end)
+timestamps. You can assume the building always starts off and ends up empty, i.e. with 0 people inside.
 */
 
-function findBusiestTime(dataObjectArray) {
+function findBusiestTimes(dataObjectArray) {
     /**
      * Takes in an array of data objects and then sorts for the time period where
      * the building was the busiest
@@ -27,21 +28,33 @@ function findBusiestTime(dataObjectArray) {
      * @returns {array} A tuple of the beginning and ending timestamp when the
      * building was the busiest.
      */
+    const ENTER = "enter";
+    const EXIT = "exit";
     let finalTimestamps = [];
+    if (!Array.isArray(dataObjectArray)) {
+        throw new TypeError("The argument must be an array");
+    }
+    if (!dataObjectArray.length) {
+        return finalTimestamps;
+    }
     let largestTotal = 0;
     let total = 0;
     dataObjectArray.forEach(dataObject => {
-        dataObject.type === "enter"
+        dataObject.type === ENTER
             ? (total += dataObject.count)
             : (total -= dataObject.count);
         if (total > largestTotal) {
             largestTotal = total;
             finalTimestamps = [dataObject.timestamp];
-        } else if (finalTimestamps.length && total < largestTotal) {
+        } else if (
+            finalTimestamps.length === 1 &&
+            dataObject.type === EXIT &&
+            total < largestTotal
+        ) {
             finalTimestamps.push(dataObject.timestamp);
         }
     });
     return finalTimestamps;
 }
 
-module.exports = findBusiestTime;
+module.exports = findBusiestTimes;

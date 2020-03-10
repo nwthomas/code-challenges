@@ -4,6 +4,7 @@
 
 -   JavaScript
     -   [Binary Tree Addition](binary-tree-addition)
+    -   [Busiest Timestamps](busiest-timestamps)
     -   [Hit Counter](hit-counter)
     -   [Permutation Palindrome](permutation-palindrome)
     -   [Read N Seven Times](read-n-seven-times)
