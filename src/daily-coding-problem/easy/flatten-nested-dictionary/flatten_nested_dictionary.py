@@ -28,7 +28,7 @@ You can assume keys do not contain dots in them, i.e. no clobbering will occur.
 from copy import deepcopy
 
 
-def flatten_nested_dictionary(base="", dictionary={}):
+def flatten_nested_dictionary(dictionary={}, base=""):
     """
     Takes in a dictionary and flattens it
     """
