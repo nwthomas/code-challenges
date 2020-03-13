@@ -40,10 +40,11 @@ def flatten_nested_dictionary(dictionary={}, base=""):
         return flattened_dict
     stack = [(base + "." + key, dictionary[key]) if len(base) >
              0 else (key, dictionary[key]) for key in dictionary]
+    stack.reverse()
     while len(stack) >= 1:
         tup = stack.pop()
         if type(tup[1]) == dict:
-            flattened_dict.update(flatten_nested_dictionary(tup[0], tup[1]))
+            flattened_dict.update(flatten_nested_dictionary(tup[1], tup[0]))
         else:
             flattened_dict[tup[0]] = tup[1]
     return flattened_dict
