@@ -23,4 +23,5 @@
     -   [Math with Lists](math-with-lists)
     -   [Reverse Words](reverse-words)
     -   [Singly Linked Palindrome](singly-linked-palindrome)
+    -   [String Mapping](string-mapping)
     -   [Word Board](word-board)
