@@ -25,6 +25,7 @@
     -   [Coin Collector](coin-collector)
     -   [Find Shortest Prefix](find-shortest-prefix)
     -   [Generate Grey Code](generate-grey-code)
+    -   [Interleave Two Queue](interleave-two-queue)
     -   [Next Item in 2D Array](next-item-in-2d-array)
     -   [Odd/Even Singleton](odd-even-singleton)
     -   [Peekable Iterator](peekable-iterator)
