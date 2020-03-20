@@ -3,7 +3,7 @@ Good morning! Here's your coding interview problem for today.
 
 This problem was asked by Google.
 
-Given a stack of N elements, interleave the first half of the stack with the second half reversed using only one other queue. This should be done in-place.
+Given a stack of N elements, interleave the first half of the stack with the second half reversed using only one other queue.
 
 Recall that you can only push or pop from a stack, and enqueue or dequeue from a queue.
 
@@ -13,7 +13,7 @@ Hint: Try working backwards from the end state.
 """
 
 
-def interleave_two_lists(num_list):
+def interleave_list(num_list):
     """
     Takes in a list of numbers and interleaves them with the second half reversed
     """
@@ -33,5 +33,8 @@ def interleave_two_lists(num_list):
         final_list.append(num_list[right])
         left += 1
         right -= 1
+
+    if len(num_list) % 2 != 0:
+        final_list.append(num_list[len(num_list) // 2])
 
     return final_list
