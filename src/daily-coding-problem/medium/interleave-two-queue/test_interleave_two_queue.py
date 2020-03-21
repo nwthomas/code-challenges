@@ -1,5 +1,6 @@
 from interleave_two_queue import interleave_list
 import unittest
+import lists
 
 
 class TestInterleaveTwoQueue(unittest.TestCase):
@@ -30,6 +31,13 @@ class TestInterleaveTwoQueue(unittest.TestCase):
         """
         result = interleave_list([4, 8, 1, 3, 0, 9, 12, 3, 5])
         self.assertEqual(result, [4, 5, 8, 3, 1, 12, 3, 9, 0])
+
+    def test_interleaves_massive_list_correctly(self):
+        """
+        Correctly interleaves a massive list of numbers
+        """
+        result = interleave_list(lists.l)
+        self.assertEqual(result, lists.result)
 
 
 if __name__ == "__main__":
