@@ -13,7 +13,7 @@ For example, given the numbers [42, 56, 14], return 14.
 def find_greatest_common_denominator(num_list):
     lowest_cd = None
     isChanged = True
-    current_try = 1
+    current_try = 2
 
     while lowest_cd is None:
         for num in num_list:
