@@ -20,7 +20,6 @@
     -   [First Recurring Character](first-recurring-character)
     -   [Fix the Lambda](fix-the-lambda)
     -   [Flatten Nested Dictionary](flatten-nested-dictionary)
-    -   [Greatest Common Denominator](greatest-common-denominator)
     -   [Math with Lists](math-with-lists)
     -   [Reverse Words](reverse-words)
     -   [Singly Linked Palindrome](singly-linked-palindrome)
