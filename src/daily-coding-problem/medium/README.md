@@ -15,6 +15,7 @@
     -   [Random Number Except List](random-number-except-list)
     -   [Replace Pixels](replace-pixels)
     -   [Reverse Binary Tree](reverse-binary-tree)
+    -   [Roman Numeral to Decimal](roman-numeral-to-decimal)
     -   [Shortest Transformation Sequence](shortest-transformation-sequence)
     -   [Smaller to Right](smaller-to-right)
     -   [Two Stack Queue](two-stack-queue)
