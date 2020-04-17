@@ -38,27 +38,32 @@ function convertRomanNumeralToDecimal(romanNumeralString) {
         );
     }
 
-    const numeralArray = romanNumeralString.toUpperCase().split("").reverse();
+    const reversedNumeralArray = romanNumeralString
+        .toUpperCase()
+        .split("")
+        .reverse();
 
-    // if (
-    //     numeralArray.some(
-    //         (numeral) => numeralConversions[numeral] !== undefined
-    //     )
-    // ) {
-    //     throw new Error(
-    //         "All characters input into convertRomanNumeralToDecimal must be valid Roman numerals"
-    //     );
-    // }
+    if (
+        reversedNumeralArray.some(
+            (numeral) => numeralConversions[numeral] == undefined
+        )
+    ) {
+        throw new Error(
+            "All characters input into convertRomanNumeralToDecimal must be valid Roman numerals"
+        );
+    }
 
-    // if (romanNumeralString.length === 1) {
-    //     return numeralConversions[romanNumeralString];
-    // }
+    if (romanNumeralString.length === 1) {
+        return numeralConversions[romanNumeralString];
+    }
 
     let final = 0,
         temp = 0,
         trackedNumeral = false;
 
-    numeralArray.forEach((currentNumeral, i) => {
+    console.log(reversedNumeralArray);
+
+    reversedNumeralArray.forEach((currentNumeral, i) => {
         if (temp === 0) {
             temp = numeralConversions[currentNumeral];
             trackedNumeral = currentNumeral;
@@ -72,7 +77,10 @@ function convertRomanNumeralToDecimal(romanNumeralString) {
             temp -= numeralConversions[currentNumeral];
         }
 
-        if (numeralConversions[numeralArray[i + 1]] > numeralcurrentNumeral) {
+        if (
+            numeralConversions[reversedNumeralArray[i + 1]] >
+            numeralConversions[currentNumeral]
+        ) {
             final = temp;
             temp = 0;
             trackedNumeral = false;
@@ -82,4 +90,5 @@ function convertRomanNumeralToDecimal(romanNumeralString) {
     return final;
 }
 
+console.log(convertRomanNumeralToDecimal("LV"));
 module.exports = convertRomanNumeralToDecimal;
