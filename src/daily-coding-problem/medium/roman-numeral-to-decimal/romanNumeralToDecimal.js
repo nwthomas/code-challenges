@@ -61,8 +61,6 @@ function convertRomanNumeralToDecimal(romanNumeralString) {
         temp = 0,
         trackedNumeral = false;
 
-    console.log(reversedNumeralArray);
-
     reversedNumeralArray.forEach((currentNumeral, i) => {
         if (temp === 0) {
             temp = numeralConversions[currentNumeral];
@@ -78,10 +76,11 @@ function convertRomanNumeralToDecimal(romanNumeralString) {
         }
 
         if (
+            reversedNumeralArray.length === i + 1 ||
             numeralConversions[reversedNumeralArray[i + 1]] >
-            numeralConversions[currentNumeral]
+                numeralConversions[currentNumeral]
         ) {
-            final = temp;
+            final += temp;
             temp = 0;
             trackedNumeral = false;
         }
@@ -90,5 +89,4 @@ function convertRomanNumeralToDecimal(romanNumeralString) {
     return final;
 }
 
-console.log(convertRomanNumeralToDecimal("LV"));
 module.exports = convertRomanNumeralToDecimal;
