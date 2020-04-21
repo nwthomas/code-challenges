@@ -65,14 +65,18 @@ function convertRomanNumeralToDecimal(romanNumeralString) {
         if (temp === 0) {
             temp = numeralConversions[currentNumeral];
             trackedNumeral = currentNumeral;
-        }
-
-        if (
+        } else if (
             trackedNumeral &&
             numeralConversions[trackedNumeral] >
                 numeralConversions[currentNumeral]
         ) {
             temp -= numeralConversions[currentNumeral];
+        } else if (
+            trackedNumeral &&
+            numeralConversions[trackedNumeral] ===
+                numeralConversions[currentNumeral]
+        ) {
+            temp += numeralConversions[currentNumeral];
         }
 
         if (
