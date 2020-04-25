@@ -7,6 +7,12 @@ Given a string and a pattern, find the starting indices of all occurrences of th
 */
 
 const findPatternStartingIndices = (pattern, string) => {
+    if (typeof pattern !== "string" || typeof string !== "string") {
+        throw new TypeError(
+            "The arguments for findPatternStartingIndices must be strings."
+        );
+    }
+
     const indicesArray = [];
     const patternLength = pattern.length;
 
