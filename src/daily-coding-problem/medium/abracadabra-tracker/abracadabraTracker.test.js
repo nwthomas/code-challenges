@@ -23,4 +23,12 @@ describe("Abracadabra Tracker", () => {
         const result = findPatternStartingIndices("abc", "uiyoiuabcoi7tugh");
         expect(result).toEqual([6]);
     });
+
+    test("finds multiple starting indices for a pattern if the pattern is in a string multiple times", () => {
+        const result = findPatternStartingIndices(
+            "abc",
+            "abcijahsdjfabcklahsgdouifhgabciohagsodufguaisd657iabc"
+        );
+        expect(result).toEqual([0, 11, 27, 50]);
+    });
 });
