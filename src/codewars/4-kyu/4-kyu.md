@@ -2,8 +2,9 @@
 
 ## Table of Contents
 
-- JavaScript
-  - [Range Extraction](range-extraction)
-  - [Strip Comments](strip-comments)
-- Python
-  - [Snail](snail)
+-   JavaScript
+    -   [Range Extraction](range-extraction)
+    -   [Strip Comments](strip-comments)
+    -   [Sum Strings as Numbers](sum-strings-as-numbers)
+-   Python
+    -   [Snail](snail)
