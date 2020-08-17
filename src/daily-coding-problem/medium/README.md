@@ -9,6 +9,7 @@
     -   [Find Majority Number](find-majority-number)
     -   [Find Single Numbers](find-single-numbers)
     -   [Find Tree Paths](find-tree-paths)
+    -   [Flip Characters](flip-characters)
     -   [Interval Spread](interval-spread)
     -   [Maximum Possible Words](maximum-possible-words)
     -   [Nearest Larger Integer](nearest-larger-integer)
