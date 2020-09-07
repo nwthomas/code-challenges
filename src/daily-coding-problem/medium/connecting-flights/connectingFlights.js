@@ -21,27 +21,27 @@ For example, our traveler wants to go from JFK to LAX with up to 3 connections, 
 Due to some improbably low flight prices, the cheapest itinerary would be JFK -> ATL -> ORD -> LAX, costing $440.
 */
 
-function getCheapestItinerary(flightArr, start, end) {
-    if (!Array.isArray(flightArr)) {
+function getCheapestItinerary(flightsArray, startCity, endCity) {
+    if (!Array.isArray(flightsArray)) {
         throw new TypeError(
             "The first argument of getCheapestItinerary must be an array"
         );
     }
-    if (typeof start !== "string") {
+    if (typeof startCity !== "string") {
         throw new TypeError(
             "The second argument of getCheapestItinerary must be of type string"
         );
     }
-    if (typeof end !== "string") {
+    if (typeof endCity !== "string") {
         throw new TypeError(
             "The third argument of getCheapestItinerary must be of type string"
         );
     }
-    if (!flightArr.length) {
+    if (!flightsArray.length) {
         return [];
     }
 
-    const flightsData = flightArr.reduce((flights, newFlight) => {
+    const flightsFromCities = flightsArray.reduce((flights, newFlight) => {
         const [newFlightStart, newFlightEnd, newFlightCost] = newFlight;
 
         if (flights[newFlightStart]) {
@@ -53,15 +53,15 @@ function getCheapestItinerary(flightArr, start, end) {
         return flights;
     }, {});
 
-    if (!flightsData[start]) {
+    if (!flightsFromCities[startCity]) {
         return [];
     }
 
-    const flightsTracker = Object.entries(flightsData[start]).reduce(
+    const flightsTracker = Object.entries(flightsFromCities[startCity]).reduce(
         (flights, newFlight) => {
             return [
                 ...flights,
-                { flights: [start, newFlight[0]], cost: newFlight[1] },
+                { flights: [startCity, newFlight[0]], cost: newFlight[1] },
             ];
         },
         []
@@ -76,7 +76,7 @@ function getCheapestItinerary(flightArr, start, end) {
     while (flightsTracker.length) {
         const { flights, cost } = flightsTracker.pop();
         const nextFlightStart = flights[flights.length - 1];
-        const nextFlightsList = flightsData[nextFlightStart];
+        const nextFlightsList = flightsFromCities[nextFlightStart];
 
         if (nextFlightsList) {
             const nextFlightsListArray = Object.entries(nextFlightsList);
@@ -88,7 +88,7 @@ function getCheapestItinerary(flightArr, start, end) {
                     cost: cost + nextFlightCost,
                 };
 
-                if (nextFlightCity === end) {
+                if (nextFlightCity === endCity) {
                     finishedFlights.push(newFlightObject);
                 } else if (!flights.includes(nextFlightCity)) {
                     flightsTracker.push(newFlightObject);
