@@ -22,7 +22,9 @@ This repository is a collection of completed code challenges, katas, whiteboardi
     -   [Medium](src/daily-coding-problem/medium)
     -   [Hard](src/daily-coding-problem/hard)
 
--   [HackerRank](src/hacker-rank)
+-   [HackerRank](src/hacker-rank/)
+
+-   [Interview Cake](src/interview-cake/)
 
 -   [Lambda School](src/lambda-school/)
 
