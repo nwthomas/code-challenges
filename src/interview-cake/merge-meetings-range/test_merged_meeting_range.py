@@ -3,6 +3,16 @@ import unittest
 
 
 class TestMerge(unittest.TestCase):
+    def test_returns_first_list_if_second_empty(self):
+        """Returns the first list if the second one is empty"""
+        result = merge([(3, 4)], [])
+        self.assertEqual(result, [(3, 4)])
+
+    def test_returns_second_list_if_first_empty(self):
+        """Returns the second list if the first one is empty"""
+        result = merge([], [(3, 4)])
+        self.assertEqual(result, [(3, 4)])
+
     def test_merged_lists(self):
         """Returns two lists of tuples sorted and merged together"""
         result = merge([(1, 10)], [(3, 5)])
