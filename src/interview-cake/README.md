@@ -3,6 +3,7 @@
 ## TABLE OF CONTENTS
 
 -   [Check Lists Order](check-lists-order)
+-   [Inflight Entertainment](inflight-entertainment)
 -   [Merge Meeting Ranges](merge-meeting-range)
 -   [Merge Sorted Lists](merge-sorted-lists)
 -   [Reverse List of Chars in Place](reverse-list-of-chars-in-place)
