@@ -1,0 +1,2 @@
+from find_coins_on_map import find_closest_coin
+import unittest
