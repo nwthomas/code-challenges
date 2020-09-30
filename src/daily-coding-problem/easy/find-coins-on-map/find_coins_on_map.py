@@ -27,12 +27,21 @@ Coins: [(0, 4), (1, 0), (2, 0), (3, 2)]
 
 
 def find_closest_coin(starting_position, coins):
+    if type(starting_position) != tuple:
+        raise TypeError(
+            "The first argument of find_closest_coin must be of type tuple.")
+    elif type(coins) != list:
+        raise TypeError(
+            "The second argument of find_closest_coin must be of type list.")
+
     smallest_move = None
+    smallest_location = None
 
     for coin in coins:
         move = abs(starting_position[0] - coin[0]) + \
             abs(starting_position[1] - coin[1])
         if not smallest_move or move < smallest_move:
             smallest_move = move
+            smallest_location = coin
 
-    return smallest_move
+    return smallest_location
