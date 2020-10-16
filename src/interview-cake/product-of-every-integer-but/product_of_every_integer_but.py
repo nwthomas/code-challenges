@@ -22,12 +22,14 @@ def get_products_of_all_ints_except_at_index(int_list):
     if type(int_list) != list:
         raise TypeError(
             "The argument for get_products_of_all_ints_except_at_index must be of type list.")
+    if len(int_list) <= 1:
+        raise Exception("The length of the integer list must be 2 or greater.")
 
     product_list = [None] * len(int_list)
     product_so_far = 1
 
     for i in range(0, len(int_list)):
-        product_list = product_so_far
+        product_list[i] = product_so_far
         product_so_far *= int_list[i]
 
     product_so_far = 1
