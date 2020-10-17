@@ -4,6 +4,7 @@
 
 -   Python
     -   [Check Lists Order](check-lists-order)
+    -   [Fisher Yates Shuffle](fisher-yates-shuffle)
     -   [Inflight Entertainment](inflight-entertainment)
     -   [Merge Meeting Ranges](merge-meeting-range)
     -   [Merge Sorted Lists](merge-sorted-lists)
