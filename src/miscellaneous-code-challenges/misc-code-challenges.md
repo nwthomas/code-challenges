@@ -7,7 +7,6 @@
     -   [Deep Copy Object](deep-copy-object)
     -   [Flatten Arrays](flatten-arrays)
     -   [Get Prime Numbers](get-prime-numbers)
-    -   [Largest Matrix](largest-matrix)
     -   [Max Sum Subarray](maximum-sum-subarray)
     -   [Meandering Array](meandering-array)
     -   [Score Palindromes](score-palindromes)
