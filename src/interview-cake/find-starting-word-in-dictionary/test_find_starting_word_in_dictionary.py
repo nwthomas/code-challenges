@@ -33,9 +33,9 @@ class TestFindRotationPoint(unittest.TestCase):
         self.assertRaises(TypeError, result)
 
     def test_returns_single_phrase_if_len_one(self):
-        """Returns a single string in a list if the list is of length one"""
+        """Returns the zero index in a list if the list is of length one"""
         result = find_rotation_point(["nathan"])
-        self.assertEqual(result, "nathan")
+        self.assertEqual(result, 0)
 
     def test_returns_none_if_empty_list(self):
         """Returns None if the list argument is empty"""
@@ -43,14 +43,14 @@ class TestFindRotationPoint(unittest.TestCase):
         self.assertIsNone(result)
 
     def test_finds_rotation_point_in_short_list(self):
-        """Finds the rotation point string in a short list of strings"""
+        """Finds the rotation point index in a short list of strings"""
         result = find_rotation_point(short_words_list)
-        self.assertEqual(result, "appreciate")
+        self.assertEqual(result, 3)
 
     def test_finds_rotation_point_in_long_list(self):
         """Finds the rotation point string in a long list of strings"""
         result = find_rotation_point(long_words_list)
-        self.assertEqual(result, "asymptote")
+        self.assertEqual(result, 6)
 
 
 if __name__ == "__main__":

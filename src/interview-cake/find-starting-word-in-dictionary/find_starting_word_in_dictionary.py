@@ -27,24 +27,16 @@ Write a function for finding the index of the "rotation point," which is where I
 beginning of the dictionary. This list is huge (there are lots of words I don't know) so we want to be
 efficient here.
 """
-
-"""
-1. Start at start_index = 0, end_index = end of list
-2. Pick the middle number
-3. 
-"""
-
-
-
-
 from random import randrange
+
+
 def find_rotation_point(word_list):
     """Takes in a list of words and finds the rotation point"""
 
     if type(word_list) != list:
         raise TypeError("The argument for word_list must be of type list.")
     elif len(word_list) <= 1:
-        return word_list[0] if len(word_list) > 0 else None
+        return 0 if len(word_list) > 0 else None
 
     start_index = 0
     end_index = len(word_list) - 1
@@ -58,6 +50,4 @@ def find_rotation_point(word_list):
             else:
                 start_index = guess_index
         else:
-            first_word = word_list[start_index]
-            second_word = word_list[end_index]
-            return first_word if first_word < second_word else second_word
+            return start_index if word_list[start_index] < word_list[end_index] else end_index
