@@ -4,6 +4,7 @@
 
 -   Python
     -   [Check Lists Order](check-lists-order)
+    -   [Find Starting Word in Dictionary](find-starting-word-in-dictionary)
     -   [Fisher Yates Shuffle](fisher-yates-shuffle)
     -   [Inflight Entertainment](inflight-entertainment)
     -   [Merge Meeting Ranges](merge-meeting-range)
