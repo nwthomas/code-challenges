@@ -26,21 +26,17 @@ class BinaryTree:
         if not self.root:
             self.root = Node(value)
         else:
-            current = self.root
-            next_value = self.get_next_node(current, value)
+            previous = self.root
+            current = self.root.right if value >= self.root.value else self.root.left
 
-            while next_value:
-                current = next_value
-                next_value = self.get_next_node(current, value)
+            while current:
+                previous = current
+                current = current.right if value >= current.value else current.left
 
-            if value >= current.value:
-                current.right = Node(value)
+            if value >= previous.value:
+                previous.right = Node(value)
             else:
-                current.left = Node(value)
-
-    def get_next_node(self, node, next_value):
-        """Compares a node to a value and returns the direction the binary tree should go"""
-        return node.right if next_value >= node.right else node.left
+                previous.left = Node(value)
 
     def find_if_sum_exists(self, total):
         """Checks if the sume of a total exists in the tree paths and returns True or False otherwise"""
@@ -78,10 +74,3 @@ class Node:
         self.value = value
         self.left = None
         self.right = None
-
-    def add_value(self, node):
-        """Takes in a node and adds it to the left or right"""
-        if node.value >= self.value:
-            self.right = node
-        else:
-            self.left = node
