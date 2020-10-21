@@ -23,3 +23,4 @@
     -   [Write Number in Expanded Form](write-number-in-expanded-form)
 -   Python
     -   [Tribonacci Sequence](tribonacci-sequence)
+    -   [Sort the Odd](sort-the-odd)
