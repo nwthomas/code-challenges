@@ -19,6 +19,14 @@ Attention: If the number has leading zeros the amount of digits should be consid
 */
 
 function incrementString (string) {
+  if (typeof(string) !== "string") {
+    throw new TypeError("The argument for incrementString must be of type string.");
+  }
+
+  if (!string.length) {
+    return "";
+  }
+
   let startingIndex = 0;
   
   for (let i = string.length - 1; i > 0; i--) {
@@ -29,13 +37,18 @@ function incrementString (string) {
       break;
     }
   }
-  
-  const incremented = addOneToString(string.slice(startingIndex));
+  const number = string.slice(startingIndex)
+  const incremented = number.length ? addOneToString(string.slice(startingIndex)) : "";
   
   return string.slice(0, startingIndex) + incremented;
 }
 
 function addOneToString(string) {
+  const convertedNum = parseInt(string);
+  if (typeof(string) !== "string" || typeof convertedNum !== "number" || isNaN(convertedNum)) {
+    throw new TypeError("The argument for addOneToString must be of type number.")
+  }
+
   let finalString = "";
   let carryingOne = true;
   
@@ -65,5 +78,5 @@ function addOneToString(string) {
 
 module.exports = {
     incrementString,
-    addOneToStrin
+    addOneToString,
 }
