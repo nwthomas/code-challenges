@@ -12,4 +12,5 @@
     -   [Vowel Count](vowel-count-js)
     -   [You're a Square!](you're-a-square)
 -   Python
+    -   [Least Larger](least-larger)
     -   [Uglify Word](uglify-word)
