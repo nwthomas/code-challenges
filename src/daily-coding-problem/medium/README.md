@@ -35,4 +35,5 @@
     -   [Next Item in 2D Array](next-item-in-2d-array)
     -   [Odd/Even Singleton](odd-even-singleton)
     -   [Peekable Iterator](peekable-iterator)
+    -   [Shortest Running Route](shortest-running-route)
     -   [Time Map](time-map)
