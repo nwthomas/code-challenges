@@ -12,3 +12,4 @@
     -   [Find Median for Range](find-median-for-range)
     -   [Validate Courses](validate-courses)
     -   [Verify String Combos](verify-string-combos)
+    -   [Wildcard Brackets](wildcard-brackets)
