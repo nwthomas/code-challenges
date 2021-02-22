@@ -20,11 +20,12 @@ class Node:
 class SinglyLinkedList:
     def __init__(self, first_value):
         self.head = None
-        self.tail
+        self.tail = None
         self.length = 0
 
         if first_value:
             self.head = Node(first_value)
+            self.tail = self.head
             self.length = 1
     
     def add_value(self, value):
@@ -40,6 +41,17 @@ class SinglyLinkedList:
             current.next = Node(value)
             self.length = 1
             self.tail = current.next
+        
+    def __str__(self):
+        string = f"(START) {self.head.value}"
+
+        current = self.head.next
+
+        while current:
+            string += f" --> {current.value}"
+            current = current.next
+
+        return string + " (END)"
 
 def get_intersection_of_lists(list_1, list_2):
     """Takes in two singly-linked lists and returns the intersection of them"""
