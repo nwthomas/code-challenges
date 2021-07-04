@@ -5,6 +5,7 @@
 -   JavaScript
     -   [Binary Tree Addition](binary-tree-addition)
     -   [Busiest Timestamps](busiest-timestamps)
+    -   [Find Word in Matrix](find-word-in-matrix)
     -   [Hit Counter](hit-counter)
     -   [Permutation Palindrome](permutation-palindrome)
     -   [Read N Seven Times](read-n-seven-times)
