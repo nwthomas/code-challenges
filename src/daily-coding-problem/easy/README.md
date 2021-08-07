@@ -20,6 +20,7 @@
 -   Python
     -   [Find Coins on Map](find-coins-on-map)
     -   [Find Binary Tree Sum](find-binary-tree-sum)
+    -   [Find Most Weighted Path](find-most-weighted-path)
     -   [First Recurring Character](first-recurring-character)
     -   [Fix the Lambda](fix-the-lambda)
     -   [Flatten Nested Dictionary](flatten-nested-dictionary)
