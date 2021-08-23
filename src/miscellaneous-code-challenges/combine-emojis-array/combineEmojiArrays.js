@@ -3,19 +3,19 @@ Write a function called mergeLists that takes in two sorted lists of the followi
 and combines them up to the hard limit passed in as the third argument.
 
 EXAMPLE
-const paulius = [
+const matthew = [
     { t: 1, emoji: 'smiley' }, 
     { t: 1, emoji: 'lovingIt' }, 
     { t: 3, emoji: 'laugh' }
 ]
-const helen = [
+const nathan = [
     { t: 2, emoji: 'wow' }, 
     { t: 3, emoji: 'laugh' }, 
     { t: 10, emoji: 'wow' }
 ]
 
 ---> input
-mergeLists(paulius, helen, 5)
+mergeLists(matthew, nathan, 5)
 
 ---> output
 [
@@ -29,6 +29,11 @@ mergeLists(paulius, helen, 5)
 
 function mergeLists(list1, list2, limit) {
     const finalEmojisArray = [];
+
+    if (!list1.length && !list2.length) {
+        return finalEmojisArray;
+    }
+
     let list1Index = 0;
     let list2Index = 0;
 
