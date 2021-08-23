@@ -3,6 +3,7 @@
 ## Table of Contents
 
 -   JavaScript
+    -   [Combine Emoji Arrays](combine-emoji-arrays)
     -   [Deep Copy Array](deep-copy-array)
     -   [Deep Copy Object](deep-copy-object)
     -   [Flatten Arrays](flatten-arrays)
