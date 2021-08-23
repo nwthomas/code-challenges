@@ -4,6 +4,7 @@
 
 -   JavaScript
     -   [Abracadabra Tracker](abracadabra-tracker)
+    -   [Build Reduce Function](build-reduce-function)
     -   [Connecting Flights](connecting-flights)
     -   [Find Non-Decreasing Integers](find-non-decreasing-integers)
     -   [Find 2D Array Values](find-2d-array-values)

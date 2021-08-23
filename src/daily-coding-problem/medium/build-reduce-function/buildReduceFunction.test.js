@@ -4,6 +4,7 @@ const largeNumArray = [
     7, 1, 4, 7, 234, 56, 43, 91, 687, 1, 4, 6, 8, 2, 4, 5, 90, 45,
 ];
 const smallNumArray = [1, 4, 7, 10, 9, 45];
+const stringArray = ["this", "is", "a", "test"];
 
 describe("reduce", () => {
     test("throw error when first argument is not an array", () => {
@@ -33,7 +34,6 @@ describe("reduce", () => {
     });
 
     test("works with other data types", () => {
-        const stringArray = ["this", "is", "a", "test"];
         const combineStrings = (accum, nextString, i, arr) => {
             return i !== arr.length - 1
                 ? accum + nextString + " "
