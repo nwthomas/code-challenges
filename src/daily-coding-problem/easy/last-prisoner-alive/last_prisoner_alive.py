@@ -12,10 +12,13 @@ For example, if N = 5 and k = 2, the order of executions would be [2, 4, 1, 5, 3
 Bonus: Find an O(log N) solution if k = 2.
 """
 
+def get_current_index(list_len, raw_index):
+    return raw_index if raw_index < list_len else raw_index % list_len
+
 def get_last_alive_prisoner(n, k):
     # Create list of indices which preserves final index state
     prisoners = [i for i in range(0, n)]
-    current_index = k
+    current_index = get_current_index(len(prisoners), k)
 
     while len(prisoners) > 1:
         start = prisoners[:current_index]
@@ -27,7 +30,7 @@ def get_last_alive_prisoner(n, k):
             current_index = 0
         
         # Set new current index and handle rotating around circle of prisoners
-        raw_index_total = current_index + k
-        current_index = raw_index_total if raw_index_total < len(prisoners) else raw_index_total % len(prisoners)
+        raw_index = current_index + k
+        current_index = get_current_index(len(prisoners), raw_index)
 
     return prisoners[0]
