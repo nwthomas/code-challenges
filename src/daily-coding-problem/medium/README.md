@@ -38,5 +38,6 @@
     -   [Peekable Iterator](peekable-iterator)
     -   [Shortest Running Route](shortest-running-route)
     -   [Sort Singly Linked Lists](sort-singly-linked-lists)
+    -   [Synonyms](synonyms)
     -   [Time Map](time-map)
     -   [Valid Sentence Checker](valid-sentence-checker)
