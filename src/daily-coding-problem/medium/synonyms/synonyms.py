@@ -14,12 +14,12 @@ Note that the synonyms (a, b) and (a, c) do not necessarily imply (b, c): consid
 Follow-up: what if we can assume that (a, b) and (a, c) do in fact imply (b, c)?
 """
 
-def create_reference_dict(*args):
+def create_reference_dict(synonyms):
     """Util to take in a list of sets and returns a dictionary reference"""
     reference_dict = {}
 
-    for arg in args:
-        first_value, second_value = arg
+    for word_set in synonyms:
+        first_value, second_value = word_set
 
         if first_value in reference_dict:
             reference_dict[first_value].append(second_value)
@@ -35,23 +35,23 @@ def create_reference_dict(*args):
 
 def are_words_synonyms(reference_dict, first_word, second_word):
     """Takes in two words with a reference dictionary and checks if they're synonyms"""
-    return True if second_word in reference_dict[first_word] else False
+    return True if second_word in reference_dict and first_word in reference_dict[second_word] else False
 
-def are_sentences_equivalent(synonyms, first_word, second_word):
+def are_sentences_equivalent(synonyms, first_str, second_str):
     """Takes in synonyms and two sentences and returns if the sentences are equivalent"""
-    if len(first_word) != len(second_word):
+    first_str_list = first_str.split()
+    second_str_list = second_str.split()
+
+    if len(first_str_list) != len(second_str_list):
         return False
 
     reference_dict = create_reference_dict(synonyms)
+    print(reference_dict)
 
-    first_word_list = first_word
-    first_word_list.split()
+    for i in range(0, len(first_str_list)):
+        are_synonyms = are_words_synonyms(reference_dict, first_str_list[i], second_str_list[i])
 
-    second_word_list = second_word
-    second_word_list.split()
-
-    for i in range(0, len(first_word_list)):
-        if first_word_list[i] != second_word_list[1] and not are_words_synonyms(reference_dict, first_word, second_word):
+        if first_str_list[i] != second_str_list[i] and not are_synonyms:
             return False
     
     return True
