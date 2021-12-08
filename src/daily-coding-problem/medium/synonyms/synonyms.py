@@ -39,14 +39,12 @@ def are_words_synonyms(reference_dict, first_word, second_word):
 
 def are_sentences_equivalent(synonyms, first_str, second_str):
     """Takes in synonyms and two sentences and returns if the sentences are equivalent"""
+    reference_dict = create_reference_dict(synonyms)
     first_str_list = first_str.split()
     second_str_list = second_str.split()
 
     if len(first_str_list) != len(second_str_list):
         return False
-
-    reference_dict = create_reference_dict(synonyms)
-    print(reference_dict)
 
     for i in range(0, len(first_str_list)):
         are_synonyms = are_words_synonyms(reference_dict, first_str_list[i], second_str_list[i])
