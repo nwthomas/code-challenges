@@ -14,6 +14,15 @@ Note that the synonyms (a, b) and (a, c) do not necessarily imply (b, c): consid
 Follow-up: what if we can assume that (a, b) and (a, c) do in fact imply (b, c)?
 """
 
+def iteratively_check_linked_synonyms(reference_dict, first_word, second_word):
+    """Takes in two words with a reference dictionary and iteratively checks if the words (with any in between) are synonyms"""
+    tracker = {}
+    stack = []
+
+    if not first_word in reference_dict:
+        return False
+
+
 def create_reference_dict(synonyms):
     """Util to take in a list of sets and returns a dictionary reference"""
     reference_dict = {}
