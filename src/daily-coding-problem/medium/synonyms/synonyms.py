@@ -16,11 +16,32 @@ Follow-up: what if we can assume that (a, b) and (a, c) do in fact imply (b, c)?
 
 def iteratively_check_linked_synonyms(reference_dict, first_word, second_word):
     """Takes in two words with a reference dictionary and iteratively checks if the words (with any in between) are synonyms"""
-    tracker = {}
-    stack = []
-
-    if not first_word in reference_dict:
+    if not first_word in reference_dict or second_word not in reference_dict:
         return False
+
+    tracker = {}
+    stack = [word for word in reference_dict[first_word]]
+
+    while len(stack) > 0:
+        current_word = stack.pop()
+
+        if current_word in tracker:
+            continue
+        else:
+            tracker[current_word] = True
+
+        current_word_synonyms = reference_dict[current_word]
+
+        for word in current_word_synonyms:
+            if word is second_word:
+                return True
+            elif word in tracker:
+                continue
+            else:
+                stack.append(word)
+
+    return False
+
 
 
 def create_reference_dict(synonyms):
