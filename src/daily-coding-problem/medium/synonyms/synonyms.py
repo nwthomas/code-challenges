@@ -14,9 +14,9 @@ Note that the synonyms (a, b) and (a, c) do not necessarily imply (b, c): consid
 Follow-up: what if we can assume that (a, b) and (a, c) do in fact imply (b, c)?
 """
 
-def iteratively_check_linked_synonyms(reference_dict, first_word, second_word):
+def are_deeply_linked_synonyms(reference_dict, first_word, second_word):
     """Takes in two words with a reference dictionary and iteratively checks if the words (with any in between) are synonyms"""
-    if not first_word in reference_dict or second_word not in reference_dict:
+    if first_word not in reference_dict or second_word not in reference_dict:
         return False
 
     tracker = {}
@@ -33,16 +33,14 @@ def iteratively_check_linked_synonyms(reference_dict, first_word, second_word):
         current_word_synonyms = reference_dict[current_word]
 
         for word in current_word_synonyms:
-            if word is second_word:
+            if word == second_word:
                 return True
             elif word in tracker:
                 continue
             else:
                 stack.append(word)
-
+                
     return False
-
-
 
 def create_reference_dict(synonyms):
     """Util to take in a list of sets and returns a dictionary reference"""
@@ -63,10 +61,6 @@ def create_reference_dict(synonyms):
 
     return reference_dict
 
-def are_words_synonyms(reference_dict, first_word, second_word):
-    """Takes in two words with a reference dictionary and checks if they're synonyms"""
-    return True if second_word in reference_dict and first_word in reference_dict[second_word] else False
-
 def are_sentences_equivalent(synonyms, first_str, second_str):
     """Takes in synonyms and two sentences and returns if the sentences are equivalent"""
     reference_dict = create_reference_dict(synonyms)
@@ -77,9 +71,9 @@ def are_sentences_equivalent(synonyms, first_str, second_str):
         return False
 
     for i in range(0, len(first_str_list)):
-        are_synonyms = are_words_synonyms(reference_dict, first_str_list[i], second_str_list[i])
-
-        if first_str_list[i] != second_str_list[i] and not are_synonyms:
+        if first_str_list[i] == second_str_list[i]:
+            continue
+        elif not are_deeply_linked_synonyms(reference_dict, first_str_list[i], second_str_list[i]):
             return False
     
     return True
