@@ -35,9 +35,7 @@ def are_deeply_linked_synonyms(reference_dict, first_word, second_word):
         for word in current_word_synonyms:
             if word == second_word:
                 return True
-            elif word in tracker:
-                continue
-            else:
+            elif word not in tracker:
                 stack.append(word)
                 
     return False

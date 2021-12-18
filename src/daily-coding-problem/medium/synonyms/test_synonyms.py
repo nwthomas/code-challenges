@@ -12,5 +12,11 @@ class TestSynonyms(unittest.TestCase):
         result = are_sentences_equivalent([["young", "youthful"], ["aged", "old"]], "You're young but cool", "You're youthful but old")
         self.assertEqual(result, False)
 
+    def test_are_deeply_linked_synonym_sentences_similar(self):
+        """Checks if two sentences are similar that are deeply linked (e.g. more than 2) in their synonyms"""
+        synonyms = [["young", "youthful"], ["youthful", "lively"]]
+        result = are_sentences_equivalent(synonyms, "You're young but cool", "You're lively but cool")
+        self.assertEqual(result, True)
+
 if __name__ == "__main__":
     unittest.main()
