@@ -42,6 +42,9 @@ class Node:
 
 def delete_node(node):
     """Takes in a node and deletes it from a chain where it is not the end node"""
+    if not node.next:
+        raise Exception("Node must not be the end of the list")
+
     next_node = node.next
     node.value = next_node.value
     node.next = next_node.next
