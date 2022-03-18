@@ -66,7 +66,7 @@ def hourglassSum(arr):
             if maximumSum is None or currentHourglassSum > maximumSum:
                 maximumSum = currentHourglassSum
     
-    return maximumSum
+    return maximumSum if maximumSum is not None else 0
 
 def getHourglassSum(arr, x, y):
     """This code assumes the indices are possible to create an hourglass"""
