@@ -36,18 +36,22 @@ Returns
 int - the maximum value in the resultant array
 """
 
-def array_manipulation(length, queries):
+def array_manipulation(queries):
     """Finds the largest sum of potentially overlapping summation queries on an array of length n"""
     tracker =  {}
     largest_value = 0
 
-    for i in range(queries):
+    for i in range(len(queries)):
         start, end, value = queries[i]
 
-        tracker[start] = tracker[start] or 0
+        if not start in tracker:
+            tracker[start] = 0;
+            
         tracker[start] += value
 
-        tracker[end + 1] = tracker[end + 1] or 0
+        if not end + 1 in tracker:
+            tracker[end + 1] = 0
+
         tracker[end + 1] -= value;
 
     current_total = 0
