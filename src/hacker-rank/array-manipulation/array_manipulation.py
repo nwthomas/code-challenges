@@ -37,7 +37,7 @@ int - the maximum value in the resultant array
 """
 
 def array_manipulation(queries):
-    """Finds the largest sum of potentially overlapping summation queries on an array of length n"""
+    """Finds the largest sum of potentially overlapping summation queries on an array"""
     tracker =  {}
     largest_value = 0
 
@@ -46,7 +46,7 @@ def array_manipulation(queries):
 
         if not start in tracker:
             tracker[start] = 0;
-            
+
         tracker[start] += value
 
         if not end + 1 in tracker:
