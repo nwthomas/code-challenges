@@ -1,6 +1,7 @@
 # HACKERRANK
 
 -   [Easy](easy/)
+    -   [Ransom Note](easy/ransom-note)
     -   [Two Strings](easy/two-strings)
 -   [Hard](hard/)
     -   [Area of the Box](hard/area-of-the-box)
