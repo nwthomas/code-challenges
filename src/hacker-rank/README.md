@@ -1,4 +1,7 @@
 # HACKERRANK
 
--   [Area of the Box](area-of-the-box)
--   [Array Manipulation](array-manipulation)
+-   [Easy](easy/)
+    -   [Two Strings](easy/two-strings)
+-   [Hard](hard/)
+    -   [Area of the Box](hard/area-of-the-box)
+    -   [Array Manipulation](hard/array-manipulation)
