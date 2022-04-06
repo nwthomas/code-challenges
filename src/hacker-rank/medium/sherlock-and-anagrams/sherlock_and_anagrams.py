@@ -55,7 +55,7 @@ def are_anagrams(s1, s2):
 
     for i in range(len(s2)):
         if s2[i] in tracker and tracker[s2[i]] != 0:
-            tracker[s2[1]] -= 1
+            tracker[s2[i]] -= 1
         else:
             return False
 
@@ -67,8 +67,8 @@ def get_all_substrings(s):
     substrings = []
 
     for i in range(len(s)):
-        for j in range(len(s)):
-            substrings.append(s[i, j])
+        for j in range(i + 1, len(s) + 1):
+            substrings.append(s[i:j])
 
     return substrings
 

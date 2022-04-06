@@ -1,7 +1,6 @@
 from area_of_the_box import numberOfWays
 import unittest
 
-
 class Tests(unittest.TestCase):
     def test_small_nums(self):
         result = numberOfWays([[3, 5], [7, 10], [1, 2]])

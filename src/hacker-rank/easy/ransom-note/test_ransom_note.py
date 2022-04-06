@@ -2,6 +2,7 @@ from ransom_note import check_magazine
 import unittest
 import unittest.mock
 from io import StringIO
+
 class TestCheckMagazine(unittest.TestCase):
     @unittest.mock.patch('sys.stdout', new_callable=StringIO)
     def test_prints_yes(self, mock_stdout):
