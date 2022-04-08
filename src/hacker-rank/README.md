@@ -1,6 +1,7 @@
 # HACKERRANK
 
 -   [Easy](easy/)
+    -   [Hourglass Sum](easy/hourglass_sum)
     -   [Ransom Note](easy/ransom-note)
     -   [Two Strings](easy/two-strings)
 -   [Medium](medium/)

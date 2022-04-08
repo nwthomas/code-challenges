@@ -24,6 +24,10 @@ This repository is a collection of completed code challenges, katas, whiteboardi
 
 -   [HackerRank](src/hacker-rank/)
 
+    -   [Easy](src/hacker-rank/easy)
+    -   [Medium](src/hacker-rank/medium)
+    -   [Hard](src/hacker-rank/hard)
+
 -   [Interview Cake](src/interview-cake/)
 
 -   [Lambda School](src/lambda-school/)
