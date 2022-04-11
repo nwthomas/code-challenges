@@ -36,17 +36,17 @@ This repository is a collection of completed code challenges, katas, whiteboardi
     -   [Week 2](src/lambda-school/week-2/week-2.md)
     -   [Week 3](src/lambda-school/week-3/week-3.md)
     -   [Week 4](src/lambda-school/week-4/week-4.md)
-    -   Week 5 (Build Week - No Code Challenges)
+    -   Week 5 _(Build Week - No Code Challenges)_
     -   [Week 6](src/lambda-school/week-6/week-6.md)
     -   [Week 7](src/lambda-school/week-7/week-7.md)
     -   [Week 8](src/lambda-school/week-8/week-8.md)
     -   [Week 9](src/lambda-school/week-9/week-9.md)
-    -   Week 10 (Build Week - No Code Challenges)
+    -   Week 10 _(Build Week - No Code Challenges)_
     -   [Week 11](src/lambda-school/week-11/week-11.md)
     -   [Week 12](src/lambda-school/week-12/week-12.md)
     -   [Week 13](src/lambda-school/week-13/week-13.md)
     -   [Week 14](src/lambda-school/week-14/week-14.md)
-    -   Week 15 (Build Week - No Code Challenges)
+    -   Week 15 _(Build Week - No Code Challenges)_
 
 -   [LeetCode](src/leetcode/)
 
