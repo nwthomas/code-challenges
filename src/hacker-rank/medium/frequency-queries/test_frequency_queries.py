@@ -1,4 +1,4 @@
-from frequency_queries import freq_query
+from frequency_queries import freqQuery as freq_query
 import unittest
 
 class TestFreqQuery(unittest.TestCase):
