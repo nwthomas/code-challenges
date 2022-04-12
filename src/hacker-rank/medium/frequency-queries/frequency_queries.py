@@ -35,7 +35,7 @@ Returns
 - int[]: the results of queries of type 3
 """
 
-def freqQuery(queries):
+def freq_query(queries):
     valueToCount = {}
     countToValue = {}
     printQueries = []
