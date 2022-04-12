@@ -37,7 +37,7 @@ Returns
 
 def freqQuery(queries):
     valueToCount = {}
-    countToValue = {}
+    countToValues = {}
     printQueries = []
     
     for query in queries:
@@ -46,36 +46,36 @@ def freqQuery(queries):
         if operation == 1 and not value in valueToCount:
             valueToCount[value] = 1
             
-            if not 1 in countToValue:
-                countToValue[1] = {}
+            if not 1 in countToValues:
+                countToValues[1] = {}
             
-            countToValue[1][value] = True
+            countToValues[1][value] = True
             
         elif operation == 1:
             previousCount = valueToCount[value]
             nextCount = previousCount + 1
             valueToCount[value] = nextCount
             
-            del countToValue[previousCount][value]
+            del countToValues[previousCount][value]
             
-            if not nextCount in countToValue:
-                countToValue[nextCount] = {}
+            if not nextCount in countToValues:
+                countToValues[nextCount] = {}
                 
-            countToValue[nextCount][value] = True
+            countToValues[nextCount][value] = True
             
         elif operation == 2 and value in valueToCount and valueToCount[value] > 0:
             previousCount = valueToCount[value]
             nextCount = valueToCount[value] - 1
             valueToCount[value] = nextCount
             
-            del countToValue[previousCount][value]
+            del countToValues[previousCount][value]
             
             if nextCount == 0:
                 del valueToCount[value]
             else:
-                countToValue[nextCount][value] = True
+                countToValues[nextCount][value] = True
             
-        elif operation == 3 and value in countToValue and len(countToValue[value].keys()) > 0:
+        elif operation == 3 and value in countToValues and len(countToValues[value].keys()) > 0:
             printQueries.append(1)
             
         elif operation == 3:
