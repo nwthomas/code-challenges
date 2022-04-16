@@ -1,12 +1,10 @@
-<h1 align="center"><img src="./assets/readme-header.png" alt="Code challenges repo banner" /></h1>
-<h4 align="center">A collection of completed code challenges for Nathan Thomas</h4>
-<br>
+# CODE CHALLENGES
 
-## Purpose
+## PURPOSE
 
 This repository is a collection of completed code challenges, katas, whiteboarding question practice, and other assorted problems from a variety of places.
 
-## Table of Contents
+## TABLE OF CONTENTS
 
 -   [Codewars](src/codewars/) <img src="https://www.codewars.com/users/nwthomas/badges/micro" alt="Codewars profile tag" />
 
@@ -54,12 +52,12 @@ This repository is a collection of completed code challenges, katas, whiteboardi
 
 -   [Miscellaneous Code Challenges](src/miscellaneous-code-challenges/misc-code-challenges.md)
 
-## Built With
+## BUILT WITH
 
 -   The code challenge solutions use [JavaScript](https://www.ecma-international.org/ecma-262/6.0/), [Java](https://www.java.com/en/), [Python](https://www.python.org/), and [Solidity](https://solidity.readthedocs.io/en/v0.4.24/index.html)
 -   The JavaScript tests are written with Facebook's [Jest](https://jestjs.io/en/) for unit testing, while Python uses its built-in [unittest](https://docs.python.org/3.7/library/unittest.html#assert-methods). Java and Solidity tests are coming soon.
 
-## Getting Started
+## GETTING STARTED
 
 1. Fork or clone this repository to your local machine
 
@@ -77,10 +75,10 @@ This repository is a collection of completed code challenges, katas, whiteboardi
 
 4. Modify some of the code in a test file to watch the magic happen
 
-## Authors
+## AUTHORS
 
 -   [**Nathan Thomas**](https://github.com/nwthomas)
 
-## Acknowledgments
+## ACKNOWLEDGEMENTS
 
 -   Thanks to [Frank Faustino](https://github.com/frankfaustino) for inspiring me to create my own completed code challenges repository.
