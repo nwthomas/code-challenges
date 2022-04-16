@@ -2,7 +2,9 @@ from in_memory_file_system import FileSystem
 import unittest
 
 class TestFileSystem(unittest.TestCase):
-    pass
+    def test_creates_file_system(self):
+        result = FileSystem()
+        print(result._getFilePathList("/d/g/a/d/a"))
 
 if __name__ == "__main__":
     unittest.main()

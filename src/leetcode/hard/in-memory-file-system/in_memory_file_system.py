@@ -25,9 +25,9 @@ Note:
 - You can assume that all directory names and file names only contain lower-case letters, and same names won’t exist in the same directory.
 """
 
-from typing import Dict, List, Type, TypeVar
+import typing
 
-DirDict = TypeVar("DirDict", bound=Dict(str, Type("Dir")))
+DirDict = typing.Dict[str, 'Dir']
 
 class Dir:
     isFile: bool = False
@@ -61,7 +61,7 @@ class Dir:
         if self.isFile:
             self.contents += contents
 
-    def ls(self) -> List[str]:
+    def ls(self) -> typing.List[str]:
         lsValues = [k for k in self.getFiles().keys()] + [k for k in self.getDirs().keys()]
 
         return lsValues.sort()
@@ -73,7 +73,7 @@ class FileSystem:
     def __init__(self):
         self.root = Dir()
 
-    def ls(self, filePath: str) -> List[str]:
+    def ls(self, filePath: str) -> typing.List[str]:
         filePathList = self._getFilePathList(filePath).reverse()
         current = self.root
 
@@ -129,7 +129,7 @@ class FileSystem:
 
         return current.getFiles()[fileName]
 
-    def _getFilePathList(self, filePath: str) -> List[str]:
+    def _getFilePathList(self, filePath: str) -> typing.List[str]:
         return filePath.split("/")
 
     def _getDirAndCreateIfNeeded(self, dir: Dir, currentPath: str) -> Dir:
