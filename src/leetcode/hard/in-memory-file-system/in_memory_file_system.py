@@ -30,15 +30,13 @@ import typing
 DirDict = typing.Dict[str, 'Dir']
 
 class Dir:
-    isFile: bool = False
-    contents: str = ""
-    dirs: DirDict = {}
-    files: DirDict = {}
-
-    def __init__(self, isFile: bool = False, contents: str = ""):
+    def __init__(self, isFile: bool = False, contents: str = "", name: str = ""):
         """Instantiates a new Dir (which can be a file or directory)"""
+        self.name = name
         self.isFile = isFile
         self.contents = contents
+        self.dirs = {}
+        self.files = {}
 
     def getDirs(self) -> DirDict:
         """Returns all sub-directories"""
@@ -46,7 +44,7 @@ class Dir:
 
     def setDir(self, key: str) -> None:
         """Sets a sub-directory"""
-        self.dirs[key] = Dir()
+        self.dirs[key] = Dir(False, "", key)
     
     def getFiles(self) -> DirDict:
         """Gets all files in the directory"""
@@ -54,7 +52,7 @@ class Dir:
 
     def setFile(self, key: str, contents: str = "") -> None:
         """Sets a file in the directory"""
-        self.files[key] = Dir(True, contents)
+        self.files[key] = Dir(True, contents, key)
 
     def addContents(self, contents: str) -> None:
         """Appends contents to a file"""
@@ -63,26 +61,28 @@ class Dir:
 
     def ls(self) -> typing.List[str]:
         lsValues = [k for k in self.getFiles().keys()] + [k for k in self.getDirs().keys()]
+        lsValues.sort()
 
-        return lsValues.sort()
+        return lsValues
+
+    def __str__(self) -> str:
+        """Returns the name of the class"""
+        return self.name
 
 
 class FileSystem:
     root: DirDict = None
 
     def __init__(self):
-        self.root = Dir()
+        self.root = Dir(False, "", "/")
 
     def ls(self, filePath: str) -> typing.List[str]:
-        filePathList = self._getFilePathList(filePath).reverse()
+        filePathList = self._getFilePathList(filePath)
+        filePathList.reverse()
         current = self.root
 
-        initialPath = filePathList.pop()
-
-        if initialPath == "":
-            return self.root
-        else:
-            current = current.getDirs()[initialPath]
+        if len(filePathList) == 0:
+            return current.ls()
 
         while len(filePathList) > 0:
             currentPath = filePathList.pop()
@@ -91,7 +91,9 @@ class FileSystem:
         return current.ls()
             
     def mkdir(self, filePath: str) -> None:
-        filePathList = self._getFilePathList(filePath).reverse()
+        filePathList = self._getFilePathList(filePath)
+        filePathList.reverse()
+
         current = self.root
 
         while len(filePathList):
@@ -113,7 +115,7 @@ class FileSystem:
         if fileName in current.files:
             current.files[fileName].addContents(contents)
         else:
-            current.files[fileName] = Dir(True, contents)
+            current.files[fileName] = Dir(True, contents, fileName)
 
     def readContentFromFile(self, filePath: str) -> str:
         filePathList = self._getFilePathList(filePath)
@@ -123,18 +125,23 @@ class FileSystem:
 
         current = self.root
 
-        while len(filePathList):
+        while len(filePathList) > 0:
             currentPath = filePathList.pop()
-            dir.dirs[currentPath]
+            current = current.getDirs()[currentPath]
 
-        return current.getFiles()[fileName]
+        return current.getFiles()[fileName].contents
 
     def _getFilePathList(self, filePath: str) -> typing.List[str]:
-        return filePath.split("/")
+        if filePath == "/":
+            return []
+
+        filePath = filePath.split("/")
+        
+        return filePath[1:]
 
     def _getDirAndCreateIfNeeded(self, dir: Dir, currentPath: str) -> Dir:
         if not currentPath in dir.dirs:
-            dir.dirs[currentPath] = Dir
+            dir.dirs[currentPath] = Dir(False, "", currentPath)
 
         return dir.dirs[currentPath]
 
