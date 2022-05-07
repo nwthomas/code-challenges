@@ -2,4 +2,4 @@
 
 ## Table of Contents
 
-- [Two Sum](two-sums)
+-   [Two Sum](two-sums)

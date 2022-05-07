@@ -22,9 +22,9 @@ This repository is a collection of completed code challenges, katas, whiteboardi
 
 -   [HackerRank](src/hacker-rank/)
 
-    -   [Easy](src/hacker-rank/easy)
-    -   [Medium](src/hacker-rank/medium)
-    -   [Hard](src/hacker-rank/hard)
+    -   [Easy](src/hacker-rank/easy/easy.md)
+    -   [Medium](src/hacker-rank/medium/medium.md)
+    -   [Hard](src/hacker-rank/hard/hard.md)
 
 -   [Interview Cake](src/interview-cake/)
 
@@ -49,6 +49,7 @@ This repository is a collection of completed code challenges, katas, whiteboardi
 -   [LeetCode](src/leetcode/)
 
     -   [Easy](src/leetcode/easy/easy.md)
+    -   [Hard](src/leetcode/hard/hard.md)
 
 -   [Miscellaneous Code Challenges](src/miscellaneous-code-challenges/misc-code-challenges.md)
 
