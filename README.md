@@ -46,7 +46,7 @@ This repository is a collection of completed code challenges, katas, whiteboardi
     -   [Week 14](src/lambda-school/week-14/week-14.md)
     -   Week 15 _(Build Week - No Code Challenges)_
 
--   [LeetCode](src/leetcode/)
+-   [LeetCode](src/leetcode/leetcode.md)
 
     -   [Easy](src/leetcode/easy/easy.md)
     -   [Hard](src/leetcode/hard/hard.md)
