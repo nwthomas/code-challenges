@@ -49,6 +49,7 @@ This repository is a collection of completed code challenges, katas, whiteboardi
 -   [LeetCode](src/leetcode/leetcode.md)
 
     -   [Easy](src/leetcode/easy/easy.md)
+    -   [Medium](src/leetcode/medium/medium.md)
     -   [Hard](src/leetcode/hard/hard.md)
 
 -   [Miscellaneous Code Challenges](src/miscellaneous-code-challenges/misc-code-challenges.md)
