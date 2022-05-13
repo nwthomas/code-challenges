@@ -19,7 +19,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   [Contains Duplicates](easy/contains-duplicate)
     -   [Product of Array Except Self](product-of-array-except-self)
     -   [Maximum Subarray](easy/maximum-subarray)
-    -   Maximum Product Subarray
+    -   [Maximum Product Subarray](easy/maximum-subarray)
     -   [Find Minimum in Rotated Sorted Array](medium/find-minimum-in-rotated-sorted-array)
     -   [Search in Sorted Array](medium/search-in-rotated-array)
     -   3 Sum
