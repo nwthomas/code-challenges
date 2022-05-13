@@ -13,6 +13,7 @@ This is a list of questions pulled from [Blind](https://leetcode.com/discuss/gen
 It will be incomplete here (in this list) up until the moment I finish doing the challenges one-by-one, but you can view the complete list in the link above.
 
 -   Arrays
+
     -   [Two Sums](easy/two-sums)
     -   [Best Time to Buy and Sell Stock](easy/best-time-to-buy-and-sell-stock)
     -   [Contains Duplicates](easy/contains-duplicate)
@@ -20,3 +21,6 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   [Maximum Subarray](easy/maximum-subarray)
     -   [Find Minimum in Rotated Sorted Array](medium/find-minimum-in-rotated-sorted-array)
     -   [Search in Sorted Array](medium/search-in-rotated-array)
+
+-   Binary
+    -   Coming Soon
