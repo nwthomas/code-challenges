@@ -56,37 +56,41 @@ class Node {
         this.val = val === undefined ? 0 : val;
         this.neighbors = neighbors === undefined ? [] : neighbors;
     }
-
-    cloneGraph = () => {
-        const root = new Node(this.val, []);
-        const cache = { [this.val]: root };
-        const queue = [[this.val, this.neighbors]];
-
-        while (queue.length) {
-            const [value, neighbors] = queue.pop();
-
-            let newNode = new Node(value, []);
-
-            if (cache[value]) {
-                newNode = cache[value];
-            }
-
-            newNode.neighbors = neighbors.map((neighbor) => {
-                let newNeighbor = new Node(neighbor.val, []);
-
-                if (cache[neighbor.val]) {
-                    newNeighbor = cache[neighbor.val];
-                } else {
-                    cache[neighbor.val] = newNeighbor;
-                    queue.push([neighbor.val, neighbor.neighbors]);
-                }
-
-                return newNeighbor;
-            });
-        }
-
-        return root;
-    };
 }
 
-module.exports = Node;
+function cloneGraph(node) {
+    if (!node.neighbors.length) {
+        return [];
+    }
+
+    const root = new Node(node.val, []);
+    const cache = { [node.val]: root };
+    const queue = [[node.val, node.neighbors]];
+
+    while (queue.length) {
+        const [value, neighbors] = queue.pop();
+
+        let newNode = new Node(value, []);
+
+        if (cache[value]) {
+            newNode = cache[value];
+        }
+
+        newNode.neighbors = neighbors.map((neighbor) => {
+            let newNeighbor = new Node(neighbor.val, []);
+
+            if (cache[neighbor.val]) {
+                newNeighbor = cache[neighbor.val];
+            } else {
+                cache[neighbor.val] = newNeighbor;
+                queue.push([neighbor.val, neighbor.neighbors]);
+            }
+
+            return newNeighbor;
+        });
+    }
+
+    return root;
+}
+
+module.exports = { cloneGraph, Node };
