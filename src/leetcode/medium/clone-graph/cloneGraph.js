@@ -89,4 +89,4 @@ class Node {
     };
 }
 
-module.exports = { cloneGraph, Node };
+module.exports = Node;
