@@ -50,7 +50,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
 -   Graph
 
     -   [Clone Graph](medium/clone-graph)
-    -   Course Schedule
+    -   [Course Schedule](medium/course-schedule)
     -   Pacific Atlantic Water Flow
     -   Number of Islands
     -   Longest Consecutive Sequence
