@@ -26,7 +26,7 @@ Output: 1
 
 from typing import List
 
-def findTargetSumWays(nums: List[int], target: int) -> int:
+def find_target_sum_ways(nums: List[int], target: int) -> int:
     cache = {}
     
     def backtrack(i, total):
