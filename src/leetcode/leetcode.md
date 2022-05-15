@@ -90,7 +90,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   Valid Anagram
     -   Group Anagrams
     -   [Valid Parentheses](easy/valid-parentheses)
-    -   Valid Palindrome
+    -   [Valid Palindrome](easy/valid-palindrome)
     -   Longest Palindromic Substring
     -   Palindromic Substrings
     -   Encode and Decode Strings
