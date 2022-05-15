@@ -26,9 +26,7 @@ Constraints:
 1 <= n <= 45
 """
 
-import typing
-
-def climbStairs(n: int) -> int:
+def climb_stairs(n: int) -> int:
     cache = {}
     
     def backtrack(step):
