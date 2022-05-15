@@ -89,7 +89,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   Minimum Window Substring
     -   Valid Anagram
     -   Group Anagrams
-    -   Valid Parentheses
+    -   [Valid Parentheses](easy/valid-parentheses)
     -   Valid Palindrome
     -   Longest Palindromic Substring
     -   Palindromic Substrings

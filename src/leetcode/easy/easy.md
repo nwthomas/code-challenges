@@ -8,3 +8,4 @@
 -   [Maximum Subarray](maximum-subarray)
 -   [Remove Element](remove-element)
 -   [Two Sum](two-sums)
+-   [Valid Parentheses](valid-parentheses)
