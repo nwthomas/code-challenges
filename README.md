@@ -4,6 +4,8 @@
 
 This repository is a collection of completed code challenges, katas, whiteboarding question practice, and other assorted problems from a variety of places.
 
+A good general place to start is this [list of 14 techniques that are good to know for interviews](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed).
+
 ## TABLE OF CONTENTS
 
 -   [Codewars](src/codewars/) <img src="https://www.codewars.com/users/nwthomas/badges/micro" alt="Codewars profile tag" />
