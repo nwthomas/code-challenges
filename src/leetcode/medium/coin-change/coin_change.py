@@ -30,7 +30,7 @@ Constraints:
 
 from typing import List
 
-def coinChange(coins: List[int], amount: int) -> int:
+def coin_change(coins: List[int], amount: int) -> int:
     tracker = [float('inf') for _ in range(amount + 1)]
     tracker[0] = 0
     
