@@ -36,7 +36,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
 -   Dynamic Programming
 
     -   [Climbing Stairs](easy/climbing-stairs)
-    -   Coin Change
+    -   [Coin Change](medium/coin-change)
     -   Longest Increasing Subsequence
     -   Longest Common Subsequence
     -   Word Break Problem
