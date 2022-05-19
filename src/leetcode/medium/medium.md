@@ -11,4 +11,5 @@
 -   [Maximum Product Subarray](maximum-product-subarray)
 -   [Product of Array Except Self](product-of-array-except-self)
 -   [Search in Sorted Array](search-in-sorted-array)
+-   [Spiral Matrix](spiral-matrix)
 -   [Target Sum](target-sum)
