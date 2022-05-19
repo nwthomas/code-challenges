@@ -19,7 +19,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   [Contains Duplicates](easy/contains-duplicate)
     -   [Product of Array Except Self](medium/product-of-array-except-self)
     -   [Maximum Subarray](easy/maximum-subarray)
-    -   [Maximum Product Subarray](easy/maximum-subarray)
+    -   [Maximum Product Subarray](easy/maximum-product-subarray)
     -   [Find Minimum in Rotated Sorted Array](medium/find-minimum-in-rotated-sorted-array)
     -   [Search in Sorted Array](medium/search-in-rotated-array)
     -   [Three Sum](medium/three_sum)
@@ -84,7 +84,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
 
 -   String
 
-    -   Longest Substring Without Repeating Characters
+    -   [ Longest Substring Without Repeating Characters](medium/longest-substring-without-repeating-characters)
     -   Longest Repeating Character Replacement
     -   Minimum Window Substring
     -   Valid Anagram
