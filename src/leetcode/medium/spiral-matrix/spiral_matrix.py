@@ -23,7 +23,7 @@ n == matrix[i].length
 
 from typing import List
 
-def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+def spiral_order(matrix: List[List[int]]) -> List[int]:
     result = [matrix[0][0]]
     tracker = set()
     tracker.add((0, 0))
