@@ -37,7 +37,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
 
     -   [Climbing Stairs](easy/climbing-stairs)
     -   [Coin Change](medium/coin-change)
-    -   Longest Increasing Subsequence
+    -   [Longest Increasing Subsequence](medium/longest-increasing-subsequence)
     -   Longest Common Subsequence
     -   Word Break Problem
     -   Combination Sum
