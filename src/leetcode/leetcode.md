@@ -45,7 +45,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   House Robber II
     -   Decode Ways
     -   Unique Paths
-    -   Jump Game
+    -   [Jump Game](medium/jump-game)
 
 -   Graph
 
