@@ -14,10 +14,10 @@ It will be incomplete here (in this list) up until the moment I finish doing the
 
 -   Arrays
 
-    -   [Two Sums](easy/two-sums)
+    -   [Two Sums](easy/two-sums) ([Article](https://nwthomas.medium.com/two-sum-leetcode-code-challenge-2fb34e0484ff))
     -   [Best Time to Buy and Sell Stock](easy/best-time-to-buy-and-sell-stock)
     -   [Contains Duplicates](easy/contains-duplicate)
-    -   [Product of Array Except Self](medium/product-of-array-except-self)
+    -   [Product of Array Except Self](medium/product-of-array-except-self) ([Article](https://nwthomas.medium.com/product-of-array-except-self-leetcode-coding-challenge-d8be088f2d28))
     -   [Maximum Subarray](easy/maximum-subarray)
     -   [Maximum Product Subarray](easy/maximum-product-subarray)
     -   [Find Minimum in Rotated Sorted Array](medium/find-minimum-in-rotated-sorted-array)
