@@ -3,7 +3,7 @@
 ## Table of Contents
 
 -   [Easy](easy/easy.md)
--   [Medium](medium/hard.md)
+-   [Medium](medium/medium.md)
 -   [Hard](hard/hard.md)
 
 ## Leetcode 75
