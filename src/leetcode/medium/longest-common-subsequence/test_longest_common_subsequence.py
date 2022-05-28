@@ -1,4 +1,3 @@
-from webbrowser import get
 from longest_common_subsequence import get_longest_common_subsequence
 import unittest
 

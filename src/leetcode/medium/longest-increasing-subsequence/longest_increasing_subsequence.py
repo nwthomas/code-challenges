@@ -26,6 +26,9 @@ Constraints:
 from typing import List
 
 def get_longest_increasing_subsequence(nums: List[int]) -> int:
+    if type(nums) != list:
+        raise TypeError('Argument must be of type list')
+
     tracker = [1] * len(nums)
     
     for i in range(len(nums) - 2, -1, -1):
