@@ -18,3 +18,4 @@
 -   [Search in Sorted Array](search-in-sorted-array)
 -   [Spiral Matrix](spiral-matrix)
 -   [Target Sum](target-sum)
+-   [Word Break](word-break)

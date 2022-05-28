@@ -39,7 +39,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   [Coin Change](medium/coin-change)
     -   [Longest Increasing Subsequence](medium/longest-increasing-subsequence)
     -   [Longest Common Subsequence](medium/longest-common-subsequence)
-    -   Word Break Problem
+    -   [Word Break](medium/word-break)
     -   Combination Sum
     -   House Robber
     -   House Robber II
