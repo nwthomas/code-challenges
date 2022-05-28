@@ -13,6 +13,7 @@
 -   [Longest Increasing Subsequence](longest-increasing-subsequence)
 -   [Longest Palindrome Subsequence](longest-palindrome-subsequence)
 -   [Longest Substring Without Repeating Characters](longest-substring-without-repeating-characters)
+-   [LRU Cache](lru-cache)
 -   [Maximum Product Subarray](maximum-product-subarray)
 -   [Product of Array Except Self](product-of-array-except-self)
 -   [Search in Sorted Array](search-in-sorted-array)
