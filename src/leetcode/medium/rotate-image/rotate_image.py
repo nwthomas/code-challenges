@@ -24,13 +24,13 @@ def rotate(matrix: List[List[int]]) -> None:
     
     while offset <= len(matrix[0]) // 2:
         for i in range(len(matrix[0]) - (1 + offset * 2)):
-            # Swap pivot and top right (y1, z1, y2,x2)
+            # Swap pivot and top right (y_one, x_one, y_two, x_two)
             swap(offset, offset + i, i + offset, len(matrix[0]) - 1 - offset)
             
-            # Swap pivot and bottom right (y1, z1, y2,x2)
+            # Swap pivot and bottom right (y_one, x_one, y_two, x_two)
             swap(offset, offset + i, len(matrix[0]) - 1 - offset, len(matrix[0]) - 1 - offset - i)
             
-            # Swap pivot and bottom left (y1, z1, y2,x2)
+            # Swap pivot and bottom left (y_one, x_one, y_two, x_two)
             swap(offset, offset + i, len(matrix[0]) - 1 - offset - i, 0 + offset)
             
         offset += 1
