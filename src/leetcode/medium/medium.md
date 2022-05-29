@@ -16,6 +16,7 @@
 -   [LRU Cache](lru-cache)
 -   [Maximum Product Subarray](maximum-product-subarray)
 -   [Product of Array Except Self](product-of-array-except-self)
+-   [Rotate Image](rotate-image)
 -   [Search in Sorted Array](search-in-sorted-array)
 -   [Spiral Matrix](spiral-matrix)
 -   [Target Sum](target-sum)

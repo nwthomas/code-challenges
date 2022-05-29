@@ -79,7 +79,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
 
     -   Set Matrix Zeroes
     -   [Spiral Matrix](medium/spiral-matrix)
-    -   Rotate Image
+    -   [Rotate Image](medium/rotate-image)
     -   Word Search
 
 -   String
