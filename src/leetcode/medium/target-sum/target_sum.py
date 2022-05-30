@@ -9,7 +9,6 @@ For example, if nums = [2, 1], you can add a '+' before 2 and a '-' before 1 and
 Return the number of different expressions that you can build, which evaluates to target.
 
 Example 1:
-
 Input: nums = [1,1,1,1,1], target = 3
 Output: 5
 Explanation: There are 5 ways to assign symbols to make the sum of nums be target 3.
@@ -18,8 +17,8 @@ Explanation: There are 5 ways to assign symbols to make the sum of nums be targe
 +1 + 1 - 1 + 1 + 1 = 3
 +1 + 1 + 1 - 1 + 1 = 3
 +1 + 1 + 1 + 1 - 1 = 3
-Example 2:
 
+Example 2:
 Input: nums = [1], target = 1
 Output: 1
 """
