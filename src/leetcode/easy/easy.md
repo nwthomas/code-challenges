@@ -8,5 +8,6 @@
 -   [Valid Palindrome](valid-palindrome)
 -   [Maximum Subarray](maximum-subarray)
 -   [Remove Element](remove-element)
+-   [Reverse Linked List](reverse-linked-list)
 -   [Two Sum](two-sums)
 -   [Valid Parentheses](valid-parentheses)

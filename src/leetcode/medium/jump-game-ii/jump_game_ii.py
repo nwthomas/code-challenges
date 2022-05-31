@@ -34,7 +34,8 @@ def can_jump(nums: List[int]) -> int:
         farthest = 0
         
         for i in range(l, r + 1):
-            farthest = max(farthest, i + nums[i])
+            new_jumps_from_here = i + nums[i]
+            farthest = max(farthest, new_jumps_from_here)
             
         l = r + 1
         r = farthest

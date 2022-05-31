@@ -68,7 +68,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
 
 -   Linked List
 
-    -   Reverse a Linked List
+    -   [Reverse a Linked List](easy/reverse-linked-list)
     -   Detect Cycle in a Linked List
     -   Merge Two Sorted Lists
     -   Merge K Sorted Lists
