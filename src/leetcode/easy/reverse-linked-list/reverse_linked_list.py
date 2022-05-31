@@ -22,7 +22,7 @@ The number of nodes in the list is the range [0, 5000].
 
 from typing import ListNode, Optional
 
-def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+def reverse_list(head: Optional[ListNode]) -> Optional[ListNode]:
     if not head:
         return None
     
