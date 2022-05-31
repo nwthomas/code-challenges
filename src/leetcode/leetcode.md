@@ -77,7 +77,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
 
 -   Matrix
 
-    -   Set Matrix Zeroes
+    -   [Set Matrix Zeroes](medium/set-matrix-zeroes)
     -   [Spiral Matrix](medium/spiral-matrix)
     -   [Rotate Image](medium/rotate-image)
     -   Word Search

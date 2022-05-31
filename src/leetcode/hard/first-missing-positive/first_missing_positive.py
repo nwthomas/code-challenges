@@ -24,21 +24,16 @@ Constraints:
 
 from typing import List
 
-def find_first_missing_positive(nums: List[int]) -> int:
-    nums_length = len(nums)
-    
-    for i in range(nums_length):
-        correct_position = nums[i] - 1
+def find_first_missing_positive(l: List[int]) -> int:
+    for i in range(len(l)):
+        correct_i = l[i] - 1
         
-        while 0 < nums[i] and nums[i] < nums_length and i != correct_position:
-            if nums[i] == nums[correct_position]:
-                break
-                
-            nums[i], nums[correct_position] = nums[correct_position], nums[i]
-            correct_position = nums[i] - 1
-        
-    for i in range(nums_length):
-        if nums[i] != i + 1:
+        while 0 < l[i] < len(l) + 1 and correct_i != i and l[i] != l[correct_i]:
+            l[i], l[correct_i] = l[correct_i], l[i]
+            correct_i = l[i] - 1
+            
+    for i, num in enumerate(l):
+        if num != i + 1:
             return i + 1
         
-    return nums_length + 1
+    return len(l) + 1
