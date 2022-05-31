@@ -56,6 +56,8 @@ A good general place to start is this [list of 14 techniques that are good to kn
 
 -   [Miscellaneous Code Challenges](src/miscellaneous-code-challenges/misc-code-challenges.md)
 
+-   [Pramp Interviews](src/pramp/pramp.md)
+
 ## BUILT WITH
 
 -   The code challenge solutions use [JavaScript](https://www.ecma-international.org/ecma-262/6.0/), [Java](https://www.java.com/en/), [Python](https://www.python.org/), and [Solidity](https://solidity.readthedocs.io/en/v0.4.24/index.html)
