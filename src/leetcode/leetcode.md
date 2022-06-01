@@ -99,7 +99,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
 
     -   [Maximum Depth of Binary Tree](easy/maximum-depth-of-binary-tree)
     -   [Same Tree](easy/is-same-tree)
-    -   Invert/Flip Binary Tree
+    -   [Invert/Flip Binary Tree](easy/invert-binary-tree)
     -   Binary Tree Maximum Path Sum
     -   Binary Tree Level Order Traversal
     -   Serialize and Deserialize Binary Tree

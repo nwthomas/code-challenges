@@ -5,6 +5,7 @@
 -   [Best Time to Buy and Sell Stock](best-time-to-buy-and-sell-stock)
 -   [Climbing Stairs](climbing-stairs)
 -   [Contains Duplicate](contains-duplicate)
+-   [Invert Binary Tree](invert-binary-tree)
 -   [Is Same Tree](is-same-tree)
 -   [Linked List Cycle](linked-list-cycle)
 -   [Maximum Depth of Binary Tree](maximum-depth-of-binary-tree)
