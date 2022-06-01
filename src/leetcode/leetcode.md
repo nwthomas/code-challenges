@@ -101,7 +101,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   [Same Tree](easy/is-same-tree)
     -   [Invert/Flip Binary Tree](easy/invert-binary-tree)
     -   Binary Tree Maximum Path Sum
-    -   Binary Tree Level Order Traversal
+    -   [Binary Tree Level Order Traversal](medium/binary-tree-level-order-traversal)
     -   Serialize and Deserialize Binary Tree
     -   Subtree of Another Tree
     -   Construct Binary Tree from Preorder and Inorder Traversal
