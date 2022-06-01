@@ -97,7 +97,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
 
 -   Tree
 
-    -   Maximum Depth of Binary Tree
+    -   [Maximum Depth of Binary Tree](easy/maximum-depth-of-binary-tree)
     -   [Same Tree](easy/is-same-tree)
     -   Invert/Flip Binary Tree
     -   Binary Tree Maximum Path Sum

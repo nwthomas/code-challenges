@@ -7,6 +7,7 @@
 -   [Contains Duplicate](contains-duplicate)
 -   [Is Same Tree](is-same-tree)
 -   [Linked List Cycle](linked-list-cycle)
+-   [Maximum Depth of Binary Tree](maximum-depth-of-binary-tree)
 -   [Maximum Subarray](maximum-subarray)
 -   [Remove Element](remove-element)
 -   [Reverse Linked List](reverse-linked-list)
