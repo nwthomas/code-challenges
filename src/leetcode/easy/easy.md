@@ -5,6 +5,7 @@
 -   [Best Time to Buy and Sell Stock](best-time-to-buy-and-sell-stock)
 -   [Climbing Stairs](climbing-stairs)
 -   [Contains Duplicate](contains-duplicate)
+-   [Is Same Tree](is-same-tree)
 -   [Linked List Cycle](linked-list-cycle)
 -   [Maximum Subarray](maximum-subarray)
 -   [Remove Element](remove-element)

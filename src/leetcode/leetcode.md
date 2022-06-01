@@ -98,7 +98,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
 -   Tree
 
     -   Maximum Depth of Binary Tree
-    -   Same Tree
+    -   [Same Tree](easy/is-same-tree)
     -   Invert/Flip Binary Tree
     -   Binary Tree Maximum Path Sum
     -   Binary Tree Level Order Traversal
