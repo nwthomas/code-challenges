@@ -114,5 +114,5 @@ It will be incomplete here (in this list) up until the moment I finish doing the
 
 -   Heap
     -   [Merge K Sorted Lists](hard/merge-k-sorted-lists)
-    -   Top K Frequent Elements
+    -   [Top K Frequent Elements](medium/top-k-frequent-elements)
     -   Find Median from Data Stream
