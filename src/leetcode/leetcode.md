@@ -113,6 +113,6 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   Word Search II
 
 -   Heap
-    -   Merge K Sorted Lists
+    -   [Merge K Sorted Lists](hard/merge-k-sorted-lists)
     -   Top K Frequent Elements
     -   Find Median from Data Stream
