@@ -24,26 +24,26 @@ from typing import List
 def merge(intervals: List[List[int]]) -> List[List[int]]:
     output = []
     
-    def getStartVal(interval):
+    def get_sort_val(interval):
         return interval[0]
     
-    intervals.sort(key=getStartVal)
+    intervals.sort(key=get_sort_val)
     
     for interval in intervals:
-        currentStart, currentEnd = interval
+        current_start, current_end = interval
         
         if len(output) < 1:
             output.append(interval)
         else:
-            prevStart, prevEnd = output[len(output) - 1]
+            prev_start, prev_end = output[len(output) - 1]
             
-            maxStart = max(prevStart, currentStart)
+            max_start = max(prev_start, current_start)
             
-            minEnd = min(prevEnd, currentEnd)
-            maxEnd = max(prevEnd, currentEnd)
+            min_end = min(prev_end, current_end)
+            max_end = max(prev_end, current_end)
             
-            if maxStart <= minEnd:
-                output[len(output) - 1][1] = maxEnd
+            if max_start <= min_end:
+                output[len(output) - 1][1] = max_end
             else:
                 output.append(interval)
                 
