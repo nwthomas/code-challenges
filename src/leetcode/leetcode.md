@@ -14,12 +14,12 @@ It will be incomplete here (in this list) up until the moment I finish doing the
 
 -   Arrays
 
-    -   [Two Sums](easy/two-sums) ([Article](https://nwthomas.medium.com/two-sum-leetcode-code-challenge-2fb34e0484ff))
-    -   [Best Time to Buy and Sell Stock](easy/best-time-to-buy-and-sell-stock)
-    -   [Contains Duplicates](easy/contains-duplicate) ([Article](https://nwthomas.medium.com/contains-duplicate-leetcode-code-challenge-1f77249e5155))
-    -   [Product of Array Except Self](medium/product-of-array-except-self) ([Article](https://nwthomas.medium.com/product-of-array-except-self-leetcode-coding-challenge-d8be088f2d28))
+    -   [Two Sums](easy/two-sums) -- ([Article](https://nwthomas.medium.com/two-sum-leetcode-code-challenge-2fb34e0484ff))
+    -   [Best Time to Buy and Sell Stock](easy/best-time-to-buy-and-sell-stock) -- ([Article](https://nwthomas.medium.com/best-time-to-buy-and-sell-stock-leetcode-code-challenge-d317bb985038))
+    -   [Contains Duplicates](easy/contains-duplicate) -- ([Article](https://nwthomas.medium.com/contains-duplicate-leetcode-code-challenge-1f77249e5155))
+    -   [Product of Array Except Self](medium/product-of-array-except-self) -- ([Article](https://nwthomas.medium.com/product-of-array-except-self-leetcode-coding-challenge-d8be088f2d28))
     -   [Maximum Subarray](easy/maximum-subarray)
-    -   [Maximum Product Subarray](easy/maximum-product-subarray)
+    -   [Maximum Product Subarray](easy/maximum-product-subarray) -- ([Article](https://nwthomas.medium.com/maximum-product-subarray-leetcode-code-challenge-a2d4854f9bf2))
     -   [Find Minimum in Rotated Sorted Array](medium/find-minimum-in-rotated-sorted-array)
     -   [Search in Sorted Array](medium/search-in-rotated-array)
     -   [Three Sum](medium/three_sum)
