@@ -27,36 +27,36 @@ newInterval.length == 2
 
 from typing import List
 
-def insert(intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+def insert(intervals: List[List[int]], new_interval: List[int]) -> List[List[int]]:
     if len(intervals) < 1:
-        return [newInterval]
+        return [new_interval]
     
     output = []
-    newStart, newEnd = newInterval
-    usedNewInterval = False
+    new_start, new_end = new_interval
+    used_new_interval = False
     
     for interval in intervals:
-        currentStart, currentEnd = interval
+        current_start, current_end = interval
         
-        minStart = min(newStart, currentStart)
-        maxStart = max(newStart, currentStart)
+        min_start = min(new_start, current_start)
+        max_start = max(new_start, current_start)
         
-        minEnd = min(newEnd, currentEnd)
-        maxEnd = max(newEnd, currentEnd)
+        minEnd = min(new_end, current_end)
+        maxEnd = max(new_end, current_end)
         
-        if maxStart <= minEnd and len(output) > 0 and output[len(output) - 1][1] > minStart:
-            usedNewInterval = minStart == newStart or maxStart == newStart
+        if max_start <= minEnd and len(output) > 0 and output[len(output) - 1][1] > min_start:
+            used_new_interval = min_start == new_start or max_start == new_start
             output[len(output) - 1][1] = maxEnd
-        elif maxStart <= minEnd:
-            usedNewInterval = minStart == newStart or maxStart == newStart
-            output.append([minStart, maxEnd])
+        elif max_start <= minEnd:
+            used_new_interval = min_start == new_start or max_start == new_start
+            output.append([min_start, maxEnd])
         else:
-            if not usedNewInterval and newInterval[1] < currentStart:
-                output.append(newInterval)
-                usedNewInterval = True
+            if not used_new_interval and new_interval[1] < current_start:
+                output.append(new_interval)
+                used_new_interval = True
             output.append(interval)
             
-    if not usedNewInterval:
-        output.append(newInterval)
+    if not used_new_interval:
+        output.append(new_interval)
             
     return output
