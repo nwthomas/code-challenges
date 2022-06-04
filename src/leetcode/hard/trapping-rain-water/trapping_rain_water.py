@@ -21,6 +21,11 @@ n == height.length
 from typing import List
 
 def trap(heights: List[int]) -> int:
+    if type(heights) != list:
+        raise TypeError("Arguments must be of type list")
+    elif len(heights) < 1:
+        return 0
+
     water_trapped = 0
     left = 0
     right = len(heights) - 1
