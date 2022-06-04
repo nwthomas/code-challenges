@@ -60,8 +60,8 @@ It will be incomplete here (in this list) up until the moment I finish doing the
 
 -   Interval
 
-    -   Insert Interval
-    -   Merge Intervals
+    -   [Insert Interval](medium/insert-interval)
+    -   [Merge Intervals](medium/merge-intervals)
     -   Non-overlapping Intervals
     -   Meeting Rooms
     -   Meeting Rooms II
