@@ -18,7 +18,13 @@ The number of nodes in the tree is in the range [0, 104].
 -100 <= Node.val <= 100
 """
 
-from typing import Optional, TreeNode
+from typing import Optional
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
 def max_depth(root: Optional[TreeNode]) -> int:
     max_depth = 0
