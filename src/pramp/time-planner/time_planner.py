@@ -20,7 +20,6 @@ input:  slotsA = [[10, 50], [60, 120], [140, 210]]
         dur = 12
 output: [] # since there is no common slot whose duration is 12
 
-
 Constraints:
 [time limit] 5000ms
 [input] array.array.integer slotsA
