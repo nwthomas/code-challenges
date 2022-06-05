@@ -24,7 +24,13 @@ The number of nodes in both trees is in the range [0, 100].
 -104 <= Node.val <= 104
 """
 
-from typing import Optional, TreeNode
+from typing import Optional
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
 def is_same_tree(p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
     if not p and not q:
