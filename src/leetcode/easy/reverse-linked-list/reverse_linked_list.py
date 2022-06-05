@@ -20,7 +20,12 @@ The number of nodes in the list is the range [0, 5000].
 -5000 <= Node.val <= 5000
 """
 
-from typing import ListNode, Optional
+from typing import Optional
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
 def reverse_list(head: Optional[ListNode]) -> Optional[ListNode]:
     if not head:
