@@ -30,7 +30,12 @@ pos is -1 or a valid index in the linked-list.
 Follow up: Can you solve it using O(1) (i.e. constant) memory?
 """
 
-from typing import ListNode, Optional
+from typing import Optional
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
 def has_cycle(head: Optional[ListNode]) -> bool:
     if not head:
