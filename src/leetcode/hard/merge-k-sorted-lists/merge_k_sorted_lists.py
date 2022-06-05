@@ -35,8 +35,13 @@ lists[i] is sorted in ascending order.
 The sum of lists[i].length will not exceed 104.
 """
 
-from collections import heappop, heappush
-from typing import List, ListNode, Optional
+from heapq import heappop, heappush
+from typing import List, Optional
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
 def merge_k_lists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
     heap = []
