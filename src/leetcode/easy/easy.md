@@ -10,6 +10,7 @@
 -   [Linked List Cycle](linked-list-cycle)
 -   [Maximum Depth of Binary Tree](maximum-depth-of-binary-tree)
 -   [Maximum Subarray](maximum-subarray)
+-   [Merge Two Sorted Lists](merge-two-sorted-lists)
 -   [Remove Element](remove-element)
 -   [Reverse Linked List](reverse-linked-list)
 -   [Two Sum](two-sums)

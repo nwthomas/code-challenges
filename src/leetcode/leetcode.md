@@ -70,7 +70,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
 
     -   [Reverse a Linked List](easy/reverse-linked-list)
     -   [Detect Cycle in a Linked List](easy/linked-list-cycle)
-    -   Merge Two Sorted Lists
+    -   [Merge Two Sorted Lists](easy/merge-two-sorted-lists)
     -   Merge K Sorted Lists
     -   Remove Nth Node From End Of List
     -   Reorder List
