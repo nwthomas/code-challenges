@@ -19,6 +19,7 @@
 -   [Maximum Product Subarray](maximum-product-subarray)
 -   [Merge Intervals](merge-intervals)
 -   [Product of Array Except Self](product-of-array-except-self)
+-   [Remove Nth Node From End of List](remove-nth-node-from-end-of-list)
 -   [Rotate Image](rotate-image)
 -   [Search in Sorted Array](search-in-sorted-array)
 -   [Set Matrix Zeroes](set-matrix-zeroes)

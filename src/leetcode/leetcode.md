@@ -72,7 +72,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   [Detect Cycle in a Linked List](easy/linked-list-cycle)
     -   [Merge Two Sorted Lists](easy/merge-two-sorted-lists)
     -   Merge K Sorted Lists
-    -   Remove Nth Node From End Of List
+    -   [Remove Nth Node From End Of List](medium/remove-nth-node-from-end-of-list)
     -   Reorder List
 
 -   Matrix
