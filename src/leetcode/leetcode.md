@@ -41,7 +41,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   [Longest Common Subsequence](medium/longest-common-subsequence)
     -   [Word Break](medium/word-break)
     -   Combination Sum
-    -   House Robber
+    -   [House Robber](medium/house-robber)
     -   House Robber II
     -   Decode Ways
     -   Unique Paths

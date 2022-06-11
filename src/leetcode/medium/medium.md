@@ -8,6 +8,7 @@
 -   [Container With Most Water](container-with-most-water)
 -   [Course Schedule](course-schedule)
 -   [Find Minimum in Rotated Sorted Array](find-minimum-in-rotated-sorted-array)
+-   [House Robber](house-robber)
 -   [Insert Interval](insert-interval)
 -   [Jump Game](jump-game)
 -   [Jump Game II](jump-game-ii)
