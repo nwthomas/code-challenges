@@ -17,5 +17,10 @@ class TestClimbStairs(unittest.TestCase):
         result = climb_stairs(20);
         self.assertEqual(result, 10946)
 
+    def test_returns_correct_possible_distinct_ways_for_large_steps(self):
+        """Returns the correct count of ways to reach the top of a large amount of steps"""
+        result = climb_stairs(60)
+        self.assertEqual(result, 2504730781961)
+
 if __name__ == "__main__":
     unittest.main()
