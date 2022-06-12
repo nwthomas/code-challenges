@@ -71,9 +71,9 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   [Reverse a Linked List](easy/reverse-linked-list)
     -   [Detect Cycle in a Linked List](easy/linked-list-cycle)
     -   [Merge Two Sorted Lists](easy/merge-two-sorted-lists)
-    -   Merge K Sorted Lists
+    -   [Merge K Sorted Lists](hard/merge-k-sorted-lists)
     -   [Remove Nth Node From End Of List](medium/remove-nth-node-from-end-of-list)
-    -   Reorder List
+    -   [Reorder List](medium/reorder-list)
 
 -   Matrix
 
