@@ -13,6 +13,7 @@
 -   [Insert Interval](insert-interval)
 -   [Jump Game](jump-game)
 -   [Jump Game II](jump-game-ii)
+-   [Kth Smallest Element in BST](kth-smallest-element-in-bst)
 -   [Longest Common Subsequence](longest-common-subsequence)
 -   [Longest Increasing Subsequence](longest-increasing-subsequence)
 -   [Longest Palindrome Subsequence](longest-palindrome-subsequence)

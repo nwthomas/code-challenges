@@ -106,7 +106,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   Subtree of Another Tree
     -   Construct Binary Tree from Preorder and Inorder Traversal
     -   Validate Binary Search Tree
-    -   Kth Smallest Element in a BST
+    -   [Kth Smallest Element in a BST](medium/kth-smallest-element-in-bst)
     -   Lowest Common Ancestor of BST
     -   Implement Trie (Prefix Tree)
     -   Add and Search Word
