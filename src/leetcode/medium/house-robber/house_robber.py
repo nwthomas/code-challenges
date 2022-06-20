@@ -25,6 +25,9 @@ Constraints:
 from typing import List
 
 def rob(nums: List[int]) -> int:
+    if len(nums) < 1:
+        return 0
+        
     max_total = max(nums)
     dp = [num for num in nums]
     lookbacks = [2, 3]

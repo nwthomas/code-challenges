@@ -26,5 +26,11 @@ class TestHouseRobber(unittest.TestCase):
         result = rob(houses)
         self.assertEqual(result, 38)
 
+    def test_handles_zero_length_house_list(self):
+        """Takes in a list of houses length 0 and returns 0 amount possible"""
+        houses = []
+        result = rob(houses)
+        self.assertEqual(result, 0)
+
 if __name__ == "__main__":
     unittest.main()
