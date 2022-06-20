@@ -105,7 +105,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   Serialize and Deserialize Binary Tree
     -   Subtree of Another Tree
     -   Construct Binary Tree from Preorder and Inorder Traversal
-    -   Validate Binary Search Tree
+    -   [Validate Binary Search Tree](medium/validate-binary-search-tree)
     -   [Kth Smallest Element in a BST](medium/kth-smallest-element-in-bst)
     -   Lowest Common Ancestor of BST
     -   Implement Trie (Prefix Tree)
