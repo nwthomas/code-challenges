@@ -42,7 +42,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   [Word Break](medium/word-break)
     -   Combination Sum
     -   [House Robber](medium/house-robber)
-    -   House Robber II
+    -   [House Robber II](medium/house-robber-ii)
     -   Decode Ways
     -   Unique Paths
     -   [Jump Game](medium/jump-game)
