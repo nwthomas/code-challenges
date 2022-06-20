@@ -21,8 +21,8 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   [Maximum Subarray](easy/maximum-subarray) -- [Article](https://nwthomas.medium.com/maximum-subarray-leetcode-53-7ce3b2eba135)
     -   [Maximum Product Subarray](easy/maximum-product-subarray) -- ([Article](https://nwthomas.medium.com/maximum-product-subarray-leetcode-code-challenge-a2d4854f9bf2))
     -   [Find Minimum in Rotated Sorted Array](medium/find-minimum-in-rotated-sorted-array) -- ([Article](https://nwthomas.medium.com/find-minimum-in-rotated-sorted-array-leetcode-153-f7da1edd99e5))
-    -   [Search in Sorted Array](medium/search-in-rotated-array)
-    -   [Three Sum](medium/three_sum)
+    -   [Search in Sorted Array](medium/search-in-rotated-array) -- ([Article](https://nwthomas.medium.com/search-in-rotated-sorted-array-leetcode-33-544a7184bf7a))
+    -   [Three Sum](medium/three_sum) -- ([Article](https://nwthomas.medium.com/three-sum-code-challenge-leetcode-15-7017116e1d6a))
     -   [Container With Most Water](medium/container-with-most-water) -- ([Article](https://nwthomas.medium.com/container-with-most-water-leetcode-11-64dd4c95762))
 
 -   Binary
@@ -35,7 +35,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
 
 -   Dynamic Programming
 
-    -   [Climbing Stairs](easy/climbing-stairs)
+    -   [Climbing Stairs](easy/climbing-stairs) -- ([Article](https://nwthomas.medium.com/climbing-stairs-leetcode-70-818a2607f28a))
     -   [Coin Change](medium/coin-change)
     -   [Longest Increasing Subsequence](medium/longest-increasing-subsequence)
     -   [Longest Common Subsequence](medium/longest-common-subsequence)
