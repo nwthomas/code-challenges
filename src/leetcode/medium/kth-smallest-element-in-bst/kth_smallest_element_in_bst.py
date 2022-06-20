@@ -46,11 +46,7 @@ def kth_smallest(root: Optional[TreeNode], k: int) -> int:
     kth_smallest_val = None
     
     while current_k < k:
-        current_val = heappop(heap)
+        kth_smallest_val = heappop(heap)
         current_k += 1
-        
-        if current_k == k:
-            kth_smallest_val = current_val
-            break
             
     return kth_smallest_val
