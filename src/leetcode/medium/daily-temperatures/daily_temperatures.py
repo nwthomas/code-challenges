@@ -22,7 +22,7 @@ Constraints:
 
 from typing import List
 
-def dailyTemperatures(temperatures: List[int]) -> List[int]:
+def daily_temperatures(temperatures: List[int]) -> List[int]:
     stack = [[temperatures[0], 0]]
     results = [0 for _ in range(len(temperatures))]
     

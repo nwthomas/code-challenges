@@ -8,6 +8,7 @@
 -   [Container With Most Water](container-with-most-water)
 -   [Conway's Game of Life](conways-game-of-life)
 -   [Course Schedule](course-schedule)
+-   [Daily Temperatures](daily-temperatures)
 -   [Find Minimum in Rotated Sorted Array](find-minimum-in-rotated-sorted-array)
 -   [House Robber](house-robber)
 -   [House Robber II](house-robber-ii)
