@@ -28,7 +28,7 @@ def daily_temperatures(temperatures: List[int]) -> List[int]:
     
     for current_index, temp in enumerate(temperatures):
         while len(stack) > 0 and temp > stack[len(stack) - 1][0]:
-            value, value_index = stack.pop()
+            _, value_index = stack.pop()
             number_of_days = current_index - value_index
             results[value_index] = number_of_days
             
