@@ -14,5 +14,6 @@
 -   [Remove Element](remove-element)
 -   [Reverse Linked List](reverse-linked-list)
 -   [Two Sum](two-sums)
+-   [Valid Anagram](valid-anagram)
 -   [Valid Palindrome](valid-palindrome)
 -   [Valid Parentheses](valid-parentheses)

@@ -87,7 +87,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   [ Longest Substring Without Repeating Characters](medium/longest-substring-without-repeating-characters)
     -   Longest Repeating Character Replacement
     -   Minimum Window Substring
-    -   Valid Anagram
+    -   [Valid Anagram](easy/valid-anagram)
     -   Group Anagrams
     -   [Valid Parentheses](easy/valid-parentheses)
     -   [Valid Palindrome](easy/valid-palindrome)
