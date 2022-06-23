@@ -36,12 +36,12 @@ It will be incomplete here (in this list) up until the moment I finish doing the
 -   Dynamic Programming
 
     -   [Climbing Stairs](easy/climbing-stairs) -- ([Article](https://nwthomas.medium.com/climbing-stairs-leetcode-70-818a2607f28a))
-    -   [Coin Change](medium/coin-change)
+    -   [Coin Change](medium/coin-change) -- ([Article](https://nwthomas.medium.com/coin-change-leetcode-322-fb533377adb2))
     -   [Longest Increasing Subsequence](medium/longest-increasing-subsequence)
     -   [Longest Common Subsequence](medium/longest-common-subsequence)
     -   [Word Break](medium/word-break)
-    -   Combination Sum
-    -   [House Robber](medium/house-robber)
+    -   [Combination Sum 4](medium/combination-sum-4)
+    -   [House Robber](medium/house-robber) -- ([Article](https://nwthomas.medium.com/house-robber-leetcode-198-f541bfc8259d))
     -   [House Robber II](medium/house-robber-ii)
     -   Decode Ways
     -   Unique Paths
