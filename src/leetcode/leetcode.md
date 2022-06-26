@@ -42,7 +42,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   [Word Break](medium/word-break)
     -   [Combination Sum 4](medium/combination-sum-4)
     -   [House Robber](medium/house-robber) -- ([Article](https://nwthomas.medium.com/house-robber-leetcode-198-f541bfc8259d))
-    -   [House Robber II](medium/house-robber-ii)
+    -   [House Robber II](medium/house-robber-ii) -- ([Article](https://nwthomas.medium.com/house-robber-ii-leetcode-213-8710d12e52c9))
     -   Decode Ways
     -   Unique Paths
     -   [Jump Game](medium/jump-game)
@@ -84,7 +84,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
 
 -   String
 
-    -   [ Longest Substring Without Repeating Characters](medium/longest-substring-without-repeating-characters)
+    -   [xLongest Substring Without Repeating Characters](medium/longest-substring-without-repeating-characters)
     -   Longest Repeating Character Replacement
     -   Minimum Window Substring
     -   [Valid Anagram](easy/valid-anagram)
