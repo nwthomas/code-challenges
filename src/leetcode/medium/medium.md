@@ -10,6 +10,7 @@
 -   [Conway's Game of Life](conways-game-of-life)
 -   [Course Schedule](course-schedule)
 -   [Daily Temperatures](daily-temperatures)
+-   [Find Cheapest Flight Within K Flights](find-cheapest-flight-within-k-flights)
 -   [Find Minimum in Rotated Sorted Array](find-minimum-in-rotated-sorted-array)
 -   [House Robber](house-robber)
 -   [House Robber II](house-robber-ii)
