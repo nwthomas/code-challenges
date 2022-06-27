@@ -61,10 +61,10 @@ function cloneGraph(node) {
 
     const root = new Node(node.val, []);
     const cache = { [node.val]: root };
-    const queue = [[node.val, node.neighbors]];
+    const stack = [[node.val, node.neighbors]];
 
-    while (queue.length) {
-        const [value, neighbors] = queue.pop();
+    while (stack.length) {
+        const [value, neighbors] = stack.pop();
 
         let newNode = new Node(value, []);
 
@@ -79,7 +79,7 @@ function cloneGraph(node) {
                 newNeighbor = cache[neighbor.val];
             } else {
                 cache[neighbor.val] = newNeighbor;
-                queue.push([neighbor.val, neighbor.neighbors]);
+                stack.push([neighbor.val, neighbor.neighbors]);
             }
 
             return newNeighbor;

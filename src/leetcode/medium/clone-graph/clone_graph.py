@@ -59,10 +59,10 @@ def clone_graph(node: Node) -> Node:
     
     root = Node(node.val, [])
     cache = { node.val: root }
-    queue = [[node.val, node.neighbors]]
+    stack = [[node.val, node.neighbors]]
     
-    while len(queue) > 0:
-        value, neighbors = queue.pop()
+    while len(stack) > 0:
+        value, neighbors = stack.pop()
         
         new_node = Node(value, [])
         
@@ -76,7 +76,7 @@ def clone_graph(node: Node) -> Node:
                 new_neighbor = cache[neighbor.val]
             else:
                 cache[neighbor.val] = new_neighbor
-                queue.append([neighbor.val, neighbor.neighbors])
+                stack.append([neighbor.val, neighbor.neighbors])
                 
             new_node.neighbors.append(new_neighbor)
             
