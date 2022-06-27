@@ -52,32 +52,32 @@ class Node:
         self.val = val
         self.neighbors = neighbors if neighbors is not None else []
 
-class Solution:
-    def cloneGraph(self, node: Node) -> Node:
-        if not node:
-            return None
+
+def clone_graph(node: Node) -> Node:
+    if not node:
+        return None
+    
+    root = Node(node.val, [])
+    cache = { node.val: root }
+    queue = [[node.val, node.neighbors]]
+    
+    while len(queue) > 0:
+        value, neighbors = queue.pop()
         
-        root = Node(node.val, [])
-        cache = { node.val: root }
-        queue = [[node.val, node.neighbors]]
+        new_node = Node(value, [])
         
-        while len(queue) > 0:
-            value, neighbors = queue.pop()
+        if value in cache:
+            new_node = cache[value]
             
-            new_node = Node(value, [])
+        for neighbor in neighbors:
+            new_neighbor = Node(neighbor.val, [])
             
-            if value in cache:
-                new_node = cache[value]
+            if neighbor.val in cache:
+                new_neighbor = cache[neighbor.val]
+            else:
+                cache[neighbor.val] = new_neighbor
+                queue.append([neighbor.val, neighbor.neighbors])
                 
-            for neighbor in neighbors:
-                new_neighbor = Node(neighbor.val, [])
-                
-                if neighbor.val in cache:
-                    new_neighbor = cache[neighbor.val]
-                else:
-                    cache[neighbor.val] = new_neighbor
-                    queue.append([neighbor.val, neighbor.neighbors])
-                    
-                new_node.neighbors.append(new_neighbor)
-                
-        return root
+            new_node.neighbors.append(new_neighbor)
+            
+    return root
