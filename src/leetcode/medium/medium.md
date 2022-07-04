@@ -25,6 +25,7 @@
 -   [LRU Cache](lru-cache)
 -   [Maximum Product Subarray](maximum-product-subarray)
 -   [Merge Intervals](merge-intervals)
+-   [Non-Overlapping Intervals](non-overlapping-intervals)
 -   [Product of Array Except Self](product-of-array-except-self)
 -   [Remove Nth Node From End of List](remove-nth-node-from-end-of-list)
 -   [Reorder List](reorder-list)
