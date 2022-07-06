@@ -24,6 +24,7 @@
 -   [Longest Substring Without Repeating Characters](longest-substring-without-repeating-characters)
 -   [LRU Cache](lru-cache)
 -   [Maximum Product Subarray](maximum-product-subarray)
+-   [Meeting Rooms](meeting-rooms)
 -   [Merge Intervals](merge-intervals)
 -   [Non-Overlapping Intervals](non-overlapping-intervals)
 -   [Product of Array Except Self](product-of-array-except-self)
