@@ -63,8 +63,8 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   [Insert Interval](medium/insert-interval)
     -   [Merge Intervals](medium/merge-intervals)
     -   [Non-overlapping Intervals](medium/non-overlapping-intervals)
-    -   [Meeting Rooms](medium/meeting-rooms)
-    -   Meeting Rooms II
+    -   Meeting Rooms
+    -   [Meeting Rooms II](medium/meeting-rooms-ii)
 
 -   Linked List
 
