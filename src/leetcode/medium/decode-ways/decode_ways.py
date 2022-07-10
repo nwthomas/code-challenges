@@ -48,7 +48,7 @@ def num_decodings_recursive(s: str) -> int:
         
         res = dfs(i + 1)
         
-        if i + 1 < len(s) and (s[i] == "1" or s[i] == "2" and s[i + 1] in "0123456"):
+        if i + 1 < len(s) and (s[i] == "1" or (s[i] == "2" and s[i + 1] in "0123456")):
             res += dfs(i + 2)
             
         dp[i] = res
@@ -66,7 +66,7 @@ def num_decodings_iterative(s: str) -> int:
         else:
             dp[i] = dp[i + 1]
 
-        if i + 1 < len(s) and (s[i] == "1" or s[i] == "2" and s[i + 1] in "0123456"):
+        if i + 1 < len(s) and (s[i] == "1" or (s[i] == "2" and s[i + 1] in "0123456")):
             dp[i] += dp[i + 2]
         
     return dp[0]
