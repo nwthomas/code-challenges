@@ -39,6 +39,7 @@
 -   [Rotate Image](rotate-image)
 -   [Search in Sorted Array](search-in-sorted-array)
 -   [Set Matrix Zeroes](set-matrix-zeroes)
+-   [Sort Colors](#sort-colors)
 -   [Spiral Matrix](spiral-matrix)
 -   [Target Sum](target-sum)
 -   [Top K Frequent](top-k-frequent)
