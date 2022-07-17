@@ -1,5 +1,5 @@
 """
-https://leetcode.com/problems/cheapest-flights-within-k-stops/
+https://leetcode.com/problems/cheapest-flights-within-k-stops
 
 There are n cities connected by some number of flights. You are given an array flights where flights[i] = [fromi, toi, pricei] indicates that there is a flight from city fromi to city toi with cost pricei.
 
@@ -45,14 +45,14 @@ def find_cheapest_price(n: int, flights: List[List[int]], src: int, dst: int, k:
     prices = [float("inf")] * n
     prices[src] = 0
     
-    for i in range(k + 1):
+    for _ in range(k + 1):
         temp_prices = prices.copy()
         
-        for s, d, p in flights: # s = source, d = destination, p = price
-            if prices[s] == float('inf'):
+        for source, destination, price in flights:
+            if prices[source] == float('inf'):
                 continue
-            if prices[s] + p < temp_prices[d]:
-                temp_prices[d] = prices[s] + p
+            if prices[source] + price < temp_prices[destination]:
+                temp_prices[destination] = prices[source] + price
                 
         prices = temp_prices
                 
