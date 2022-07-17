@@ -44,7 +44,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   [House Robber](medium/house-robber) -- ([Article](https://nwthomas.medium.com/house-robber-leetcode-198-f541bfc8259d))
     -   [House Robber II](medium/house-robber-ii) -- ([Article](https://nwthomas.medium.com/house-robber-ii-leetcode-213-8710d12e52c9))
     -   [Decode Ways](medium/decode-ways)
-    -   Unique Paths
+    -   [Unique Paths](medium/unique-paths)
     -   [Jump Game](medium/jump-game)
 
 -   Graph
