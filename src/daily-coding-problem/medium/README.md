@@ -33,6 +33,7 @@
     -   [Interleave Two Queue](interleave-two-queue)
     -   [Keprekar's Constant](keprekars-constant)
     -   [Look and Say Numbers](look-and-say-numbers)
+    -   [Matrix Iterator Class](matrix-iterator-class)
     -   [Next Item in 2D Array](next-item-in-2d-array)
     -   [Odd/Even Singleton](odd-even-singleton)
     -   [Peekable Iterator](peekable-iterator)
