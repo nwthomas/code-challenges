@@ -38,7 +38,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   [Climbing Stairs](easy/climbing-stairs) -- ([Article](https://nwthomas.medium.com/climbing-stairs-leetcode-70-818a2607f28a))
     -   [Coin Change](medium/coin-change) -- ([Article](https://nwthomas.medium.com/coin-change-leetcode-322-fb533377adb2))
     -   [Longest Increasing Subsequence](medium/longest-increasing-subsequence)
-    -   [Longest Common Subsequence](medium/longest-common-subsequence)
+    -   [Longest Common Subsequence](medium/longest-common-subsequence) -- ([Article](https://nwthomas.medium.com/longest-common-subsequence-leetcode-1143-5125d411dc42))
     -   [Word Break](medium/word-break)
     -   [Combination Sum 4](medium/combination-sum-4)
     -   [House Robber](medium/house-robber) -- ([Article](https://nwthomas.medium.com/house-robber-leetcode-198-f541bfc8259d))
@@ -49,7 +49,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
 
 -   Graph
 
-    -   [Clone Graph](medium/clone-graph)
+    -   [Clone Graph](medium/clone-graph) - ([Article](https://nwthomas.medium.com/clone-graph-leetcode-133-144ebcecd985))
     -   [Course Schedule](medium/course-schedule)
     -   Pacific Atlantic Water Flow
     -   Number of Islands
@@ -61,7 +61,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
 -   Interval
 
     -   [Insert Interval](medium/insert-interval)
-    -   [Merge Intervals](medium/merge-intervals)
+    -   [Merge Intervals](medium/merge-intervals) - ([Article](https://nwthomas.medium.com/merge-intervals-leetcode-56-8e56eaa648b7))
     -   [Non-overlapping Intervals](medium/non-overlapping-intervals)
     -   [Meeting Rooms](easy/meeting-rooms)
     -   [Meeting Rooms II](medium/meeting-rooms-ii)
