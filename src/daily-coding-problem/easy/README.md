@@ -18,6 +18,7 @@
     -   [URL Shortener](url-shortener)
     -   [Word Matrix](word-matrix)
 -   Python
+    -   [Run Length Encoding](run-length-encoding)
     -   [Find Coins on Map](find-coins-on-map)
     -   [Find Binary Tree Sum](find-binary-tree-sum)
     -   [Find Most Weighted Path](find-most-weighted-path)

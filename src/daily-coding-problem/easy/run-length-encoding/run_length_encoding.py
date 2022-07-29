@@ -9,6 +9,9 @@ Implement run-length encoding and decoding. You can assume the string to be enco
 """
 
 def encode_run_length(s: str) -> str:
+    if type(s) != str:
+        raise TypeError("Argument for encode_run_length must be of type string")
+
     tracker = {}
     final_chars = []
 
@@ -21,6 +24,6 @@ def encode_run_length(s: str) -> str:
         if i == len(s) - 1 or char != s[i + 1]:
             number = tracker[char]
             del tracker[char]
-            final_chars.extend((number, char))
+            final_chars.extend((f"{number}", char))
 
     return "".join(final_chars)
