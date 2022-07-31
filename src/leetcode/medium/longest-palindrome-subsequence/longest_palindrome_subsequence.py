@@ -21,6 +21,9 @@ s consists only of lowercase English letters.
 """
 
 def get_longest_palindrome_subsequence(s: str) -> int:
+    if type(s) != str:
+        raise TypeError("Argument for get_longest_palindrome_subsequence must be of type string")
+
     grid = [[0 for _ in range(len(s) + 1)] for _ in range(len(s) + 1)]
     s_reversed = s[::-1]
     

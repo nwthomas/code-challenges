@@ -12,5 +12,12 @@ class TestGetLongestPalindromeSubsequence(unittest.TestCase):
         result = get_longest_palindrome_subsequence("abcxyz")
         self.assertEqual(result, 1)
 
+    def test_raises_typeerror_if_arg_not_string(self):
+        """Raises a new TypeError if argument is not of type string"""
+        def result():
+            return get_longest_palindrome_subsequence(1726538)
+
+        self.assertRaises(TypeError, result)
+
 if __name__ == "__main__":
     unittest.main()
