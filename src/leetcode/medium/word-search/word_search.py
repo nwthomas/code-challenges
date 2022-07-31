@@ -29,7 +29,11 @@ Follow up: Could you use search pruning to make your solution faster with a larg
 
 from typing import List
 
-def exist(board: List[List[str]], word: str) -> bool:
+def does_word_exist(board: List[List[str]], word: str) -> bool:
+    if type(board) != list:
+        raise TypeError("First argument for does_word_exist must be of type list")
+    if type(word) != str:
+        raise TypeError("Second argument for does_word_exist must be of type string")
     
     def search(y, x, index, cache):
         if index == len(word) - 1 and board[y][x] == word[index]:
@@ -58,7 +62,13 @@ def exist(board: List[List[str]], word: str) -> bool:
         return False
     
     for y in range(len(board)):
+        if type(board[y]) != list:
+            raise TypeError("First argument of type list must contain only rows of type list")
+
         for x in range(len(board[y])):
+            if type(board[y][x]) != str:
+                raise TypeError("Values in lists of list must contain only type string")
+
             if board[y][x] == word[0]:
                 result = search(y, x, 0, set())
                 
