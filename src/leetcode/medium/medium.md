@@ -15,6 +15,7 @@
 -   [Find Minimum in Rotated Sorted Array](find-minimum-in-rotated-sorted-array)
 -   [House Robber](house-robber)
 -   [House Robber II](house-robber-ii)
+-   [Implement Trie Prefix Tree](implement-trie-prefix-tree)
 -   [Insert Interval](insert-interval)
 -   [Jump Game](jump-game)
 -   [Jump Game II](jump-game-ii)

@@ -108,7 +108,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   [Validate Binary Search Tree](medium/validate-binary-search-tree)
     -   [Kth Smallest Element in a BST](medium/kth-smallest-element-in-bst)
     -   Lowest Common Ancestor of BST
-    -   Implement Trie (Prefix Tree)
+    -   [Implement Trie (Prefix Tree)](medium/implement-trie-prefix-tree)
     -   Add and Search Word
     -   Word Search II
 
