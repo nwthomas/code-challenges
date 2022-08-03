@@ -26,7 +26,7 @@ n == heights[r].length
 
 from typing import List
 
-def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
+def pacific_atlantic(heights: List[List[int]]) -> List[List[int]]:
     cache = {}
     output = []
     
