@@ -52,7 +52,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   [Clone Graph](medium/clone-graph) - ([Article](https://nwthomas.medium.com/clone-graph-leetcode-133-144ebcecd985))
     -   [Course Schedule](medium/course-schedule)
     -   Pacific Atlantic Water Flow
-    -   Number of Islands
+    -   [Number of Islands](medium/number-of-islands)
     -   Longest Consecutive Sequence
     -   Alien Dictionary
     -   Graph Valid Tree
