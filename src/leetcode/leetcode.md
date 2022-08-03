@@ -53,7 +53,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   [Course Schedule](medium/course-schedule)
     -   Pacific Atlantic Water Flow
     -   [Number of Islands](medium/number-of-islands)
-    -   Longest Consecutive Sequence
+    -   [Longest Consecutive Sequence](medium/longest-consecutive-sequence)
     -   Alien Dictionary
     -   Graph Valid Tree
     -   Number of Connected Components in an Undirected Graph
@@ -84,7 +84,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
 
 -   String
 
-    -   [xLongest Substring Without Repeating Characters](medium/longest-substring-without-repeating-characters)
+    -   [Longest Substring Without Repeating Characters](medium/longest-substring-without-repeating-characters)
     -   Longest Repeating Character Replacement
     -   Minimum Window Substring
     -   [Valid Anagram](easy/valid-anagram)
