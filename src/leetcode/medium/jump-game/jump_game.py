@@ -26,14 +26,12 @@ from typing import List
 def can_jump(nums: List[int]) -> bool:
     remaining_jumps = 0
     
-    for i in range(len(nums)):
-        remaining_jumps = max(remaining_jumps, nums[i])
+    for i, num in enumerate(nums):
+        remaining_jumps = max(remaining_jumps, num)
         
-        if i == len(nums) - 1:
-            return True
-        elif remaining_jumps == 0:
-            break
+        if i < len(nums) - 1 and remaining_jumps == 0:
+            return False
         
         remaining_jumps -= 1
-        
-    return False
+    
+    return True

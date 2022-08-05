@@ -29,6 +29,9 @@ from typing import List
 def pacific_atlantic(heights: List[List[int]]) -> List[List[int]]:
     cache = {}
     output = []
+
+    if len(heights) < 1:
+        return output
     
     def traverse(y, x, from_pacific, prev_value):
         if heights[y][x] < prev_value:
