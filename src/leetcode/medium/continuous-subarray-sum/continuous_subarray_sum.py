@@ -29,7 +29,7 @@ Constraints:
 
 from typing import List
 
-def check_subarray_sum(nums: List[int], k: int) -> bool:        
+def check_subarray_sum(nums: List[int], k: int) -> bool:    
     tracker = { 0: -1 }
     current_total = 0
     
