@@ -3,6 +3,7 @@
 ## TABLE OF CONTENTS
 
 -   Python
+    -   [Cake Thief](cake-thief)
     -   [Check Lists Order](check-lists-order)
     -   [Delete Node](delete-node)
     -   [Find Starting Word in Dictionary](find-starting-word-in-dictionary)
