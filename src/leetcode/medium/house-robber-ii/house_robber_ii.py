@@ -31,7 +31,7 @@ def rob(nums: List[int]) -> int:
     if len(nums) <= 1:
         return nums[0] if len(nums) == 1 else 0
         
-    def get_max_rob_amount(houses):            
+    def get_max_rob_amount(houses):
         max_robbed = max(nums)
         dp = [num for num in houses]
         lookbacks = [2, 3]

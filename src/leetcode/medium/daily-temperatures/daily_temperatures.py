@@ -23,15 +23,15 @@ Constraints:
 from typing import List
 
 def daily_temperatures(temperatures: List[int]) -> List[int]:
-    stack = [[temperatures[0], 0]]
-    results = [0 for _ in range(len(temperatures))]
+    stack = []
+    output = [0 for _ in temperatures]
     
-    for current_index, temp in enumerate(temperatures):
-        while len(stack) > 0 and temp > stack[len(stack) - 1][0]:
-            _, value_index = stack.pop()
-            number_of_days = current_index - value_index
-            results[value_index] = number_of_days
+    for i, temp in enumerate(temperatures):
+        while len(stack) > 0 and temperatures[stack[len(stack) - 1]] < temp:
+            current = stack.pop()
+            difference = i - current
+            output[current] = difference
+
+        stack.append(i)
             
-        stack.append([temp, current_index])
-        
-    return results
+    return output
