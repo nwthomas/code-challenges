@@ -27,9 +27,14 @@ Constraints:
 1 <= k <= 231 - 1
 """
 
-from typing import List
+from typing import List, Type
 
 def check_subarray_sum(nums: List[int], k: int) -> bool:    
+    if type(nums) != list:
+        raise TypeError("First argument must be of type list")
+    elif  type(k) != int:
+        raise TypeError("Second argument must be of type int")
+
     tracker = { 0: -1 }
     current_total = 0
     

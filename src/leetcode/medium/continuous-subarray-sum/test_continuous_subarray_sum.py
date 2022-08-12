@@ -12,5 +12,19 @@ class TestCheckSubarraySum(unittest.TestCase):
         result = check_subarray_sum([23,2,6,4,7], 15)
         self.assertFalse(result)
 
+    def test_raises_typeerror_if_not_list(self):
+        """Raises a new TypeError if the first argument is not of type list"""
+        def result():
+            return check_subarray_sum({}, 10)
+
+        self.assertRaises(TypeError, result)
+
+    def test_raises_typeerror_if_not_int(self):
+        """Raises a new TypeError if the second argument is not of type int"""
+        def result():
+            return check_subarray_sum([1, 2, 3], True)
+
+        self.assertRaises(TypeError, result)
+
 if __name__ == "__main__":
     unittest.main()
