@@ -25,6 +25,7 @@
 -   [Longest Consecutive Sequence](longest-consecutive-sequence)
 -   [Longest Increasing Subsequence](longest-increasing-subsequence)
 -   [Longest Palindrome Subsequence](longest-palindrome-subsequence)
+-   [Longest Palindromic Substring](longest-palindrome-substring)
 -   [Longest Substring Without Repeating Characters](longest-substring-without-repeating-characters)
 -   [LRU Cache](lru-cache)
 -   [Lowest Common Ancestor of Binary Search Tree](lowest-common-ancestor-of-bst)
