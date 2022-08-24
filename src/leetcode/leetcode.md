@@ -37,7 +37,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
 
     -   [Climbing Stairs](easy/climbing-stairs) -- ([Article](https://nwthomas.medium.com/climbing-stairs-leetcode-70-818a2607f28a))
     -   [Coin Change](medium/coin-change) -- ([Article](https://nwthomas.medium.com/coin-change-leetcode-322-fb533377adb2))
-    -   [Longest Increasing Subsequence](medium/longest-increasing-subsequence)
+    -   [Longest Increasing Subsequence](medium/longest-increasing-subsequence) -- ([Article](https://medium.com/@nwthomas/longest-increasing-subsequence-leetcode-300-f888b3657c03))
     -   [Longest Common Subsequence](medium/longest-common-subsequence) -- ([Article](https://nwthomas.medium.com/longest-common-subsequence-leetcode-1143-5125d411dc42))
     -   [Word Break](medium/word-break)
     -   [Combination Sum 4](medium/combination-sum-4)
@@ -45,7 +45,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   [House Robber II](medium/house-robber-ii) -- ([Article](https://nwthomas.medium.com/house-robber-ii-leetcode-213-8710d12e52c9))
     -   [Decode Ways](medium/decode-ways)
     -   [Unique Paths](medium/unique-paths)
-    -   [Jump Game](medium/jump-game)
+    -   [Jump Game](medium/jump-game) -- ([Article](https://medium.com/@nwthomas/jump-game-leetcode-55-8db45b80f949))
 
 -   Graph
 
