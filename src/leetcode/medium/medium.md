@@ -12,6 +12,7 @@
 -   [Course Schedule](course-schedule)
 -   [Daily Temperatures](daily-temperatures)
 -   [Decode Ways](decode-ways)
+-   [Design Add and Search Words Data Structure](design-add-and-search-words-data-structure)
 -   [Find Cheapest Flight Within K Flights](find-cheapest-flight-within-k-flights)
 -   [Find Minimum in Rotated Sorted Array](find-minimum-in-rotated-sorted-array)
 -   [House Robber](house-robber)

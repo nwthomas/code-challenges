@@ -109,7 +109,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   [Kth Smallest Element in a BST](medium/kth-smallest-element-in-bst)
     -   [Lowest Common Ancestor of BST](easy/lowest-common-ancestor-of-a-bst)
     -   [Implement Trie (Prefix Tree)](medium/implement-trie-prefix-tree)
-    -   Add and Search Word
+    -   [Add and Search Word](medium/design-add-and-search-words-data-structure)
     -   Word Search II
 
 -   Heap
