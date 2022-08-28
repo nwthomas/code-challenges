@@ -58,7 +58,7 @@ class WordDictionary:
             
         current.word_totals += 1
 
-    def search(self, word: str) -> bool:
+    def searchRecursively(self, word: str) -> bool:
         def dfs(j, root):
             cur = root
             
@@ -76,3 +76,19 @@ class WordDictionary:
             return cur.word_totals > 0
         
         return dfs(0, self.root)
+
+    def searchIteratively(self, word: str) -> bool:
+        stack = [[0, self.root]]
+        
+        while len(stack) > 0:
+            index, current = stack.pop()
+            
+            if index == len(word) and (word[index - 1] == current.value or word[index - 1] == ".") and current.word_totals > 0:
+                return True
+            elif index < len(word) and word[index] == ".":
+                for node in current.children.values():
+                    stack.append([index + 1, node])
+            elif index < len(word) and word[index] in current.children:
+                stack.append([index + 1, current.children[word[index]]])
+            
+        return False
