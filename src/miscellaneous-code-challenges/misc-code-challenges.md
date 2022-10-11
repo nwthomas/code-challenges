@@ -11,6 +11,7 @@
     -   [Max Sum Subarray](maximum-sum-subarray)
     -   [Meandering Array](meandering-array)
     -   [Score Palindromes](score-palindromes)
+    -   [Spreadsheet](spreadsheet)
     -   [Sum Fibonacci](sum-fibonacci)
 -   Python
     -   [Count Islands](count-islands)
