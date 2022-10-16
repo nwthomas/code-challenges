@@ -28,13 +28,21 @@ function findShortestStandardizedPath(path) {
 
         // Check that it's not the root folder, it's a truthy string, and not a direction
         // for same folder
-        if (i !== 0 && IGNORE_DIRECTIONS.indexOf(direction) >= 0) {
+        if (i !== 0 && IGNORE_DIRECTIONS.indexOf(direction) > -1) {
             continue;
         }
 
         // Move back up to parent folder and pop it off
-        else if (direction === BACK_DIRECTION) {
+        else if (
+            stack[stack.length - 1] !== BACK_DIRECTION &&
+            direction === BACK_DIRECTION &&
+            stack.length
+        ) {
             stack.pop();
+
+            if (!stack.length) {
+                stack.push(BACK_DIRECTION);
+            }
         }
 
         // Add to final path
@@ -43,8 +51,8 @@ function findShortestStandardizedPath(path) {
         }
     }
 
-    if (stack.length) {
-        return "";
+    if (stack.length <= 1) {
+        return path;
     }
 
     return `${stack.join("/")}/`;
