@@ -8,6 +8,13 @@ describe("findShortestStandardizedPath", () => {
         expect(result).toBe("/usr/bin/");
     });
 
+    it("returns correct shortened path for a long string", () => {
+        const originalPath = "./usr/dist/../../usr/test/../bin/test/../../usr/";
+        const result = findShortestStandardizedPath(originalPath);
+
+        expect(result).toBe("./usr/usr/");
+    });
+
     it("returns an empty string when the path is empty", () => {
         const originalPath = "";
         const result = findShortestStandardizedPath(originalPath);
@@ -31,12 +38,5 @@ describe("findShortestStandardizedPath", () => {
                 "The argument for findShortestStandardizedPath must be of type string",
             ),
         );
-    });
-
-    it("can handle backing out of parent directory", () => {
-        const originalPath = "./../.././../";
-        const result = findShortestStandardizedPath(originalPath);
-
-        expect(result).toBe("../../../");
     });
 });

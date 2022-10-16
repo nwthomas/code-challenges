@@ -33,11 +33,7 @@ function findShortestStandardizedPath(path) {
         }
 
         // Move back up to parent folder and pop it off
-        else if (
-            stack[stack.length - 1] !== BACK_DIRECTION &&
-            direction === BACK_DIRECTION &&
-            stack.length
-        ) {
+        else if (direction === BACK_DIRECTION && stack.length) {
             stack.pop();
 
             if (!stack.length) {
