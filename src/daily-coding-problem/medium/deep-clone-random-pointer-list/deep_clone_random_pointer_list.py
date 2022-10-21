@@ -12,7 +12,7 @@ class Node:
         self.next_node = next_node
         self.random_node = random_node
 
-def clone_random_pointer_list(l):
+def deep_clone_random_pointer_list(l):
     stack = [l]
     cache = { l: Node(l.value) }
 
