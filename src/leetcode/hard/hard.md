@@ -2,6 +2,7 @@
 
 ## Table of Contents
 
+-   [Alien Dictionary](alien-dictionary)
 -   [Find Median From Data Stream](find-median-from-data-stream)
 -   [First Missing Positive](first-missing-positive)
 -   [In-Memory File System](in-memory-file-system)

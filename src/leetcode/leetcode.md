@@ -54,7 +54,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   [Pacific Atlantic Water Flow](medium/pacific-atlantic-water-flow)
     -   [Number of Islands](medium/number-of-islands)
     -   [Longest Consecutive Sequence](medium/longest-consecutive-sequence)
-    -   Alien Dictionary
+    -   [Alien Dictionary](hard/alien-dictionary)
     -   Graph Valid Tree
     -   Number of Connected Components in an Undirected Graph
 
