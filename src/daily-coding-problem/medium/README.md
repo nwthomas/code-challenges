@@ -31,6 +31,7 @@
 -   Python
     -   [Coin Collector](coin-collector)
     -   [Deep Clone Random Pointer List](deep-clone-random-pointer-list)
+    -   [Binary Tree Paths](binary-tree-paths)
     -   [Find Shortest Prefix](find-shortest-prefix)
     -   [Generate Grey Code](generate-grey-code)
     -   [Interleave Two Queue](interleave-two-queue)
