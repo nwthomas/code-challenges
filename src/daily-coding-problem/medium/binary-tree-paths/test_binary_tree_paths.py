@@ -25,5 +25,12 @@ class TestGetBinaryTreePaths(unittest.TestCase):
         result = get_binary_tree_paths(root)
         self.assertEqual(result, [[10, 20, 25, 30], [10, 20, 25, 24], [10, 8, 9], [10, 8, 5]])
 
+    def test_handles_single_node_as_root(self):
+        """Takes in a tree that is just a single root node and returns the value path"""
+        root = TreeNode(1000)
+
+        result = get_binary_tree_paths(root)
+        self.assertEqual(result, [[1000]])
+
 if __name__ == "__main__":
     unittest.main()
