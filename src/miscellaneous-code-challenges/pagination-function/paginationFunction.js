@@ -54,4 +54,4 @@ function buildPagePagination(total, show, current) {
     return result;
 }
 
-console.log(buildPagePagination(10, 6, 9));
+module.exports = buildPagePagination;
