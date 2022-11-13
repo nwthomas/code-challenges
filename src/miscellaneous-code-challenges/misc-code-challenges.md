@@ -10,6 +10,7 @@
     -   [Get Prime Numbers](get-prime-numbers)
     -   [Max Sum Subarray](maximum-sum-subarray)
     -   [Meandering Array](meandering-array)
+    -   [Pagination Function](pagination-function)
     -   [Score Palindromes](score-palindromes)
     -   [Spreadsheet](spreadsheet)
     -   [Sum Fibonacci](sum-fibonacci)
