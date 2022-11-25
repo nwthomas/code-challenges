@@ -46,8 +46,6 @@ def topKFrequent(words: List[str], k: int) -> List[str]:
             
     results = []
     
-    print(freqToWords)
-    
     for freq in freqToWords:
         sortedWords = sorted(freqToWords[freq].keys())
         sortedWords.reverse()
