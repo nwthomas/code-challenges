@@ -93,7 +93,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   [Valid Palindrome](easy/valid-palindrome)
     -   [Longest Palindromic Substring](medium/longest-palindromic-substring)
     -   [Palindromic Substrings](medium/palindromic-substrings)
-    -   Encode and Decode Strings
+    -   [Encode and Decode Strings](medium/endcode-and-decode-strings)
 
 -   Tree
 
