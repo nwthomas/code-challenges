@@ -8,10 +8,6 @@ A good general place to start is this [list of 14 techniques that are good to kn
 
 ## TABLE OF CONTENTS
 
--   [Advent of Code](src/advent-of-code) ([Website](https://adventofcode.com/)) 🚧 COMING SOON 🚧
-
-    -   [2022](src/advent-of-code/2022)
-
 -   [Codewars](src/codewars/) <img src="https://www.codewars.com/users/nwthomas/badges/micro" alt="Codewars profile tag" />
 
     -   [8 kyu](src/codewars/8-kyu/8-kyu.md)
