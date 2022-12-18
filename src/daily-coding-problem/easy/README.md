@@ -27,6 +27,7 @@
     -   [Flatten Nested Dictionary](flatten-nested-dictionary)
     -   [Last Prisoner Alive](last-prisoner-alive)
     -   [Math with Lists](math-with-lists)
+    -   [Quxes Island](quxes-island)
     -   [Reverse Words](reverse-words)
     -   [Singly Linked Palindrome](singly-linked-palindrome)
     -   [String Mapping](string-mapping)
