@@ -21,3 +21,4 @@
     -   [Recipe Batches](recipe-batches)
     -   [Rock Paper Scissors](rock-paper-scissors)
     -   [Stock Prices](stock-prices)
+    -   [Trapping Water Droplets](trapping-water-droplets)
