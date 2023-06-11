@@ -20,41 +20,39 @@ def island_counter(islands):
     """
     if len(islands) <= 0:
         return 0
-    if type(islands) is not list or type(islands[0]) is not list:
+    if type(islands) is not list or len(list(filter(lambda r: type(r) != list, islands))) > 0:
         return None
+    
     visited = set()
     total_islands = 0
 
-    def check_for_island(x, y):
+    def check_for_island(y, x):
         """
         Visits a specific value to see if its value is 1 and, if it is, visits
         surrounding north, south, east, west values to see if they're part of
         the same island
         """
-        if (x, y) in visited:
+        if (y, x) in visited:
             return None
         else:
-            visited.add((x, y))
-            if islands[x][y] == 1:
-                if x - 1 >= 0:
-                    check_for_island(x - 1, y)
-                if x + 1 < len(islands):
-                    check_for_island(x + 1, y)
+            visited.add((y, x))
+            if islands[y][x] == 1:
                 if y - 1 >= 0:
-                    check_for_island(x, y - 1)
-                if y + 1 < len(islands[x]):
-                    check_for_island(x, y + 1)
+                    check_for_island(y - 1, x)
+                if y + 1 < len(islands):
+                    check_for_island(y + 1, x)
+                if x - 1 >= 0:
+                    check_for_island(y, x - 1)
+                if x + 1 < len(islands[y]):
+                    check_for_island(y, x + 1)
                 return True
             else:
                 return False
 
-    for x in range(0, len(islands)):
-        for y in range(0, len(islands[x])):
-            if (x, y) in visited:
-                continue
-            else:
-                result = check_for_island(x, y)
-                if result:
+    for y in range(0, len(islands)):
+        for x in range(0, len(islands[y])):
+            if (y, x) not in visited:
+                if check_for_island(y, x):
                     total_islands += 1
 
     return total_islands

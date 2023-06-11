@@ -45,6 +45,14 @@ class TestIslandCounter(unittest.TestCase):
         result = island_counter(matrix)
         self.assertEqual(result, 7)
 
+    def test_returns_none_if_value_in_matrix_is_not_list(self):
+        """
+        Returns None if a value in the matrix is not a list
+        """
+        matrix = [[1, 0, 1], {}, [0, 0, 0]]
+        result = island_counter(matrix)
+        self.assertIsNone(result)
+
 
 if __name__ == "__main__":
     unittest.main()
