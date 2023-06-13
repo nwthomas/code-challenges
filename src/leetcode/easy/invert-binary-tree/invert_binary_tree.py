@@ -29,18 +29,16 @@ class TreeNode:
         self.right = right
 
 def invert_tree(root: Optional[TreeNode]) -> Optional[TreeNode]:
-    inverted_root = TreeNode(root.val) if root else None
-    tracker = [[root, inverted_root]] if root else []
+    """Takes in a Tree and inverts it by swapping the left and right nodes of each node"""
+
+    def invert(node: Optional[TreeNode]) -> Optional[TreeNode]:
+        if not node:
+            return
+        
+        temp_right = node.right
+        node.right = invert(node.left)
+        node.left = invert(temp_right)
+
+        return node
     
-    while len(tracker) > 0:
-        original_current, new_current = tracker.pop()
-        
-        if original_current.right:
-            new_current.left = TreeNode(original_current.right.val)
-            tracker.append([original_current.right, new_current.left])
-        
-        if original_current.left:
-            new_current.right = TreeNode(original_current.left.val)
-            tracker.append([original_current.left, new_current.right])
-            
-    return inverted_root
+    return invert(root)
