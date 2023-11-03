@@ -8,59 +8,60 @@ caching system in order to avoid multiple highly intensive computational actions
 
 class Spreadsheet {
     constructor() {
-        this.cells = {};
         this.cache = {};
+        this.cells = {};
         this.graph = {};
     }
 
-    put(cell, value) {
-        this._recursivelyClearCache(cell);
-        this.graph[cell] = [];
-        this.cells[cell] = value;
-    }
+    put = (key, value) => {
+        this.cells[key] = value;
+        this._recursivelyClearCache(key);
+        this.graph[key] = [];
+    };
 
-    get(cell) {
-        const value = this.cells[cell];
-        const splitCells = value.split("=").join("").split("+");
-        let additionValue = 0;
+    get = (key) => {
+        if (this.cache[key]) {
+            return this.cache[key];
+        }
 
-        for (let cellKey of splitCells) {
-            const convertedCellKey = parseInt(cellKey, 10);
+        const value = this.cells[key];
+        const valuesArray = value.split("=").join("").split("+");
 
-            if (isNaN(convertedCellKey)) {
-                const recursivelyComputedValue = this.get(cellKey);
-                this._addGraphDependency(cell, cellKey);
+        let total = 0;
 
-                additionValue += recursivelyComputedValue;
+        for (const currentValue of valuesArray) {
+            const convertedValue = parseInt(currentValue, 10);
+
+            if (isNaN(convertedValue)) {
+                total += this.get(currentValue);
+                this._addGraphDependency(currentValue, key);
             } else {
-                additionValue += convertedCellKey;
+                total += convertedValue;
             }
         }
 
-        this.cache[cell] = additionValue;
+        this.cache[key] = total;
 
-        return this.cache[cell];
-    }
+        return total;
+    };
 
-    _addGraphDependency(cell, dep) {
-        if (!this.graph[cell]) {
-            this.graph[cell] = [];
-        }
-
-        this.graph[cell].push(dep);
-    }
-
-    _recursivelyClearCache(key) {
+    _recursivelyClearCache = (key) => {
         delete this.cache[key];
 
         if (!this.graph[key]) {
             this.graph[key] = [];
         }
 
-        for (let dep of this.graph[key]) {
+        this.graph[key].forEach((dep) => {
             this._recursivelyClearCache(dep);
-        }
-    }
+        });
+    };
+
+    _addGraphDependency = (child, parent) => {
+        this.graph[child] = this.graph[child] || [];
+
+        this.graph[child].push(parent);
+    };
 }
 
 module.exports = Spreadsheet;

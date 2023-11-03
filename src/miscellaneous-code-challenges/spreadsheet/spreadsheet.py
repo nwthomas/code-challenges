@@ -11,30 +11,46 @@ class Spreadsheet:
         self.graph = {}
 
     def put(self, key: str, value: str) -> None:
-        if key in self.cells:
-            self.recursively_clear_cache(key)
-
         self.cells[key] = value
+        self.recursively_clear_cache(key)
+        self.graph[key] = []
 
     def get(self, key: str) -> str:
         if key in self.cache:
             return self.cache[key]
     
-        cell_value = self.cells[key]
+        value = self.cells[key]
+        without_equals_prefix = "".join(value.split("="))
+        values_list = without_equals_prefix.split("+")
 
-        if cell_value[0] == "=":
-            total = 0
-            split_values = cell_value[1:].split("+")
+        total = 0
 
-            for value in split_values:
-                total += int(value) if self.is_int(value) else self.get(value)
+        for new_value in values_list:
+            if self.is_int(new_value):
+                total += int(new_value)
+            else:
+                total += self.get(new_value)
+                self.add_graph_dependency(new_value, key)
 
-            return total
-        else:
-            return cell_value
+        self.cache[key] = total
+
+        return total
 
     def recursively_clear_cache(self, key: str) -> None:
-        pass
+        if key in self.cache:
+            del self.cache[key]
+
+        if not key in self.graph:
+            self.graph[key] = []
+
+        for parent_dep in self.graph[key]:
+            self.recursively_clear_cache(parent_dep)
+
+    def add_graph_dependency(self, child: str, parent: str) -> None:
+        if not child in self.graph:
+            self.graph[child] = []
+
+        self.graph[child].append(parent)
 
     def is_int(self, string: str) -> bool:
         try: 
