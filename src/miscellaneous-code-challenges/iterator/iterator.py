@@ -3,17 +3,21 @@ Build an iterator class that can intake a list of anything, iterate through them
 raise a StopIteration error when finished, and include capabilities to peak at the
 next item as well as 
 """
-from types import int, TypeVar, Union
+
+from typing import Iterator, List, Optional, TypeVar, Union
 
 T = TypeVar('T')
 
-class Iterator:
+class IteratorClass:
     index: int = 0
 
-    def __init__(self, values: T) -> None:
+    def __init__(self, values: List[T]) -> None:
         self.values = values
 
-    def __iter__(self) -> T:
+    def __iter__(self) -> Iterator:
+        return self
+        
+    def __next__(self) -> T:
         if self.index < len(self.values):
             value = self.values[self.index]
             self.index += 1
