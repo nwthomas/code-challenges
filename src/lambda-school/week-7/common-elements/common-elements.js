@@ -15,15 +15,13 @@ Good morning! Write a function called commonElements that has parameters for two
 */
 
 function commonElements(arr1, arr2) {
-  let common = [];
-  arr1.forEach(item1 => {
-    arr2.forEach(item2 => {
-      if (item1 === item2) return common.push(item1);
+    let common = [];
+    arr1.forEach((item1) => {
+        arr2.forEach((item2) => {
+            if (item1 === item2) return common.push(item1);
+        });
     });
-  });
-  return common;
+    return common;
 }
-
-console.log(commonElements([1, 2, 3, 4], [3, 4, 5, 6]));
 
 module.exports = commonElements;
