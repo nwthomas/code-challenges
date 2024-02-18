@@ -39,6 +39,7 @@
     -   [Look and Say Numbers](look-and-say-numbers)
     -   [Matrix Iterator Class](matrix-iterator-class)
     -   [Next Item in 2D Array](next-item-in-2d-array)
+    -   [Nmber of Buildinbgs With View of Sun](number-of-buildings-view-of-sun)
     -   [Odd/Even Singleton](odd-even-singleton)
     -   [Pascal's Triangle](pascals-triangle)
     -   [Peekable Iterator](peekable-iterator)

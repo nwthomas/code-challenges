@@ -18,7 +18,7 @@
     -   [URL Shortener](url-shortener)
     -   [Word Matrix](word-matrix)
 -   Python
-    -   [Run Length Encoding](run-length-encoding)
+    -   [Binary Tree Minimum Sum](binary-tree-minimum-sum)
     -   [Find Coins on Map](find-coins-on-map)
     -   [Find Binary Tree Sum](find-binary-tree-sum)
     -   [Find Most Weighted Path](find-most-weighted-path)
@@ -29,6 +29,7 @@
     -   [Math with Lists](math-with-lists)
     -   [Quxes Island](quxes-island)
     -   [Reverse Words](reverse-words)
+    -   [Run Length Encoding](run-length-encoding)
     -   [Singly Linked Palindrome](singly-linked-palindrome)
     -   [String Mapping](string-mapping)
     -   [Word Board](word-board)
