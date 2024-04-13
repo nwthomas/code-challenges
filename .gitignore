@@ -115,3 +115,6 @@ dist
 /src/miscellaneous-code-challenges/largest-sub-matrix
 /src/daily-coding-problem/easy/find-strobogrammatic-numbers
 /src/leetcode/easy/design-linked-list
+
+# Miscellaneous
+.DS_Store
