@@ -22,4 +22,19 @@ def get_egg_broken_floor(n: int, k: int) -> int:
         dp[i][0] = 0
         dp[i][1] = 1
 
+    # Fill dp table
+    for i in range(2, n + 1):
+        for j in range(2, k + 1):
+            dp[i][j] = float('inf')  # Initialize to a large number
+            for x in range(1, j + 1):
+                # Egg breaks: check below floors
+                breaks = dp[i - 1][x - 1]
+                # Egg doesn't break: check above floors
+                not_breaks = dp[i][j - x]
+                # Take the maximum of both scenarios plus the current drop
+                worst_case_drops = 1 + max(breaks, not_breaks)
+                # Choose the minimum of all possible x values
+                dp[i][j] = min(dp[i][j], worst_case_drops)
+    
+    # Result is stored in dp[n][k]
     return dp[n][k]
