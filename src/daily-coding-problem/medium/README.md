@@ -29,9 +29,10 @@
     -   [Validate Binary Search Tree](validate-binary-search-tree)
     -   [Weighted Number Selection](weighted-number-selection)
 -   Python
+    -   [Binary Tree Paths](binary-tree-paths)
     -   [Coin Collector](coin-collector)
     -   [Deep Clone Random Pointer List](deep-clone-random-pointer-list)
-    -   [Binary Tree Paths](binary-tree-paths)
+    -   [Egg Break](egg-break)
     -   [Find Shortest Prefix](find-shortest-prefix)
     -   [Generate Grey Code](generate-grey-code)
     -   [Interleave Two Queue](interleave-two-queue)
