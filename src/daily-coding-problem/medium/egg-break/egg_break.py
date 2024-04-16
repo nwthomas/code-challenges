@@ -11,13 +11,16 @@ For example, if N = 1 and k = 5, we will need to try dropping the egg at every f
 """
 
 def get_egg_broken_floor(n: int, k: int) -> int:
+    if n < 1:
+        return 0
+
     dp = [[0] * (k + 1) for _ in range(n + 1)]
 
     # Base case for only 1 egg
     for j in range(1, k + 1):
         dp[1][j] = j
 
-    # Base case for 
+    # Base case for zero floors/trials and one floor/trials
     for i in range(1, n + 1):
         dp[i][0] = 0
         dp[i][1] = 1
