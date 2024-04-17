@@ -18,5 +18,13 @@ class TestGetEggBrokenFloor(unittest.TestCase):
         result = get_egg_broken_floor(0, 1)
         self.assertEqual(result, 0)
 
+    def test_get_large_floor_one_trial_amount(self):
+        result = get_egg_broken_floor(1, 10000)
+        self.assertEqual(result, 10000)
+
+    def test_get_large_floor_large_trial_amount(self):
+        result = get_egg_broken_floor(100, 100)
+        self.assertEqual(result, 7)
+
 if __name__ == "__main__":
     unittest.main()
