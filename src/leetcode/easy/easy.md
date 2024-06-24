@@ -13,6 +13,7 @@
 -   [Maximum Subarray](maximum-subarray)
 -   [Meeting Rooms](meeting-rooms)
 -   [Merge Two Sorted Lists](merge-two-sorted-lists)
+-   [Number of 1 Bits](number-of-1-bits)
 -   [Remove Element](remove-element)
 -   [Reverse Linked List](reverse-linked-list)
 -   [Two Sum](two-sums)
