@@ -6,6 +6,7 @@
 -   [Change Directory](change-directory)
 -   [Climbing Stairs](climbing-stairs)
 -   [Contains Duplicate](contains-duplicate)
+-   [Counting Bits](counting-bits)
 -   [Invert Binary Tree](invert-binary-tree)
 -   [Is Same Tree](is-same-tree)
 -   [Linked List Cycle](linked-list-cycle)
