@@ -21,31 +21,37 @@ All functions should return a 1 for true and a 0 for false.
 */
 
 function NAND(x, y) {
-  // You can use whatever JS operators that you would like: &&, ||, !
-  return x ? (y ? 0 : 1) : 1;
+    // You can use whatever JS operators that you would like: &&, ||, !
+    return x ? (y ? 0 : 1) : 1;
 }
 
 function NOT(n) {
-  // Do not use !
-  return NAND(n, n);
+    // Do not use !
+    return NAND(n, n);
 }
 
 function AND(x, y) {
-  // Do not use &&, ||, or !
-  // You can use any of the functions that you have already written
-  return NAND(x, y) ? 0 : 1;
+    // Do not use &&, ||, or !
+    // You can use any of the functions that you have already written
+    return NAND(x, y) ? 0 : 1;
 }
 
 function OR(x, y) {
-  // Do not use ||, &&, or !
-  // You can use any of the functions that you have already written
-  return NAND(NAND(x, x), NAND(y, y));
+    // Do not use ||, &&, or !
+    // You can use any of the functions that you have already written
+    return NAND(NAND(x, x), NAND(y, y));
+}
+
+function NOR(x, y) {
+    // Do not use ||, &&, or !
+    // You can use any of the functions that you have already written
+    return NAND(NAND(x, x), NAND(y, y)) ? 0 : 1;
 }
 
 function XOR(x, y) {
-  // Do not use ||, &&, or !
-  // You can use any of the functions that you have already written
-  return NAND(NAND(x, NAND(x, y)), NAND(y, NAND(x, y)));
+    // Do not use ||, &&, or !
+    // You can use any of the functions that you have already written
+    return NAND(NAND(x, NAND(x, y)), NAND(y, NAND(x, y)));
 }
 
-module.exports = { NAND, NOT, AND, OR, XOR };
+module.exports = { NAND, NOT, AND, OR, NOR, XOR };

@@ -1,30 +1,34 @@
-const { NAND, AND, NOT, OR, XOR } = require("./nand-logic-gates");
+const { NAND, AND, NOT, OR, NOR, XOR } = require("./nand-logic-gates");
 
 describe("the NAND gate library", () => {
-    describe("NAND() method", () => {
-        test("returns 0 if both inputs are truthy and 1 otherwise", () => {
-            expect(NAND(1, 1)).toBe(0);
-            expect(NAND(1, 0)).toBe(1);
-        });
+    test("NAND() method", () => {
+        expect(NAND(1, 1)).toBe(0);
+        expect(NAND(1, 0)).toBe(1);
     });
 
-    describe("AND() method", () => {
+    test("AND() method", () => {
         expect(AND(1, 0)).toBe(0);
         expect(AND(0, 0)).toBe(0);
         expect(AND(1, 1)).toBe(1);
     });
 
-    describe("NOT() method", () => {
+    test("NOT() method", () => {
         expect(NOT(1)).toBe(0);
     });
 
-    describe("OR() method", () => {
+    test("OR() method", () => {
         expect(OR(1, 0)).toBe(1);
         expect(OR(1, 1)).toBe(1);
         expect(OR(0, 0)).toBe(0);
     });
 
-    describe("XOR() method", () => {
+    test("NOR() method", () => {
+        expect(NOR(0, 0)).toBe(1);
+        expect(NOR(1, 0)).toBe(0);
+        expect(NOR(1, 1)).toBe(0);
+    });
+
+    test("XOR() method", () => {
         expect(XOR(1, 1)).toBe(0);
         expect(XOR(0, 0)).toBe(0);
         expect(XOR(1, 0)).toBe(1);
