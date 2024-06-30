@@ -54,4 +54,25 @@ function XOR(x, y) {
     return NAND(NAND(x, NAND(x, y)), NAND(y, NAND(x, y)));
 }
 
-module.exports = { NAND, NOT, AND, OR, NOR, XOR };
+function XNOR(x, y) {
+    // Do not use ||, &&, or !
+    // You can use any of the functions that you have already written
+    return NAND(NAND(NAND(x, x), NAND(y, y)), NAND(x, y));
+}
+
+function MUX(x, y, selector) {
+    // Do not use ||, &&, or !
+    // You can use any of the functions that you have already written
+    return NAND(NAND(x, NAND(selector, selector)), NAND(y, selector));
+}
+
+function DEMUX(data, selector) {
+    // Do not use ||, &&, or !
+    // You can use any of the functions that you have already written
+    return {
+        a: AND(data, NOT(selector)),
+        b: AND(data, selector),
+    };
+}
+
+module.exports = { NAND, NOT, AND, OR, NOR, XOR, XNOR, MUX, DEMUX };

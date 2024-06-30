@@ -1,4 +1,14 @@
-const { NAND, AND, NOT, OR, NOR, XOR } = require("./nand-logic-gates");
+const {
+    NAND,
+    AND,
+    NOT,
+    OR,
+    NOR,
+    XOR,
+    XNOR,
+    MUX,
+    DEMUX,
+} = require("./nand-logic-gates");
 
 describe("the NAND gate library", () => {
     test("NAND() method", () => {
@@ -32,5 +42,23 @@ describe("the NAND gate library", () => {
         expect(XOR(1, 1)).toBe(0);
         expect(XOR(0, 0)).toBe(0);
         expect(XOR(1, 0)).toBe(1);
+    });
+
+    test("XNOR() method", () => {
+        expect(XNOR(0, 0)).toBe(1);
+        expect(XNOR(0, 1)).toBe(0);
+        expect(XNOR(1, 0)).toBe(0);
+        expect(XNOR(1, 1)).toBe(1);
+    });
+
+    test("MUX() method", () => {
+        expect(MUX(0, 0, 0)).toBe(0);
+        expect(MUX(0, 1, 0)).toBe(0);
+        expect(MUX(1, 0, 0)).toBe(1);
+        expect(MUX(1, 1, 0)).toBe(1);
+        expect(MUX(0, 0, 1)).toBe(0);
+        expect(MUX(0, 1, 1)).toBe(1);
+        expect(MUX(1, 0, 1)).toBe(0);
+        expect(MUX(1, 1, 1)).toBe(1);
     });
 });
