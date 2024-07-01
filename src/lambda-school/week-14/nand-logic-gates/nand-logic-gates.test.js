@@ -61,4 +61,11 @@ describe("the NAND gate library", () => {
         expect(MUX(1, 0, 1)).toBe(0);
         expect(MUX(1, 1, 1)).toBe(1);
     });
+
+    test("DEMUX() method", () => {
+        expect(DEMUX(0, 0)).toEqual({ a: 0, b: 0 });
+        expect(DEMUX(1, 0)).toEqual({ a: 1, b: 0 });
+        expect(DEMUX(0, 1)).toEqual({ a: 0, b: 0 });
+        expect(DEMUX(1, 1)).toEqual({ a: 0, b: 1 });
+    });
 });

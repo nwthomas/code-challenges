@@ -66,13 +66,15 @@ function MUX(x, y, selector) {
     return NAND(NAND(x, NAND(selector, selector)), NAND(y, selector));
 }
 
-function DEMUX(data, selector) {
+function DEMUX(x, selector) {
     // Do not use ||, &&, or !
     // You can use any of the functions that you have already written
-    return {
-        a: AND(data, NOT(selector)),
-        b: AND(data, selector),
-    };
+    const a = NAND(
+        NAND(x, NAND(selector, selector)),
+        NAND(x, NAND(selector, selector)),
+    );
+    const b = NAND(NAND(selector, x), NAND(selector, x));
+    return { a, b };
 }
 
 module.exports = { NAND, NOT, AND, OR, NOR, XOR, XNOR, MUX, DEMUX };
