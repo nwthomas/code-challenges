@@ -1,14 +1,19 @@
 """
 https://leetcode.com/problems/meeting-rooms-ii
 
-Given an array of meeting time intervals consisting of start and end times [s1, e1], [s2, e2], ... , determine if a person could attend all meetings.
+Given an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],...] (si < ei), find the minimum number of conference rooms required.
 
-For example,
-Given [ [0, 30], [5, 10], [15, 20] ],
-return false.
+Example 1:
+Input: [[0, 30],[5, 10],[15, 20]]
+Output: 2
+
+Example 2:
+Input: [[7,10],[2,4]]
+Output: 1
 """
 
 from typing import List
+
 
 def get_minimum_meeting_rooms_count(intervals: List[List[int]]) -> int:
     def get_sort_value(interval: List[int]) -> int:
@@ -27,7 +32,7 @@ def get_minimum_meeting_rooms_count(intervals: List[List[int]]) -> int:
 
         while len(prev_ends) > 0 and prev_ends[len(prev_ends) - 1] < current_start:
             prev_ends.pop()
-            
+
         prev_ends.append(current_end)
 
         rooms_needed = max(rooms_needed, len(prev_ends))
