@@ -33,6 +33,9 @@ def four_sum(nums: List[int], target: int) -> List[List[int]]:
 
     nums.sort()
 
+    # [0, 1, 1, 1, 2, 2, 3, 4]
+    #     i        j  k  l
+
     for i in range(n):
         for j in range(i + 1, n):
             if j > i + 1 and nums[j] == nums[j - 1]:
@@ -40,9 +43,10 @@ def four_sum(nums: List[int], target: int) -> List[List[int]]:
     
             k = j + 1
             l = n - 1
+
             while k < l:
                 total = nums[i] + nums[j] + nums[k] + nums[l]
-                print(total)
+
                 if total == target:
                     quadruplets.append([nums[i], nums[j], nums[k], nums[l]])
                     k += 1
