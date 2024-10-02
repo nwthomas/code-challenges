@@ -17,6 +17,7 @@
 -   [Encode and Decode Strings](encode-and-decode-strings)
 -   [Find Cheapest Flight Within K Flights](find-cheapest-flight-within-k-flights)
 -   [Find Minimum in Rotated Sorted Array](find-minimum-in-rotated-sorted-array)
+-   [Four Sum](four-sum)
 -   [Group Anagrams](group-anagrams)
 -   [House Robber](house-robber)
 -   [House Robber II](house-robber-ii)
