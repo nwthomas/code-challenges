@@ -19,7 +19,7 @@ It will be incomplete here (in this list) up until the moment I finish doing the
     -   [Contains Duplicates](easy/contains-duplicate) -- ([Article](https://nwthomas.medium.com/contains-duplicate-leetcode-code-challenge-1f77249e5155))
     -   [Product of Array Except Self](medium/product-of-array-except-self) -- ([Article](https://nwthomas.medium.com/product-of-array-except-self-leetcode-coding-challenge-d8be088f2d28))
     -   [Maximum Subarray](easy/maximum-subarray) -- ([Article](https://nwthomas.medium.com/maximum-subarray-leetcode-53-7ce3b2eba135))
-    -   [Maximum Product Subarray](easy/maximum-product-subarray) -- ([Article](https://nwthomas.medium.com/maximum-product-subarray-leetcode-code-challenge-a2d4854f9bf2))
+    -   [Maximum Product Subarray](medium/maximum-product-subarray) -- ([Article](https://nwthomas.medium.com/maximum-product-subarray-leetcode-code-challenge-a2d4854f9bf2))
     -   [Find Minimum in Rotated Sorted Array](medium/find-minimum-in-rotated-sorted-array) -- ([Article](https://nwthomas.medium.com/find-minimum-in-rotated-sorted-array-leetcode-153-f7da1edd99e5))
     -   [Search in Sorted Array](medium/search-in-rotated-array) -- ([Article](https://nwthomas.medium.com/search-in-rotated-sorted-array-leetcode-33-544a7184bf7a))
     -   [Three Sum](medium/three_sum) -- ([Article](https://nwthomas.medium.com/three-sum-code-challenge-leetcode-15-7017116e1d6a))
