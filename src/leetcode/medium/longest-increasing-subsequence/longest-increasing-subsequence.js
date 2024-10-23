@@ -23,7 +23,7 @@ Constraints:
 -104 <= nums[i] <= 104
 */
 
-function getLongestIncreasinsSubsequence(nums) {
+function getLongestIncreasingSubsequence(nums) {
     const tracker = nums.map((_) => 1);
 
     for (let i = nums.length - 2; i >= 0; i--) {
@@ -37,4 +37,4 @@ function getLongestIncreasinsSubsequence(nums) {
     return Math.max(...tracker);
 }
 
-module.exports = getLongestIncreasinsSubsequence;
+module.exports = getLongestIncreasingSubsequence;
