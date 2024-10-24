@@ -7,10 +7,7 @@ describe(getLongestCommonSubsequence.name, () => {
     });
 
     it("returns the longest common subsequence for dissimilar words", () => {
-        const result = getLongestCommonSubsequence(
-            "nathanthomas",
-            "anotherstring",
-        );
-        expect(result).toBe(5);
+        const result = getLongestCommonSubsequence("nathan", "anothera");
+        expect(result).toBe(4);
     });
 });
