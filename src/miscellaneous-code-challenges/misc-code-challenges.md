@@ -17,6 +17,7 @@
 -   Python
     -   [Count Islands](count-islands)
     -   [Eating Cookies](eating-cookies)
+    -   [GPU Credit Tracker](gpu-credit-tracker)
     -   [Making Change](making-change)
     -   [Recipe Batches](recipe-batches)
     -   [Rock Paper Scissors](rock-paper-scissors)
