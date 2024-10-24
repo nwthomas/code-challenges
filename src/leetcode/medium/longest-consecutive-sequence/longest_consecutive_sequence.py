@@ -22,22 +22,24 @@ Constraints:
 from heapq import heappop, heappush
 from typing import List
 
-def longest_consecutive_with_heap(nums: List[int]) -> int:
+
+def longest_consecutive_sequence_with_heap(nums: List[int]) -> int:
+    """Returns the longest consecutive sequence using a heap in O(n log n) time"""
     if len(nums) < 1:
         return 0
-    
+
     heap = []
     longest_consecutive = 0
     current_consecutive = 0
     prev_num = None
-    
+
     for num in nums:
         heappush(heap, num)
-    
+
     prev_num = heappop(heap)
     longest_consecutive = 1
     current_consecutive = 1
-    
+
     while len(heap) > 0:
         current_num = heappop(heap)
 
@@ -48,12 +50,14 @@ def longest_consecutive_with_heap(nums: List[int]) -> int:
             longest_consecutive = max(longest_consecutive, current_consecutive)
         else:
             current_consecutive = 1
-        
+
         prev_num = current_num
-        
+
     return longest_consecutive
 
-def longest_consecutive_with_set(nums: List[int]) -> int:
+
+def longest_consecutive_sequence_with_set(nums: List[int]) -> int:
+    """Returns the longest consecutive sequence using a set in O(n) time"""
     if len(nums) < 1:
         return 0
 

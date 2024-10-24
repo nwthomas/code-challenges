@@ -27,21 +27,6 @@ Constraints:
 1 <= text1.length, text2.length <= 1000
 text1 and text2 consist of only lowercase English characters.
 
-
-testy
-tester
-
-[
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 4, 2, 1, 0, 0],
-  [0, 0, 2, 1, 0, 0, 0],
-  [1, 0, 0, 1, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0],
-]
-
-
-
 */
 
 function getLongestCommonSubsequence(text1, text2) {
