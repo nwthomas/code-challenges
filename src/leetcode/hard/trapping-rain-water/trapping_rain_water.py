@@ -20,10 +20,11 @@ n == height.length
 
 from typing import List
 
+
 def trap(heights: List[int]) -> int:
-    if type(heights) != list:
+    if isinstance(heights, list):
         raise TypeError("Arguments must be of type list")
-    elif len(heights) < 1:
+    if len(heights) < 1:
         return 0
 
     water_trapped = 0
@@ -31,17 +32,17 @@ def trap(heights: List[int]) -> int:
     right = len(heights) - 1
     max_left = heights[left]
     max_right = heights[right]
-    
+
     while left < right:
         if max_left <= max_right:
             left += 1
         else:
             right -= 1
-            
+
         current_index = left if max_left <= max_right else right
         trapped = min(max_left, max_right) - heights[current_index]
         water_trapped += trapped if trapped > 0 else 0
         max_right = max(max_right, heights[right])
-        max_left = max(max_left, heights[left])  
-    
+        max_left = max(max_left, heights[left])
+
     return water_trapped

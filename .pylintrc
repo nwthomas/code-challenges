@@ -4,6 +4,7 @@ ignore=tests
 
 [MESSAGES CONTROL]
 disable=C0111,  # missing-docstring
+        C0301,  # line-too-long
         R0903,  # too-few-public-methods
 
 [FORMAT]
