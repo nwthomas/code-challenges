@@ -1,5 +1,7 @@
-from trapping_rain_water import trap
 import unittest
+
+from trapping_rain_water import trap
+
 
 class TestTrap(unittest.TestCase):
     def test_returns_zero_if_empty_list(self):
@@ -26,8 +28,9 @@ class TestTrap(unittest.TestCase):
 
     def test_returns_trapped_rainwater_for_variable_list(self):
         """Takes in a list with variable numbers and returns trapped water"""
-        result = trap([4,2,0,3,2,5])
+        result = trap([4, 2, 0, 3, 2, 5])
         self.assertEqual(result, 9)
+
 
 if __name__ == "__main__":
     unittest.main()
