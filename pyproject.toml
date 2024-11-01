@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "code-challenges"
+version = "0.0.0-alpha"
+description = "A repository for housing code challenges"
+authors = ["Nathan Thomas"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
