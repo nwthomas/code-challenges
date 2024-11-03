@@ -7,7 +7,7 @@
         "test": "jest --verbose"
     },
     "repository": "git@github.com:nwthomas/code-challenges.git",
-    "author": "Nathan Thomas <nwthomas@me.com>",
+    "author": "Nathan Thomas",
     "license": "MIT",
     "dependencies": {},
     "devDependencies": {
