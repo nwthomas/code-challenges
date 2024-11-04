@@ -1,5 +1,3 @@
-# pylint: disable=missing-module-docstring, line-too-long, too-few-public-methods
-
 from copy import deepcopy
 from dataclasses import dataclass, field
 from heapq import heappop, heappush
