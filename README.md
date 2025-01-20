@@ -75,9 +75,9 @@ A good general place to start is this [list of 14 techniques that are good to kn
 
 3. For Python challenges:
 
-    - Open your terminal and install dependencies via `pipenv install`
-    - Start a shell environment by running either `pip shell` (or, if you have it installed, preferably `pipenv shell`)
-    - Navigate into any directory and run files using the `python3 <file name here>` command
+    - Open your terminal and install dependencies via `poetry install`
+    - Start a shell environment by running either `poetry shell`
+    - Run tests locally by identifying the subdirectory you want to run and using the command `PYTHONPATH=$(pwd) poetry run python ./src/path/to/the/test_file.py` to run it
 
 4. Modify some of the code in a test file to watch the magic happen
 

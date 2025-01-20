@@ -8,7 +8,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-
+sortedcontainers = "^2.4.0"
 
 [tool.poetry.group.dev.dependencies]
 pylint = "3.3.1"

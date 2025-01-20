@@ -1,7 +1,7 @@
 """
 https://leetcode.com/problems/group-anagrams
 
-Given an array of strings strs, group the 
+Given an array of strings strs, group the
 anagrams together. You can return the answer in any order.
 
 Example 1:
@@ -28,38 +28,39 @@ strs[i] consists of lowercase English letters.
 """
 from typing import List
 
-from sortedcontainers import SortedDict
+# This repo uses running Poetry via PYTHONPATH, so this is safe to disable
+from sortedcontainers import SortedDict  # pylint: disable=import-error
 
 
-class Solution:
-    def group_anagrams(self, strs: List[str]) -> List[List[str]]:
-        groups = {}
+def group_anagrams(strs: List[str]) -> List[List[str]]:
+    groups = {}
 
-        for s in strs:
-            key = self.convert_str_to_deterministic_key(s)
+    for s in strs:
+        key = convert_str_to_deterministic_key(s)
 
-            if key not in groups:
-                groups[key] = [s]
-            else:
-                groups[key].append(s)
+        if key not in groups:
+            groups[key] = [s]
+        else:
+            groups[key].append(s)
 
-        return list(groups.values())
+    return list(groups.values())
 
-    def convert_str_to_deterministic_key(self, unsorted_str: str) -> str:
-        result = ""
-        tracker = SortedDict()
 
-        for s in unsorted_str:
-            if not s in tracker:
-                tracker[s] = 1
-            else:
-                tracker[s] += 1
+def convert_str_to_deterministic_key(unsorted_str: str) -> str:
+    result = ""
+    tracker = SortedDict()
 
-            for key in tracker.keys():
-                if tracker[key] > 1:
-                    for _ in range(tracker[key]):
-                        result += key
-                else:
+    for s in unsorted_str:
+        if not s in tracker:
+            tracker[s] = 1
+        else:
+            tracker[s] += 1
+
+        for key in tracker.keys():
+            if tracker[key] > 1:
+                for _ in range(tracker[key]):
                     result += key
+            else:
+                result += key
 
-            return result
+        return result
