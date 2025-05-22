@@ -3,7 +3,9 @@ init-hook="import sys; sys.path.append('./')"
 ignore=tests
 
 [MESSAGES CONTROL]
-disable=C0111,  # missing-docstring
+disable=C0103,  # invalid-name
+        C0111,  # missing-docstring
+        C0200,  # consider-using-enumerate
         C0301,  # line-too-long
         R0903,  # too-few-public-methods
 

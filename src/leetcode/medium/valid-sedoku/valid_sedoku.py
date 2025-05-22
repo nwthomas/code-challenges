@@ -10,7 +10,7 @@ A Sudoku board (partially filled) could be valid but is not necessarily solvable
 Only the filled cells need to be validated according to the mentioned rules.
 
 Example 1:
-Input: board = 
+Input: board =
 [["5","3",".",".","7",".",".",".","."]
 ,["6",".",".","1","9","5",".",".","."]
 ,[".","9","8",".",".",".",".","6","."]
@@ -23,7 +23,7 @@ Input: board =
 Output: true
 
 Example 2:
-Input: board = 
+Input: board =
 [["8","3",".",".","7",".",".",".","."]
 ,["6",".",".","1","9","5",".",".","."]
 ,[".","9","8",".",".",".",".","6","."]
@@ -44,34 +44,41 @@ board[i][j] is a digit 1-9 or '.'.
 
 from typing import List
 
+
 def isValidSudoku(board: List[List[str]]) -> bool:
-    prevSeen = {
-        "rows": { num: {} for num in range(len(board)) },
-        "columns": { num: {} for num in range(len(board[0])) }
-    }
-    buckets = [[{} for _ in range(3)] for _ in range(3)]
-    
-    for y in range(len(board)):
-        for x in range(len(board[y])):
-            currentNum = board[y][x]
-            
-            if (currentNum == "."):
+    rowToNums = {}
+    columnToNums = {}
+    gridToNums = {}
+
+    for y, _ in enumerate(board):
+        for x, column in enumerate(board[y]):
+            # Skip "." values which aren't necessary to check
+            if column == ".":
                 continue
-            
-            if currentNum in prevSeen["rows"][y]:
+
+            # Set initial tracker keys if not present
+            if not y in rowToNums:
+                rowToNums[y] = {}
+            if not x in columnToNums:
+                columnToNums[x] = {}
+
+            yGridBox = y // 3
+            xGridBox = x // 3
+            gridKey = f"{yGridBox}{xGridBox}"
+            if gridKey not in gridToNums:
+                gridToNums[gridKey] = {}
+
+            # Perform check for num presence in sub-box grid
+            if column in gridToNums[gridKey]:
                 return False
-            if currentNum in prevSeen["columns"][x]:
+
+            # Next, perform checks for row/column values
+            if column in rowToNums[y] or column in columnToNums[x]:
                 return False
-            
-            prevSeen["rows"][y][currentNum] = True
-            prevSeen["columns"][x][currentNum] = True
-                            
-            bucketY = y // 3
-            bucketX = x // 3
-            
-            if currentNum in buckets[bucketY][bucketX]:
-                return False
-            
-            buckets[bucketY][bucketX][currentNum] = True
-            
+
+            # Set values in trackers for later comparisons
+            rowToNums[y][column] = True
+            columnToNums[x][column] = True
+            gridToNums[gridKey][column] = True
+
     return True
