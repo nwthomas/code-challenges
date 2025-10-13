@@ -8,8 +8,7 @@ class TestGroupAnagrams(unittest.TestCase):
         """Takes in a list of strings and returns a list of lists of grouped anagrams"""
         strs = ["asdf", "fdsa", "ityahjsd", "fffa", "afff"]
         result = group_anagrams(strs)
-        self.assertEqual(result, [["asdf", "afff"], [
-                         "fdsa", "fffa"], ["ityahjsd"]])
+        self.assertEqual(result, [['asdf', 'fdsa'], ['ityahjsd'], ['fffa', 'afff']])
 
     def test_can_handle_empty_list(self):
         """Can properly handle an empty list and return an empty list"""

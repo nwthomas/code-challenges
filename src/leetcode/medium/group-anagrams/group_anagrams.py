@@ -28,39 +28,20 @@ strs[i] consists of lowercase English letters.
 """
 from typing import List
 
-# This repo uses running Poetry via PYTHONPATH, so this is safe to disable
-from sortedcontainers import SortedDict  # pylint: disable=import-error
-
 
 def group_anagrams(strs: List[str]) -> List[List[str]]:
-    groups = {}
+    tracker = {}
 
-    for s in strs:
-        key = convert_str_to_deterministic_key(s)
+    for new_str in strs:
+        key = {}
+        for char in new_str:
+            if not char in key:
+                key[char] = 0
+            key[char] += 1
 
-        if key not in groups:
-            groups[key] = [s]
-        else:
-            groups[key].append(s)
+        sorted_key = tuple(sorted(key.items()))
+        if not sorted_key in tracker:
+            tracker[sorted_key] = []
+        tracker[sorted_key].append(new_str)
 
-    return list(groups.values())
-
-
-def convert_str_to_deterministic_key(unsorted_str: str) -> str:
-    result = ""
-    tracker = SortedDict()
-
-    for s in unsorted_str:
-        if not s in tracker:
-            tracker[s] = 1
-        else:
-            tracker[s] += 1
-
-        for key in tracker.keys():
-            if tracker[key] > 1:
-                for _ in range(tracker[key]):
-                    result += key
-            else:
-                result += key
-
-        return result
+    return list(tracker.values())
