@@ -21,18 +21,32 @@ One possible encode method is: "we:;say:;:::;yes"
 
 from typing import List
 
-ENCODING_SPACER = "|.del~|"
+DELIMITER = "π"
 
-def encode(l: List[str]) -> str:
-    global ENCODING_SPACER
-
-    encodedString = ""
-
-    for i, s in enumerate(l):
-        encodedString += s if i == 0 else ENCODING_SPACER + s
-
-    return encodedString
-
+def encode(strs: List[str]) -> str:
+    result = ""
+    lengths = ""
+    concatted_strs = ""
+    for new_str in strs:
+        new_length = str(len(new_str))
+        lengths += new_length + ","
+        concatted_strs += new_str
+    result += lengths + DELIMITER + concatted_strs
+    return result
 
 def decode(s: str) -> List[str]:
-    return s.split(ENCODING_SPACER)
+    result = []
+    sizes = []
+    i = 0
+    while s[i] != DELIMITER:
+        current_size = ""
+        while s[i] != ",":
+            current_size += s[i]
+            i += 1
+        sizes.append(int(current_size))
+        i += 1
+    i += 1
+    for size in sizes:
+        result.append(s[i:i+size])
+        i += size
+    return result
