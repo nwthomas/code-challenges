@@ -1,18 +1,18 @@
-[tool.poetry]
+[project]
 name = "code-challenges"
 version = "0.0.0-alpha"
 description = "A repository for housing code challenges"
-authors = ["Nathan Thomas"]
-license = "MIT"
+authors = [
+    {name = "Nathan Thomas"}
+]
+license = {text = "MIT"}
 readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "sortedcontainers>=2.4.0",
+]
 
-[tool.poetry.dependencies]
-python = "^3.12"
-sortedcontainers = "^2.4.0"
-
-[tool.poetry.group.dev.dependencies]
-pylint = "3.3.1"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[tool.uv]
+dev-dependencies = [
+    "pylint==3.3.1",
+]

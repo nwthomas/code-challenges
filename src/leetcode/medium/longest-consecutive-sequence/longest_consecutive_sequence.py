@@ -24,7 +24,14 @@ from typing import List
 
 
 def longest_consecutive_sequence_with_heap(nums: List[int]) -> int:
-    """Returns the longest consecutive sequence using a heap in O(n log n) time"""
+    """Returns the longest consecutive sequence using a heap in O(n log n) time
+    
+    Args:
+        nums (List[int]): The list of numbers to find the longest consecutive sequence of
+
+    Returns:
+        int: The length of the longest consecutive sequence
+    """
     if len(nums) < 1:
         return 0
 
@@ -57,21 +64,22 @@ def longest_consecutive_sequence_with_heap(nums: List[int]) -> int:
 
 
 def longest_consecutive_sequence_with_set(nums: List[int]) -> int:
-    """Returns the longest consecutive sequence using a set in O(n) time"""
-    if len(nums) < 1:
-        return 0
+    """Returns the longest consecutive sequence using a set in O(n) time
+    
+    Args:
+        nums (List[int]): The list of numbers to find the longest consecutive sequence of
 
-    nums_set = set(nums)
-    longest_sequence = 1
+    Returns:
+        int: The length of the longest consecutive sequence
+    """
+    num_set = set(nums)
+    longest = 0
 
-    for num in nums_set:
-        if num - 1 not in nums_set:
-            current_num = num
-            current_sequence = 1
+    for num in num_set:
+        if (num - 1) not in num_set:
+            length = 1
+            while (num + length) in num_set:
+                length += 1
+            longest = max(length, longest)
 
-            while current_num + 1 in nums_set:
-                current_num += 1
-                current_sequence += 1
-                longest_sequence = max(longest_sequence, current_sequence)
-
-    return longest_sequence
+    return longest

@@ -1,5 +1,2 @@
 install:
-	poetry install && pnpm install
-
-pshell:
-	poetry shell
+	uv sync && pnpm install
