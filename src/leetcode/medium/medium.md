@@ -54,7 +54,7 @@
 -   [Top K Frequent Words](top-k-frequent-words)
 -   [Unique Paths](unique-paths)
 -   [Unique Paths II](unique-paths-ii)
--   [Valid Sedoku](valid-sedoku)
+-   [Is Valid Sedoku](is-valid-sedoku)
 -   [Validate Binary Search Tree](validate-binary-search-tree)
 -   [Word Break](word-break)
 -   [Word Search](word-search)
