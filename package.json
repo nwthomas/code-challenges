@@ -1,7 +1,7 @@
 {
     "name": "code-challenges",
-    "version": "1.0.0",
-    "description": "A repository of code challenges",
+    "version": "0.0.0-alpha",
+    "description": "A repository of code challenges by Nathan Thomas",
     "main": "index.js",
     "scripts": {
         "test": "jest --verbose"
