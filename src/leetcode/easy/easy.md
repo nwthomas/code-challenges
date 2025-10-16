@@ -8,6 +8,7 @@
 -   [Contains Duplicate](contains-duplicate)
 -   [Counting Bits](counting-bits)
 -   [Invert Binary Tree](invert-binary-tree)
+-   [Is Palindrome](is-palindrome)
 -   [Is Same Tree](is-same-tree)
 -   [Linked List Cycle](linked-list-cycle)
 -   [Maximum Depth of Binary Tree](maximum-depth-of-binary-tree)
