@@ -53,6 +53,8 @@ class MinStack:
             self.min = self.min - pop
 
     def top(self) -> int:
+        if not self.stack:
+            return float('inf')
         top = self.stack[-1]
         if top > 0:
             return top + self.min
