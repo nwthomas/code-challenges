@@ -28,24 +28,22 @@ Constraints:
  * @return {number}
  */
 function maxProfit(prices) {
-    if (prices.length <= 1) {
-        return 0;
-    }
+    let buyPrice = Infinity;
+    let maximumProfit = 0;
 
-    let maxProfit = 0;
-    let initialPrice = prices[0];
+    for (let i = 0; i < prices.length; i++) {
+        const currentPrice = prices[i];
 
-    for (let i = 1; i < prices.length; i++) {
-        const price = prices[i];
-
-        if (price - initialPrice < 0) {
-            initialPrice = price;
-        } else if (price - initialPrice > maxProfit) {
-            maxProfit = price - initialPrice;
+        if (currentPrice < buyPrice) {
+            buyPrice = currentPrice;
+            continue;
         }
+
+        const diff = currentPrice - buyPrice;
+        maximumProfit = Math.max(diff, maximumProfit);
     }
 
-    return maxProfit;
+    return maximumProfit;
 }
 
 module.exports = {
