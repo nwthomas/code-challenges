@@ -37,6 +37,7 @@
 -   [Maximum Product Subarray](maximum-product-subarray)
 -   [Meeting Rooms II](meeting-rooms)
 -   [Merge Intervals](merge-intervals)
+-   [Min Stack](min-stack)
 -   [Non-Overlapping Intervals](non-overlapping-intervals)
 -   [Number of Islands](number-of-islands)
 -   [Pacific Atlantic Water Flow](pacific-atlantic-water-flow)
