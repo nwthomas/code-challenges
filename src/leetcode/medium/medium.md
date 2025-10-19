@@ -46,6 +46,7 @@
 -   [Remove Nth Node From End of List](remove-nth-node-from-end-of-list)
 -   [Reorder List](reorder-list)
 -   [Rotate Image](rotate-image)
+-   [Search 2D Matrix](search-2d-matrix)
 -   [Search in Sorted Array](search-in-sorted-array)
 -   [Set Matrix Zeroes](set-matrix-zeroes)
 -   [Sort Colors](#sort-colors)
