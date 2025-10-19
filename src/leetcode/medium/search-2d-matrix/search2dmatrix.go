@@ -1,47 +1,25 @@
 package search2dmatrix
 
-func binarySearch(nums []int, target int) int {
-    left := 0
-    right := len(nums) - 1
-
-    for left <= right {
-        choice := ((right - left) / 2) + left
-
-        leftNum := nums[left]
-        rightNum := nums[right]
-        choiceNum := nums[choice]
-        
-        if leftNum == target {
-            return left
-        } else if rightNum == target {
-            return right
-        } else if choiceNum == target {
-            return choice
-        }
-
-        if left == right {
-            return -1
-        } else if choiceNum > target {
-            right = choice
-        } else if choice != left {
-            left = choice
-        } else {
-            left += 1
-        }
-    }
-
-    return -1
-}
-
 func searchMatrix(matrix [][]int, target int) bool {
-    list := []int{}
+    rows, cols := len(matrix), len(matrix[0])
+    l, r := 0, rows * cols -1
 
-    for i := 0; i < len(matrix); i++ {
-        currentList := matrix[i]
-        list = append(list, currentList...)
+    for l <= r {
+        m := l + (r - l) / 2
+		// row = m divided by columns to get y, col = m modulo by colums to get x
+        row, col := m / cols, m % cols
+		lRow, lCol := l / cols, l % cols
+		rRow, rCol := r / cols, r % cols
+
+		// Perform three checks (l, m, r) every time to speed up the search
+        if matrix[row][col] == target || matrix[lRow][lCol] == target || matrix[rRow][rCol] == target {
+            return true
+        } else if matrix[row][col] < target {
+            l = m + 1
+        } else {
+            r = m - 1
+        }
     }
 
-    result := binarySearch(list, target)
-
-    return result != -1
+    return false
 }
