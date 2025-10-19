@@ -3,6 +3,7 @@
 ## Table of Contents
 
 -   [Best Time to Buy and Sell Stock](best-time-to-buy-and-sell-stock)
+-   [Binary Search](binary-search)
 -   [Change Directory](change-directory)
 -   [Climbing Stairs](climbing-stairs)
 -   [Contains Duplicate](contains-duplicate)
