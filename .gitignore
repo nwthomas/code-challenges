@@ -170,7 +170,6 @@ htmlcov/
 .idea/
 *.sublime-*
 *.swp
-.python-version
 
 # Documentation build
 docs/_build/

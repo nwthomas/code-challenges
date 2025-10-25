@@ -9,7 +9,7 @@ license = {text = "MIT"}
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "sortedcontainers>=2.4.0",
+    "sortedcontainers==2.4.0",
 ]
 
 [tool.uv]
