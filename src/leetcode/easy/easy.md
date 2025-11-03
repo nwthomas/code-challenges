@@ -12,6 +12,7 @@
 -   [Invert Binary Tree](invert-binary-tree)
 -   [Is Palindrome](is-palindrome)
 -   [Is Same Tree](is-same-tree)
+-   [Last Stone Weight](last-stone-weight)
 -   [Linked List Cycle](linked-list-cycle)
 -   [Maximum Depth of Binary Tree](maximum-depth-of-binary-tree)
 -   [Maximum Subarray](maximum-subarray)
