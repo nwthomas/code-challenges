@@ -17,6 +17,10 @@ test-js:
 	pnpm test
 	@echo "All Python tests..."
 
-test-python:
-	@echo "All Python tests..."
-	# TODO: Add Python testing to this command
+test-py:
+    # NOTE: This isn't a standard way to run Python tests, but I didn't each directory with an __init__.py file so here we are.
+	@echo "Running all Python tests..."
+	find src -name "test_*.py" -type f | while read file; do \
+		echo "\n==============================================\n\nRunning $$file"; \
+		python "$$file"; \
+	done;
