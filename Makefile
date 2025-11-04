@@ -18,7 +18,7 @@ test-js:
 	@echo "All Python tests..."
 
 test-py:
-    # NOTE: This isn't a standard way to run Python tests, but I didn't each directory with an __init__.py file so here we are.
+    # NOTE: This isn't a standard way to run Python tests, but I didn't put an __init__.py file in each directory so here we are.
 	@echo "Running all Python tests..."
 	find src -name "test_*.py" -type f | while read file; do \
 		echo "\n==============================================\n\nRunning $$file"; \

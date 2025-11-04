@@ -27,6 +27,7 @@
 -   [Jump Game](jump-game)
 -   [Jump Game II](jump-game-ii)
 -   [Kth Smallest Element in BST](kth-smallest-element-in-bst)
+-   [Length of Longest Substring Without Repeating Character](length-of-longest-substring-without-repeating-character)
 -   [Longest Common Subsequence](longest-common-subsequence)
 -   [Longest Consecutive Sequence](longest-consecutive-sequence)
 -   [Longest Increasing Subsequence](longest-increasing-subsequence)
