@@ -27,7 +27,7 @@ class TestGetMinCostClimbingStairs(unittest.TestCase):
         """Handles a staircase of length and cost length 1"""
         staircase_costs = [10]
         result = get_min_cost_climbing_stairs(staircase_costs)
-        self.assertEqual(result, 10)
+        self.assertEqual(result, 0)
 
 
 if __name__ == "__main__":
