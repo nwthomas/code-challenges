@@ -26,24 +26,16 @@ Constraints:
 1 <= n <= 45
 */
 
-function climbStairs(n) {
-    const cache = {};
-
-    function backtrack(step) {
-        if (cache[step]) {
-            return cache[step];
-        } else if (step === n) {
-            return 1;
-        } else if (step > n) {
-            return 0;
-        }
-
-        cache[step] = backtrack(step + 1) + backtrack(step + 2);
-
+const climbStairs = (n, cache = {}, step = 0) => {
+    if (cache[step]) {
         return cache[step];
+    } else if (step >= n) {
+        return step > n ? 0 : 1;
     }
 
-    return backtrack(0);
+    cache[step] = climbStairs(n, cache, step + 1) + climbStairs(n, cache, step + 2);
+
+    return cache[step];
 }
 
 module.exports = { climbStairs };
