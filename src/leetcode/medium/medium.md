@@ -53,6 +53,7 @@
 -   [Set Matrix Zeroes](set-matrix-zeroes)
 -   [Sort Colors](#sort-colors)
 -   [Spiral Matrix](spiral-matrix)
+-   [Subsets](subsets)
 -   [Target Sum](target-sum)
 -   [Top K Frequent ELements](top-k-frequent-elements)
 -   [Top K Frequent Words](top-k-frequent-words)
