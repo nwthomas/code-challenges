@@ -7,6 +7,8 @@
 -   [Combination Sum 4](combination-sum-4)
 -   [Coin Change](coin-change)
 -   [Coin Change II](coin-change-ii)
+-   [Combination Sum](combination-sum)
+-   [Combination Sum IIII](combination-sum-iiii)
 -   [Container With Most Water](container-with-most-water)
 -   [Continuous Subarray Sum](continuous-subarray-sum)
 -   [Conway's Game of Life](conways-game-of-life)
