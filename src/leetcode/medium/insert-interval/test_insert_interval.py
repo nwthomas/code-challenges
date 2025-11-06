@@ -24,8 +24,8 @@ class TestInsert(unittest.TestCase):
 
     def test_merges_new_interval_and_existing_intervals(self):
         """Takes in intervals + new interval and merges them all together"""
-        result = insert([[0, 3], [2, 8], [15, 20], [16, 19]], [7, 16])
-        self.assertEqual(result, [[0, 19]])
+        result = insert([[0, 3], [4, 8], [15, 16], [17, 20]], [0, 17])
+        self.assertEqual(result, [[0, 20]])
 
     def test_merges_new_interval_at_single_point(self):
         """Takes in intervals + new interval and merges it in the correct spot"""
