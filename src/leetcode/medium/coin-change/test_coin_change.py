@@ -12,7 +12,6 @@ class TestCoinChange(unittest.TestCase):
         result = coin_change([1, 4, 5, 100], 0)
         self.assertEqual(result, 0)
 
-
     def test_returns_fewest_coins_for_targetd_amount(self):
         """Takes in an array of coins and a targeted amount and returns fewest coins to reach it"""
         result = coin_change([1, 3, 5, 8], 100)
