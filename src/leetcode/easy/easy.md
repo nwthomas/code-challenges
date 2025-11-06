@@ -21,6 +21,7 @@
 -   [Merge Two Sorted Lists](merge-two-sorted-lists)
 -   [Min Cost Climbing Stairs](min-cost-climbing-stairs)
 -   [Number of 1 Bits](number-of-1-bits)
+-   [Plus One](plus-one)
 -   [Remove Element](remove-element)
 -   [Reverse Linked List](reverse-linked-list)
 -   [Two Sum](two-sums)
