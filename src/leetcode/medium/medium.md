@@ -43,6 +43,7 @@
 -   [LRU Cache](lru-cache)
 -   [Lowest Common Ancestor of Binary Search Tree](lowest-common-ancestor-of-bst)
 -   [Maximum Product Subarray](maximum-product-subarray)
+-   [Maximum Subarray](maximum-subarray)
 -   [Meeting Rooms II](meeting-rooms)
 -   [Merge Intervals](merge-intervals)
 -   [Min Stack](min-stack)
