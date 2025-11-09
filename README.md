@@ -33,7 +33,7 @@ A good general place to start is this [list of 14 techniques that are good to kn
 
 3. For JavaScript challenges:
 
-    - Ensure installation of [pnpm](https://pnpm.io) before doing dependency installation
+    - Ensure installation of [bun](https://bun.com) before doing dependency installation
     - Run `pnpm i` to install all dependencies
     - Run `make test-js`, `pnpm test <file name>`, or `pnpm test <file name> --watch` to run JS tests
 

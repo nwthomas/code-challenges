@@ -2,7 +2,7 @@
 .PHONY: install test
 
 install:
-	uv sync && pnpm install
+	uv sync && bun install
 
 test-go:
 	@echo "Running all Go tests..."
@@ -14,7 +14,7 @@ test-go:
 
 test-js:
 	@echo "All JavaScript tests..."
-	pnpm test
+	bun run test
 	@echo "All Python tests..."
 
 test-py:
