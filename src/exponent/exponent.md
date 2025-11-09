@@ -1,4 +1,4 @@
-# Pramp Interviews
+# Exponent Interviews
 
 ## Table of Contents
 
