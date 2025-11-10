@@ -45,26 +45,19 @@ class ListNode:
 
 def merge_k_lists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
     heap = []
-    tracker = [root_node for root_node in lists]
-    
-    while len(tracker):
-        current_node = tracker.pop()
-        
-        if not current_node:
-            continue
-        
-        heappush(heap, current_node.val)
-        
-        if current_node.next:
-            tracker.append(current_node.next)
-            
-    root = ListNode(heappop(heap)) if len(heap) > 0 else None
-    current = root if root else None
-    
-    while current and len(heap) > 0:
-        current_value = heappop(heap)
-        
-        current.next = ListNode(current_value)
+
+    for l in lists:
+        current = l
+        while current:
+            heappush(heap, current.val)
+            current = current.next
+
+    dummy = ListNode(float('-inf'))
+    current = dummy
+    while len(heap) > 0:
+        val = heappop(heap)
+        newNode = ListNode(val)
+        current.next = newNode
         current = current.next
-        
-    return root
+
+    return dummy.next
