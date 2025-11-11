@@ -32,6 +32,7 @@
 -   [Insert Interval](insert-interval)
 -   [Jump Game](jump-game)
 -   [Jump Game II](jump-game-ii)
+-   [Koko Eating Bananas](koko-eating-bananas)
 -   [Kth Smallest Element in BST](kth-smallest-element-in-bst)
 -   [Length of Longest Substring Without Repeating Character](length-of-longest-substring-without-repeating-character)
 -   [Longest Common Subsequence](longest-common-subsequence)
