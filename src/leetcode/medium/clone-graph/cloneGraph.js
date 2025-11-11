@@ -54,35 +54,29 @@ class Node {
     }
 }
 
-function cloneGraph(node) {
-    if (!node.neighbors.length) {
-        return [];
+const cloneGraph = (node) => {
+    if (!node) {
+        return node
     }
 
-    const root = new Node(node.val, []);
+    const root = new Node(node.val);
     const cache = { [node.val]: root };
-    const stack = [[node.val, node.neighbors]];
+    const tracker = [[node.val, node.neighbors]];
 
-    while (stack.length) {
-        const [value, neighbors] = stack.pop();
+    while (tracker.length > 0) {
+        const [val, neighbors] = tracker.pop();
+        const newNode = cache[val] ?? new Node(val);
+        cache[val] = newNode;
 
-        let newNode = new Node(value, []);
-
-        if (cache[value]) {
-            newNode = cache[value];
-        }
-
-        newNode.neighbors = neighbors.map((neighbor) => {
-            let newNeighbor = new Node(neighbor.val, []);
-
-            if (cache[neighbor.val]) {
-                newNeighbor = cache[neighbor.val];
-            } else {
-                cache[neighbor.val] = newNeighbor;
-                stack.push([neighbor.val, neighbor.neighbors]);
+        neighbors.forEach(neighbor => {
+            const newNeighbor = cache[neighbor.val] ?? new Node(neighbor.val);
+    
+            if (!cache[neighbor.val]) {
+                tracker.push([neighbor.val, neighbor.neighbors]);
             }
-
-            return newNeighbor;
+    
+            newNode.neighbors.push(newNeighbor);
+            cache[newNeighbor.val] = newNeighbor;
         });
     }
 

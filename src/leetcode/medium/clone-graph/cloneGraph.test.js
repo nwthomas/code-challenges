@@ -18,10 +18,16 @@ describe("Clone Graph", () => {
         fourth.neighbors.push(node, third);
     });
 
-    it("returns an empty array if no neighbors", () => {
+    it("returns undefined if no node is given as input", () => {
+        const result = cloneGraph();
+        expect(result).toBe(undefined);
+    });
+
+    it("returns a singular node if only one node with no neighbors is given", () => {
         const newNode = new Node(1, []);
         const result = cloneGraph(newNode);
-        expect(result).toEqual([]);
+        expect(result.val).toEqual(newNode.val);
+        expect(result.neighbors).toEqual(newNode.neighbors);
     });
 
     it("returns a deeploy cloned graph", () => {
