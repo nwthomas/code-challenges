@@ -25,7 +25,7 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "sortedcontainers", specifier = ">=2.4.0" }]
+requires-dist = [{ name = "sortedcontainers", specifier = "==2.4.0" }]
 
 [package.metadata.requires-dev]
 dev = [{ name = "pylint", specifier = "==3.3.1" }]
