@@ -54,26 +54,5 @@ class TestNumIslands(unittest.TestCase):
         result = num_islands(grid)
         self.assertEqual(result, 4)
 
-    def test_raises_typeerror_if_arg_not_list(self):
-        """Takes in an argument that's not of type list and raises TypeError"""
-        def result():
-            return num_islands({})
-
-        self.assertRaises(TypeError, result)
-
-    def test_raises_typeerror_if_rows_not_list(self):
-        """Takes in a list with some rows not of type list and raises TypeError"""
-        def result():
-            return num_islands([{}, "test", 123])
-
-        self.assertRaises(TypeError, result)
-
-    def test_raises_typeerror_if_cells_not_string(self):
-        """Takes in a grid with some cells that aren't of type string and raises TypeError"""
-        def result():
-            return num_islands([["1", 2, 3], ["1", "0", {}]])
-
-        self.assertRaises(TypeError, result)
-
 if __name__ == "__main__":
     unittest.main()

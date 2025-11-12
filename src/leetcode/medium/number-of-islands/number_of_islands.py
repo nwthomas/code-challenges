@@ -33,37 +33,28 @@ grid[i][j] is '0' or '1'.
 from typing import List, Type
 
 def num_islands(grid: List[List[str]]) -> int:
-    if type(grid) != list:
-        raise TypeError("Argument must be of type lists within list")
-
-    total_islands = 0
+    islands = 0
     cache = {}
-    
-    def traverse(y, x):
-        if (y, x) in cache or grid[y][x] == "0":
-            return
-        else:
-            cache[(y, x)] = True
-            
-            if y - 1 >= 0:
-                traverse(y - 1, x)
-            if x - 1 >= 0:
-                traverse(y, x - 1)
-            if y + 1 < len(grid):
-                traverse(y + 1, x)
-            if x + 1 < len(grid[y]):
-                traverse(y, x + 1)
-                
-    for y in range(len(grid)):
-        if type (grid[y]) != list:
-            raise TypeError("Argument must be of type lists within list")
 
+    def traverse(y, x):
+        if f"{y}{x}" in cache:
+            return
+        
+        cache[f"{y}{x}"] = True
+
+        if y - 1 >= 0 and grid[y - 1][x] == "1":
+            traverse(y - 1, x)
+        if y + 1 < len(grid) and grid[y + 1][x] == "1":
+            traverse(y + 1, x)
+        if x - 1 >= 0 and grid[y][x - 1] == "1":
+            traverse(y, x - 1)
+        if x + 1 < len(grid[y]) and grid[y][x + 1] == "1":
+            traverse(y, x + 1)
+
+    for y in range(len(grid)):
         for x in range(len(grid[y])):
-            if type(grid[y][x]) != str:
-                raise TypeError("Cells within grid must be of type string")
-                
-            if (y, x) not in cache and grid[y][x] == "1":
-                total_islands += 1
+            if f"{y}{x}" not in cache and grid[y][x] == "1":
                 traverse(y, x)
-                
-    return total_islands
+                islands += 1
+
+    return islands
