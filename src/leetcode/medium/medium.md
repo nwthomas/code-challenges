@@ -44,6 +44,7 @@
 -   [Longest Substring Without Repeating Characters](longest-substring-without-repeating-characters)
 -   [LRU Cache](lru-cache)
 -   [Lowest Common Ancestor of Binary Search Tree](lowest-common-ancestor-of-bst)
+-   [Kth Largest Element in an Array](kth-largest-element-in-an-array)
 -   [Maximum Product Subarray](maximum-product-subarray)
 -   [Maximum Subarray](maximum-subarray)
 -   [Meeting Rooms II](meeting-rooms)
