@@ -37,23 +37,11 @@ All the values of coins are unique.
 from typing import List, Type
 
 def change(amount: int, coins: List[int]) -> int:
-    if type(amount) != int:
-        raise TypeError("First argument of change must be of type int")
-    if type(coins) != list:
-        raise TypeError("Second argument of change must be of type list")
+    cache = [0 for _ in range(amount + 1)]
+    cache[0] = 1
 
-    dp =[[0 if i > 0 else 1 for i in range(amount + 1)] for _ in coins]
-    
-    for row, coin in enumerate(coins):
-        if type(coin) != int:
-            raise TypeError("Values in second argument of change must be of type int")
+    for c in range(len(coins) - 1, -1, -1):
+        for a in range(1, amount + 1):
+            cache[a] += cache[a - coins[c]] if coins[c] <= a else 0
 
-        for slot in range(1, len(dp[row])):
-            prev_slot = slot - coin
-            
-            if prev_slot >= 0:
-                dp[row][slot] = dp[row][prev_slot]
-            if row > 0:
-                dp[row][slot] += dp[row - 1][slot]
-                
-    return dp[len(coins) - 1][amount]
+    return cache[amount]

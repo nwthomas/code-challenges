@@ -17,26 +17,5 @@ class TestChange(unittest.TestCase):
         result = change(amount, coins)
         self.assertEqual(result, 93843)
 
-    def test_raises_typeerror_for_wrong_first_argument(self):
-        """Raises TypeError if first argument is not of type int"""
-        def result():
-            return change({}, [1, 2, 3])
-        
-        self.assertRaises(TypeError, result)
-
-    def test_raises_typeerror_for_wrong_second_argument(self):
-        """Raises TypeError if second argument is not of type list"""
-        def result():
-            return change(100, {})
-
-        self.assertRaises(TypeError, result)
-
-    def test_raises_typeerror_for_non_int_in_coins(self):
-        """Raises TypeError for a non-int value in the coins list"""
-        def result():
-            return change(100, [1, 2, "test"])
-        
-        self.assertRaises(TypeError, result)
-
 if __name__ == "__main__":
     unittest.main()
