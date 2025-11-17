@@ -36,7 +36,7 @@ All the values of coins are unique.
 
 from typing import List, Type
 
-def change(amount: int, coins: List[int]) -> int:
+def changeIterative(amount: int, coins: List[int]) -> int:
     cache = [0 for _ in range(amount + 1)]
     cache[0] = 1
 
@@ -45,3 +45,20 @@ def change(amount: int, coins: List[int]) -> int:
             cache[a] += cache[a - coins[c]] if coins[c] <= a else 0
 
     return cache[amount]
+
+def changeRecursive(amount: int, coins: List[int]) -> int:
+    cache = {}
+
+    def dfs(i, a):
+        nonlocal cache
+        if a == amount:
+            return 1
+        if a > amount or i == len(coins):
+            return 0
+        if (i, a) in cache:
+            return cache[(i, a)]
+        
+        cache[(i, a)] = dfs(i, a + coins[i]) + dfs(i + 1, a)
+        return cache[(i, a)]
+
+    return dfs(0, 0)
