@@ -65,6 +65,7 @@
 -   [Spiral Matrix](spiral-matrix)
 -   [Subsets](subsets)
 -   [Target Sum](target-sum)
+-   [Time-Based Key Value Store](time-based-key-value-store)
 -   [Top K Frequent ELements](top-k-frequent-elements)
 -   [Top K Frequent Words](top-k-frequent-words)
 -   [Two Integer Sum II](two-integer-sum-ii)
