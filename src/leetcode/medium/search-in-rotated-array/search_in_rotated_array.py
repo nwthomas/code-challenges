@@ -31,35 +31,24 @@ nums is an ascending array that is possibly rotated.
 
 from typing import List
 
-def search(nums: List[int], target: int) -> int:
-    if len(nums) <= 1:
-        if len(nums) > 0 and nums[0] == target:
-            return 0
-        else:
-            return -1
-    
+def search(nums: List[int], target: int) -> int:        
     left = 0
     right = len(nums) - 1
     
-    while left < right:
-        pivot = ((right - left) // 2) + left
-        
-        if nums[pivot] == target:
+    while left <= right:
+        pivot = (right + left) // 2
+        if target == nums[pivot]:
             return pivot
-        elif nums[right] == target:
-            return right
-        elif nums[left] == target:
-            return left
-        
-        if nums[pivot] < nums[right]:
-            if target > nums[pivot] and target < nums[right]:
+
+        if nums[left] <= nums[pivot]:
+            if target > nums[pivot] or target < nums[left]:
                 left = pivot + 1
             else:
                 right = pivot - 1
         else:
-            if target > nums[left] and target < nums[pivot]:
+            if target < nums[pivot] or target > nums[right]:
                 right = pivot - 1
             else:
                 left = pivot + 1
-            
+
     return -1
