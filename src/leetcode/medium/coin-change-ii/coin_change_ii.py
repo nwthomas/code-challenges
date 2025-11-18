@@ -34,7 +34,7 @@ All the values of coins are unique.
 0 <= amount <= 5000
 """
 
-from typing import List, Type
+from typing import List
 
 def changeIterative(amount: int, coins: List[int]) -> int:
     cache = [0 for _ in range(amount + 1)]

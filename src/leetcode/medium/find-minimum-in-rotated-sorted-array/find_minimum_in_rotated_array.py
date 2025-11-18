@@ -30,21 +30,17 @@ Explanation: The original array was [11,13,15,17] and it was rotated 4 times.
 from typing import List
 
 def find_min(nums: List[int]) -> int:
-    if len(nums) == 1:
-        return nums[0]
-    elif len(nums) == 2:
-        return nums[0] if nums[0] < nums[1] else nums[1]
-    
-    left, right = 0, len(nums) - 1
-    
+    left = 0
+    right = len(nums) - 1
+
     while left < right:
-        pivot = ((right - left) // 2) + left
+        pivot = (left + right) // 2
         
-        if nums[pivot + 1] < nums[pivot]:
-            return nums[pivot + 1]
-        elif nums[pivot - 1] > nums[pivot]:
-            return nums[pivot]
-        elif nums[pivot] < nums[right]:
-            right = pivot
-        else:
+        if nums[pivot] >= nums[right] and pivot == left:
+            left += 1
+        elif nums[pivot] >= nums[right]:
             left = pivot
+        else:
+            right = pivot
+
+    return nums[left]
