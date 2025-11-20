@@ -27,6 +27,7 @@
 -   [Find Minimum in Rotated Sorted Array](find-minimum-in-rotated-sorted-array)
 -   [Four Sum](four-sum)
 -   [Generate Parentheses](generate-parentheses)
+-   [Graph Valid Tree](graph-valid-tree)
 -   [Group Anagrams](group-anagrams)
 -   [House Robber](house-robber)
 -   [House Robber II](house-robber-ii)
