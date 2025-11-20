@@ -17,6 +17,7 @@
 -   [Conway's Game of Life](conways-game-of-life)
 -   [Copy Linked List with Random Pointer](copy-linked-list-with-random-pointer)
 -   [Course Schedule](course-schedule)
+-   [Course Schedule II](course-schedule-ii)
 -   [Daily Temperatures](daily-temperatures)
 -   [Decode Ways](decode-ways)
 -   [Design Add and Search Words Data Structure](design-add-and-search-words-data-structure)
