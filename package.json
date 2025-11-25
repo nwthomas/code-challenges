@@ -11,7 +11,7 @@
     "license": "MIT",
     "dependencies": {},
     "devDependencies": {
-        "heapq": "npm:@nwthomas/heapq@0.0.3",
+        "heapq": "npm:@nwthomas/heapq@0.2.0",
         "jest": "24.9.0",
         "jest-extended": "0.11.2"
     },

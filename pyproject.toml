@@ -12,7 +12,7 @@ dependencies = [
     "sortedcontainers==2.4.0",
 ]
 
-[tool.uv]
-dev-dependencies = [
+[dependency-groups]
+dev = [
     "pylint==3.3.1",
 ]

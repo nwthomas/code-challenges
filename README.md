@@ -26,20 +26,23 @@ A good general place to start is this [list of 14 techniques that are good to kn
 
 1. Fork or clone this repository to your local machine
 
-2. For Go challenges:
+2. Install the languages and package/dependency management software for all languages:
 
-    - Ensure you have the required version of Golang installed (see this repository's [go.mod](https://github.com/nwthomas/code-challenges/blob/master/go.mod) file)
+    - Install [Go](https://go.dev), [JavaScript](https://nodejs.org), and [Python](https://www.python.org) - see each languages setup files in this repository for required versions
+    - Ensure installation of [bun](https://bun.com) for JavaScript and [uv](https://docs.astral.sh/uv) for Python before doing dependency installation
+
+3. Run `make i` or `make install` to install all required dependencies for all languages
+
+4. For Go challenges:
+
     - Run the command `make test-go` to run all Go tests
 
-3. For JavaScript challenges:
+5. For JavaScript challenges:
 
-    - Ensure installation of [bun](https://bun.com) before doing dependency installation
-    - Run `pnpm i` to install all dependencies
-    - Run `make test-js`, `pnpm test <file name>`, or `pnpm test <file name> --watch` to run JS tests
+    - Run `make test-js`, `bun test <file name>`, or `bun test <file name> --watch` to run JS tests
 
-4. For Python challenges:
+6. For Python challenges:
 
-    - Ensure correct version of Python is installed (see [.python-version](https://github.com/nwthomas/code-challenges/blob/master/.python-version))
     - Run `make test-py` to run all Python tests in the repository
 
 ## ACKNOWLEDGEMENTS

@@ -1,7 +1,7 @@
 # Go testing targets
-.PHONY: install test
+.PHONY: install i test
 
-install:
+install i:
 	uv sync && bun install
 
 test-go:
