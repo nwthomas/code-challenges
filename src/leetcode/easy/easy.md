@@ -25,6 +25,7 @@
 -   [Plus One](plus-one)
 -   [Remove Element](remove-element)
 -   [Reverse Linked List](reverse-linked-list)
+-   [Subtree of Another Tree](subtree-of-another-tree)
 -   [Two Sum](two-sums)
 -   [Valid Anagram](valid-anagram)
 -   [Valid Palindrome](valid-palindrome)

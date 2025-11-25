@@ -71,7 +71,6 @@
 -   [Spiral Matrix](spiral-matrix)
 -   [Subsets](subsets)
 -   [Subsets II](subsets-ii)
--   [Subtree of Another Tree](subtree-of-another-tree)
 -   [Target Sum](target-sum)
 -   [Time-Based Key Value Store](time-based-key-value-store)
 -   [Top K Frequent ELements](top-k-frequent-elements)
