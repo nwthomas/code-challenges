@@ -4,7 +4,6 @@
 
 -   [Add Two Numbers](add-two-numbers)
 -   [Alien Dictionary](alien-dictionary)
--   [Balanced Binary Tree](balanced-binary-tree)
 -   [Best Time to Buy and Sell Stock II](best-time-to-buy-and-sell-stock-ii)
 -   [Binary Tree Level Order Traversal](binary-tree-level-order-traversal)
 -   [Clone Graph](clone-graph)
@@ -72,6 +71,7 @@
 -   [Spiral Matrix](spiral-matrix)
 -   [Subsets](subsets)
 -   [Subsets II](subsets-ii)
+-   [Subtree of Another Tree](subtree-of-another-tree)
 -   [Target Sum](target-sum)
 -   [Time-Based Key Value Store](time-based-key-value-store)
 -   [Top K Frequent ELements](top-k-frequent-elements)
