@@ -4,6 +4,7 @@
 
 -   [Add Two Numbers](add-two-numbers)
 -   [Alien Dictionary](alien-dictionary)
+-   [Balanced Binary Tree](balanced-binary-tree)
 -   [Best Time to Buy and Sell Stock II](best-time-to-buy-and-sell-stock-ii)
 -   [Binary Tree Level Order Traversal](binary-tree-level-order-traversal)
 -   [Clone Graph](clone-graph)
