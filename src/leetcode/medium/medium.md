@@ -60,6 +60,7 @@
 -   [Pacific Atlantic Water Flow](pacific-atlantic-water-flow)
 -   [Palindromic Substring](palindromic-substring)
 -   [Permutation in String](permutation-in-string)
+-   [pow(x,y)](pow-x-y)
 -   [Product of Array Except Self](product-of-array-except-self)
 -   [Remove Nth Node From End of List](remove-nth-node-from-end-of-list)
 -   [Reorder List](reorder-list)
