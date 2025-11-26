@@ -10,6 +10,7 @@
 -   [Climbing Stairs](climbing-stairs)
 -   [Contains Duplicate](contains-duplicate)
 -   [Counting Bits](counting-bits)
+-   [Find Minimum Operations to Make All Elements Divide by Three](find-minimum-operations-to-make-all-elements-divide-by-three)
 -   [Invert Binary Tree](invert-binary-tree)
 -   [Is Palindrome](is-palindrome)
 -   [Is Same Tree](is-same-tree)
