@@ -22,6 +22,7 @@
 -   [Meeting Rooms](meeting-rooms)
 -   [Merge Two Sorted Lists](merge-two-sorted-lists)
 -   [Min Cost Climbing Stairs](min-cost-climbing-stairs)
+-   [Non-Cyclical Number](non-cyclical-number)
 -   [Number of 1 Bits](number-of-1-bits)
 -   [Plus One](plus-one)
 -   [Remove Element](remove-element)
