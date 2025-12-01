@@ -1,7 +1,7 @@
 {
     "name": "code-challenges",
     "version": "0.0.0-alpha.1",
-    "description": "A repository of code challenges by Nathan Thomas",
+    "description": "A repository of Nathan Thomas' completed code challenges",
     "main": "index.js",
     "scripts": {
         "test": "jest --verbose"
@@ -11,7 +11,7 @@
     "license": "MIT",
     "dependencies": {},
     "devDependencies": {
-        "heapq": "npm:@nwthomas/heapq@0.2.0",
+        "heapq": "npm:@nwthomas/heapq@1.0.0",
         "jest": "24.9.0",
         "jest-extended": "0.11.2"
     },

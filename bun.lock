@@ -5,7 +5,7 @@
     "": {
       "name": "code-challenges",
       "devDependencies": {
-        "heapq": "npm:@nwthomas/heapq@0.2.0",
+        "heapq": "npm:@nwthomas/heapq@1.0.0",
         "jest": "24.9.0",
         "jest-extended": "0.11.2",
       },
@@ -412,7 +412,7 @@
 
     "hasown": ["hasown@2.0.2", "", { "dependencies": { "function-bind": "^1.1.2" } }, "sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ=="],
 
-    "heapq": ["@nwthomas/heapq@0.2.0", "", { "peerDependencies": { "typescript": "^5" } }, "sha512-hED33ZrfS/37yB5snquKNqcZ4Rh/MsoW2SFWCJz4leO5No1tLNhl5qUBe0MzKRc5sUep9aU2Bd4HW5VwEOYiVQ=="],
+    "heapq": ["@nwthomas/heapq@1.0.0", "", { "peerDependencies": { "typescript": "^5" } }, "sha512-N3woe9IgEqNYmCU/LtBzTGPDP304ixVZSmAy5ut1EXqRCwsRgiop9Q319FApSHswWvyrYJwqgPksYkxY8uC5zA=="],
 
     "hosted-git-info": ["hosted-git-info@2.8.9", "", {}, "sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw=="],
 
