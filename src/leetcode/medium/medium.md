@@ -16,6 +16,7 @@
 -   [Continuous Subarray Sum](continuous-subarray-sum)
 -   [Conway's Game of Life](conways-game-of-life)
 -   [Copy Linked List with Random Pointer](copy-linked-list-with-random-pointer)
+-   [Count Good Nodes in Binary Tree](count-good-nodes-in-binary-tree)
 -   [Course Schedule](course-schedule)
 -   [Course Schedule II](course-schedule-ii)
 -   [Daily Temperatures](daily-temperatures)
