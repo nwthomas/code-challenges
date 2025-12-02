@@ -6,7 +6,7 @@ Return the max sliding window.
 Example 1:
 Input: nums = [1,3,-1,-3,5,3,6,7], k = 3
 Output: [3,3,5,5,6,7]
-Explanation: 
+Explanation:
 Window position                Max
 ---------------               -----
 [1  3  -1] -3  5  3  6  7       3
@@ -29,43 +29,25 @@ Constraints:
 from heapq import heappop, heappush
 from typing import List
 
-def maxSlidingWindow(nums: List[int], k: int) -> List[int]:
-    h = []
-    tracker = {}
-    
-    right = 0
-    
-    while right < k:
-        if not nums[right] in tracker: 
-            tracker[nums[right]] = 0
-            
-        tracker[nums[right]] += 1
-        heappush(h, nums[right] * -1)
-        right += 1
-        
-    results = [h[0] * -1]
-    left = 1
-    
-    tracker[nums[0]] -= 1
-    
-    while right < len(nums):
-        if not nums[right] in tracker:
-            tracker[nums[right]] = 0
 
-        tracker[nums[right]] += 1
-        heappush(h, nums[right] * -1)
-        
-        currentMax = h[0] * -1
-        
-        while tracker[currentMax] == 0:
-            heappop(h)
-            currentMax = h[0] * -1
-            
-        results.append(currentMax)
-        
-        tracker[nums[left]] -= 1
-    
-        left += 1
-        right += 1
-    
-    return results
+def maxSlidingWindow(nums: List[int], k: int) -> List[int]:
+    heap = []
+    result = []
+    i = 0
+
+    while i < k:
+        heappush(heap, (nums[i] * -1, i))
+        i += 1
+
+    result.append(heap[0][0] * -1)
+
+    while i < len(nums):
+        heappush(heap, (nums[i] * -1, i))
+
+        while heap[0][1] <= i - k:
+            heappop(heap)
+
+        result.append(heap[0][0] * -1)
+        i += 1
+
+    return result
