@@ -1,4 +1,4 @@
-"""
+/*
 https://leetcode.com/problems/sliding-window-maximum
 
 You are given an array of integers nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.
@@ -26,30 +26,38 @@ Constraints:
 1 <= nums.length <= 105
 -104 <= nums[i] <= 104
 1 <= k <= nums.length
-"""
+*/
 
-from heapq import heappop, heappush
-from typing import List
+const { heapPush, heapPop } = require("heapq");
 
+function comparator(a, b) {
+    return a[0] < b[0];
+}
 
-def maxSlidingWindow(nums: List[int], k: int) -> List[int]:
-    heap = []
-    result = []
-    i = 0
+function slidingWindowMaximum(nums, k) {
+    const heap = [];
+    const result = [];
+    let i = 0;
 
-    while i < k:
-        heappush(heap, (nums[i] * -1, i))
-        i += 1
+    while (i < k) {
+        heapPush(heap, [nums[i] * -1, i], { comparator });
+        i += 1;
+    }
 
-    result.append(heap[0][0] * -1)
+    result.push(heap[0][0] * -1);
 
-    while i < len(nums):
-        heappush(heap, (nums[i] * -1, i))
+    while (i < nums.length) {
+        heapPush(heap, [nums[i] * -1, i], { comparator });
 
-        while heap[0][1] <= i - k:
-            heappop(heap)
+        while (heap[0][1] <= i - k) {
+            heapPop(heap, { comparator });
+        }
 
-        result.append(heap[0][0] * -1)
-        i += 1
+        result.push(heap[0][0] * -1);
+        i += 1;
+    }
 
-    return result
+    return result;
+}
+
+module.exports = { slidingWindowMaximum };
