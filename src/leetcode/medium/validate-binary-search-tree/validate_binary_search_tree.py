@@ -25,25 +25,27 @@ The number of nodes in the tree is in the range [1, 104].
 
 from typing import Optional
 
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
 
+
 def is_valid_binary_search_tree(root: Optional[TreeNode]) -> bool:
-    tracker = [[root, float("-inf"), float("inf")]]
-    
-    while len(tracker) > 0:
-        current, min_seen, max_seen = tracker.pop()
-        left = current.left
-        right = current.right
-        
-        if not min_seen < current.val < max_seen:
+    if not root:
+        return True
+
+    q = [(root, float("-inf"), float("inf"))]
+
+    while q:
+        node, left, right = q.pop()
+        if not (left < node.val < right):
             return False
-        if left:
-            tracker.append([left, min_seen, current.val])
-        if right:
-            tracker.append([right, current.val, max_seen])
-            
+        if node.left:
+            q.append((node.left, left, node.val))
+        if node.right:
+            q.append((node.right, node.val, right))
+
     return True
