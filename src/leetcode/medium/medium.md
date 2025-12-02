@@ -76,6 +76,7 @@
 -   [Subsets](subsets)
 -   [Subsets II](subsets-ii)
 -   [Target Sum](target-sum)
+-   [Task Scheduler](task-scheduler)
 -   [Time-Based Key Value Store](time-based-key-value-store)
 -   [Top K Frequent ELements](top-k-frequent-elements)
 -   [Top K Frequent Words](top-k-frequent-words)
