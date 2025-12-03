@@ -60,6 +60,7 @@
 -   [Non-Overlapping Intervals](non-overlapping-intervals)
 -   [Number of Islands](number-of-islands)
 -   [Pacific Atlantic Water Flow](pacific-atlantic-water-flow)
+-   [Palindrome Partitioning](palindrome-partitioning)
 -   [Palindromic Substring](palindromic-substring)
 -   [Permutation in String](permutation-in-string)
 -   [pow(x,y)](pow-x-y)
