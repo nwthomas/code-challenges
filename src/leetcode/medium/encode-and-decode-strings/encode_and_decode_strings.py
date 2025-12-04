@@ -1,4 +1,6 @@
 """
+https://leetcode.com/problems/encode-and-decode-strings/description
+
 Description
 Design an algorithm to encode a list of strings to a string. The encoded string is then sent over the network and is decoded back to the original list of strings.
 
@@ -23,6 +25,7 @@ from typing import List
 
 DELIMITER = "π"
 
+
 def encode(strs: List[str]) -> str:
     result = ""
     lengths = ""
@@ -33,6 +36,7 @@ def encode(strs: List[str]) -> str:
         concatted_strs += new_str
     result += lengths + DELIMITER + concatted_strs
     return result
+
 
 def decode(s: str) -> List[str]:
     result = []
@@ -47,6 +51,6 @@ def decode(s: str) -> List[str]:
         i += 1
     i += 1
     for size in sizes:
-        result.append(s[i:i+size])
+        result.append(s[i : i + size])
         i += size
     return result
