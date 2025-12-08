@@ -1,4 +1,4 @@
-"""
+/*
 https://leetcode.com/problems/meeting-rooms-ii
 
 Given an array of meeting time interval objects consisting of start and end times [[start_1,end_1],[start_2,end_2],...] (start_i < end_i), find the minimum number of days required to schedule all meetings without any conflicts.
@@ -19,25 +19,29 @@ Output: 1
 Constraints:
 0 <= intervals.length <= 500
 0 <= intervals[i].start < intervals[i].end <= 1,000,000
-"""
+*/
 
-from typing import List
-from heapq import heappop, heappush
+const { heapPop, heapPush } = require("heapq");
 
+class Interval {
+    constructor(start, end) {
+        this.start = start;
+        this.end = end;
+    }
+}
 
-class Interval(object):
-    def __init__(self, start, end):
-        self.start = start
-        self.end = end
+const getMinimumMeetingRoomsCount = (intervals) => {
+    intervals = intervals.sort((a, b) => a.start - b.start);
+    const minHeap = [];
 
+    for (const interval of intervals) {
+        if (minHeap.length > 0 && minHeap[0] <= interval.start) {
+            heapPop(minHeap);
+        }
+        heapPush(minHeap, interval.end);
+    }
 
-def minMeetingRooms(intervals: List[Interval]) -> int:
-    intervals = sorted(intervals, key=lambda x: x.start)
-    min_heap = []
+    return minHeap.length;
+};
 
-    for interval in intervals:
-        if len(min_heap) > 0 and min_heap[0] <= interval.start:
-            heappop(min_heap)
-        heappush(min_heap, interval.end)
-
-    return len(min_heap)
+module.exports = { getMinimumMeetingRoomsCount, Interval };
