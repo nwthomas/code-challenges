@@ -11,6 +11,7 @@ class TestTrap(unittest.TestCase):
 
     def test_throws_typeerror_if_arguments_not_list(self):
         """Takes in an argument of not a list and raises a TypeError"""
+
         def result():
             return trap("test")
 

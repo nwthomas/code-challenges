@@ -31,10 +31,6 @@ def trap(heights: List[int]) -> int:
     Returns:
         int: The amount of water that can be trapped.
     """
-    # Edge case: input is not a list
-    if not isinstance(heights, list):
-        raise TypeError("Arguments must be of type list")
-
     # Edge case: empty list
     if len(heights) < 1:
         return 0
