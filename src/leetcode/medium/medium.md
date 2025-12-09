@@ -86,5 +86,6 @@
 -   [Unique Paths II](unique-paths-ii)
 -   [Is Valid Sedoku](is-valid-sedoku)
 -   [Validate Binary Search Tree](validate-binary-search-tree)
+-   [Walls and Grapes](walls-and-grapes)
 -   [Word Break](word-break)
 -   [Word Search](word-search)
