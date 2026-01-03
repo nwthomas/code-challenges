@@ -69,6 +69,7 @@
 -   [Reorder List](reorder-list)
 -   [Reverse Polish Notation](reverse-polish-notation)
 -   [Rotate Image](rotate-image)
+-   [Rotting Oranges](rotting-oranges)
 -   [Search 2D Matrix](search-2d-matrix)
 -   [Search in Sorted Array](search-in-sorted-array)
 -   [Set Matrix Zeroes](set-matrix-zeroes)
