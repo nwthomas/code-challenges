@@ -9,6 +9,7 @@ license = {text = "MIT"}
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "pytest==9.0.2",
     "sortedcontainers==2.4.0",
 ]
 

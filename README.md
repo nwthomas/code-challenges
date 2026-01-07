@@ -1,10 +1,8 @@
-# CODE CHALLENGES 👨🏻‍💻
+# CODE CHALLENGES
 
 ## PURPOSE
 
-This repository is a collection of completed code challenges, katas, whiteboarding question practice, and other assorted problems from a variety of places.
-
-A good general place to start is this [list of 14 techniques that are good to know for interviews](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed).
+This repository is a collection of completed code challenges from a variety of places.
 
 ## TABLE OF CONTENTS
 
@@ -20,7 +18,7 @@ A good general place to start is this [list of 14 techniques that are good to kn
 ## BUILT WITH
 
 -   Aside from a few one-off solutions, the code challenges in this repository use [Golang](https://go.dev), [JavaScript](https://www.ecma-international.org/ecma-262/6.0/), and [Python](https://www.python.org/)
--   The JavaScript tests are written with Facebook's [Jest](https://jestjs.io/en/) for unit testing, while Python uses its built-in [unittest](https://docs.python.org/3.7/library/unittest.html#assert-methods). Go tests are written using the standard library [testing](https://pkg.go.dev/testing) package.
+-   The JavaScript tests are written with Facebook's [Jest](https://jestjs.io/en/) for unit testing, while Python uses [pytest](https://docs.pytest.org/en/stable/index.html). Go tests are written using the standard library [testing](https://pkg.go.dev/testing) package.
 
 ## GETTING STARTED
 
@@ -44,7 +42,3 @@ A good general place to start is this [list of 14 techniques that are good to kn
 6. For Python challenges:
 
     - Run `make test-py` to run all Python tests in the repository
-
-## ACKNOWLEDGEMENTS
-
--   Thanks to [Frank Faustino](https://github.com/frankfaustino) for inspiring me to create my own completed code challenges repository.
