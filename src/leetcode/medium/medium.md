@@ -31,6 +31,7 @@
 -   [Generate Parentheses](generate-parentheses)
 -   [Graph Valid Tree](graph-valid-tree)
 -   [Group Anagrams](group-anagrams)
+-   [Hand of Straights](hand-of-straights)
 -   [House Robber](house-robber)
 -   [House Robber II](house-robber-ii)
 -   [Implement Trie Prefix Tree](implement-trie-prefix-tree)

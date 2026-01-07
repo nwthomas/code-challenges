@@ -1,5 +1,5 @@
 """
-https://neetcode.io/problems/surrounded-regions/question
+https://leetcode.com/problems/surrounded-regions/description
 
 You are given a 2-D matrix board containing 'X' and 'O' characters.
 
