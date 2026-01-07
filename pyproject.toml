@@ -5,7 +5,7 @@ description = "A repository for housing code challenges"
 authors = [
     {name = "Nathan Thomas"}
 ]
-license = {text = "MIT"}
+license = {text = "GPL-3.0"}
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [

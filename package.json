@@ -8,7 +8,7 @@
     },
     "repository": "git@github.com:nwthomas/code-challenges.git",
     "author": "Nathan Thomas",
-    "license": "MIT",
+    "license": "GPL-3.0",
     "dependencies": {},
     "devDependencies": {
         "heapq": "npm:@nwthomas/heapq@1.1.0",
