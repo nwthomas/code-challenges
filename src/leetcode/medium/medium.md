@@ -77,6 +77,7 @@
 -   [Spiral Matrix](spiral-matrix)
 -   [Subsets](subsets)
 -   [Subsets II](subsets-ii)
+-   [Surrounded Regions](surrounded-regions)
 -   [Target Sum](target-sum)
 -   [Task Scheduler](task-scheduler)
 -   [Time-Based Key Value Store](time-based-key-value-store)
