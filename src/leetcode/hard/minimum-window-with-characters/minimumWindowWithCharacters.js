@@ -35,7 +35,7 @@ function minWindow(s, t) {
         return "";
     }
 
-    let tracker = {};
+    const tracker = {};
     for (const char of t) {
         tracker[char] = tracker[char] || 0;
         tracker[char] += 1;
@@ -43,7 +43,7 @@ function minWindow(s, t) {
 
     const window = {};
     let have = 0;
-    let need = Object.keys(tracker).length;
+    const need = Object.keys(tracker).length;
     let l = 0;
     let res = "";
     let resLen = Infinity;
