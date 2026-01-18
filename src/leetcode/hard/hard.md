@@ -7,5 +7,6 @@
 -   [First Missing Positive](first-missing-positive)
 -   [In-Memory File System](in-memory-file-system)
 -   [Merge K Sorted Lists](merge-k-sorted-lists)
+-   [Minimum Window With Characters](minimum-window-with-characters)
 -   [Sliding Window Maximum](sliding-window-maximum)
 -   [Trapping Rain Water](trapping-rain-water)
