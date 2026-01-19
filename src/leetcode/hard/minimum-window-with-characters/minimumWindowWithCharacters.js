@@ -49,7 +49,7 @@ function minWindow(s, t) {
     let resLen = Infinity;
 
     for (let r = 0; r < s.length; r++) {
-        const char = s[r]
+        const char = s[r];
         window[char] = window[char] || 0;
         window[char] += 1;
 
@@ -58,7 +58,7 @@ function minWindow(s, t) {
         }
 
         while (have === need) {
-            if ((r - l + 1) < resLen) {
+            if (r - l + 1 < resLen) {
                 resLen = r - l + 1;
                 res = s.substring(l, r + 1);
             }

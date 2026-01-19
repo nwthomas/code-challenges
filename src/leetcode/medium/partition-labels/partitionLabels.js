@@ -48,6 +48,6 @@ const partitionLabels = (s) => {
     }
 
     return res;
-}
+};
 
 module.exports = { partitionLabels };
