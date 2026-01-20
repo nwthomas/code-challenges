@@ -16,7 +16,13 @@ class Transaction:
     timestamp: int
     expiration_timestamp: Optional[int]
 
-    def __init__(self, action: str, timestamp: int, amount: int, expiration_timestamp: Optional[int]):
+    def __init__(
+        self,
+        action: str,
+        timestamp: int,
+        amount: int,
+        expiration_timestamp: Optional[int],
+    ):
         self.action = action
         self.amount = amount
         self.timestamp = timestamp
@@ -32,12 +38,14 @@ class GPUCreditTracker:
     Implements the ability to create GPU credit grants, subtract credits, and get the credit
     balance at a given point in time.
     """
+
     transactions: List[Transaction] = field(default_factory=list)
 
-    def create_grant(self, timestamp: int, expiration_timestamp: int, amount: int) -> None:
+    def create_grant(
+        self, timestamp: int, expiration_timestamp: int, amount: int
+    ) -> None:
         """Creates a grant for a credit balance increase"""
-        transaction = Transaction(
-            "grant", timestamp, amount, expiration_timestamp)
+        transaction = Transaction("grant", timestamp, amount, expiration_timestamp)
         self.__insert_transaction(transaction)
 
     def subtract(self, timestamp: int, amount: int) -> None:
@@ -50,11 +58,17 @@ class GPUCreditTracker:
         grant_heap = []
         current = 0
 
-        while current < len(self.transactions) and self.transactions[current].timestamp <= timestamp:
+        while (
+            current < len(self.transactions)
+            and self.transactions[current].timestamp <= timestamp
+        ):
             current_transaction = deepcopy(self.transactions[current])
 
             # Clear out stale grants that have expired and can no longer be used
-            while len(grant_heap) > 0 and grant_heap[0].expiration_timestamp < current_transaction.timestamp:
+            while (
+                len(grant_heap) > 0
+                and grant_heap[0].expiration_timestamp < current_transaction.timestamp
+            ):
                 heappop(grant_heap)
 
             if current_transaction.action == "grant":
@@ -89,8 +103,20 @@ class GPUCreditTracker:
         else:
             current = 0
 
-            while current < len(self.transactions) and self.transactions[current].timestamp < transaction.timestamp:
+            while current < len(self.transactions) and (
+                (
+                    transaction.action == "grant"
+                    and self.transactions[current].timestamp < transaction.timestamp
+                )
+                or (
+                    transaction.action == "subtract"
+                    and self.transactions[current].timestamp <= transaction.timestamp
+                )
+            ):
                 current += 1
 
-            self.transactions = self.transactions[:current] + \
-                [transaction] + self.transactions[current:]
+            self.transactions = (
+                self.transactions[:current]
+                + [transaction]
+                + self.transactions[current:]
+            )
