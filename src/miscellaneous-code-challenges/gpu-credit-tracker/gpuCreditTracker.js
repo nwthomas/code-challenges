@@ -4,28 +4,28 @@ https://prachub.com/interview-questions/implement-credit-ledger-with-out-of-orde
 
 const { heapPush, heapPop } = require("heapq");
 
-const ACTIONS = {
+const ACTION = {
     ADD_CREDIT: "add_credit",
     CHARGE_CREDIT: "charge_credit",
 };
 
-function compareExpirationTimestamps(a, b) {
+function comparator(a, b) {
     return a.expirationTimestamp < b.expirationTimestamp;
 }
 
 class Transaction {
-    constructor(action, timestamp, amount, expirationTimestamp) {
+    constructor(action, amount, timestamp, expirationTimestamp = Infinity) {
         this.action = action;
-        this.timestamp = timestamp;
         this.amount = amount;
-        this.expirationTimestamp = expirationTimestamp || Infinity;
+        this.timestamp = timestamp;
+        this.expirationTimestamp = expirationTimestamp;
     }
 
     clone = () => {
         return new Transaction(
             this.action,
-            this.timestamp,
             this.amount,
+            this.timestamp,
             this.expirationTimestamp,
         );
     };
@@ -36,104 +36,93 @@ class GPUCreditTracker {
         this.transactions = [];
     }
 
+    _insertTransaction = (transaction) => {
+        if (this.transactions.length === 0) {
+            this.transactions.push(transaction);
+        } else {
+            let index = 0;
+
+            while (
+                index < this.transactions.length &&
+                ((transaction.action === ACTION.ADD_CREDIT &&
+                    this.transactions[index].timestamp <
+                        transaction.timestamp) ||
+                    (transaction.action === ACTION.CHARGE_CREDIT &&
+                        this.transactions[index].timestamp <=
+                            transaction.timestamp))
+            ) {
+                index++;
+            }
+
+            this.transactions = this.transactions
+                .slice(0, index)
+                .concat([transaction])
+                .concat(this.transactions.slice(index));
+        }
+    };
+
     addCredit = (timestamp, expirationTimestamp, amount) => {
-        const grantTransaction = new Transaction(
-            ACTIONS.ADD_CREDIT,
-            timestamp,
-            amount,
-            expirationTimestamp,
+        this._insertTransaction(
+            new Transaction(
+                ACTION.ADD_CREDIT,
+                amount,
+                timestamp,
+                expirationTimestamp,
+            ),
         );
-        this._insertTransaction(grantTransaction);
     };
 
     chargeCredit = (timestamp, amount) => {
-        const subtractTransaction = new Transaction(
-            ACTIONS.CHARGE_CREDIT,
-            timestamp,
-            amount,
+        this._insertTransaction(
+            new Transaction(ACTION.CHARGE_CREDIT, amount, timestamp),
         );
-        this._insertTransaction(subtractTransaction);
     };
 
     getBalance = (timestamp) => {
-        const grantHeap = [];
-        let current = 0;
+        const minHeap = [];
+        let index = 0;
 
         while (
-            current < this.transactions.length &&
-            this.transactions[current].timestamp <= timestamp
+            index < this.transactions.length &&
+            this.transactions[index].timestamp <= timestamp
         ) {
-            const currentTransaction = this.transactions[current].clone();
+            const current = this.transactions[index].clone();
 
             while (
-                grantHeap.length > 0 &&
-                grantHeap[0].experationTimestamp < currentTransaction.timestamp
+                minHeap.length > 0 &&
+                minHeap[0].expirationTimestamp < current.timestamp
             ) {
-                heapPop(grantHeap, compareExpirationTimestamps);
+                heapPop(minHeap, { comparator });
             }
 
-            if (currentTransaction.action === ACTIONS.ADD_CREDIT) {
-                heapPush(
-                    grantHeap,
-                    currentTransaction,
-                    compareExpirationTimestamps,
-                );
+            if (current.action === ACTION.ADD_CREDIT) {
+                heapPush(minHeap, current, { comparator });
             } else {
-                let totalSubtractRemaining = currentTransaction.amount;
+                let subtractRemaining = current.amount;
 
-                while (grantHeap.length > 0 && totalSubtractRemaining > 0) {
-                    const currentGrantRemainingAmount = grantHeap[0].amount;
-                    if (currentGrantRemainingAmount >= totalSubtractRemaining) {
-                        grantHeap[0].amount -= totalSubtractRemaining;
-                        totalSubtractRemaining = 0;
+                while (minHeap.length > 0 && subtractRemaining > 0) {
+                    if (minHeap[0].amount >= subtractRemaining) {
+                        minHeap[0].amount -= subtractRemaining;
+                        subtractRemaining = 0;
                     } else {
-                        totalSubtractRemaining -= currentGrantRemainingAmount;
-                        heapPop(grantHeap);
+                        subtractRemaining -= minHeap[0].amount;
+                        heapPop(minHeap, { comparator });
                     }
                 }
             }
 
-            current += 1;
+            index += 1;
         }
 
         let total = 0;
-        while (grantHeap.length > 0) {
-            const currentGrant = heapPop(
-                grantHeap,
-                compareExpirationTimestamps,
-            );
-            if (currentGrant.expirationTimestamp >= timestamp) {
-                total += currentGrant.amount;
+        while (minHeap.length > 0) {
+            const current = heapPop(minHeap, { comparator });
+            if (current.expirationTimestamp >= timestamp) {
+                total += current.amount;
             }
         }
+
         return total;
-    };
-
-    _insertTransaction = (transaction) => {
-        if (!this.transactions.length) {
-            this.transactions.push(transaction);
-        } else {
-            let current = 0;
-
-            while (
-                current < this.transactions.length &&
-                // Place add credits at beginning of timestamp
-                ((transaction.action === ACTIONS.ADD_CREDIT &&
-                    this.transactions[current].timestamp <
-                        transaction.timestamp) ||
-                    // Place charge credits at end of timestamp
-                    (transaction.action === ACTIONS.CHARGE_CREDIT &&
-                        this.transactions[current].timestamp <=
-                            transaction.timestamp))
-            ) {
-                current++;
-            }
-
-            this.transactions = this.transactions
-                .slice(0, current)
-                .concat([transaction])
-                .concat(this.transactions.slice(current));
-        }
     };
 }
 

@@ -105,10 +105,12 @@ class GPUCreditTracker:
 
             while current < len(self.transactions) and (
                 (
+                    # Place grant transactions at beginning of same timestamp
                     transaction.action == "grant"
                     and self.transactions[current].timestamp < transaction.timestamp
                 )
                 or (
+                    # Place subtract transactions at end of same timestamp
                     transaction.action == "subtract"
                     and self.transactions[current].timestamp <= transaction.timestamp
                 )

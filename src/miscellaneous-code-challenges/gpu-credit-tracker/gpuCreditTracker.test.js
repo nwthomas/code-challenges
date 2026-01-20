@@ -1,7 +1,7 @@
 const { GPUCreditTracker } = require("./gpuCreditTracker");
 
-describe("GPUCreditTracker", () => {
-    it("should create a grant", () => {
+describe(GPUCreditTracker.name, () => {
+    it("inserts transactions correctly and gets the balance", () => {
         const tracker = new GPUCreditTracker();
         tracker.addCredit(10, 80, 5);
         tracker.addCredit(20, 60, 5);
