@@ -23,6 +23,7 @@
 -   [Decode Ways](decode-ways)
 -   [Design Add and Search Words Data Structure](design-add-and-search-words-data-structure)
 -   [Encode and Decode Strings](encode-and-decode-strings)
+-   [Exclusion Time of Functions](exclusion-time-of-functions)
 -   [Find Cheapest Flight Within K Flights](find-cheapest-flight-within-k-flights)
 -   [Find Duplicate Integer](find-duplicate-integer)
 -   [Find Minimum in Rotated Sorted Array](find-minimum-in-rotated-sorted-array)
