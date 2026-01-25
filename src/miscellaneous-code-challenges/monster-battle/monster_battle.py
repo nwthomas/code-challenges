@@ -22,23 +22,20 @@ Follow-ups to consider:
 """
 
 from dataclasses import dataclass
+import random
 
 
 @dataclass
 class Setup:
     attack: int
     damage: int
+    miss_chance: float = 0.0
 
 
 class Game:
     def __init__(self, side_one: ["Monster"], side_two: ["Monster"]):
-        self.side_one = []
-        self.side_two = []
-
-        for m in side_one:
-            self.side_one.append(Monster(m.attack, m.damage))
-        for m in side_two:
-            self.side_two.append(Monster(m.attack, m.damage))
+        self.side_one = [Monster(m.attack, m.damage, m.miss_chance) for m in side_one]
+        self.side_two = [Monster(m.attack, m.damage, m.miss_chance) for m in side_two]
 
     def fight(self) -> [str]:
         """Causes the two sides of monsters to fight each other and returns logs of the result"""
@@ -57,12 +54,15 @@ class Game:
 
             first_attack = first_monster.attack(second_monster)
             second_attack = second_monster.attack(first_monster)
-            logs.extend(
-                [
-                    f"First monster attacks for {first_attack} damage. Second monster has {second_monster.health} health left.",
-                    f"Second monster attacks for {second_attack} damage. First monster has {first_monster.health} health left.",
-                ],
-            )
+
+            first_log = f"First monster attacks for {first_attack} damage. Second monster has {second_monster.health} health left."
+            second_log = f"Second monster attacks for {second_attack} damage. First monster has {first_monster.health} health left."
+            if first_attack == 0:
+                first_log = f"First monster missed. Second monster has {second_monster.health} health left."
+            if second_attack == 0:
+                second_log = f"Second monster missed. First monster has {first_monster.health} health left."
+
+            logs.extend([first_log, second_log])
 
             if not first_monster.is_alive():
                 logs.append("The first monster died.")
@@ -79,12 +79,16 @@ class Game:
 
 
 class Monster:
-    def __init__(self, attack_power: int, health: int):
+    def __init__(self, attack_power: int, health: int, miss_chance: float = 0.0):
         self.attack_power = attack_power
         self.health = health
+        self.miss_chance = miss_chance
 
     def attack(self, monster: "Monster") -> int:
         """Takes in another monster to attack and deals damange to it"""
+        if random.random() < self.miss_chance:
+            return 0
+
         damage_dealt = monster.damage(self.attack_power)
 
         return damage_dealt
