@@ -23,19 +23,39 @@ Follow-ups to consider:
 
 from dataclasses import dataclass
 import random
+from typing import Literal
+
+
+STATUS = Literal["poison", "paralysis", "sleep", "burn", "freeze"]
+STATUS_DAMAGE = {
+    "poison": 1,
+    "paralysis": 2,
+    "sleep": 3,
+    "burn": 4,
+    "freeze": 5,
+}
+TYPES = Literal["fire", "water", "earth", "air"]
 
 
 @dataclass
 class Setup:
     attack: int
-    damage: int
+    health: int
+    attack_type: STATUS | None = None
+    monster_type: TYPES | None = None
     miss_chance: float = 0.0
 
 
 class Game:
     def __init__(self, side_one: ["Monster"], side_two: ["Monster"]):
-        self.side_one = [Monster(m.attack, m.damage, m.miss_chance) for m in side_one]
-        self.side_two = [Monster(m.attack, m.damage, m.miss_chance) for m in side_two]
+        self.side_one = [
+            Monster(m.attack, m.health, m.attack_type, m.monster_type, m.miss_chance)
+            for m in side_one
+        ]
+        self.side_two = [
+            Monster(m.attack, m.health, m.attack_type, m.monster_type, m.miss_chance)
+            for m in side_two
+        ]
 
     def fight(self) -> [str]:
         """Causes the two sides of monsters to fight each other and returns logs of the result"""
@@ -48,27 +68,27 @@ class Game:
                 logs.append("Side one has no monsters alive. Side two wins.")
             else:
                 logs.append("No monsters left alive. It's a draw.")
-        else:
-            first_monster = self.side_one.pop()
-            second_monster = self.side_two.pop()
 
-            first_attack = first_monster.attack(second_monster)
-            second_attack = second_monster.attack(first_monster)
+            return logs
 
-            first_log = f"First monster attacks for {first_attack} damage. Second monster has {second_monster.health} health left."
-            second_log = f"Second monster attacks for {second_attack} damage. First monster has {first_monster.health} health left."
-            if first_attack == 0:
-                first_log = f"First monster missed. Second monster has {second_monster.health} health left."
-            if second_attack == 0:
-                second_log = f"Second monster missed. First monster has {first_monster.health} health left."
+        first_monster = self.side_one.pop()
+        second_monster = self.side_two.pop()
+        first_attack = first_monster.attack(second_monster)
+        second_attack = second_monster.attack(first_monster)
 
-            logs.extend([first_log, second_log])
+        first_log = f"First monster attacks for {first_attack} damage with {first_monster.attack_type} type. Second monster has {second_monster.health} health left."
+        second_log = f"Second monster attacks for {second_attack} damage with {second_monster.attack_type} type. First monster has {first_monster.health} health left."
+        if first_attack == 0:
+            first_log = f"First monster missed. Second monster has {second_monster.health} health left."
+        if second_attack == 0:
+            second_log = f"Second monster missed. First monster has {first_monster.health} health left."
 
-            if not first_monster.is_alive():
-                logs.append("The first monster died.")
+        logs.extend([first_log, second_log])
 
-            if not second_monster.is_alive():
-                logs.append("The second monster died.")
+        if not first_monster.is_alive():
+            logs.append("First monster died.")
+        if not second_monster.is_alive():
+            logs.append("Second monster died.")
 
         return logs
 
@@ -79,22 +99,43 @@ class Game:
 
 
 class Monster:
-    def __init__(self, attack_power: int, health: int, miss_chance: float = 0.0):
+    def __init__(
+        self,
+        attack_power: int,
+        health: int,
+        attack_type: STATUS | None = None,
+        monster_type: TYPES | None = None,
+        miss_chance: float = 0.0,
+    ):
         self.attack_power = attack_power
+        self.attack_type = attack_type
         self.health = health
         self.miss_chance = miss_chance
+        self.monster_type = monster_type
+        self.status = None
 
     def attack(self, monster: "Monster") -> int:
         """Takes in another monster to attack and deals damange to it"""
         if random.random() < self.miss_chance:
             return 0
 
-        damage_dealt = monster.damage(self.attack_power)
+        damage_dealt = monster.damage(self.attack_power, self.attack_type)
 
         return damage_dealt
 
-    def damage(self, attack_power: int) -> int:
+    def damage(
+        self,
+        attack_power: int,
+        attack_type: TYPES,
+    ) -> int:
         """Takes in an attack power from another monster and"""
+        if attack_type == self.weakness():
+            attack_power *= 2
+
+        self.status = None if self.status is not None else attack_type
+        if self.status:
+            self.health -= STATUS_DAMAGE[self.status]
+
         if self.health >= attack_power:
             self.health -= attack_power
 
@@ -109,3 +150,14 @@ class Monster:
         """Returns if the monster is still alive or not"""
 
         return self.health > 0
+
+    def weakness(self) -> TYPES | None:
+        """Returns the weakness of the monster"""
+        m = {
+            "fire": "water",
+            "water": "earth",
+            "earth": "air",
+            "air": "fire",
+        }
+
+        return m[self.monster_type]
