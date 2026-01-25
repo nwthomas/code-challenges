@@ -23,10 +23,10 @@ Follow-ups to consider:
 
 from dataclasses import dataclass
 import random
-from typing import Literal
+from enum import Enum
 
 
-STATUS = Literal["poison", "paralysis", "sleep", "burn", "freeze"]
+STATUS = Enum("STATUS", ["poison", "paralysis", "sleep", "burn", "freeze"])
 STATUS_DAMAGE = {
     "poison": 1,
     "paralysis": 2,
@@ -34,7 +34,13 @@ STATUS_DAMAGE = {
     "burn": 4,
     "freeze": 5,
 }
-TYPES = Literal["fire", "water", "earth", "air"]
+TYPES = Enum("TYPES", ["fire", "water", "earth", "air"])
+WEAKNESS = {
+    "fire": "water",
+    "water": "earth",
+    "earth": "air",
+    "air": "fire",
+}
 
 
 @dataclass
@@ -47,7 +53,7 @@ class Setup:
 
 
 class Game:
-    def __init__(self, side_one: ["Monster"], side_two: ["Monster"]):
+    def __init__(self, side_one: list["Monster"], side_two: list["Monster"]):
         self.side_one = [
             Monster(m.attack, m.health, m.attack_type, m.monster_type, m.miss_chance)
             for m in side_one
@@ -57,20 +63,18 @@ class Game:
             for m in side_two
         ]
 
-    def fight(self) -> [str]:
+    def fight(self) -> list[str]:
         """Causes the two sides of monsters to fight each other and returns logs of the result"""
-        logs = []
 
-        if not len(self.side_one) or not len(self.side_one):
-            if len(self.side_one):
-                logs.append("Side two has no monsters alive. Side one wins.")
-            elif len(self.side_two):
-                logs.append("Side one has no monsters alive. Side two wins.")
+        if not self.side_one or not self.side_two:
+            if self.side_one:
+                return ["Side two has no monsters alive. Side one wins."]
+            elif self.side_two:
+                return ["Side one has no monsters alive. Side two wins."]
             else:
-                logs.append("No monsters left alive. It's a draw.")
+                return ["No monsters left alive. It's a draw."]
 
-            return logs
-
+        logs = []
         first_monster = self.side_one.pop()
         second_monster = self.side_two.pop()
         first_attack = first_monster.attack(second_monster)
@@ -94,7 +98,6 @@ class Game:
 
     def can_fight(self) -> bool:
         """Returns if there are monsters alive on both sides"""
-
         return len(self.side_one) > 0 and len(self.side_two) > 0
 
 
@@ -128,11 +131,13 @@ class Monster:
         attack_power: int,
         attack_type: TYPES,
     ) -> int:
-        """Takes in an attack power from another monster and"""
+        """Takes in an attack from another monster"""
         if attack_type == self.weakness():
             attack_power *= 2
 
-        self.status = None if self.status is not None else attack_type
+        if self.status is None:
+            self.status = attack_type
+
         if self.status:
             self.health -= STATUS_DAMAGE[self.status]
 
@@ -148,16 +153,8 @@ class Monster:
 
     def is_alive(self) -> bool:
         """Returns if the monster is still alive or not"""
-
         return self.health > 0
 
     def weakness(self) -> TYPES | None:
         """Returns the weakness of the monster"""
-        m = {
-            "fire": "water",
-            "water": "earth",
-            "earth": "air",
-            "air": "fire",
-        }
-
-        return m[self.monster_type]
+        return WEAKNESS[self.monster_type]
