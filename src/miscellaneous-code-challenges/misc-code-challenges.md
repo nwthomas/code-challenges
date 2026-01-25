@@ -19,6 +19,7 @@
     -   [Eating Cookies](eating-cookies)
     -   [GPU Credit Tracker](gpu-credit-tracker)
     -   [Making Change](making-change)
+    -   [Monster Battle](monster-battle)
     -   [Recipe Batches](recipe-batches)
     -   [Rock Paper Scissors](rock-paper-scissors)
     -   [Stock Prices](stock-prices)
