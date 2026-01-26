@@ -25,38 +25,25 @@ newInterval.length == 2
 0 <= start <= end <= 105
 """
 
-from typing import List
 
-def insert(intervals: List[List[int]], new_interval: List[int]) -> List[List[int]]:
-    if len(intervals) < 1:
-        return [new_interval]
-    
-    output = []
-    new_start, new_end = new_interval
-    used_new_interval = False
-    
+def insert(intervals: list[list[int]], newInterval: list[int]) -> list[list[int]]:
+    result = []
+
     for interval in intervals:
-        current_start, current_end = interval
-        
-        min_start = min(new_start, current_start)
-        max_start = max(new_start, current_start)
-        
-        minEnd = min(new_end, current_end)
-        maxEnd = max(new_end, current_end)
-        
-        if max_start <= minEnd and len(output) > 0 and output[len(output) - 1][1] > min_start:
-            used_new_interval = min_start == new_start or max_start == new_start
-            output[len(output) - 1][1] = maxEnd
-        elif max_start <= minEnd:
-            used_new_interval = min_start == new_start or max_start == new_start
-            output.append([min_start, maxEnd])
+        if newInterval and newInterval[1] < interval[0]:
+            result.extend([newInterval, interval])
+            newInterval = None
+        elif newInterval and newInterval[0] <= interval[1]:
+            result.append(
+                [min(newInterval[0], interval[0]), max(newInterval[1], interval[1])]
+            )
+            newInterval = None
+        elif result and interval[0] <= result[len(result) - 1][1]:
+            result[len(result) - 1][1] = max(result[len(result) - 1][1], interval[1])
         else:
-            if not used_new_interval and new_interval[1] < current_start:
-                output.append(new_interval)
-                used_new_interval = True
-            output.append(interval)
-            
-    if not used_new_interval:
-        output.append(new_interval)
-            
-    return output
+            result.append(interval)
+
+    if newInterval:
+        result.append(newInterval)
+
+    return result
