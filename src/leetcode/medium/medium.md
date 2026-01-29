@@ -53,6 +53,7 @@
 -   [Longest Substring Without Repeating Characters](longest-substring-without-repeating-characters)
 -   [LRU Cache](lru-cache)
 -   [Lowest Common Ancestor of Binary Search Tree](lowest-common-ancestor-of-bst)
+-   [K Closest Points to Origin](k-closest-points-to-origin)
 -   [Kth Largest Element in an Array](kth-largest-element-in-an-array)
 -   [Max Area of Island](max-area-of-island)
 -   [Maximum Product Subarray](maximum-product-subarray)
