@@ -20,6 +20,7 @@
     -   [Eating Cookies](eating-cookies)
     -   [GPU Credit Tracker](gpu-credit-tracker)
     -   [Implement In-Memory SQL Table](implement-in-memory-sql-table)
+    -   [Key Value Store With Serialization](key-value-store-with-serialization)
     -   [Making Change](making-change)
     -   [Monster Battle](monster-battle)
     -   [Recipe Batches](recipe-batches)
