@@ -25,6 +25,7 @@
     -   [KMey Value Store Plan Type Conversions](key-value-store-plan-type-conversions)
     -   [Making Change](making-change)
     -   [Monster Battle](monster-battle)
+    -   [Node Counting](node-counting)
     -   [Recipe Batches](recipe-batches)
     -   [Rock Paper Scissors](rock-paper-scissors)
     -   [Stock Prices](stock-prices)
