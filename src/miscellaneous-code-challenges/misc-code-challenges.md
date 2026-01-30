@@ -15,6 +15,7 @@
     -   [Spreadsheet](spreadsheet)
     -   [Sum Fibonacci](sum-fibonacci)
 -   Python
+    -   [Change Directory](cd)
     -   [Count Islands](count-islands)
     -   [Eating Cookies](eating-cookies)
     -   [GPU Credit Tracker](gpu-credit-tracker)

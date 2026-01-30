@@ -1,6 +1,7 @@
 from change_directory import change_directory
 import unittest
 
+
 class TestChangeDirectory(unittest.TestCase):
     def test_handles_empty_change_directions(self):
         result = change_directory("/t/e/s/t", "")
@@ -20,6 +21,7 @@ class TestChangeDirectory(unittest.TestCase):
         """Can go back part way and then forwards in returned route"""
         result = change_directory("/s/t/z/g", "h/../../../i/l")
         self.assertEqual(result, "/s/t/i/l")
+
 
 if __name__ == "__main__":
     unittest.main()
