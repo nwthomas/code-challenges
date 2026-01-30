@@ -30,15 +30,15 @@ All the strings of wordDict are unique.
 
 from typing import List
 
+
 def word_break(s: str, wordDict: List[str]) -> bool:
     cache = [i == len(s) for i in range(len(s) + 1)]
-    
+
     for i in range(len(s) - 1, -1, -1):
         for word in wordDict:
-            if i + len(word) <= len(s) and s[i:i + len(word)] == word:
+            if i + len(word) <= len(s) and s[i : i + len(word)] == word:
                 cache[i] = cache[i + len(word)]
             if cache[i]:
                 break
 
     return cache[0]
-            
