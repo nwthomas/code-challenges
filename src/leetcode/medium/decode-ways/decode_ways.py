@@ -37,28 +37,32 @@ Constraints:
 s contains only digits and may contain leading zero(s).
 """
 
+
 def num_decodings_recursive(s: str) -> int:
-    dp = { len(s): 1 }
-    
-    def dfs(i):
-        if i in dp:
-            return dp[i]
-        elif s[i] == "0":
+    if "00" in s:
+        return 0
+
+    tracker = {len(s): 1}
+
+    def dfs(i: int):
+        if i in tracker:
+            return tracker[i]
+        if s[i] == "0":
             return 0
-        
-        res = dfs(i + 1)
-        
-        if i + 1 < len(s) and (s[i] == "1" or (s[i] == "2" and s[i + 1] in "0123456")):
-            res += dfs(i + 2)
-            
-        dp[i] = res
-        
-        return res
-    
+
+        result = dfs(i + 1)
+        if i + 1 < len(s) and (s[i] == "1" or (s[i] == "2" and int(s[i + 1]) < 7)):
+            result += dfs(i + 2)
+
+        tracker[i] = result
+
+        return tracker[i]
+
     return dfs(0)
 
+
 def num_decodings_iterative(s: str) -> int:
-    dp = { len(s): 1 }
+    dp = {len(s): 1}
 
     for i in range(len(s) - 1, -1, -1):
         if s[i] == "0":
@@ -68,5 +72,5 @@ def num_decodings_iterative(s: str) -> int:
 
         if i + 1 < len(s) and (s[i] == "1" or (s[i] == "2" and s[i + 1] in "0123456")):
             dp[i] += dp[i + 2]
-        
+
     return dp[0]
