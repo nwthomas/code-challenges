@@ -21,6 +21,7 @@
     -   [GPU Credit Tracker](gpu-credit-tracker)
     -   [Implement In-Memory SQL Table](implement-in-memory-sql-table)
     -   [Key Value Store With Serialization](key-value-store-with-serialization)
+    -   [KMey Value Store Plan Type Conversions](key-value-store-plan-type-conversions)
     -   [Making Change](making-change)
     -   [Monster Battle](monster-battle)
     -   [Recipe Batches](recipe-batches)
