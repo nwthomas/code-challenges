@@ -17,6 +17,7 @@
 -   Python
     -   [Change Directory](cd)
     -   [Count Islands](count-islands)
+    -   [Dependency Version Check](dependency-version-check)
     -   [Eating Cookies](eating-cookies)
     -   [GPU Credit Tracker](gpu-credit-tracker)
     -   [Implement In-Memory SQL Table](implement-in-memory-sql-table)
