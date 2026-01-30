@@ -4,6 +4,7 @@ like in Excel. You can assume that values accessed will exist, but we may want t
 caching system in order to avoid multiple highly intensive computational actions.
 """
 
+
 class Spreadsheet:
     def __init__(self):
         self.cells = {}
@@ -15,24 +16,32 @@ class Spreadsheet:
         self.recursively_clear_cache(key)
         self.graph[key] = []
 
-    def get(self, key: str) -> str:
+    def get(self, key: str, visited=None) -> str:
+        if visited is None:
+            visited = set[str]()
+
         if key in self.cache:
             return self.cache[key]
-    
+        if key in visited:
+            raise ValueError(f"Cycle detected: {key}")
+
+        visited.add(key)
+
         value = self.cells[key]
         without_equals_prefix = "".join(value.split("="))
         values_list = without_equals_prefix.split("+")
 
         total = 0
-
         for new_value in values_list:
-            if self.is_int(new_value):
+            if new_value.isdigit():
                 total += int(new_value)
             else:
-                total += self.get(new_value)
+                total += self.get(new_value, visited.copy())
                 self.add_graph_dependency(new_value, key)
 
         self.cache[key] = total
+
+        visited.remove(key)
 
         return total
 
@@ -51,11 +60,3 @@ class Spreadsheet:
             self.graph[child] = []
 
         self.graph[child].append(parent)
-
-    def is_int(self, string: str) -> bool:
-        try: 
-            int(string)
-        except ValueError:
-            return False
-        else:
-            return True
