@@ -1,10 +1,10 @@
-# CODE CHALLENGES
+# Code Challenges
 
-## PURPOSE
+## Purpose
 
 This repository is a collection of completed code challenges from a variety of places.
 
-## TABLE OF CONTENTS
+## Table of Contents
 
 -   [Codewars](src/codewars/)
 -   [Daily Coding Problem](src/daily-coding-problem)
@@ -15,12 +15,12 @@ This repository is a collection of completed code challenges from a variety of p
 -   [Miscellaneous Code Challenges](src/miscellaneous-code-challenges/misc-code-challenges.md)
 -   [Exponent Interviews](src/exponent/exponent.md)
 
-## BUILT WITH
+## Built With
 
 -   Aside from a few one-off solutions, the code challenges in this repository use [Golang](https://go.dev), [JavaScript](https://www.ecma-international.org/ecma-262/6.0/), and [Python](https://www.python.org/)
 -   The JavaScript tests are written with Facebook's [Jest](https://jestjs.io/en/) for unit testing, while Python uses [pytest](https://docs.pytest.org/en/stable/index.html). Go tests are written using the standard library [testing](https://pkg.go.dev/testing) package.
 
-## GETTING STARTED
+## Getting Started
 
 1. Fork or clone this repository to your local machine
 
