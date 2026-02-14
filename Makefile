@@ -18,4 +18,4 @@ test-js:
 
 test-py:
 	@echo "Running all Python tests..."
-	uv run pytest
+	uv run pytest -s
