@@ -20,7 +20,10 @@ def test_subtracts_from_expiring_grants_first():
     assert credit.get_balance(15) == 15
     credit.subtract(15, 10)
     assert credit.get_balance(10) == 5
-    assert credit.get_balance(20) == 5
+    assert credit.get_balance(14) == 15
+    assert credit.get_balance(15) == 5
+    assert credit.get_balance(59) == 5
+    assert credit.get_balance(60) == 0
 
 
 def test_subtracts_in_any_order_entered():
@@ -42,6 +45,7 @@ def test_should_return_zero_for_no_grants():
     """Returns 0 for get_balance() if no grants have been created"""
     credit = GPUCreditTracker()
     assert credit.get_balance(10) == 0
+    assert credit.get_balance(100000000) == 0
 
 
 def test_handles_all_grants_expired():
@@ -61,6 +65,7 @@ def test_handles_negative_balance():
     assert credit.get_balance(15) == None
     assert credit.get_balance(16) == None
     assert credit.get_balance(20) == None
+    assert credit.get_balance(100000000) == None
     credit.create_grant(11, 100, 10)
     assert credit.get_balance(10) == 5
     assert credit.get_balance(11) == 15

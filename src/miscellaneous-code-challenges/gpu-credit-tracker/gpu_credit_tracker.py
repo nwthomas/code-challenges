@@ -1,7 +1,7 @@
 from copy import deepcopy
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from heapq import heappop, heappush
-from typing import List, Optional
+from typing import List
 
 from enum import Enum
 
@@ -12,23 +12,31 @@ class Action(Enum):
 
 
 @dataclass
-class Transaction:
+class Grant:
     """
-    Preserves a grant creation, subtract, or get_balance transaction
-    at a given point in time
+    Marks a grant transaction at a given timestamp for a ceratin amount with a certain expiration
+    timestamp.
     """
 
-    action: Action
+    action = Action.GRANT
     timestamp: int
     amount: int
-    expiration_timestamp: Optional[int] = field(default=None)
+    expiration_timestamp: int
 
     def __lt__(self, other_value) -> bool:
-        """Compares two transactions. Required for heap comparisons. Only works with grants."""
-        if self.action != Action.GRANT:
-            return False
-
+        """Compares two transactions. Required for heap comparisons."""
         return self.expiration_timestamp < other_value.expiration_timestamp
+
+
+@dataclass
+class Subtract:
+    """
+    Marks a subtract transaction at a given timestamp for a certain amount.
+    """
+
+    action = Action.SUBTRACT
+    timestamp: int
+    amount: int
 
 
 class GPUCreditTracker:
@@ -38,24 +46,24 @@ class GPUCreditTracker:
     """
 
     def __init__(self):
-        self.transactions: List[Transaction] = []
+        self.transactions: List[Grant | Subtract] = []
 
     def create_grant(
         self, timestamp: int, expiration_timestamp: int, amount: int
     ) -> None:
         """Creates a grant for a credit balance increase."""
-        transaction = Transaction(Action.GRANT, timestamp, amount, expiration_timestamp)
+        transaction = Grant(timestamp, amount, expiration_timestamp)
         self.__insert_transaction(transaction)
 
     def subtract(self, timestamp: int, amount: int) -> None:
         """Subtracts credits from the current balance if possible."""
-        transaction = Transaction(Action.SUBTRACT, timestamp, amount, None)
+        transaction = Subtract(timestamp, amount)
         self.__insert_transaction(transaction)
 
     def get_balance(self, timestamp: int) -> int | None:
         """Returns the balance at a certain point in time."""
         has_gone_negative = False
-        grant_heap: list[Transaction] = []
+        grant_heap: list[Grant] = []
         i = 0
 
         while (
@@ -70,9 +78,9 @@ class GPUCreditTracker:
             ):
                 heappop(grant_heap)
 
-            if current_transaction.action == Action.GRANT:
+            if isinstance(current_transaction, Grant):
                 heappush(grant_heap, current_transaction)
-            elif current_transaction.action == Action.SUBTRACT:
+            elif isinstance(current_transaction, Subtract):
                 total_subtract_remaining = current_transaction.amount
 
                 while grant_heap and total_subtract_remaining > 0:
@@ -103,10 +111,10 @@ class GPUCreditTracker:
 
         return total if not has_gone_negative else None
 
-    def __insert_transaction(self, transaction: Transaction) -> None:
+    def __insert_transaction(self, transaction: Grant | Subtract) -> None:
         """Inserts a new transaction into the list of transactions."""
-        new_transaction: Transaction | None = transaction
-        new_transactions_list: list[Transaction] = []
+        new_transaction: Grant | Subtract | None = transaction
+        new_transactions_list: list[Grant | Subtract] = []
 
         for i, t in enumerate(self.transactions):
             if i == 0 and new_transaction and new_transaction.timestamp < t.timestamp:
