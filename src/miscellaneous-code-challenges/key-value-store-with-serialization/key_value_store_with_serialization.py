@@ -18,53 +18,92 @@ Serialization must be reversible - deserialize(serialize(data)) == data
 Must handle empty strings and empty dictionaries
 """
 
-from typing import Optional
-from unittest import result
+from typing import Any, Optional
+
+DELIMINTER = ":"
 
 
-def serialize(data: Optional[dict[str, str]]) -> str:
+def __get_data_type_from_value(value: Any) -> str:
+    if isinstance(value, bool):
+        return ["b", str(value)]
+    if isinstance(value, float):
+        return ["f", repr(value)]
+    if isinstance(value, int):
+        return ["i", str(value)]
+    if isinstance(value, str):
+        return ["s", str(value)]
+
+    return ["n", ""]
+
+
+def __get_value_from_data_and_type(value: str, data_type: str) -> Any:
+    if data_type == "s":
+        return value
+    if data_type == "b":
+        return value == "True"
+    if data_type == "i":
+        return int(value)
+    if data_type == "f":
+        return float(value)
+
+    return None
+
+
+def serialize(data: Optional[dict[str, Any]]) -> str:
     result = ""
 
     if not data:
         return result
 
     for key, value in data.items():
-        key_len = len(key)
-        value_len = len(value)
-        string = f"{key_len}:{key}:{value_len}:{value}"
-        result += ":" + string if result else string
+        _, key_final = __get_data_type_from_value(key)
+        value_type, value_final = __get_data_type_from_value(value)
+        key_len = len(key_final)
+        value_len = len(value_final)
+
+        result += f"{key_len}{DELIMINTER}{key_final}{value_len}{DELIMINTER}{value_type}{value_final}"
 
     return result
 
 
-def deserialize(data: Optional[str]) -> dict[str, str]:
+def deserialize(data: Optional[str]) -> dict[str, Any]:
     result = {}
 
     if not data:
         return result
 
     i = 0
-    while i < len(data) - 1:
-        key_len_str = ""
-        while data[i] != ":":
-            key_len_str += data[i]
+    while i < len(data):
+        key_len_s = ""
+        while data[i] != DELIMINTER:
+            key_len_s += data[i]
             i += 1
-        key_len = int(key_len_str)
 
+        key_len = int(key_len_s)
         i += 1
+
         key = data[i : i + key_len]
-        i += key_len + 1
+        i += key_len
 
-        value_len_str = ""
-        while data[i] != ":":
-            value_len_str += data[i]
+        value_len_s = ""
+        while data[i] != DELIMINTER:
+            value_len_s += data[i]
             i += 1
-        value_len = int(value_len_str)
+
+        value_len = int(value_len_s)
 
         i += 1
-        value = data[i : i + value_len]
-        i += value_len + 1
+        value_type = data[i]
+        i += 1
 
-        result[key] = value
+        value = data[i : i + value_len]
+        i += value_len
+
+        result[key] = __get_value_from_data_and_type(value, value_type)
 
     return result
+
+
+# data = {"na::me": "Nathan Thomas", "a,,,,ge": 38, "test\\_none": None, "float": 3.14}
+# print(serialize(data))
+# print(deserialize(serialize(data)))
