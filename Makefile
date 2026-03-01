@@ -18,4 +18,7 @@ test-js:
 
 test-py:
 	@echo "Running all Python tests..."
-	uv run pytest -s
+	# -s: Allows for print statements to be displayed
+	# -v: Increases verbosity of test output
+	# -vv: Does not truncate test output
+	uv run pytest -s -vv

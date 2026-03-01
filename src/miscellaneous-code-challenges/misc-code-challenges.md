@@ -30,3 +30,4 @@
     -   [Rock Paper Scissors](rock-paper-scissors)
     -   [Stock Prices](stock-prices)
     -   [Trapping Water Droplets](trapping-water-droplets)
+    -   [Web Crawler](web-crawler)
