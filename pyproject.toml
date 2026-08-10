@@ -18,3 +18,19 @@ dependencies = [
 dev = [
     "pylint==3.3.1",
 ]
+
+[tool.pylint."messages control"]
+disable = [
+    "C0103",
+    "C0115",
+    "C0116",
+    "C0301",
+    "C0303",
+    "C0321",
+    "C0413",
+    "W0104",
+    "W0106",
+    "W0107",
+    "W0212",
+    "W0621",
+]

@@ -19,79 +19,35 @@ num1 and num2 consist of digits only.
 Both num1 and num2 do not contain any leading zero, except the number 0 itself.
 """
 
+strToNum = {
+    "0": 0,
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 6,
+    "7": 7,
+    "8": 8,
+    "9": 9,
+}
+
 
 def multiply(num1: str, num2: str) -> str:
-    res = "0"
-
-    if "0" in [num1, num2]:
+    if num1 == "0" or num2 == "0":
         return "0"
 
-    for i, num in enumerate(num1[::-1]):
-        curr = multiplyOneNum(num, num2, i)
-        res = add(res, curr)
+    result = [0] * (len(num1) + len(num2))
 
-    return res
+    for i in range(len(num1) - 1, -1, -1):
+        for j in range(len(num2) - 1, -1, -1):
+            product = strToNum[num1[i]] * strToNum[num2[j]]
 
+            ones = i + j + 1
+            tens = i + j
+            total = product + result[ones]
 
-def multiplyOneNum(num: str, num2: str, placeValue: int) -> str:
-    res = ""
-    num2 = num2[::-1]
-    carriedNum = 0
+            result[ones] = total % 10
+            result[tens] += total // 10
 
-    for i in range(len(num2)):
-        curr = int(num) * int(num2[i])
-        curr += carriedNum
-        carriedNum = 0
-
-        while curr >= 10:
-            curr -= 10
-            carriedNum += 1
-
-        res += f"{curr}"
-
-    if carriedNum > 0:
-        res += f"{carriedNum}"
-
-    res = res[::-1]
-
-    while placeValue > 0:
-        res += "0"
-        placeValue -= 1
-
-    return res
-
-
-def add(num1: str, num2: str) -> str:
-    if num1 == "0" or num2 == "0":
-        return num2 if num1 == "0" else num1
-
-    res = ""
-    i = 0
-    num1 = num1[::-1]
-    num2 = num2[::-1]
-    carry = False
-
-    while i < len(num1) or i < len(num2):
-        curr = 0
-        if carry:
-            curr += 1
-            carry = False
-
-        if i > len(num1) - 1:
-            curr += int(num2[i])
-        elif i > len(num2) - 1:
-            curr += int(num1[i])
-        else:
-            curr += int(num1[i]) + int(num2[i])
-
-        if curr >= 10:
-            curr -= 10
-            carry = True
-
-        i += 1
-        res += f"{curr}"
-
-    if carry:
-        res += "1"
-
-    return res[::-1]
+    return "".join(map(str, result)).lstrip("0")
