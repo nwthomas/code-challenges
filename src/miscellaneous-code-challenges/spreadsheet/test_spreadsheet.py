@@ -1,5 +1,5 @@
-from spreadsheet import Spreadsheet
 import pytest
+from spreadsheet import Spreadsheet
 
 
 def test_writes_expected_values():

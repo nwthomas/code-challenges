@@ -4,59 +4,66 @@ like in Excel. You can assume that values accessed will exist, but we may want t
 caching system in order to avoid multiple highly intensive computational actions.
 """
 
+from collections import defaultdict
+
 
 class Spreadsheet:
     def __init__(self):
-        self.cells = {}
         self.cache = {}
-        self.graph = {}
+        self.cells = {}
+        self.childToParents = defaultdict(list)
 
     def put(self, key: str, value: str) -> None:
+        self.recursivelyClearCache(key)
         self.cells[key] = value
-        self.recursively_clear_cache(key)
-        self.graph[key] = []
 
-    def get(self, key: str, visited=None) -> str:
+    def get(self, key: str, visited=None) -> int:
         if visited is None:
-            visited = set[str]()
+            visited = set()
 
         if key in self.cache:
             return self.cache[key]
+        if self.isNumber(self.cells[key]):
+            return int(self.cells[key])
         if key in visited:
-            raise ValueError(f"Cycle detected: {key}")
+            raise ValueError("Cycle detected")
 
         visited.add(key)
+        val = self.cells[key]
 
-        value = self.cells[key]
-        without_equals_prefix = "".join(value.split("="))
-        values_list = without_equals_prefix.split("+")
+        equation = val[1:].split("+")
+        vals = []
+        for cell in equation:
+            if self.isNumber(cell):
+                vals.append(int(cell))
+                continue
 
-        total = 0
-        for new_value in values_list:
-            if new_value.isdigit():
-                total += int(new_value)
-            else:
-                total += self.get(new_value, visited.copy())
-                self.add_graph_dependency(new_value, key)
+            self.childToParents[cell].append(key)
+            vals.append(self.get(cell, visited.copy()))
 
-        self.cache[key] = total
+        result = 0
+        for v in vals:
+            result += v
 
-        visited.remove(key)
+        return result
 
-        return total
-
-    def recursively_clear_cache(self, key: str) -> None:
+    def recursivelyClearCache(self, key: str) -> None:
         if key in self.cache:
             del self.cache[key]
 
-        if not key in self.graph:
-            self.graph[key] = []
+        parents = self.childToParents[key]
 
-        for parent_dep in self.graph[key]:
-            self.recursively_clear_cache(parent_dep)
+        if len(parents) == 0:
+            return
 
-    def add_graph_dependency(self, child: str, parent: str) -> None:
-        if not child in self.graph:
-            self.graph[child] = []
+        for p in parents:
+            self.recursivelyClearCache(p)
 
-        self.graph[child].append(parent)
+        self.childToParents[key] = []
+
+    def isNumber(self, val: str) -> bool:
+        try:
+            int(val)
+            return True
+        except:
+            return False
