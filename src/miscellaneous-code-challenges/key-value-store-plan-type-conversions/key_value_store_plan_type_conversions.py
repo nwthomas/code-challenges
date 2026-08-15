@@ -15,30 +15,20 @@ from collections import defaultdict
 
 class KeyValueStoreWithTimestamps:
     def __init__(self):
-        # Store = { key: [{ timestamp, value }]}
+        # Store = dict{ [key: str]: list[ set(timestamp: int, value: str ) ] }
         self.store = defaultdict(list)
 
     def set_at(self, key: str, value: str, timestamp: int) -> None:
         i = 0
-        for val in self.store[key]:
-            if val["timestamp"] <= timestamp:
-                i += 1
-                continue
+        while i < len(self.store[key]) and self.store[key][i][0] <= timestamp:
+            i += 1
 
-            break
-
-        self.store[key] = (
-            self.store[key][:i]
-            + [{"value": value, "timestamp": timestamp}]
-            + self.store[key][i:]
-        )
+        self.store[key] = self.store[key][:i] + \
+            [(timestamp, value)] + self.store[key][i:]
 
     def get_at(self, key: str, timestamp: int) -> str:
-        if not key in self.store:
-            return ""
-
         values = self.store[key]
-        if len(values) == 0:
+        if not key in self.store or len(values) == 0:
             return ""
 
         left = 0
@@ -52,10 +42,10 @@ class KeyValueStoreWithTimestamps:
                 break
 
             val = values[pivot]
-            if val["timestamp"] <= timestamp:
+            if val[0] <= timestamp:
                 max_seen = val
                 left = pivot + 1
             else:
                 right = pivot - 1
 
-        return max_seen["value"]
+        return max_seen[1]
