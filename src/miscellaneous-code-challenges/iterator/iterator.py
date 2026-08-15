@@ -4,9 +4,10 @@ raise a StopIteration error when finished, and include capabilities to peak at t
 next item as well as 
 """
 
-from typing import Iterator, List, Optional, TypeVar, Union
+from typing import Iterator, List, TypeVar, Union
 
 T = TypeVar('T')
+
 
 class IteratorClass:
     index: int = 0
@@ -16,20 +17,20 @@ class IteratorClass:
 
     def __iter__(self) -> Iterator:
         return self
-        
+
     def __next__(self) -> T:
         if self.index < len(self.values):
             value = self.values[self.index]
             self.index += 1
             return value
-        else:
-            raise StopIteration
 
-    def peak(self) -> Union[T, None]:
+        raise StopIteration
+
+    def peak(self) -> Union[T, None] | None:
         if self.index < len(self.values) - 1:
             return self.values[self.index + 1]
-        else:
-            None
+
+        return None
 
     def restart(self) -> None:
         self.index = 0
