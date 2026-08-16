@@ -6,6 +6,8 @@ next item as well as
 
 type State = dict[str, list["Iterator"] | int]
 
+type SavedState[T] = dict[str, list[dict[str, int | list[T]]] | int]
+
 
 class IteratorManager[T]:
     state: State
@@ -38,19 +40,34 @@ class IteratorManager[T]:
         currentIterator = self.state["iterators"][currentIndex]
         return currentIterator.__next__()
 
-    def getState(self) -> State:
-        return self.state
+    def getState(self) -> SavedState:
+        state = {"index": self.state["index"], "iterators": []}
 
-    def setState(self, state: State):
-        self.state = state
+        for i in self.state["iterators"]:
+            state["iterators"].append(
+                {"index": i.index, "values": i.values})
+
+        return state
+
+    def setState(self, state: SavedState):
+        newState: State = {"index": state["index"], "iterators": []}
+
+        for i in state["iterators"]:
+            newIterator = Iterator(i["values"], i["index"])
+            newState["iterators"].append(newIterator)
+
+        self.state = newState
 
 
 class Iterator[T]:
     index: int = 0
     values: list[T]
 
-    def __init__(self, values: list[T]) -> None:
+    def __init__(self, values: list[T], index: int = 0) -> None:
         self.values = values
+        self.index = 0
+        if index:
+            self.index = index
 
     def __iter__(self) -> Iterator:
         return self

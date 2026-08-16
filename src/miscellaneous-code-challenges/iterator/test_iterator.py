@@ -66,8 +66,8 @@ class TestIteratorManager(unittest.TestCase):
         self.assertEqual(valueOne, 1)
 
         state = im.getState()
-
-        resumedIm = IteratorManager(state.copy())
+        resumedIm = IteratorManager({"index": 0, "iterators": []})
+        resumedIm.setState(state)
         valueTwo = resumedIm.__next__()
         valueThree = resumedIm.__next__()
         valueFour = resumedIm.__next__()
