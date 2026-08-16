@@ -1,6 +1,6 @@
 import unittest
 
-from iterator import Iterator, IteratorManager
+from resumable_iterator import Iterator, IteratorManager
 
 
 class TestIteratorManager(unittest.TestCase):
