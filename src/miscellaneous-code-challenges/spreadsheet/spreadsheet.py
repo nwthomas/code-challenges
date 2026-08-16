@@ -9,50 +9,54 @@ from collections import defaultdict
 
 class Spreadsheet:
     def __init__(self):
-        self.cache = {}
         self.cells = {}
+        self.cache = {}
         self.childToParents = defaultdict(list)
 
     def put(self, key: str, value: str) -> None:
-        self.recursivelyClearCache(key)
         self.cells[key] = value
+        self.recursivelyClearCache(key)
 
     def get(self, key: str, visited=None) -> int:
-        if visited is None:
-            visited = set()
-
         if key in self.cache:
             return self.cache[key]
-        if self.isNumber(self.cells[key]):
-            return int(self.cells[key])
+        if not visited:
+            visited = set()
         if key in visited:
             raise ValueError("Cycle detected")
 
         visited.add(key)
-        val = self.cells[key]
 
-        equation = val[1:].split("+")
-        vals = []
-        for cell in equation:
-            if self.isNumber(cell):
-                vals.append(int(cell))
-                continue
+        value = self.cells[key]
 
-            self.childToParents[cell].append(key)
-            vals.append(self.get(cell, visited.copy()))
+        total = 0
+        if self.isNumber(value):
+            return int(value)
 
-        result = 0
-        for v in vals:
-            result += v
+        valueList = value[1:].split("+")
+        for v in valueList:
+            if self.isNumber(v):
+                total += int(v)
+            else:
+                self.childToParents[v].append(key)
+                total += self.get(v, visited.copy())
 
-        return result
+        self.cache[key] = total
 
-    def recursivelyClearCache(self, key: str) -> None:
+        return total
+
+    def isNumber(self, value: str) -> bool:
+        try:
+            int(value)
+            return True
+        except:
+            return False
+
+    def recursivelyClearCache(self, key: str):
         if key in self.cache:
             del self.cache[key]
 
         parents = self.childToParents[key]
-
         if len(parents) == 0:
             return
 
@@ -60,10 +64,3 @@ class Spreadsheet:
             self.recursivelyClearCache(p)
 
         self.childToParents[key] = []
-
-    def isNumber(self, val: str) -> bool:
-        try:
-            int(val)
-            return True
-        except:
-            return False
