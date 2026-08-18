@@ -25,13 +25,14 @@ nums.length == 2 * n
 
 from typing import List
 
+
 def array_pair_sum(nums: List[int]) -> int:
     nums.sort()
     i = 0
     total = 0
-    
+
     while i < len(nums) - 1:
         total += nums[i]
         i += 2
-        
+
     return total

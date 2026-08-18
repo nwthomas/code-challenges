@@ -1,6 +1,7 @@
-from array import array
-from array_partition import array_pair_sum
 import unittest
+
+from array_partition import array_pair_sum
+
 
 class TestArrayPairSum(unittest.TestCase):
     def test_returns_correct_total(self):
@@ -17,6 +18,7 @@ class TestArrayPairSum(unittest.TestCase):
         """Returns the correct total when all integers are the same"""
         result = array_pair_sum([2, 2, 2, 2, 2, 2, 2, 2])
         self.assertEqual(result, 8)
+
 
 if __name__ == "__main__":
     unittest.main()

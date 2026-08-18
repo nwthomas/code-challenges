@@ -34,8 +34,12 @@ const traverse = (node) => {
 
     let leftResults = traverse(node.left);
     let rightResults = traverse(node.right);
-    const longestCurrent = (leftResults.longestCurrent > rightResults.longestCurrent ? leftResults.longestCurrent : rightResults.longestCurrent) + 1;
-    let longestCombined = leftResults.longestCurrent + rightResults.longestCurrent + 1;
+    const longestCurrent =
+        (leftResults.longestCurrent > rightResults.longestCurrent
+            ? leftResults.longestCurrent
+            : rightResults.longestCurrent) + 1;
+    let longestCombined =
+        leftResults.longestCurrent + rightResults.longestCurrent;
     if (leftResults.longestCombined > longestCombined) {
         longestCombined = leftResults.longestCombined;
     }
@@ -44,14 +48,14 @@ const traverse = (node) => {
     }
 
     return { longestCombined, longestCurrent };
-}
+};
 
 const diameterOfBinaryTree = (root) => {
     const result = traverse(root);
 
     // The traverse function calculates vertices, and we want edges. Simplest way is just to -1
     // before returning the final result from the function.
-    return result.longestCombined - 1;
-}
+    return result.longestCombined;
+};
 
 module.exports = { diameterOfBinaryTree, TreeNode };
