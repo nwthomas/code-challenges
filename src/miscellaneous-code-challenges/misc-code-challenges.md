@@ -27,6 +27,7 @@
     - [Making Change](making-change)
     - [Monster Battle](monster-battle)
     - [Node Counting](node-counting)
+    - [Pairs With Specific Difference](pairs-with-specific-difference)
     - [Recipe Batches](recipe-batches)
     - [Resumable Iterator](resumable_iterator)
     - [Rock Paper Scissors](rock-paper-scissors)
