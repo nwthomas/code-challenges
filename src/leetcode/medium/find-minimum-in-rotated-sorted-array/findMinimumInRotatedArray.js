@@ -1,4 +1,4 @@
-"""
+/*
 https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
 
 Suppose an array of length n sorted in ascending order is rotated between 1 and n times. For example, the array nums = [0,1,2,4,5,6,7] might become:
@@ -25,21 +25,26 @@ Example 3:
 Input: nums = [11,13,15,17]
 Output: 11
 Explanation: The original array was [11,13,15,17] and it was rotated 4 times. 
-"""
+*/
 
-from typing import List
+function findMin(nums) {
+    let left = 0;
+    let right = nums.length - 1;
 
+    while (left < right) {
+        const pivot = Math.floor((left + right) / 2);
 
-def find_min(nums: List[int]) -> int:
-    left = 0
-    right = len(nums) - 1
+        // Minimum could be to the right of the pivot
+        if (nums[pivot] > nums[right]) {
+            left = pivot + 1;
+        }
+        // Minimum could be pivot, or somewhere to its left
+        else {
+            right = pivot;
+        }
+    }
 
-    while left < right:
-        pivot = (left + right) // 2
+    return nums[left];
+}
 
-        if nums[pivot] > nums[right]:
-            left = pivot + 1
-        else:
-            right = pivot
-
-    return nums[left]
+module.exports = { findMin };

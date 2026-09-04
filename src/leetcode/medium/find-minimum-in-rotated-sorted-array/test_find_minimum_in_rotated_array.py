@@ -1,5 +1,7 @@
-from find_minimum_in_rotated_array import find_min
 import unittest
+
+from find_minimum_in_rotated_array import find_min
+
 
 class TestFindMin(unittest.TestCase):
     def test_returns_min_with_list_length_one(self):
@@ -19,8 +21,10 @@ class TestFindMin(unittest.TestCase):
 
     def test_returns_min_with_not_rotated_array(self):
         """Takes in a non-rotated array and returns the minimum value"""
-        result = find_min([4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 50, 60, 10000000])
+        result = find_min(
+            [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 50, 60, 10000000])
         self.assertEqual(result, 4)
+
 
 if __name__ == "__main__":
     unittest.main()
