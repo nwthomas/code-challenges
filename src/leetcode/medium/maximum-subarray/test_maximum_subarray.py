@@ -1,16 +1,19 @@
-from maximum_subarray import max_sub_array
-import unittest
+from maximum_subarray import maxSubArray
 
-class TestMaxSubarray(unittest.TestCase):
-    def test_returns_largest_sum_of_short_array_of_numbers(self):
-        """Takes in a short array of numbers and returns the largest sum"""
-        result = max_sub_array([5, 4, -1, 7, 8])
-        self.assertEqual(result, 23)
 
-    def test_returns_largest_sum_of_medium_array_of_numbers(self):
-        """Takes in a medium array of numbers and returns the largest sum"""
-        result = max_sub_array([-2, 1, -3, 4, -1, 2, 1, -5, 4])
-        self.assertEqual(result, 6)
+def test_array_of_length_one():
+    result = maxSubArray([10])
+    assert result == 10
 
-if __name__ == "__main__":
-    unittest.main()
+
+def test_short_array():
+    result = maxSubArray([1, 4, 28, -100, 4, 40, 13])
+    assert result == 57
+
+
+def test_long_array():
+    result = maxSubArray([
+        1, 4, 28, -100, 4, 40, 13, 1000,
+        -200, -400, 500, 3, -20, -300, 100,
+    ])
+    assert result == 1057
