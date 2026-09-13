@@ -32,6 +32,7 @@
     - [Recipe Batches](recipe-batches)
     - [Resumable Iterator](resumable_iterator)
     - [Rock Paper Scissors](rock-paper-scissors)
+    - [Sentence Similarity](sentence-similarity)
     - [Shortest Word Edit Path](shortest_word_edit_path)
     - [Stock Prices](stock-prices)
     - [Trapping Water Droplets](trapping-water-droplets)
