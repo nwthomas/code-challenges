@@ -30,7 +30,7 @@
     - [Node Counting](node-counting)
     - [Pairs With Specific Difference](pairs-with-specific-difference)
     - [Recipe Batches](recipe-batches)
-    - [Resumable Iterator](resumable_iterator)
+    - [Resumable Iterator](resumable-iterator)
     - [Rock Paper Scissors](rock-paper-scissors)
     - [Sentence Similarity](sentence-similarity)
     - [Shortest Word Edit Path](shortest_word_edit_path)
