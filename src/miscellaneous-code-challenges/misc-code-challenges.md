@@ -20,6 +20,7 @@
     - [Count Islands](count-islands)
     - [Dependency Version Check](dependency-version-check)
     - [Eating Cookies](eating-cookies)
+    - [Getting a Different Number](getting-a-different-number)
     - [GPU Credit Tracker](gpu-credit-tracker)
     - [Implement In-Memory SQL Table](implement-in-memory-sql-table)
     - [Key Value Store With Serialization](key-value-store-with-serialization)
