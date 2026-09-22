@@ -31,9 +31,9 @@ All the pairs prerequisites[i] are unique.
  * @param {number[][]} prerequisites
  * @return {boolean}
  */
-const canFinish = (numCourses, prerequisites) => {    
+const canFinish = (numCourses, prerequisites) => {
     const courseToPrereqs = {};
-    Array.from({ length: numCourses }, (_, i) => courseToPrereqs[i] = []);
+    Array.from({ length: numCourses }, (_, i) => (courseToPrereqs[i] = []));
     prerequisites.forEach(([course, prereq]) => {
         courseToPrereqs[course].push(prereq);
     });
@@ -47,7 +47,11 @@ const canFinish = (numCourses, prerequisites) => {
 
         visited[course] = true;
 
-        if (!courseToPrereqs[course].map(prereq => dfs(prereq, visited)).every(res => res)) {
+        if (
+            !courseToPrereqs[course]
+                .map((prereq) => dfs(prereq, visited))
+                .every((res) => res)
+        ) {
             return false;
         }
 
@@ -55,9 +59,9 @@ const canFinish = (numCourses, prerequisites) => {
         courseToPrereqs[course] = [];
 
         return true;
-    }
+    };
 
-    return Object.keys(courseToPrereqs).every(course => dfs(course));
-}
+    return Object.keys(courseToPrereqs).every((course) => dfs(course));
+};
 
 module.exports = { canFinish };
