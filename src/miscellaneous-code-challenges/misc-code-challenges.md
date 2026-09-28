@@ -7,6 +7,7 @@
     - [Deep Copy Array](deep-copy-array)
     - [Deep Copy Object](deep-copy-object)
     - [Flatten Arrays](flatten-arrays)
+    - [Get Elements By Style](get-elements-by-style)
     - [Get Prime Numbers](get-prime-numbers)
     - [Max Sum Subarray](maximum-sum-subarray)
     - [Meandering Array](meandering-array)
