@@ -1,5 +1,5 @@
-# Go testing targets
-.PHONY: install i test
+# Development commands
+.PHONY: install i test-go test-ts typecheck test-py
 
 install i:
 	uv sync && bun install
@@ -12,9 +12,12 @@ test-go:
 		go test "$$dir"; \
 	done;
 
-test-js:
-	@echo "All JavaScript tests..."
+test-ts:
+	@echo "Running all TypeScript tests..."
 	bun run test
+
+typecheck:
+	bun run typecheck
 
 test-py:
 	@echo "Running all Python tests..."

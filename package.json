@@ -1,22 +1,28 @@
 {
     "name": "code-challenges",
-    "version": "0.0.0-alpha.1",
+    "version": "0.0.1",
     "description": "A repository of Nathan Thomas' completed code challenges",
-    "main": "index.js",
     "scripts": {
-        "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose"
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "typecheck": "tsc --noEmit",
+        "format": "prettier --write --ignore-path .gitignore \"src/**/*.ts\" vitest.config.ts tsconfig.json package.json README.md .github/workflows/test.yml",
+        "format:check": "prettier --check --ignore-path .gitignore \"src/**/*.ts\" vitest.config.ts tsconfig.json package.json README.md .github/workflows/test.yml"
     },
     "repository": "git@github.com:nwthomas/code-challenges.git",
     "author": "Nathan Thomas",
     "license": "GPL-3.0",
     "devDependencies": {
+        "@types/node": "^25",
         "heapq": "npm:@nwthomas/heapq@1.1.0",
-        "jest": "30.5.2",
-        "jest-environment-jsdom": "30.5.2",
-        "jest-extended": "0.11.2",
-        "jsdom": "30.1.1"
+        "jsdom": "30.1.1",
+        "prettier": "^3.9.9",
+        "typescript": "7.0.2",
+        "vitest": "5.0.2"
     },
     "engines": {
         "node": "25"
-    }
+    },
+    "private": true,
+    "type": "module"
 }

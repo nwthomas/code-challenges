@@ -1,0 +1,15 @@
+import { describe, it, expect } from "vitest";
+
+import getLongestCommonSubsequence from "./longest-common-subsequence.ts";
+
+describe(getLongestCommonSubsequence.name, () => {
+    it("returns the longest common subsequence for similar words", () => {
+        const result = getLongestCommonSubsequence("testing", "testtest");
+        expect(result).toBe(4);
+    });
+
+    it("returns the longest common subsequence for dissimilar words", () => {
+        const result = getLongestCommonSubsequence("nathan", "anothera");
+        expect(result).toBe(4);
+    });
+});
