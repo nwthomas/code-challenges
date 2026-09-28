@@ -4,6 +4,7 @@
 
 - JavaScript
     - [Combine Emoji Arrays](combine-emoji-arrays)
+    - [Curry](curry)
     - [Deep Copy Array](deep-copy-array)
     - [Deep Copy Object](deep-copy-object)
     - [Flatten Arrays](flatten-arrays)
