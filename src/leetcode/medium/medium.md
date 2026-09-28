@@ -27,6 +27,7 @@
 - [Design Twitter](design-twitter)
 - [Encode and Decode Strings](encode-and-decode-strings)
 - [Exclusion Time of Functions](exclusion-time-of-functions)
+- [Find Busiest Time in Mall](find-busiest-time-in-mall)
 - [Find Cheapest Flight Within K Flights](find-cheapest-flight-within-k-flights)
 - [Find Duplicate Integer](find-duplicate-integer)
 - [Find Minimum in Rotated Sorted Array](find-minimum-in-rotated-sorted-array)
