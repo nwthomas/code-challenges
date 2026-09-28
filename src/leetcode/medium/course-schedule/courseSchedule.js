@@ -31,37 +31,44 @@ All the pairs prerequisites[i] are unique.
  * @param {number[][]} prerequisites
  * @return {boolean}
  */
-const canFinish = (numCourses, prerequisites) => {
+function canFinish(numCourses, prerequisites) {
     const courseToPrereqs = {};
-    Array.from({ length: numCourses }, (_, i) => (courseToPrereqs[i] = []));
-    prerequisites.forEach(([course, prereq]) => {
-        courseToPrereqs[course].push(prereq);
-    });
+    Array.from({ length: numCourses }).forEach(
+        (_, i) => (courseToPrereqs[i] = []),
+    );
+    prerequisites.forEach(([course, prereq]) =>
+        courseToPrereqs[course].push(prereq),
+    );
 
-    const dfs = (course, visited = {}) => {
-        if (visited[course]) {
+    function dfs(course, seen) {
+        if (seen.has(course)) {
             return false;
-        } else if (!courseToPrereqs[course].length) {
+        }
+        if (courseToPrereqs[course].length === 0) {
             return true;
         }
 
-        visited[course] = true;
+        seen.add(course);
 
-        if (
-            !courseToPrereqs[course]
-                .map((prereq) => dfs(prereq, visited))
-                .every((res) => res)
-        ) {
-            return false;
+        for (const prereq of courseToPrereqs[course]) {
+            if (!dfs(prereq, seen)) {
+                return false;
+            }
         }
 
-        delete visited[course];
         courseToPrereqs[course] = [];
+        seen.delete(course);
 
         return true;
-    };
+    }
 
-    return Object.keys(courseToPrereqs).every((course) => dfs(course));
-};
+    for (let i = 0; i < numCourses; i++) {
+        if (!dfs(i, new Set())) {
+            return false;
+        }
+    }
+
+    return true;
+}
 
 module.exports = { canFinish };
