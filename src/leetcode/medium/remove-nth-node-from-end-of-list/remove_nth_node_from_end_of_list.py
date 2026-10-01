@@ -26,28 +26,30 @@ Follow up: Could you do this in one pass?
 
 from typing import Optional
 
+
 class ListNode:
-    def __init__(self, val=0, next=None):
+    def __init__(self, val=0, next_node=None):
         self.val = val
-        self.next = next
+        self.next = next_node
+
 
 def remove_nth_from_end(head: Optional[ListNode], n: int) -> Optional[ListNode]:
     dummy_node = ListNode(None, head)
     left = dummy_node
     right = head
-    
+
     while right and n > 0:
         right = right.next
         n -= 1
-        
+
     while right:
         left = left.next
         right = right.next
-    
+
     new_next = left.next.next
     left.next.next = None
     left.next = new_next
     final_head = dummy_node.next
     dummy_node.next = None
-    
+
     return final_head
