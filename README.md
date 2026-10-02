@@ -45,11 +45,3 @@ This repository is a collection of completed code challenges from a variety of p
 6. For Python challenges:
 
     - Run `make test-py` to run all Python tests in the repository
-
-## TypeScript conventions
-
-The TypeScript challenges use ESM (`import` / `export`) and explicit `.ts` extensions for relative imports. Keep each solution and its `.test.ts` file together. Import test helpers such as `describe`, `test`, and `expect` from `vitest`.
-
-Vitest runs TypeScript directly; no build output is needed. Type checking is a separate step, and CI runs both checks. Use `bun run test`, since `bun test` starts Bun's own test runner instead of Vitest.
-
-Tests that intentionally pass invalid inputs retain their runtime assertions and use a documented `@ts-expect-error` on the invalid call. Avoid suppressing errors in solution code. Unfinished challenge directories already listed in `.gitignore` are also excluded from `tsconfig.json`; remove that exclusion when completing a challenge.
