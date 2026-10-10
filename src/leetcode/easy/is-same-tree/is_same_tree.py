@@ -26,34 +26,36 @@ The number of nodes in both trees is in the range [0, 100].
 
 from typing import Optional
 
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
 
+
 def is_same_tree(p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
     if not p and not q:
         return True
     elif p and not q or q and not p:
         return False
-    
+
     tracker = [[p, q]]
-    
-    while len(tracker):
+
+    while len(tracker) > 0:
         one, two = tracker.pop()
-        
+
         if one.val != two.val:
             return False
-        
+
         if one.left and two.left:
             tracker.append([one.left, two.left])
         elif one.left and not two.left or two.left and not one.left:
             return False
-        
+
         if one.right and two.right:
             tracker.append([one.right, two.right])
         elif one.right and not two.right or two.right and not one.right:
             return False
-        
+
     return True
