@@ -23,39 +23,41 @@ The length of the linked list is n.
 0 <= Node.val <= 100
 """
 
-from typing import Optional
-
 
 class ListNode:
-    def __init__(self, val=0, next=None):
+    def __init__(self, val=0, next_node=None):
         self.val = val
-        self.next = next
+        self.next = next_node
 
 
-def reverseKGroup(head: Optional[ListNode], k: int) -> Optional[ListNode]:
-    lists = [[head]] if head is not None else head
-    if len(lists) > 0:
-        head = head.next
+def reverseKGroup(head: ListNode | None, k: int) -> ListNode | None:
+    if not head:
+        return None
 
-    while head:
-        if len(lists[len(lists) - 1]) == k:
-            lists.append([])
+    values = []
+    current = head
+    while current:
+        segment = []
 
-        temp = head.next
-        lists[len(lists) - 1].append(head)
-        head = temp
+        for _ in range(k):
+            if not current:
+                break
 
-    for i, group in enumerate(lists):
-        if len(group) == k:
-            for j, node in enumerate(group):
-                node.next = None
-                if j > 0:
-                    node.next = group[j - 1]
+            segment.append(current.val)
+            current = current.next
 
-            if i > 0:
-                lists[i - 1][0].next = group[len(group) - 1]
-        else:
-            if i > 0:
-                lists[i - 1][0].next = group[0]
+        values.append(segment)
 
-    return lists[0][len(lists[0]) - 1] if len(lists) > 0 else None
+    newRoot = ListNode()
+    current = newRoot
+    for v in values:
+        currentValues = v
+
+        if len(currentValues) == k:
+            currentValues = reversed(currentValues)
+
+        for num in currentValues:
+            current.next = ListNode(num)
+            current = current.next
+
+    return newRoot.next
