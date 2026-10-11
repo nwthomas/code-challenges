@@ -49,8 +49,8 @@ def orangesRotting(grid: list[list[int]]) -> int:
 
     while len(rotten.keys()) > 0:
         updatedRotten = {}
-        for key in rotten.keys():
-            y, x = rotten[key]
+
+        for y, x in rotten.values():
             possibleInfections = getOrangesToInfect(grid, y, x)
 
             for infection in possibleInfections:
