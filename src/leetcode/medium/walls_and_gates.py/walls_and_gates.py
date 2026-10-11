@@ -43,38 +43,31 @@ n == grid[i].length
 grid[i][j] is one of {-1, 0, 2147483647}
 """
 
+from collections import deque
 from typing import List
 
 
-def wallsAndGrapes(grid: List[List[int]]) -> None:
-    chests = []
+def wallsAndGates(grid: List[List[int]]) -> None:
+    queue = deque()
 
     for y in range(len(grid)):
         for x in range(len(grid[y])):
             if grid[y][x] == 0:
-                chests.append([y, x])
+                queue.append((y, x, 0))
 
-    def dfs(y: int, x: int, distance: int):
-        if grid[y][x] == -1 or grid[y][x] == 0:
-            return
-        if grid[y][x] < distance:
-            return
-
-        grid[y][x] = distance
+    while queue:
+        y, x, distance = queue.popleft()
         newDistance = distance + 1
 
-        helper(y, x, newDistance)
-
-    def helper(y: int, x: int, distance: int):
-        if x - 1 >= 0:
-            dfs(y, x - 1, distance)
-        if x + 1 < len(grid[y]):
-            dfs(y, x + 1, distance)
-        if y - 1 >= 0:
-            dfs(y - 1, x, distance)
-        if y + 1 < len(grid):
-            dfs(y + 1, x, distance)
-
-    for chest in chests:
-        y, x = chest
-        helper(y, x, 1)
+        if y - 1 >= 0 and grid[y - 1][x] > 0 and newDistance < grid[y - 1][x]:
+            queue.append((y - 1, x, newDistance))
+            grid[y - 1][x] = newDistance
+        if y + 1 < len(grid) and grid[y + 1][x] > 0 and newDistance < grid[y + 1][x]:
+            queue.append((y + 1, x, newDistance))
+            grid[y + 1][x] = newDistance
+        if x - 1 >= 0 and grid[y][x - 1] > 0 and newDistance < grid[y][x - 1]:
+            queue.append((y, x - 1, newDistance))
+            grid[y][x - 1] = newDistance
+        if x + 1 < len(grid[y]) and grid[y][x + 1] > 0 and newDistance < grid[y][x + 1]:
+            queue.append((y, x + 1, newDistance))
+            grid[y][x + 1] = newDistance

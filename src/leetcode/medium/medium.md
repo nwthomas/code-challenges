@@ -98,6 +98,6 @@
 - [Is Valid Sedoku](is-valid-sedoku)
 - [Validate Binary Search Tree](validate-binary-search-tree)
 - [Valid Parentheses String](valid-parentheses-string)
-- [Walls and Grapes](walls-and-grapes)
+- [Walls and Grates](walls-and-grates)
 - [Word Break](word-break)
 - [Word Search](word-search)

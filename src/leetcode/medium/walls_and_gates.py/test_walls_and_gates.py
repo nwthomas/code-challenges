@@ -1,15 +1,16 @@
-from walls_and_grapes import wallsAndGrapes
 import unittest
 
+from walls_and_gates import wallsAndGates
 
-class TestWallsAndGrapes(unittest.TestCase):
+
+class TestwallsAndGates(unittest.TestCase):
     def test_sets_correct_values_for_small_grid(self):
         """Sets the correct values for a small grid"""
         grid = [
             [-1, 0, 2147483647],
             [2147483647, 2147483647, 2147483647],
         ]
-        wallsAndGrapes(grid)
+        wallsAndGates(grid)
         self.assertEqual(
             grid,
             [
@@ -26,7 +27,7 @@ class TestWallsAndGrapes(unittest.TestCase):
             [-1, 2147483647, 2147483647],
             [0, -1, 2147483647],
         ]
-        wallsAndGrapes(grid)
+        wallsAndGates(grid)
         self.assertEqual(
             grid,
             [
@@ -43,7 +44,7 @@ class TestWallsAndGrapes(unittest.TestCase):
             [0, -1, 2147483647],
             [2147483647, -1, -1],
         ]
-        wallsAndGrapes(grid)
+        wallsAndGates(grid)
         self.assertEqual(
             grid,
             [
