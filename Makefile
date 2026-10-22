@@ -6,11 +6,7 @@ install i:
 
 test-go:
 	@echo "Running all Go tests..."
-	@find . -name "*_test.go" | while read file; do \
-		dir=$$(dirname "$$file"); \
-		echo "Running tests in $$dir"; \
-		go test "$$dir"; \
-	done;
+	@go test -count=1 ./...
 
 test-ts:
 	@echo "Running all TypeScript tests..."
