@@ -16,28 +16,32 @@ Output: 4
 Explanation: Replace the one 'A' in the middle with 'B' and form "AABBBBA".
 The substring "BBBB" has the longest repeating letters, which is 4.
 There may exists other ways to achieve this answer too.
- 
+
 Constraints:
 1 <= s.length <= 105
 s consists of only uppercase English letters.
 0 <= k <= s.length
 """
 
+from collections import defaultdict
+
+
 def characterReplacement(s: str, k: int) -> int:
-    cache = {}
-    longest = 0
-    l, r = 0, 0
-    maxFrequent = 0
+    tracker = defaultdict(int)
+    longestLength = 0
+    maxFreq = 0
+    left = 0
+    right = 0
 
-    while r < len(s):
-        cache[s[r]] = cache.get(s[r], 0) + 1
-        maxFrequent = max(maxFrequent, cache[s[r]])
+    while right < len(s):
+        tracker[s[right]] += 1
+        maxFreq = max(maxFreq, tracker[s[right]])
 
-        while (r - l + 1) - maxFrequent > k:
-            cache[s[l]] -= 1
-            l += 1
+        while (right - left + 1) - maxFreq > k:
+            tracker[s[left]] -= 1
+            left += 1
 
-        longest = max(longest, r - l + 1)
-        r += 1
-            
-    return longest
+        longestLength = max(longestLength, right - left + 1)
+        right += 1
+
+    return longestLength
