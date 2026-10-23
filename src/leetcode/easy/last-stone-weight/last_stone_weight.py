@@ -28,25 +28,23 @@ Constraints:
 1 <= stones[i] <= 100
 """
 
-from heapq import heappush, heappop
-from typing import List
+from heapq import heappop, heappush
 
-def last_stone_weight(stones: List[int]) -> int:
+
+def last_stone_weight(stones: list[int]) -> int:
     h = []
+
     for s in stones:
         heappush(h, s * -1)
-    
-    while len(h) > 0:
-        current_one = heappop(h) * -1
-        current_two = heappop(h) * -1 if len(h) > 0 else None
 
-        if current_one and current_two is None or current_one is None and current_two:
-            return current_one if not None else current_two
+    while len(h) > 1:
+        stoneOne = heappop(h) * -1
+        stoneTwo = heappop(h) * -1
 
-        if current_one == current_two:
+        if stoneOne == stoneTwo:
             continue
-        
-        current_difference = max(current_one, current_two) - min(current_one, current_two)
-        heappush(h, current_difference * -1)
 
-    return 0
+        diff = stoneOne - stoneTwo
+        heappush(h, diff * -1)
+
+    return h[0] * -1 if h else 0
