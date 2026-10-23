@@ -24,37 +24,47 @@ The number of nodes in the list is in the range [1, 5 * 104].
 
 from typing import Optional
 
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
 
-def reorder_list(head: Optional[ListNode]) -> None:
-    # Find middle
-    slow, fast = head, head.next
-    while fast and fast.next:
-        slow = slow.next
-        fast = fast.next.next
-        
-    # Reverse second half
-    second = slow.next
-    prev = None
-    slow.next = None
-    while second:
-        temp = second.next
-        second.next = prev
-        prev = second
-        second = temp
-        
-    # Merge two halves
-    first = head
-    second = prev
-    while second:
-        temp1 = first.next
-        temp2 = second.next
-        first.next = second
-        second.next = temp1
-        first = temp1
-        second = temp2
-        
+class ListNode:
+    def __init__(self, val=0, next_node=None):
+        self.val = val
+        self.next = next_node
+
+
+def reorder_list(head: Optional[ListNode]):
+    """]
+    :type head: Optional[ListNode]
+    :rtype: None Do not return anything, modify head in-place instead.
+    """
+    l = []
+
+    current = head
+    while current:
+        nextCurrent = current.next
+        current.next = None
+        l.append(current)
+        current = nextCurrent
+
+    if len(l) <= 1:
+        return l[0] if l else None
+
+    left = 0
+    right = len(l) - 1
+    dummyHead = ListNode()
+    current = dummyHead
+    while left < right:
+        nodeOne = l[left]
+        nodeTwo = l[right]
+        current.next = nodeOne
+        current.next.next = nodeTwo
+        current = current.next.next
+        left += 1
+        right -= 1
+
+    if len(l) % 2 != 0:
+        current.next = l[left]
+
+    head = dummyHead.next
+    dummyHead.next = None
+
     return head
