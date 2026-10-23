@@ -29,58 +29,48 @@ board[i][j] is 'X' or 'O'.
 """
 
 
-def surroundRegions(board: list[list[str]]) -> None:
-    cache = {}
-    toFlipCache = {}
-
-    for y in range(len(board)):
-        for x in range(len(board[y])):
-            if (
-                board[y][x] == "O"
-                and f"{y}{x}" not in cache
-                and 0 < y < len(board) - 1
-                and 0 < x < len(board[0]) - 1
-            ):
-                responseCache = {}
-                isValid = traverse(board, y, x, responseCache)
-                cache = {**cache, **responseCache}
-                if isValid:
-                    toFlipCache = {**toFlipCache, **responseCache}
-
-    for key in toFlipCache.keys():
-        y, x = list(key)
-        board[int(y)][int(x)] = "X"
-
-
-def traverse(board: list[list[str]], y: int, x: int, cache: dict[str, bool]) -> bool:
-    cache[f"{y}{x}"] = True
-
-    if (y == 0 or y == len(board) - 1 or x == 0 or x == len(board[0]) - 1) and board[y][
-        x
-    ] == "O":
+def traverse(board, y: int, x: int, seen: dict) -> bool:
+    if y < 0 or y > len(board) - 1:
         return False
+    if x < 0 or x > len(board[y]) - 1:
+        return False
+    if (y, x) in seen:
+        return True
+    if board[y][x] == "X":
+        return True
 
-    results = []
+    seen.add((y, x))
 
-    if y - 1 >= 0 and f"{y - 1}{x}" not in cache:
-        results.append(
-            True if board[y - 1][x] == "X" else traverse(board, y - 1, x, cache)
-        )
-    if y + 1 < len(board) and f"{y + 1}{x}" not in cache:
-        results.append(
-            True if board[y + 1][x] == "X" else traverse(board, y + 1, x, cache)
-        )
-    if x - 1 >= 0 and f"{y}{x - 1}" not in cache:
-        results.append(
-            True if board[y][x - 1] == "X" else traverse(board, y, x - 1, cache)
-        )
-    if x + 1 < len(board[0]) and f"{y}{x + 1}" not in cache:
-        results.append(
-            True if board[y][x + 1] == "X" else traverse(board, y, x + 1, cache)
-        )
+    results = [
+        traverse(board, y - 1, x, seen),
+        traverse(board, y + 1, x, seen),
+        traverse(board, y, x - 1, seen),
+        traverse(board, y, x + 1, seen),
+    ]
 
-    for b in results:
-        if not b:
+    for r in results:
+        if not r:
             return False
 
     return True
+
+
+def fill_cells(board, y: int, x: int):
+    if board[y][x] == "X":
+        return
+
+    board[y][x] = "X"
+
+    fill_cells(board, y - 1, x)
+    fill_cells(board, y + 1, x)
+    fill_cells(board, y, x - 1)
+    fill_cells(board, y, x + 1)
+
+
+def surroundRegions(board: list[list[str]]) -> None:
+    for y in range(len(board)):
+        for x in range(len(board[y])):
+            if board[y][x] == "O" and traverse(board, y, x, set()):
+                fill_cells(board, y, x)
+
+    return board

@@ -1,5 +1,6 @@
-from surrounded_regions import surroundRegions
 import unittest
+
+from surrounded_regions import surroundRegions
 
 
 class TestSurroundRegions(unittest.TestCase):
