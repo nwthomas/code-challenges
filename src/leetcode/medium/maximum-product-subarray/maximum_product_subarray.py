@@ -23,17 +23,16 @@ Constraints:
 The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
 """
 
-from typing import List
 
-def max_product(nums: List[int]) -> int:
+def max_product(nums: list[int]) -> int:
     if len(nums) == 1:
         return nums[0]
-    
+
     max_so_far = max(nums)
     max_current = 1
     min_current = 1
-    
-    for _, num in enumerate(nums):            
+
+    for _, num in enumerate(nums):
         if num == 0:
             max_current = 1
             min_current = 1
@@ -43,5 +42,5 @@ def max_product(nums: List[int]) -> int:
         max_current = max(temp_max_current, num * min_current, num)
         min_current = min(temp_max_current, num * min_current, num)
         max_so_far = max(max_so_far, max_current)
-            
+
     return max_so_far

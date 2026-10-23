@@ -1,5 +1,7 @@
-from maximum_product_subarray import max_product
 import unittest
+
+from maximum_product_subarray import max_product
+
 
 class TestMaxProduct(unittest.TestCase):
     def test_returns_only_value_if_array_length_one(self):
@@ -9,8 +11,9 @@ class TestMaxProduct(unittest.TestCase):
 
     def test_returns_largest_product_within_array(self):
         """Takes in an array and returns the largest contiguous product"""
-        result = max_product([2,3,-2,4,10,-5,3,2,1])
+        result = max_product([2, 3, -2, 4, 10, -5, 3, 2, 1])
         self.assertEqual(result, 14400)
+
 
 if __name__ == "__main__":
     unittest.main()
