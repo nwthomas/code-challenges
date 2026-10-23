@@ -27,19 +27,17 @@ s consists of lowercase English letters.
 
 
 def partitionLabels(s: str) -> list[int]:
-    tracker = {}
+    last = {char: i for i, char in enumerate(s)}
+
+    partitions = []
+    start = 0
+    end = 0
 
     for i, char in enumerate(s):
-        tracker[char] = i
-
-    res = []
-    size, end = 0, 0
-    for i, char in enumerate(s):
-        size += 1
-        end = max(end, tracker[char])
+        end = max(end, last[char])
 
         if i == end:
-            res.append(size)
-            size = 0
+            partitions.append(end - start + 1)
+            start = i + 1
 
-    return res
+    return partitions

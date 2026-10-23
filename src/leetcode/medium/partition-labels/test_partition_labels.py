@@ -6,4 +6,4 @@ def test_partitionLabels():
     assert partitionLabels("eccbbbbdec") == [10]
     assert partitionLabels("abc") == [1, 1, 1]
     assert partitionLabels("a") == [1]
-    assert partitionLabels("") == []
+    assert not partitionLabels("")
