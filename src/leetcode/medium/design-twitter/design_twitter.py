@@ -42,22 +42,25 @@ from collections import defaultdict
 class Twitter:
     def __init__(self):
         self.count = 0
-        self.userToFollowers = defaultdict(list)
+        self.tweetToUser = defaultdict(lambda: -float("inf"))
         self.userToFeed = defaultdict(list)
+        self.userToFollowers = defaultdict(list)
         self.userTweets = defaultdict(list)
-        self.tweetToUser = defaultdict(str)
 
     def postTweet(self, userId: int, tweetId: int) -> None:
         newTweet = [self.count, tweetId]
         self.count += 1
+
         self.userTweets[userId].append(newTweet)
         self.tweetToUser[tweetId] = userId
-        followers = self.userToFollowers[userId]
-        for f in followers + [userId]:
+
+        for f in self.userToFollowers[userId] + [userId]:
             self.userToFeed[f].append(newTweet)
 
     def getNewsFeed(self, userId: int) -> list[int]:
-        feed = sorted(self.userToFeed[userId], reverse=True, key=lambda x: x[0])[:10]
+        feed = sorted(self.userToFeed[userId],
+                      reverse=True, key=lambda x: x[0])[:10]
+
         return [tweet[1] for tweet in feed]
 
     def follow(self, followerId: int, followeeId: int) -> None:
@@ -66,8 +69,7 @@ class Twitter:
 
         self.userToFollowers[followeeId].append(followerId)
 
-        prevFeed = [*self.userTweets[followeeId]]
-        for tweet in prevFeed:
+        for tweet in [*self.userTweets[followeeId]]:
             if tweet not in self.userToFeed[followerId]:
                 self.userToFeed[followerId].append(tweet)
 
@@ -75,10 +77,8 @@ class Twitter:
         if followerId == followeeId:
             return
 
-        if followerId in self.userToFollowers[followeeId]:
-            self.userToFollowers[followeeId].remove(followerId)
+        self.userToFollowers[followeeId].remove(followerId)
 
-        prevFeed = [*self.userToFeed[followerId]]
-        for tweet in prevFeed:
+        for tweet in [*self.userToFeed[followerId]]:
             if self.tweetToUser[tweet[1]] == followeeId:
                 self.userToFeed[followerId].remove(tweet)
