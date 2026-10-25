@@ -21,13 +21,14 @@ Constraints:
 const subsetsWithDup = (nums: number[]) => {
     nums.sort((a, b) => a - b);
 
-    function backtrack(step: number = 0, subset: number[] = []) {
+    function backtrack(step: number, subset: number[]) {
         if (step >= nums.length) {
             return [subset];
         }
 
         const result = [subset];
-        let prev = -Infinity;
+        let prev: number | null = null;
+
         for (let i = step; i < nums.length; i++) {
             const currentNum = nums[i];
 
@@ -40,7 +41,7 @@ const subsetsWithDup = (nums: number[]) => {
         return result;
     }
 
-    return backtrack();
+    return backtrack(0, []);
 };
 
 export { subsetsWithDup };
