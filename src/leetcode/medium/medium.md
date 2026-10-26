@@ -6,6 +6,7 @@
 - [Alien Dictionary](alien-dictionary)
 - [Best Time to Buy and Sell Stock II](best-time-to-buy-and-sell-stock-ii)
 - [Binary Tree Level Order Traversal](binary-tree-level-order-traversal)
+- [Binary Tree Right Side View](binary-tree-right-side-view)
 - [Car Fleet](car-fleet)
 - [Clone Graph](clone-graph)
 - [Combination Sum 4](combination-sum-4)
