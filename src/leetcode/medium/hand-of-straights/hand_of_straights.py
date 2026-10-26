@@ -26,16 +26,17 @@ Constraints:
 
 def isNStraightHand(hand: list[int], groupSize: int) -> bool:
     hand.sort()
-
     group = []
     i = 0
+
     while i < len(hand) and len(hand) > 0:
         curr = hand[i]
+
         if len(group) > 0 and group[len(group) - 1] + 1 != curr:
             break
 
         group.append(curr)
-        hand = hand[:i] + hand[i + 1 :] if i <= len(hand) - 1 else []
+        hand = hand[:i] + hand[i + 1:] if i <= len(hand) - 1 else []
 
         if len(group) == groupSize:
             group = []
