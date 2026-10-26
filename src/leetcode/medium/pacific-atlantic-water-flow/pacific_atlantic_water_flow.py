@@ -26,13 +26,14 @@ n == heights[r].length
 
 from typing import List
 
+
 def pacific_atlantic(heights: List[List[int]]) -> List[List[int]]:
     cache = {}
     output = []
 
     if len(heights) < 1:
         return output
-    
+
     def traverse(y, x, from_pacific, prev_value):
         if heights[y][x] < prev_value:
             return
@@ -40,15 +41,15 @@ def pacific_atlantic(heights: List[List[int]]) -> List[List[int]]:
             return
         if (y, x) in cache and not from_pacific and cache[(y, x)]["atlantic"]:
             return
-            
-        if not (y, x) in cache:
-            cache[(y, x)] = { "pacific": False, "atlantic": False }
-            
+
+        if (y, x) not in cache:
+            cache[(y, x)] = {"pacific": False, "atlantic": False}
+
         if from_pacific:
             cache[(y, x)]["pacific"] = True
         else:
             cache[(y, x)]["atlantic"] = True
-            
+
         if y + 1 < len(heights):
             traverse(y + 1, x, from_pacific, heights[y][x])
         if x + 1 < len(heights[y]):
@@ -57,15 +58,16 @@ def pacific_atlantic(heights: List[List[int]]) -> List[List[int]]:
             traverse(y - 1, x, from_pacific, heights[y][x])
         if x - 1 >= 0:
             traverse(y, x - 1, from_pacific, heights[y][x])
-                
+
     for y in range(len(heights)):
         traverse(y, 0, True, heights[y][0])
-        traverse(y, len(heights[y]) - 1, False, heights[y][len(heights[y]) - 1])
-        
+        traverse(y, len(heights[y]) - 1, False,
+                 heights[y][len(heights[y]) - 1])
+
     for x in range(len(heights[0])):
         traverse(0, x, True, heights[0][x])
         traverse(len(heights) - 1, x, False, heights[len(heights) - 1][x])
-        
+
     for y in range(len(heights)):
         for x in range(len(heights[y])):
             if (y, x) in cache:
@@ -73,5 +75,5 @@ def pacific_atlantic(heights: List[List[int]]) -> List[List[int]]:
 
                 if current["pacific"] and current['atlantic']:
                     output.append([y, x])
-                
+
     return output
