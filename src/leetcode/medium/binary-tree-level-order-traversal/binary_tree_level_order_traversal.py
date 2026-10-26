@@ -21,7 +21,7 @@ The number of nodes in the tree is in the range [0, 2000].
 """
 
 from collections import deque
-from typing import List, Optional
+
 
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
@@ -29,25 +29,25 @@ class TreeNode:
         self.left = left
         self.right = right
 
-def level_order(root: Optional[TreeNode]) -> List[List[int]]:
-    tracker = deque()
+
+def levelOrder(root: TreeNode | None) -> list[list[int]]:
+    q = deque([root] if root else [])
     result = []
-    
-    if root:
-        tracker.append([root, 0])
-    
-    while len(tracker) > 0:
-        node, level = tracker.pop()
-        
-        if len(result) <= level:
-            result.append([])
-            
-        result[level].append(node.val)
-        
-        if node.left:
-            tracker.appendleft([node.left, level + 1])
-        
-        if node.right:
-            tracker.appendleft([node.right, level + 1])
-            
+
+    while len(q) > 0:
+        newQueue = deque()
+        level = []
+
+        while len(q) > 0:
+            current = q.popleft()
+            level.append(current.val)
+
+            if current.left:
+                newQueue.append(current.left)
+            if current.right:
+                newQueue.append(current.right)
+
+        result.append(level)
+        q = newQueue
+
     return result
