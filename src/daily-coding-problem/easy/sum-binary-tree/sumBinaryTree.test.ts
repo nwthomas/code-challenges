@@ -1,4 +1,4 @@
-import { describe, test, expect, beforeEach } from "vitest";
+import { describe, test, expect, beforeEach } from "bun:test";
 
 import Node from "./sumBinaryTree.ts";
 
@@ -53,7 +53,7 @@ describe("sumBinaryTree", () => {
             test("returns the value of the node", () => {
                 // @ts-expect-error Exercise legacy runtime behavior with an input outside the typed API.
                 const node = new Node("test");
-                expect(node.getValue()).toBe("test");
+                expect(String(node.getValue())).toBe("test");
             });
         });
 

@@ -3,7 +3,7 @@ import {
     deserialize,
     serialize,
 } from "./serializeAndDeserializeBinaryTree.ts";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "bun:test";
 
 function buildTree(values: (number | null)[]): TreeNode | null {
     if (values.length === 0 || values[0] === null) {

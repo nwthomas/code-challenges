@@ -1,4 +1,4 @@
-import { test, expect } from "vitest";
+import { test, expect } from "bun:test";
 
 import iqTest from "./iq-test.ts";
 

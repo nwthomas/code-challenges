@@ -1,4 +1,4 @@
-import { describe, test, it, expect } from "vitest";
+import { describe, test, it, expect } from "bun:test";
 
 import { negCheck, multiply, divide, modulo } from "./operators.ts";
 

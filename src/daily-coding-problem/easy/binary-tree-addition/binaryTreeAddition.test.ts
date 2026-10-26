@@ -1,4 +1,4 @@
-import { describe, test, expect } from "vitest";
+import { describe, test, expect } from "bun:test";
 
 import { findSumInBinaryTree, Node } from "./binaryTreeAddition.ts";
 
@@ -41,7 +41,7 @@ describe("binaryTreeAddition", () => {
                 // @ts-expect-error Exercise legacy runtime behavior with an input outside the typed API.
                 const node = new Node("test");
                 const result = node.value;
-                expect(result).toBe("test");
+                expect(String(result)).toBe("test");
             });
 
             test("instantiates with a left and right value if they are given", () => {
@@ -95,7 +95,7 @@ describe("binaryTreeAddition", () => {
             rootNode.addValue(7);
             rootNode.addValue(1);
             const result = findSumInBinaryTree(rootNode, 15);
-            expect(result).toEqual([rootNode, rootNode.right]);
+            expect(result).toEqual([rootNode, rootNode.right!]);
         });
 
         test("returns the two Nodes that add up to a number in a medium Binary Search Tree", () => {
@@ -104,8 +104,8 @@ describe("binaryTreeAddition", () => {
             );
             const result = findSumInBinaryTree(rootNode, 19);
             expect(result).toEqual([
-                rootNode.right!.right,
-                rootNode.right!.right!.left,
+                rootNode.right!.right!,
+                rootNode.right!.right!.left!,
             ]);
         });
     });

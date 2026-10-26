@@ -1,4 +1,4 @@
-import { test, expect } from "vitest";
+import { test, expect } from "bun:test";
 
 import { AND, OR, NOT, XOR, NAND } from "./emulate-logic-gates.ts";
 

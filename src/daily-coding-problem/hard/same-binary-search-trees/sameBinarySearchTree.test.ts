@@ -1,4 +1,4 @@
-import { describe, test, expect } from "vitest";
+import { describe, test, expect } from "bun:test";
 
 import Node from "./sameBinarySearchTrees.ts";
 
@@ -43,7 +43,7 @@ describe("Node", () => {
             // @ts-expect-error Exercise legacy runtime behavior with an input outside the typed API.
             const node = new Node("test");
             const result = node.value;
-            expect(result).toBe("test");
+            expect(String(result)).toBe("test");
         });
     });
 
@@ -53,7 +53,7 @@ describe("Node", () => {
             // @ts-expect-error Exercise legacy runtime behavior with an input outside the typed API.
             node.addValue("test");
             const result = node.value;
-            expect(result).toBe("test");
+            expect(String(result)).toBe("test");
         });
 
         test("adds a value to the Binary Search Tree recursively", () => {

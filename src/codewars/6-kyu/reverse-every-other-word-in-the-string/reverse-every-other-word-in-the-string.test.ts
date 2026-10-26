@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect } from "bun:test";
 
 import reverse from "./reverse-every-other-word-in-the-string.ts";
 

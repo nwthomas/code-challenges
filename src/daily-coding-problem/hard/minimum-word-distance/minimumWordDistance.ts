@@ -12,7 +12,7 @@ const findMinimumWordDistance = (
     wordOne: string,
     wordTwo: string,
     wordString: string,
-) => {
+): number | null => {
     if (typeof wordOne !== "string") {
         throw new TypeError("The first argument must be a string");
     }

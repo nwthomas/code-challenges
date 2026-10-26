@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect } from "bun:test";
 
 import sortArray from "./sort-odd-and-even-numbers-in-different-order.ts";
 

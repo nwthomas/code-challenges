@@ -1,4 +1,4 @@
-import { describe, test, expect } from "vitest";
+import { describe, test, expect } from "bun:test";
 
 import Node from "./findTreePath.ts";
 
@@ -40,7 +40,7 @@ describe("Node", () => {
             // @ts-expect-error Exercise legacy runtime behavior with an input outside the typed API.
             const node = new Node("test");
             const result = node._value;
-            expect(result).toBe("test");
+            expect(String(result)).toBe("test");
         });
 
         test("instantiates with a left and right node if they are given as arguments", () => {
@@ -65,7 +65,7 @@ describe("Node", () => {
             // @ts-expect-error Exercise legacy runtime behavior with an input outside the typed API.
             const node = new Node("test");
             const result = node.getValue();
-            expect(result).toBe("test");
+            expect(String(result)).toBe("test");
         });
     });
 

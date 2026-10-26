@@ -1,4 +1,4 @@
-import { test, expect } from "vitest";
+import { test, expect } from "bun:test";
 
 import expandedForm from "./write-number-in-expanded-form.ts";
 

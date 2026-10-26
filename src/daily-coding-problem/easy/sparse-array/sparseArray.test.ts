@@ -1,4 +1,4 @@
-import { describe, test, expect } from "vitest";
+import { describe, test, expect } from "bun:test";
 
 import SparseArray from "./sparseArray.ts";
 
@@ -17,18 +17,18 @@ describe("SparseArray", () => {
         test("returns an empty object if the first argument is not an array", () => {
             // @ts-expect-error Exercise legacy runtime behavior with an input outside the typed API.
             const result = new SparseArray("test", 0);
-            expect(result).toEqual({});
+            expect(result as unknown as object).toEqual({});
         });
 
         test("returns an empty object if the second argument is not a number", () => {
             // @ts-expect-error Exercise legacy runtime behavior with an input outside the typed API.
             const result = new SparseArray([], "test");
-            expect(result).toEqual({});
+            expect(result as unknown as object).toEqual({});
         });
 
         test("returns an empty object if the size argument is less than the array length", () => {
             const result = new SparseArray(utils.smallNumberArray, 0);
-            expect(result).toEqual({});
+            expect(result as unknown as object).toEqual({});
         });
 
         test("instantiates with an array of numbers and only adds the non-zero values to \

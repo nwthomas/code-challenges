@@ -1,10 +1,14 @@
-/**
- * @vitest-environment jsdom
- */
+import { JSDOM } from "jsdom";
 
-import { describe, test, expect } from "vitest";
+import { describe, test, expect } from "bun:test";
 
 import { getElementsByStyle } from "./getElementsByStyle.ts";
+
+// Bun's test runner has no jsdom environment, so expose the globals the
+// implementation and helpers rely on directly from a JSDOM instance.
+const dom = new JSDOM("<!DOCTYPE html><html><body></body></html>");
+globalThis.document = dom.window.document;
+globalThis.HTMLElement = dom.window.HTMLElement;
 
 function checkResults(expected: ArrayLike<Element>, received: Element[]) {
     expect(received.length).toBe(expected.length);

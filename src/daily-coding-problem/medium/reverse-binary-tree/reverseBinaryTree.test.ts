@@ -1,4 +1,4 @@
-import { describe, test, expect, beforeEach } from "vitest";
+import { describe, test, expect, beforeEach } from "bun:test";
 
 import { ReverseBinaryTreeHelper as RBT, Node } from "./reverseBinaryTree.ts";
 import jsonTree from "./data.json" with { type: "json" };
@@ -40,7 +40,7 @@ describe("reverseBinaryTree", () => {
             test("instantiates with a value if one is passed in as an argument", () => {
                 // @ts-expect-error Exercise legacy runtime behavior with an input outside the typed API.
                 const node = new Node("test");
-                expect(node._value).toBe("test");
+                expect(String(node._value)).toBe("test");
             });
         });
 
@@ -72,7 +72,7 @@ describe("reverseBinaryTree", () => {
             test("returns the Node's value when the getValue() method is invoked", () => {
                 // @ts-expect-error Exercise legacy runtime behavior with an input outside the typed API.
                 const node = new Node("test");
-                expect(node.getValue()).toBe("test");
+                expect(String(node.getValue())).toBe("test");
             });
 
             test("returns null when no value has been passed into the constructor function", () => {

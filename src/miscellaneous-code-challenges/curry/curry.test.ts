@@ -1,4 +1,4 @@
-import { describe, expect, test, vi } from "vitest";
+import { describe, expect, mock, test } from "bun:test";
 
 import curry from "./curry.ts";
 
@@ -10,13 +10,13 @@ describe("curry", () => {
     });
 
     test("invokes the original function only after collecting enough arguments", () => {
-        const add = vi.fn((a: number, b: number, c: number) => a + b + c);
+        const add = mock((a: number, b: number, c: number) => a + b + c);
         const curried = curry(add);
         const partial = curried(1)(2);
 
         expect(add).not.toHaveBeenCalled();
         expect(partial(3)).toBe(6);
-        expect(add).toHaveBeenCalledExactlyOnceWith(1, 2, 3);
+        expect(add.mock.calls).toEqual([[1, 2, 3]]);
     });
 
     test("handles a function with one parameter", () => {
@@ -26,7 +26,7 @@ describe("curry", () => {
     });
 
     test("invokes a zero-parameter function on each call, not during setup", () => {
-        const original = vi.fn(() => "ready");
+        const original = mock(() => "ready");
         const curried = curry(original);
 
         expect(original).not.toHaveBeenCalled();
@@ -36,12 +36,12 @@ describe("curry", () => {
     });
 
     test("ignores empty calls before and between arguments", () => {
-        const add = vi.fn((a: number, b: number) => a + b);
+        const add = mock((a: number, b: number) => a + b);
         const partial = curry(add)()()(2)()();
 
         expect(add).not.toHaveBeenCalled();
         expect(partial(3)).toBe(5);
-        expect(add).toHaveBeenCalledExactlyOnceWith(2, 3);
+        expect(add.mock.calls).toEqual([[2, 3]]);
     });
 
     test("counts an explicitly passed undefined as an argument", () => {
@@ -62,11 +62,11 @@ describe("curry", () => {
     });
 
     test("ignores additional arguments at every stage", () => {
-        const original = vi.fn((a: number, b: number, c: number) => a + b + c);
+        const original = mock((a: number, b: number, c: number) => a + b + c);
         const curried = curry(original);
 
         expect(curried(1, 99)(2, 98)(3, 97)).toBe(6);
-        expect(original).toHaveBeenCalledExactlyOnceWith(1, 2, 3);
+        expect(original.mock.calls).toEqual([[1, 2, 3]]);
     });
 
     test("allows partial functions to be reused without sharing later arguments", () => {
@@ -166,7 +166,7 @@ describe("curry", () => {
 
     test("propagates errors thrown by the original function", () => {
         const error = new Error("Unable to add");
-        const original = vi.fn((_a: number, _b: number) => {
+        const original = mock((_a: number, _b: number) => {
             throw error;
         });
         const partial = curry(original)(1);

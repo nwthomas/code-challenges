@@ -18,7 +18,7 @@ This repository is a collection of completed code challenges from a variety of p
 ## Built With
 
 - Aside from a few one-off solutions, the code challenges in this repository use [Golang](https://go.dev), [TypeScript](https://www.typescriptlang.org/), and [Python](https://www.python.org/)
-- The TypeScript tests use [Vitest](https://vitest.dev/) for unit testing, while Python uses [pytest](https://docs.pytest.org/en/stable/index.html). Go tests are written using the standard library [testing](https://pkg.go.dev/testing) package.
+- The TypeScript tests use [Bun's test runner](https://bun.com/docs/cli/test) for unit testing, while Python uses [pytest](https://docs.pytest.org/en/stable/index.html). Go tests are written using the standard library [testing](https://pkg.go.dev/testing) package.
 
 ## Getting Started
 
@@ -37,9 +37,9 @@ This repository is a collection of completed code challenges from a variety of p
 
 5. For TypeScript challenges:
 
-    - Run `make test-ts` or `bun run test` to run all tests once
-    - Run `bun run test <file name>` to run a single test file
-    - Run `bun run test:watch <file name>` for watch mode
+    - Run `make test-ts` or `bun test` to run all tests once
+    - Run `bun test <file name>` to run a single test file
+    - Run `bun test --watch <file name>` for watch mode
     - Run `make typecheck` or `bun run typecheck` to check implementations and tests with strict TypeScript settings
 
 6. For Python challenges:

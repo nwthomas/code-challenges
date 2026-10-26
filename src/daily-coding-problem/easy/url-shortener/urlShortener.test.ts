@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect } from "bun:test";
 
 import shortenUrl from "./urlShortener.ts";
 const [shorten, restore] = shortenUrl(6)!;

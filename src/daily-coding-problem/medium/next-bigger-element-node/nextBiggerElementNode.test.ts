@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "bun:test";
 
 import { Node } from "./nextBiggerElementNode.ts";
 
@@ -22,7 +22,7 @@ describe("Node", () => {
         expect(root.right?.left?.parent).toBe(root.right);
         expect(root.right?.right?.value).toBe(35);
         expect(root.right?.right?.parent).toBe(root.right);
-        expect(root.findNextBigger(root.right!.left)).toBe(root.right);
+        expect(root.findNextBigger(root.right!.left)).toBe(root.right!);
     });
 
     it("finds the leftmost successor in the right subtree", () => {
@@ -30,7 +30,7 @@ describe("Node", () => {
         for (const value of [30, 22, 15]) {
             root.addValue(value);
         }
-        expect(root.findNextBigger(root)).toBe(root.right!.left!.left);
+        expect(root.findNextBigger(root)).toBe(root.right!.left!.left!);
     });
 
     it("climbs past smaller ancestors to find the successor", () => {
@@ -53,7 +53,7 @@ describe("Node", () => {
     it("keeps duplicate values in inorder sequence", () => {
         const root = new Node(10);
         root.addValue(10);
-        expect(root.findNextBigger(root)).toBe(root.right);
+        expect(root.findNextBigger(root)).toBe(root.right!);
         expect(root.findNextBigger(root.right)).toEqual({});
     });
 });

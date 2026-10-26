@@ -1,4 +1,4 @@
-import { test, expect } from "vitest";
+import { test, expect } from "bun:test";
 
 import { encrypt, decrypt } from "./simple-encryption-1.ts";
 

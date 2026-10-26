@@ -1,4 +1,4 @@
-import { test, expect } from "vitest";
+import { test, expect } from "bun:test";
 
 import findOutlier from "./find-the-parity-outlier.ts";
 

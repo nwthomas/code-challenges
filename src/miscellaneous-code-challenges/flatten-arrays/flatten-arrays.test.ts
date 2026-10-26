@@ -1,4 +1,4 @@
-import { test, expect } from "vitest";
+import { test, expect } from "bun:test";
 
 import flattenArrays from "./flatten-arrays.ts";
 

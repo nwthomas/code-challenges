@@ -11,8 +11,8 @@ Place each challenge in a descriptive kebab-case directory, such as `src/leetcod
 Use Node.js 25, Python 3.14+, Go 1.25.4, Bun, and uv, matching repository configuration.
 
 - `make install` (or `make i`): install Python and TypeScript dependencies.
-- `make test-ts`: run all Vitest tests once.
-- `bun run test:watch <file>`: watch a TypeScript test file during development.
+- `make test-ts`: run all TypeScript tests once (via `bun test`).
+- `bun test --watch <file>`: watch a TypeScript test file during development.
 - `make typecheck`: check TypeScript implementations and tests without emitting files.
 - `make test-py`: run Python tests through uv and pytest.
 - `make test-go`: run Go tests in challenge directories.
@@ -26,9 +26,9 @@ Follow neighboring solutions and keep changes focused on the challenge. TypeScri
 
 ## Testing Guidelines
 
-Use Vitest with `*.test.ts`, pytest with `test_*.py` (including existing unittest-style tests), and Go's standard `testing` package with `*_test.go`. Cover examples, boundary inputs, and regressions. No numeric coverage threshold is configured.
+Use Bun's test runner (`bun:test`) with `*.test.ts`, pytest with `test_*.py` (including existing unittest-style tests), and Go's standard `testing` package with `*_test.go`. Cover examples, boundary inputs, and regressions. No numeric coverage threshold is configured.
 
-Run focused tests with `bun run test <file>`, `uv run pytest <path>`, or `go test ./src/<challenge-path>`. Before submitting, run the relevant language suite and TypeScript typechecking when applicable; CI runs all three suites and typechecking.
+Run focused tests with `bun test <file>`, `uv run pytest <path>`, or `go test ./src/<challenge-path>`. Before submitting, run the relevant language suite and TypeScript typechecking when applicable; CI runs all three suites and typechecking.
 
 ## Commit & Pull Request Guidelines
 
