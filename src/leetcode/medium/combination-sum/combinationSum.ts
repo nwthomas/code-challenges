@@ -30,29 +30,30 @@ All elements of candidates are distinct.
 1 <= target <= 40
 */
 
-const combinationSum = (nums: number[], target: number) => {
+export function combinationSum(
+    candidates: number[],
+    target: number,
+): number[][] {
     const result: number[][] = [];
-    nums = nums.sort((a, b) => a - b);
+    const parts: number[] = [];
 
-    const dfs = (i: number, current: number[], total: number) => {
+    function dfs(index: number = 0, total: number = 0) {
         if (total === target) {
-            result.push([...current]);
+            result.push([...parts]);
         }
 
-        for (let j = i; j < nums.length; j++) {
-            if (total + nums[j] > target) {
-                return;
+        for (let i = index; i < candidates.length; i++) {
+            if (total + candidates[i] > target) {
+                continue;
             }
 
-            current.push(nums[j]);
-            dfs(j, current, total + nums[j]);
-            current.pop();
+            parts.push(candidates[i]);
+            dfs(i, total + candidates[i]);
+            parts.pop();
         }
-    };
+    }
 
-    dfs(0, [], 0);
+    dfs();
 
     return result;
-};
-
-export { combinationSum };
+}
