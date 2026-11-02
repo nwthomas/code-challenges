@@ -1,5 +1,6 @@
-from rotting_oranges import orangesRotting
 import unittest
+
+from rotting_oranges import orangesRotting
 
 
 class TestOrangesRotting(unittest.TestCase):
