@@ -28,13 +28,14 @@ Constraints:
 
 from typing import List
 
+
 def coin_change(coins: List[int], amount: int) -> int:
     tracker = [float('inf') for _ in range(amount + 1)]
     tracker[0] = 0
-    
+
     for i in range(len(tracker)):
         for c in coins:
             if i - c >= 0:
                 tracker[i] = min(tracker[i], tracker[i - c] + 1)
-                
+
     return -1 if tracker[-1] == float('inf') else tracker[-1]

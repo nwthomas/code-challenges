@@ -31,6 +31,7 @@
     - [Monster Battle](monster-battle)
     - [Node Counting](node-counting)
     - [Pairs With Specific Difference](pairs-with-specific-difference)
+    - [Pancake Sort](pancake-sort)
     - [Recipe Batches](recipe-batches)
     - [Resumable Iterator](resumable-iterator)
     - [Rock Paper Scissors](rock-paper-scissors)
