@@ -68,6 +68,7 @@
 - [Min Stack](min-stack)
 - [Multiply Strings](multiply-strings)
 - [Non-Overlapping Intervals](non-overlapping-intervals)
+- [Number of Connected Components](number-of-connected-components)
 - [Number of Islands](number-of-islands)
 - [Pacific Atlantic Water Flow](pacific-atlantic-water-flow)
 - [Palindrome Partitioning](palindrome-partitioning)

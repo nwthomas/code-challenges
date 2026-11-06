@@ -16,7 +16,7 @@ Constraints:
 1 <= n <= 8
 */
 
-const generateParenthesis = (n: number) => {
+export const generateParenthesis = (n: number) => {
     function backtrack(str: string, open: number, closed: number): string[] {
         if (open === 1 && closed === n - 1) {
             return [str + ")"];
@@ -35,5 +35,3 @@ const generateParenthesis = (n: number) => {
 
     return backtrack("(", 1, 0);
 };
-
-export { generateParenthesis };
