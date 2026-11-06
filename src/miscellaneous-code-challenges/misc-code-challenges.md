@@ -21,6 +21,7 @@
     - [Change Directory](cd)
     - [Count Islands](count-islands)
     - [Dependency Version Check](dependency-version-check)
+    - [Degrees of Friendship](degrees-of-friendship)
     - [Eating Cookies](eating-cookies)
     - [Getting a Different Number](getting-a-different-number)
     - [GPU Credit Tracker](gpu-credit-tracker)
