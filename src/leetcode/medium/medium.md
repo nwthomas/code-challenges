@@ -67,6 +67,7 @@
 - [Merge Intervals](merge-intervals)
 - [Min Stack](min-stack)
 - [Multiply Strings](multiply-strings)
+- [Network Delay Time](network-delay-time)
 - [Non-Overlapping Intervals](non-overlapping-intervals)
 - [Number of Connected Components](number-of-connected-components)
 - [Number of Islands](number-of-islands)
