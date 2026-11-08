@@ -35,6 +35,7 @@
     - [Pairs With Specific Difference](pairs-with-specific-difference)
     - [Pancake Sort](pancake-sort)
     - [Recipe Batches](recipe-batches)
+    - [Remove Duplicates in String](remove-duplicates-in-string)
     - [Resumable Iterator](resumable-iterator)
     - [Rock Paper Scissors](rock-paper-scissors)
     - [Sentence Similarity](sentence-similarity)
