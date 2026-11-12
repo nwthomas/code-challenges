@@ -23,4 +23,4 @@ test-py:
 	# -s: Allows for print statements to be displayed
 	# -v: Increases verbosity of test output
 	# -vv: Does not truncate test output
-	uv run pytest -s -vv
+	uv run pytest --capture=no -vv

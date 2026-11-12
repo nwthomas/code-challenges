@@ -27,7 +27,6 @@ def deletion_distance(word1: str, word2: str) -> int:
 
     for i in range(m + 1):
         dp[i][0] = i
-
     for i in range(n + 1):
         dp[0][i] = i
 

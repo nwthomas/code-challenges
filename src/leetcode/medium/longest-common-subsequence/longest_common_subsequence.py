@@ -10,8 +10,8 @@ For example, "ace" is a subsequence of "abcde".
 A common subsequence of two strings is a subsequence that is common to both strings.
 
 Example 1:
-Input: text1 = "abcde", text2 = "ace" 
-Output: 3  
+Input: text1 = "abcde", text2 = "ace"
+Output: 3
 Explanation: The longest common subsequence is "ace" and its length is 3.
 
 Example 2:
@@ -31,14 +31,20 @@ text1 and text2 consist of only lowercase English characters.
 
 
 def get_longest_common_subsequence(text1: str, text2: str) -> int:
-    """Returns the longest common subsequence between two strings"""
-    grid = [[0 for _ in range(len(text2) + 1)] for _ in range(len(text1) + 1)]
+    dp = [[0 for _ in range(len(text2) + 1)]
+          for _ in range(len(text1) + 1)]
 
-    for y in range(len(text1) - 1, -1, -1):
-        for x in range(len(text2) - 1, -1, -1):
-            if text1[y] == text2[x]:
-                grid[y][x] = 1 + grid[y + 1][x + 1]
+    for y in range(1, len(text1) + 1):
+        for x in range(1, len(text2) + 1):
+            char1 = text1[y - 1]
+            char2 = text2[x - 1]
+
+            if char1 == char2:
+                dp[y][x] = dp[y - 1][x - 1] + 1
             else:
-                grid[y][x] = max(grid[y + 1][x], grid[y][x + 1])
+                dp[y][x] = max(
+                    dp[y - 1][x],
+                    dp[y][x - 1],
+                )
 
-    return grid[0][0]
+    return dp[-1][-1]
