@@ -11,8 +11,8 @@ class TestReorderList(unittest.TestCase):
         for num in order:
             if current.val != num:
                 return False
-            else:
-                current = current.next
+
+            current = current.next
 
         return True
 
