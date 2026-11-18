@@ -20,7 +20,7 @@ Explanation: A possible sequence is: A -> B -> C -> D -> A -> B.
 With a cooling interval of 1, you can repeat a task after just one other task.
 
 Example 3:
-Input: tasks = ["A","A","A", "B","B","B"], n = 3
+Input: tasks = ["A","A","A","B","B","B"], n = 3
 
 Output: 10
 Explanation: A possible sequence is: A -> B -> idle -> idle -> A -> B -> idle -> idle -> A -> B.
@@ -32,38 +32,35 @@ tasks[i] is an uppercase English letter.
 0 <= n <= 100
 """
 
-from typing import List
-from heapq import heappush, heappop
+from collections import defaultdict
+from heapq import heappop, heappush
 
 
-def leastInterval(tasks: List[str], n: int) -> int:
-    heap = []
-    queue = []
-    result = []
+def leastInterval(tasks: list[str], n: int) -> int:
+    groups = defaultdict(int)
+    for t in tasks:
+        groups[t] += 1
 
-    tracker = {}
-    for task in tasks:
-        if not task in tracker:
-            tracker[task] = 0
-        tracker[task] += 1
+    interval = 0
+    taskCounts = []
+    taskTimeouts = []
 
-    for task, count in tracker.items():
-        heappush(heap, [count * -1, task])
+    for k, v in groups.items():
+        heappush(taskCounts, (v * -1, k))
 
-    while len(heap) > 0 or len(queue) > 0:
-        if len(queue) > 0 and queue[0][1] == len(result) - 1 - n:
-            renewedTask, _ = queue.pop(0)
-            heappush(heap, renewedTask)
+    while taskCounts or taskTimeouts:
+        if taskTimeouts and taskTimeouts[0][0] <= interval:
+            _, renewedTaskCount, renewedTask = heappop(taskTimeouts)
+            heappush(taskCounts, (renewedTaskCount * -1, renewedTask))
 
-        if len(heap) == 0:
-            result.append(None)
-            continue
+        if len(taskCounts) > 0:
+            taskCount, taskName = heappop(taskCounts)
+            taskCount *= -1
 
-        currentTask = heappop(heap)
-        result.append(currentTask[1])
-        currentTask[0] += 1
+            if (taskCount - 1) > 0:
+                heappush(taskTimeouts, (interval + n +
+                         1, taskCount - 1, taskName))
 
-        if currentTask[0] < 0:
-            queue.append([currentTask, len(result) - 1])
+        interval += 1
 
-    return len(result)
+    return interval
