@@ -38,32 +38,30 @@ If 99% of all integer numbers from the stream are in the range [0, 100], how wou
 
 from heapq import heappop, heappush
 
+
 class MedianFinder:
     def __init__(self):
-        self.small = []
-        self.large = []
+        self.leftHeap = []  # min heap of nums * -1
+        self.rightHeap = []  # min heap, no multiplication
 
-    def add_num(self, num: int) -> None:
-        if self.is_even() and len(self.small) < 1 and len(self.large) < 1:
-            heappush(self.large, num)
-        elif not self.is_even() and len(self.small) < 1:
-            heappush(self.large, num)
-            heappush(self.small, heappop(self.large) * -1)
-        else:
-            was_even = self.is_even()
-            heappush(self.large, num)
-            
-            if self.small[0] * -1 > self.large[0]:
-                small = heappop(self.small) * -1
-                large = heappop(self.large)
-                heappush(self.small, large * -1)
-                heappush(self.large, small)
-                
-            if not was_even:
-                heappush(self.small, heappop(self.large) * -1)
-        
-    def find_median(self) -> float:
-        return ((self.small[0] * -1) + self.large[0]) / 2 if self.is_even() else self.large[0]
-    
-    def is_even(self) -> bool:
-        return (len(self.small) + len(self.large)) % 2 == 0
+    def addNum(self, num: int) -> None:
+        heappush(self.rightHeap, num)
+
+        if len(self.rightHeap) > len(self.leftHeap):
+            heappush(self.leftHeap, heappop(self.rightHeap) * -1)
+
+        if self.leftHeap and self.rightHeap:
+            while self.leftHeap[0] * -1 > self.rightHeap[0]:
+                leftNum = heappop(self.leftHeap)
+                rightNum = heappop(self.rightHeap)
+                heappush(self.leftHeap, rightNum * -1)
+                heappush(self.rightHeap, leftNum * -1)
+
+    def findMedian(self) -> float:
+        if len(self.leftHeap) > len(self.rightHeap):
+            return self.leftHeap[0] * -1
+
+        leftNum = self.leftHeap[0] * -1
+        rightNum = self.rightHeap[0]
+
+        return (leftNum + rightNum) / 2
