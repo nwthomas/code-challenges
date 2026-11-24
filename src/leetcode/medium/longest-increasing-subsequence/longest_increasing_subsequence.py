@@ -25,15 +25,13 @@ Constraints:
 
 from typing import List
 
-def get_longest_increasing_subsequence(nums: List[int]) -> int:
-    if type(nums) != list:
-        raise TypeError('Argument must be of type list')
 
+def get_longest_increasing_subsequence(nums: List[int]) -> int:
     tracker = [1] * len(nums)
-    
+
     for i in range(len(nums) - 2, -1, -1):
         for j in range(i + 1, len(nums)):
             if nums[i] < nums[j]:
                 tracker[i] = max(tracker[i], tracker[j] + 1)
-                
+
     return max(tracker)
